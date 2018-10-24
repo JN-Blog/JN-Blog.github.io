@@ -30,6 +30,8 @@ AUTHOR_FEED_RSS = None
 
 # Category Settings
 DEFAULT_CATEGORY = 'home'
+USE_FOLDER_AS_CATEGORY = True
+DISPLAY_CATEGORIES_ON_MENU = True
 
 # URL Settings
 
@@ -53,6 +55,9 @@ AUTHOR_SAVE_AS = ''
 # YEAR_ARCHIVES_SAVE_AS = 'articles/{date:%Y}/index.html'
 # MONTH_ARCHIVES_SAVE_AS = 'articles/{date:%Y}/{date:%b}/index.html'
 
+
+# Theme settings
+THEME = "themes/Responsive-Pelican"
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
