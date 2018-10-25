@@ -10,8 +10,8 @@ after_failure:
   - make revert
 deploy:
   provider: pages
-  repo: JN-Blog/JN-Blog.github.io
-  target_branch: master
+  repo: JN-Blog/jn-blog.com
+  target_branch: gh-pages
   skip_cleaneup: true
   github_token: $GITHUB_TOKEN
   local_dir: output
