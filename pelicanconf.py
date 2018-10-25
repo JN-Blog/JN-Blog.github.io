@@ -56,8 +56,11 @@ AUTHOR_SAVE_AS = ''
 # MONTH_ARCHIVES_SAVE_AS = 'articles/{date:%Y}/{date:%b}/index.html'
 
 
-# Theme settings
-THEME = "themes/Responsive-Pelican"
+# Theme settings for development
+
+# THEME = "../JN-PelicanTheme-Minimalist/Responsive-Pelican"
+THEME = "../JN-PelicanTheme-Minimalist/dist"
+CSS_FILE = 'style.css'
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
