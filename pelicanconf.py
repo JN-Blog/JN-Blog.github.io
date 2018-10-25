@@ -57,7 +57,7 @@ AUTHOR_SAVE_AS = ''
 
 
 # Theme settings
-THEME = "themes/Responsive-Pelican"
+# THEME = "themes/Responsive-Pelican"
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),

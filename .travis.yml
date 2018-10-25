@@ -11,9 +11,9 @@ after_failure:
 deploy:
   provider: pages
   repo: JN-Blog/JN-Blog.github.io
-  target_branch: gh-pages
+  target_branch: master
   skip_cleaneup: true
   github_token: $GITHUB_TOKEN
   local_dir: output
   on:
-    branch: master
+    branch: staging
