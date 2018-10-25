@@ -99,18 +99,6 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-revert:
-ifeq ($(TRAVIS_PULL_REQUEST), false)
-	@echo "Build errors were encountered. Reverting last commit..."
-	@git revert HEAD -n
-	@git commit -m "Revert to last commit because errors were found."
-	@git checkout -b errors
-	@git push -f https://$(GITHUB_TOKEN)@github.com/PythonClassmates/PythonClassmates.org.git errors:master
-	@echo "Last commit reverted"
-else
-	@echo "In a pull request. Nothing to revert."
-endif
-
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 

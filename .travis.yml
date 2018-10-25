@@ -14,9 +14,6 @@ script:
   # Download targeted them
   - make publish github
 
-after_failure:
-  - make revert
-
 deploy:
   provider: pages
   repo: JN-Blog/jn-blog.com
