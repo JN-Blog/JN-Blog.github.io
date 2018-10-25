@@ -21,7 +21,7 @@ deploy:
   provider: pages
   repo: JN-Blog/jn-blog.com
   target_branch: gh-pages
-  skip_cleaneup: true
+  skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: output
   on:
