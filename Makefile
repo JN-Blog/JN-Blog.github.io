@@ -99,6 +99,18 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
+revert:
+ifeq ($(TRAVIS_PULL_REQUEST), false)
+	@echo "Build errors were encountered. Reverting last commit..."
+	@git revert HEAD -n
+	@git commit -m "Revert to last commit because errors were found."
+	@git checkout -b errors
+	@git push -f https://$(GITHUB_TOKEN)@github.com/PythonClassmates/PythonClassmates.org.git errors:master
+	@echo "Last commit reverted"
+else
+	@echo "In a pull request. Nothing to revert."
+endif
+
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
@@ -118,7 +130,9 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push origin $(GITHUB_PAGES_BRANCH)
+	# ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	# git push origin $(GITHUB_PAGES_BRANCH)
+	ghp-import -n $(OUTPUTDIR)
+	@git push -fq https://${GITHUB_TOKEN}@github.com/JN-Blog/jn-blog.com.git gh-pages > /dev/null
 
-.PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+.PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github revert
