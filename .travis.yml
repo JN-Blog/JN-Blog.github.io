@@ -8,10 +8,11 @@ branches:
 
 install:
   - pip3 install -r requirements.txt
+  - pip3 install ghp-import
 
 script:
   # Download targeted them
-  - make publish
+  - make publish github
 
 after_failure:
   - make revert
