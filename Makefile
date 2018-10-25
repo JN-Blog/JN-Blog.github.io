@@ -133,6 +133,6 @@ github: publish
 	# ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	# git push origin $(GITHUB_PAGES_BRANCH)
 	ghp-import -n $(OUTPUTDIR)
-	@git push -fq https://${GITHUB_TOKEN}@github.com/JN-Blog/jn-blog.com.git gh-pages > /dev/null
+	@git push -fq https://$(GITHUB_TOKEN)@github.com/JN-Blog/jn-blog.com.git gh-pages > /dev/null
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github revert
