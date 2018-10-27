@@ -12,11 +12,11 @@ Summary: Découvrez toutes les étapes pour configurer GitHub Pages et héberger
 Maintenant que nous avons découvert ce qu'est un [blog statique](lien de l'article précédent) et comment cela fonctionne, il est temps de commencer à se retrousser les manches et de configurer notre environnement de travail.
 
 Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:
-1. - [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
-2. - **2.Mettre en place GitHub Pages pour l'hébergement d'un blog statique**
-3. - [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
-4. - [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
-5. - [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
+1. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
+2. **Mettre en place GitHub Pages pour l'hébergement d'un blog statique**
+3. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
+4. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
+5. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
 Pour rappel, ce tutoriel se base sur la construction d'un blog statique que vous pouvez déjà découvrir à l'adresse suivante: https://www.tutoriel-pelican.jn-blog.com
 
@@ -144,35 +144,6 @@ Il vous suffit, au sein de votre interface de sélectionné le nom de domaine qu
 
 Une fois cela fait, il va falloir un peu patienter car l'opération peut prendre quelques heures à être propagé.
 
-
-
-### Cloner le repository en local
-
-Une fois le repository créé, nous allons le cloner sur notre machine dans le répertoire dedié au blog:
-
-```
-git clone https://ta-race.git 
-```
-
-Un fois cloné, nous créeons les branches source et gh-pages en plus de la branche master:
-
-```
-git branch source
-git branch gh-pages
-```
-
-Désormais, si nous lançons la commande ```git branch```, nous pouvons constater que le repository possède trois branches:
-
-```
-* master
-source
-gh-pages
-```
-
-Une fois créée, nous pouvons désormais toutes les pousser sur GitHub:
-
-```
-git push origin HEAD
-```
-
-Maintenant, retournant sur GitHub dans notre repository pour continuer la configuration.
+<!-- Ensuite:
+- terminer config du domaine avec custom url + https
+- Ouvrir sur le prochain article -->

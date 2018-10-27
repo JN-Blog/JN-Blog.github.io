@@ -60,6 +60,6 @@ A ce stade, le blog sera fonctionnel et la plus grande partie du travail aura é
 
 Bien sûr, ce tutoriel va s'enrichir avec le temps et de nouveaux chapitres verront le jour. Vous découvrirez ainsi comment mettre en place un système de commentaires, ou encore mettre en place Google Analytics afin de suivre les performances et la popularité de votre blog. Et puis, finalement ce tutoriel évoluera également en fonction de vos questions et besoin. Alors n'hésitez pas à écrire des commentaires afin d'avoir vos retours sur ce dernier. Cela me permettra d'affiner le contenu suite à votre retour d'expérience.
 
-C'est parti? Allez, c'est par ici alors:
+Prêt pour la suite? Allez, c'est par ici alors:
 
-Un blog statique? C'est quoi et ca sert à quoi?
+[Comprendre ce qu'est un blog statique]({filename}tuto_pelican_1_whats_blog_statique.md)
