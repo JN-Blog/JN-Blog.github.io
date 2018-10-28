@@ -28,10 +28,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Category Settings
+# Category and Tags Settings
 DEFAULT_CATEGORY = 'home'
 USE_FOLDER_AS_CATEGORY = True
 DISPLAY_CATEGORIES_ON_MENU = True
+DISPLAY_TAGS_ON_MENU = True
 
 # URL Settings
 
