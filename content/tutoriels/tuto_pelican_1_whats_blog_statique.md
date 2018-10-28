@@ -12,7 +12,7 @@ Summary: Un blog statique, c'est quoi et comment ça marche? Découvrez le conce
 Un blog statique? Mais qu'est-ce que tu me racontes? Si je veux un blog, je me tourne vers Wordpress et puis on en parle plus.
 Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blog qu'il faut prendre à tout pris, mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.
 
-Comme cet article est le premier d'un tutoriel dédié à la création d'un blog statique, je me permets à chaque début d'articles de rappeler le plan du tutoriel:
+Comme cet article est le premier d'un tutoriel dédié à la création d'un blog statique, je me permets à chaque début d'article de rappeler le plan du tutoriel:
 1. **Un blog statique, c'est quoi et comment ça fonctionne?**
 2. [Mettre en place GitHub Pages pour l'hébergement d'un blog statique]({filename}tuto_pelican_2_githubpages_setup.md)
 3. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)

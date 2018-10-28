@@ -144,6 +144,11 @@ Il vous suffit, au sein de votre interface de sélectionné le nom de domaine qu
 
 Une fois cela fait, il va falloir un peu patienter car l'opération peut prendre quelques heures à être propagé.
 
-<!-- Ensuite:
-- terminer config du domaine avec custom url + https
-- Ouvrir sur le prochain article -->
+Pour terminé la configuration, rien de plus simple. Il suffit juste de retourner dans les settings de votre repository GitHub et ajouter votre domaine à l'endroit indiqué. Je vous recommande également d'activer le protocole https. Cela vous apporte un niveau de sécurité supplémentaire et les domaines accessibles en https sont favorisés en terme de référencement naturel. Dans la même logique, cette activation demande la mise en place d'un certificat SSL du côté et GitHub et cela peut demander un peu de temps.
+
+![configuration github pages terminés]({filename}/images/tuto-pelican-settings-global-done.png)
+
+Notre configuration de GitHub Pages est désormais terminé! Notre repository est prêt à acceuillir notre blog ainsi qu'à le servir sur notre domaine personnalisé.
+Nous allons dans la prochaine étape installer notre blog et mettre en place ses configurations initiales:
+
+[Mettre en place Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
