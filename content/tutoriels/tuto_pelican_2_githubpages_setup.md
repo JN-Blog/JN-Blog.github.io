@@ -9,7 +9,7 @@ Summary: Découvrez toutes les étapes pour configurer GitHub Pages et héberger
 
 # Utiliser GitHub Pages pour héberger son blog statique
 
-Maintenant que nous avons découvert ce qu'est un [blog statique](lien de l'article précédent) et comment cela fonctionne, il est temps de commencer à se retrousser les manches et de configurer notre environnement de travail.
+Maintenant que nous avons découvert ce qu'est un [blog statique]({filename}tuto_pelican_1_whats_blog_statique.md) et comment cela fonctionne, il est temps de commencer à se retrousser les manches et de configurer notre environnement de travail.
 
 Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:
 1. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
@@ -20,7 +20,7 @@ Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié
 
 Pour rappel, ce tutoriel se base sur la construction d'un blog statique que vous pouvez déjà découvrir à l'adresse suivante: https://www.tutoriel-pelican.jn-blog.com
 
-Dans cet article, nous découvrirons ce qu'est GitHub Pages comment nous allons l'utiliser au sein de notre projet de blog. Ensuite, nous le configurerons complètement pour qu'il puisse ensuite accueillir la structure de notre blog statique.
+Dans cet article, nous découvrirons ce qu'est GitHub Pages comment nous allons l'utiliser au sein de notre projet de blog. Ensuite, nous le configurerons complètement pour qu'il puisse accueillir la structure de notre blog statique.
 
 Commençons donc par présenter GitHub Pages.
 
@@ -62,9 +62,9 @@ Voici un petit schéma pour illustrer mes propos:
 
 Encore une fois, ce n'est pas la seule logique de fonctionnement. J'ai vu certaines personnes travailler avec deux repositories par exemple: un pour travailler et concevoir le blog et l'autre uniquement pour le déploiement, ce qui est une solution judicieuse également. J'ai simplement peur d'ajouter un risque de confusion supplémentaire en travaillant avec deux repositories.
 
-D'autres personnes intervertissent la branche gh-pages et master dans la logique de fonctionnement. Ainsi, c'est la branche master sur laquelle GitHub Pages se base pour le déploiement et la branche gh-pages ou un autre nom qui contient la version du code à jour. C'est d'autant plus intéressant que si vous n'utilisez pas de nom de domaine personnalisé et que vous avez nommé votre repository USERNAME.github.io, vous n'avez pas la possibilité de choisir une autre branche que master comme origine de déploiement. Nous y reviendrons quelque peu dans les parties suivantes.
+D'autres personnes intervertissent la branche gh-pages et master dans la logique de fonctionnement. Ainsi, c'est la branche master sur laquelle GitHub Pages se base pour le déploiement et la branche gh-pages ou un autre nom qui contient la version du code à jour. C'est d'autant plus intéressant que si vous n'utilisez pas de nom de domaine personnalisé et que vous avez nommé votre repository USERNAME.github.io, vous n'avez pas la possibilité de choisir une autre branche que master comme origine de déploiement.
 
-Alors pourquoi intervertir les deux me demanderiez vous? Et bien principalement pour une convention de nommage. La branche Master est de base la branche par défaut, celle qui contient le code en production et que l'on voit directement lorsque l'on arrive sur un repository. C'est sa fonctionnalité dans la majorité des projets. Cela peut paraître absurde mais si vous créez un blog avec plusiquers contributeurs et auteurs qui ont l'habitude, tellement l'habitude que ca touche au domaine de l'inconcsient, cela risque de provoquer des erreurs comme pousser un code non testé sur la branche qui sert au déploiement. Et boom, le site est cassé...
+Alors pourquoi intervertir les deux me demanderiez vous? Et bien principalement pour une convention de nommage. La branche Master est de base la branche par défaut, celle qui contient le code complet et stable et que l'on voit directement lorsque l'on arrive sur un repository. C'est sa fonctionnalité dans la majorité des projets. Cela peut paraître absurde mais si vous créez un blog avec plusieurs contributeurs et auteurs qui ont l'habitude - tellement l'habitude que ca touche au domaine de l'inconcsient - de fonctionner ainsi, cela risque de provoquer des erreurs comme pousser un code non testé sur la branche qui sert au déploiement. Et boom, le site est cassé...
 
 Maintenant que la logique de fonctionnement est décrite, il est temps de passer à l'action.
 
