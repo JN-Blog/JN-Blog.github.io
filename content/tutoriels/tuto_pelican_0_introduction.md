@@ -4,6 +4,7 @@ Modified: 2018-10-26
 Category: tutoriels
 Tags: tutoriel, pelican, blog statique
 Slug: tutoriel-creer-un-blog-statique
+Lang: fr
 Authors: Julien Nuellas
 Summary: Vous avez envie de créer un blog et vous êtes tenté par la solution du blog statique? Alors ce tutoriel est fait pour vous.
 

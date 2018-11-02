@@ -4,6 +4,7 @@ Modified: 2018-10-26
 Category: tutoriels
 Tags: tutoriel, pelican, blog statique
 Slug: heberger-un-blog-statique-avec-github-pages
+Lang: fr
 Authors: Julien Nuellas
 Summary: Découvrez toutes les étapes pour configurer GitHub Pages et héberger votre blog statique facilement. Ne soyez pas effrayé, ce n'est pas très compliqué!
 

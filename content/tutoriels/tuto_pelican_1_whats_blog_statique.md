@@ -4,6 +4,7 @@ Modified: 2018-10-26
 Category: tutoriels
 Tags: tutoriel, pelican, blog statique
 Slug: explication-blog-statique
+Lang: fr
 Authors: Julien Nuellas
 Summary: Un blog statique, c'est quoi et comment ça marche? Découvrez le concept de blog statique, ses avantages et ses inconvénients ainsi que son fonctionnement.
 
