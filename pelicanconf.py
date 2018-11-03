@@ -46,10 +46,10 @@ AUTHOR_FEED_RSS = None
 
 # Category and Tags Settings
 USE_FOLDER_AS_CATEGORY = False
-DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_MENU = False
 DISPLAY_TAGS_ON_MENU = True
 
-MAIN_MENU = True
+MAIN_MENU = False
 HOME_HIDE_TAGS = True
 
 # URL Settings
