@@ -1,4 +1,4 @@
-Title: JN-Blog: Utiliser GitHub Pages pour héberger son blog statique
+Title: Utiliser GitHub Pages pour héberger son blog statique
 Date: 2018-10-26
 Modified: 2018-10-26
 Category: tutoriels
@@ -8,16 +8,16 @@ Lang: fr
 Authors: Julien Nuellas
 Summary: Découvrez toutes les étapes pour configurer GitHub Pages et héberger votre blog statique facilement. Ne soyez pas effrayé, ce n'est pas très compliqué!
 
-# Utiliser GitHub Pages pour héberger son blog statique
-
 Maintenant que nous avons découvert ce qu'est un [blog statique]({filename}tuto_pelican_1_whats_blog_statique.md) et comment cela fonctionne, il est temps de commencer à se retrousser les manches et de configurer notre environnement de travail.
 
 Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:
-1. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
-2. **Mettre en place GitHub Pages pour l'hébergement d'un blog statique**
-3. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
-4. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
-5. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
+
+1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
+2. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
+3. **Mettre en place GitHub Pages pour l'hébergement d'un blog statique**
+4. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
+5. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
+6. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
 Pour rappel, ce tutoriel se base sur la construction d'un blog statique que vous pouvez déjà découvrir à l'adresse suivante: https://www.tutoriel-pelican.jn-blog.com
 

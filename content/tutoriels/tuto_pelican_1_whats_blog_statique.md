@@ -1,4 +1,4 @@
-Title: JN-Blog: C'est quoi un blog statique? Comment ca fonctionne?
+Title: C'est quoi un blog statique? Comment ca fonctionne?
 Date: 2018-10-26
 Modified: 2018-10-26
 Category: tutoriels
@@ -8,17 +8,17 @@ Lang: fr
 Authors: Julien Nuellas
 Summary: Un blog statique, c'est quoi et comment ça marche? Découvrez le concept de blog statique, ses avantages et ses inconvénients ainsi que son fonctionnement.
 
-# Un blog Statique c'est quoi et comment ça fonctionne?
-
 Un blog statique? Mais qu'est-ce que tu me racontes? Si je veux un blog, je me tourne vers Wordpress et puis on en parle plus.
-Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blog qu'il faut prendre à tout pris, mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique (et un site statique plus globalement) ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.
+Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blogs qu'il faut prendre à tout pris, mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique (et un site statique plus globalement) ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.
 
 Comme ce post est le premier d'un tutoriel dédié à la création d'un blog statique, je me permets à chaque début d'articles de rappeler le plan du tutoriel:
-1. **Un blog statique, c'est quoi et comment ça fonctionne?**
-2. [Mettre en place GitHub Pages pour l'hébergement d'un blog statique]({filename}tuto_pelican_2_githubpages_setup.md)
-3. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
-4. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
-5. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
+
+1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
+2. **Un blog statique, c'est quoi et comment ça fonctionne?**
+3. [Mettre en place GitHub Pages pour l'hébergement d'un blog statique]({filename}tuto_pelican_2_githubpages_setup.md)
+4. [Utiliser Pelican pour son blog statique]({filename}tuto_pelican_3_installer_pelican.md)
+5. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
+6. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
 Celui-ci s'attachera donc à définir le concept de blog statique puis d'en décrire ces avantages et ces inconvénients. Ensuite, il décrira de façon macro comment un blog statique fonctionne et s'attardera sur le générateur de sites statiques **Pelican**, car c'est celui-ci qui nous utiliserons dans le tutoriel.
 
@@ -94,6 +94,7 @@ La particularité principale d'un générateur de sites statiques réside dans s
 Ensuite lorsque vous souhaitez publier/ mettre à jour votre site suite à la création d'un nouveau contenu, le générateur va créer les fichiers html qui composeront votre site.
 
 Il existe une multitude de générateurs de sites statiques. En voici une liste non exhaustive:
+
 * [Jekyll](https://jekyllrb.com/) (écrit en Ruby)
 * [Pelican](http://docs.getpelican.com/en/stable/) (écrit en Python)
 * [Hugo](https://gohugo.io/) (écrit en Go)
