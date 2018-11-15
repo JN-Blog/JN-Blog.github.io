@@ -8,12 +8,11 @@ Lang: fr
 Authors: Julien Nuellas
 Summary: Vous avez envie de créer un blog et vous êtes tenté par la solution du blog statique? Alors ce tutoriel est fait pour vous.
 
-Quand on débute l'écriture d'un blog, il faut bien commencer par quelque part. Et quoi de plus logique que de débuter l'aventure de ce blog statique par un tutoriel expliquant la mise en place d'un blog statique? 
+A travers ce tutoriel, je souhaite partager mon expérience suite à la mise en place de mon blog statique. En effet, j'ai créé ce blog dans l'idée d'en faire une base d'échange, de partage d'expérience, de connaissances et il paraît donc logique que le premier tutoriel de ce blog traîte du sujet de la mise en place d'un blog statique.
 
 ![gif ça fait sens](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
 
-J'ai effectivement créé ce blog dans l'idée d'en faire une base d'échange, de partage d'expérience et de connaissance.
-Et c'est pourquoi je vous attends nombreux dans la section *commentaire* afin de pouvoir partager votre retour d'expérience sur votre propre mise en place d'un blog statique.
+Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérience dans la section *commentaire*.
 Et j'insiste sur le fait que je ne prétends pas avoir la solution ultime (existe-t-elle vraiment finalement?) mais une solution pertinente par rapport à des objectifs définis.
 
 ## Objectifs du tutoriel
@@ -29,12 +28,12 @@ Le premier avantage à tout ça, vous pouvez créer un blog **gratuitement** san
 
 ## Quels sont les pré-requis?
 
-Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore **approchées** le monde du développement. Il n'y a rien d'innaccessible et il ne faut pas être un développeur confirmé pour mettre en place ce style de blog mais il faut avoir une certaine curiosité par rapport à l'environnement de développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif premier de ce tutoriel:
+Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore **cotoyés** le monde du développement. Il n'y a rien d'innaccessible et il ne faut pas être un développeur confirmé pour mettre en place ce style de blog mais il faut avoir une certaine curiosité par rapport à l'environnement de développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif premier:
 
-* Ne pas être effrayé par les lignes de commandes
-* Avoir des notions basiques avec git et GitHub
-* Comprendre l'environnement de développement Python
-* Savoir ce qu'est l'intégration continue et ce à quoi peut servir un outil comme Travis CI
+* Utilisation de lignes de commandes
+* Utilisation de git et GitHub
+* Mise en place d'un environnement Python
+* Mise en place de Travis CI pour automatiser le déploiement
 
 Alors, prêt pour l'aventure?
 
@@ -66,7 +65,7 @@ On écrira même un premier article que nous déploierons en local afin de véri
 
 ## 4. [Mise en place de Travis et du workflow de déploiement]({filename}tuto_pelican_4_installer_travis.md)
 
-L'étape suivante consistera à mettre en place le déploiement automatisé avec **Travis**. L'objectif étant qu'à chaque fois que vous écrivez un nouvel article et que vous souhaitez le publier, vous n'ayez qu'à pousser votre projet sur GitHub, puis historiser la publication via une pull request (pour conserver un certain historique). Travis se chargera de tester le projet et déployer la nouvelle version du blog si tout se passe bien.
+L'étape suivante consistera à mettre en place le déploiement automatisé avec **Travis**. L'objectif étant qu'à chaque fois que vous écrirez un nouvel article et que vous souhaiterez le publier, vous n'aurez qu'à pousser votre projet sur GitHub, puis historiser la publication via une pull request (pour conserver un certain historique). Travis se chargera de tester le projet et déploiera la nouvelle version du blog si tout se passe bien.
 
 ## 5. [Mettre en place un thème Pelican]({filename}tuto_pelican_5_installer_theme.md)
 

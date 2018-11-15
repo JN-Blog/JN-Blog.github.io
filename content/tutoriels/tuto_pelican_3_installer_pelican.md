@@ -10,7 +10,7 @@ Summary: Découvrez comment installer et configurer Pelican pour votre propre bl
 
 Après avoir découvert ce qu'est un site statique et avoir installé notre environnement de production via GitHub Pages, nous allons désormais mettre en place la structure de notre blog statique en utilisant le générateur de site statique [Pelican](http://docs.getpelican.com/en/stable/).
 
-Comme cet article constitue la troisième partie d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:
+Comme cet article constitue la quatrième partie d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:
 
 1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
 2. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
@@ -20,8 +20,6 @@ Comme cet article constitue la troisième partie d'un tutoriel dédié à la cr�
 6. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
 Nous verrons donc dans cet article comment installer Pelican et le configurer de manière basique. Nous écrirons également notre premier article et publirons notre blog en local.
-
-Pour cela, nous ferons appel à quelques connaissances liées à l'environnement Python. En effet, Pelican est un générateur de sites statiques construit en Python et cela demande donc quelques connaissances sur son environnement de fonctionnement. Je tâcherai tout au long de ce tutoriel d'apporter un maximum d'explication mais je ne souhaite pas non plus diluer l'objectif de cet article en dérivant sur des explications précises sur l'environnement Python. Par contre, si vous êtes intéressé par en apprendre plus sur ce sujet, faîtes le moi savoir dans les commentaires et je serai râvi de prendre le sujet à coeur et en faire des articles annexes.
 
 Maintenant que l'on sait ce que l'on va faire dans cet article, il est temps de débuter les hostilités.
 
@@ -69,7 +67,8 @@ Nous sommes désormais prêt à installer Pelican
 
 ## Installer Pelican et Markdown
 
-Pour installer Pelican, rien de plus de simple, il suffit d'installer pip, le gestionnaire de paquet Python:
+Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
+Attention à bien avoir activé votre environnement virtuel au préalable.
 
 ```
 pip install pelican
@@ -107,7 +106,7 @@ Unidecode==1.0.22
 
 Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.
 
-2. Créer notre fichier .gitignore et y ajouter les éléments que l'on ne souhaite pas commitez à savoir notre environnement virtuel et prenons un peu d'avance en y ajoutant le répertoire __pycache__/ et output/:
+2. Créer notre fichier .gitignore et y ajouter les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel et prenons un peu d'avance en y ajoutant le répertoire __pycache__/ et output/:
 
 ```
 touch .gitignore
@@ -197,9 +196,161 @@ Et voilà! Si vous examinez un peu votre répertoire, vous vous apercevez que to
 
 ## Mettre en place les premières configurations
 
-### gitignore et requirements.txt
-### peliconf.py
-### content extra (favicon, CNAME et robots.txt)
+Parmi les éléments installés, deux fichiers essentiels sont apparus. Il s'agit des fichiers:
+
+* pelicanconf.py
+* publishconf.py
+
+Il s'agit des fichiers de configurations du blog. pelicanconf.py est le fichier de configuration principale et publishconf.py sera utilisé uniquement pour le déploiement en production et viendra ajouter ou écraser des configurations présentes dans pelicanconf.py.
+
+### Quelques ajustements sur pelicanconf.py
+
+Alors comment attaquer le morceau?
+Premièrement, je vous invite à prendre quelques minutes pour examiner la [documentation](http://docs.getpelican.com/en/stable/settings.html) et décourvir toutes les possibilités.
+
+En fonction des réponses aux questions, vous devez retrouver de votre côté un contenu similaire:
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+AUTHOR = 'Julien Nuellas'
+SITENAME = 'tutoriel-pelican'
+SITEURL = ''
+
+PATH = 'content'
+
+TIMEZONE = 'Europe/Paris'
+
+DEFAULT_LANG = 'fr'
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+# Blogroll
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('Python.org', 'http://python.org/'),
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('You can modify those links in your config file', '#'),)
+
+# Social widget
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
+
+DEFAULT_PAGINATION = 10
+
+# Uncomment following line if you want document-relative URLs when developing
+#RELATIVE_URLS = True
+```
+
+Il s'agit des configurations basiques. Globalement, on retrouve:
+
+* ```AUTHOR```: Le nom de l'auteur du blog
+* ```SITENAME```: le nom du blog
+* ```SITEURL```: l'URL du blog en environnement de développement. Cette variable sera écrasé par l'url de votre site en production via le fichier publishconf.py
+* ```PATH```: le nom du dossier contenant vos contenus
+* ```TIMEZONE``` et ```DEFAULT_LANG```: les configurations basiques du fuseau horaire et du langage principal.
+* Ensuite, il y a les variables servant à activer ou désactiver les flux Atom et RSS. On laissera ici à None car on ne souhaite pas les générer pour l'environnement de développement
+* ```LINKS```: cette variable contient un tuple de tuples contenant des liens devant apparaître dans le header
+* ```SOCIAL```: dans la même logique que la variable LINKS, il s'agit des liens de vos réseaux sociaux devant apparaître dans la section social.
+* ```DEFAULT_PAGINATION```: définit le nombre d'articles maximum à intégrer dans une page.
+
+Ainsi, le fichier de configuration contient tout ce qu'il y a de nécessaire pour fonctionner correctement dans un premier temps.
+Je vous propose cependant d'ajouter quelques éléments supplémentaires
+
+#### Configurations des URLs
+
+Personnellement, j'aime bien définir la tête de mes urls. Je trouve que c'est un éléments non négligeables qui participe à la cohérence dans le processus de navigation. Je vous propose donc de rajouter les variables suivantes:
+
+```python
+# URL Settings
+ARTICLE_URL = 'articles/{slug}/'
+ARTICLE_SAVE_AS = 'articles/{slug}/index.html'
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+CATEGORY_URL = 'categorie/{slug}/'
+CATEGORY_SAVE_AS = 'categorie/{slug}/index.html'
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
+
+CATEGORIES_SAVE_AS = 'categories.html'
+TAGS_SAVE_AS = 'tags.html'
+INDEX_SAVE_AS = 'index.html'
+
+AUTHOR_URL = 'author/{slug}/'
+AUTHOR_SAVE_AS = ''
+```
+
+#### Configuration des éléménts statiques
+
+Vous intègrerez certainement des images dans vos articles et pour cela, il vous faut un endroit où les entreposer.
+Je vous propose donc de stocker ces éléments dans un répertoire que nous nommerons **images** au sein du répertoire **content**.
+
+```
+content
+    |- images
+...
+```
+
+Une fois créé, il est nécessaire d'indiquer à Pelican le chemin où récupérer ces statics.
+Il faut pour cela utiliser la variable STATIC_PATHS au sein du fichier de configuration:
+
+```python
+STATIC_PATHS = [
+    'images',
+]
+```
+
+cette variable contient une liste de répertoire par rapport au répertoire indiquer dans la variable ```PATH```, donc dans notre cas le repertoire **content**. Ces répertoires seront copiés dans le répertoire **output** sans modifications et pourront être utilisés en production. Par défault, Pelican inclus déjà le répertoire **images** mais c'est toujours bon de savoir comment faire!
+
+Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire **output**. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
+Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
+Je vous propose dans le répertoire **content** d'ajouter un répertoire **extra** avec les fichiers **robots.txt** et **CNAME** et le **favicon**:
+
+```
+content
+    |- images
+    |- extra
+        |- robots.txt
+        |- CNAME
+        |- favicon.png
+...
+```
+
+Et dans le fichier pelicanconf.py, nous allons rajouter ces éléments dans la variable STATIC_PATHS et ajouter la variable EXTRA_PATH_METADATA comme ceci:
+
+```python
+STATIC_PATHS = [
+    'images',
+    'extra/robots.txt',
+    'extra/CNAME',
+    'extra/favicon.png',
+]
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/favicon.png': {'path': 'favicon.png'}
+}
+```
+
+Petits bonus:
+* Si vous ne connaissez par très bien le fonctionnement d'un fichier robots.txt mais que vous souhaitez être référencé sur l'ensemble des moteurs, voici la configuration:
+```
+User-agent: *
+Disallow: 
+```
+
+* Votre fichier CNAME doit contenir uniquement votre nom de domaine. Pour le projet du tutoriel:
+```
+tutoriel.jn-blog.com
+```
+
+Et voilà, notre configuration de base est faîte. Nous allons pouvoir créer notre premier article!
 
 ## Créer notre premier articles
 

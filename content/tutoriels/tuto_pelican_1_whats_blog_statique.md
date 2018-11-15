@@ -11,7 +11,7 @@ Summary: Un blog statique, c'est quoi et comment ça marche? Découvrez le conce
 Un blog statique? Mais qu'est-ce que tu me racontes? Si je veux un blog, je me tourne vers Wordpress et puis on en parle plus.
 Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blogs qu'il faut prendre à tout pris, mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique (et un site statique plus globalement) ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.
 
-Comme ce post est le premier d'un tutoriel dédié à la création d'un blog statique, je me permets à chaque début d'articles de rappeler le plan du tutoriel:
+Comme ce post est le premier d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan du tutoriel:
 
 1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
 2. **Un blog statique, c'est quoi et comment ça fonctionne?**
@@ -20,7 +20,7 @@ Comme ce post est le premier d'un tutoriel dédié à la création d'un blog sta
 5. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
 6. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
-Celui-ci s'attachera donc à définir le concept de blog statique puis d'en décrire ces avantages et ces inconvénients. Ensuite, il décrira de façon macro comment un blog statique fonctionne et s'attardera sur le générateur de sites statiques **Pelican**, car c'est celui-ci qui nous utiliserons dans le tutoriel.
+Au travers cet article, il s'gira donc de définir le concept de blog statique puis d'en présenter ces avantages et ces inconvénients. Ensuite, il décrira de façon macro comment un blog statique fonctionne et s'attardera sur le générateur de sites statiques **Pelican**, car c'est celui-ci que nous utiliserons dans le tutoriel.
 
 Et si vous avez des remarques, suggestions ou compléments à la fin de l'article, n'hésitez pas à laisser un commentaire!
 
@@ -40,11 +40,11 @@ Alors super, maintenant qu'on sait ce que c'est, en quoi c'est intéressant de c
 
 ## Les avantages d'un blog statique
 
-Je vois principalement trois gros avantages:
+Je vois personnellement trois gros avantages:
 
 ### La rapidité
 
-En effet, le serveur n'a plus besoin de récupérer des informations dans une base de données pour construire les pages. Il ne fait rien d'autres que délivrer des pages HTML et les médias qui lui sont associées.
+En effet, le serveur n'a plus besoin de récupérer des informations dans une base de données pour construire les pages. Il ne fait rien d'autres que délivrer des pages HTML et les médias qui lui sont associés.
 
 ### La sécurité
 
@@ -57,7 +57,7 @@ Enfin, le dernier avantage non négligeable concerne la souplesse de ce type de 
 Le fait d'avoir un site statique rend l'**hébergement** beaucoup plus simple et moins cher. Dans ce tuto, il ne nous coûtera pas 1 seul centime! Le seul coût concernera l'achat du nom de domaine.
 De plus, un site statique offre une très bonne capacité à tenir la **charge**. Je ne l'ai peut être pas assez dit, mais un site statique n'est composé que de fichiers statiques... Oui, mais du coup, et je me répète encore, pas de scripts exécutés sur le serveurs et cela permet d'économiser des ressources serveurs importantes!
 
-Pour terminer avec la souplesse d'un blog statique (si je ne vous ai pas encore convaincu), la sauvegarde et la restauration se font facilement. Un simple archivage de fichiers suffit et il n'est pas nécessaire de faire des exports ou imports de base de données qui peuvent être des ta^ches parfois délicates.
+Pour terminer avec la souplesse d'un blog statique (si je ne vous ai pas encore convaincu), la sauvegarde et la restauration se font facilement. Un simple archivage de fichiers suffit et il n'est pas nécessaire de faire des exports ou imports de base de données qui peuvent être des tâches parfois délicates.
 
 Ouahhhh, c'est super un site statique. Pourquoi tout le monde ne l'utilise pas alors? Et bien, comme toute solution, il n'y a pas forcément que des avantages.
 

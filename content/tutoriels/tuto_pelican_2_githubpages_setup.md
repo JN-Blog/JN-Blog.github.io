@@ -10,7 +10,7 @@ Summary: Découvrez toutes les étapes pour configurer GitHub Pages et héberger
 
 Maintenant que nous avons découvert ce qu'est un [blog statique]({filename}tuto_pelican_1_whats_blog_statique.md) et comment cela fonctionne, il est temps de commencer à se retrousser les manches et de configurer notre environnement de travail.
 
-Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:
+Avant d'aller plus loin, puisque cet article est le troisième d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:
 
 1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
 2. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
@@ -21,7 +21,7 @@ Avant d'aller plus loin, puisque cet article est le second d'un tutoriel dédié
 
 Pour rappel, ce tutoriel se base sur la construction d'un blog statique que vous pouvez déjà découvrir à l'adresse suivante: https://www.tutoriel-pelican.jn-blog.com
 
-Dans cet article, nous découvrirons ce qu'est GitHub Pages comment nous allons l'utiliser au sein de notre projet de blog. Ensuite, nous le configurerons complètement pour qu'il puisse accueillir la structure de notre blog statique.
+Dans cet article, nous découvrirons ce qu'est GitHub Pages puisque nous allons l'utiliser au sein de notre projet de blog. Ensuite, nous le configurerons complètement pour qu'il puisse accueillir la structure de notre blog statique.
 
 Commençons donc par présenter GitHub Pages.
 
@@ -109,7 +109,7 @@ Cependant, si cela ne s'est pas créé automatiquement, il suffit juste de séle
 
 Et voilà, désormais tout site hébergé poussé au sein de la branche gh-pages sera désormais accessible via l'url indiqué. Dans notre cas, il s'agit de l'url https://jn-blog.github.io/tutoriel-pelican/
 
-Ca fait pas très vendeur vous ne pensez pas? un peu difficil à retenir, puis on n'identifie pas trop le thème et l'objectif du site à travers cette url. 
+Ca fait pas très vendeur vous ne pensez pas? un peu difficile à retenir, puis on n'identifie pas trop le thème et l'objectif du site à travers cette url. 
 A la limite, nous aurions pu un peu mieux faire si nous avions nommé notre repository JN-Blog/JN-Blog.github.io. En effet, l'url aurait été https://jn-blog.github.io. Cela permet d'avoir une url qui ne fonctionne pas avec un répertoire mais cela implique d'autres problèmes:
 1. En effet, jn-blog c'est parlant pour le blog que vous lisez actuellement car c'est son nom, mais on ne retrouve pas le thème du blog qui consiste à proposer des tutoriels autour de du générateur Pelican. Il aurait donc fallu créé une nouvel organisation qui s'appellerait tutoriel-pelican et créer un repository tutoriel-pelican.github.io. On aurait ainsi eu tutoriel-pelican/tutoriel-pelican.github.io et le site aurait été accessible à l'adresse https://tutoriel-pelican.github.io. C'est désormais beaucoup plus parlant en effet.
 
