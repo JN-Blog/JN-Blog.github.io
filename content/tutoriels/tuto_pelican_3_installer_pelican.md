@@ -292,8 +292,8 @@ Vous intègrerez certainement des images dans vos articles et pour cela, il vous
 Je vous propose donc de stocker ces éléments dans un répertoire que nous nommerons **images** au sein du répertoire **content**.
 
 ```
-content
-    |- images
+content/
+    |- images/
 ...
 ```
 
@@ -313,9 +313,9 @@ Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
 Je vous propose dans le répertoire **content** d'ajouter un répertoire **extra** avec les fichiers **robots.txt** et **CNAME** et le **favicon**:
 
 ```
-content
-    |- images
-    |- extra
+content/
+    |- images/
+    |- extra/
         |- robots.txt
         |- CNAME
         |- favicon.png
@@ -350,39 +350,107 @@ Disallow:
 tutoriel.jn-blog.com
 ```
 
-Et voilà, notre configuration de base est faîte. Nous allons pouvoir créer notre premier article!
-
-## Créer notre premier articles
+Et voilà, notre configuration de base est faîte.
 
 ## Publier notre site en local
 
-<!-- ### Cloner le repository en local
-
-Une fois le repository créé, nous allons le cloner sur notre machine dans le répertoire dedié au blog:
-
-```
-git clone https://ta-race.git 
-```
-
-Un fois cloné, nous créeons les branches source et gh-pages en plus de la branche master:
+Maintenant que tout est en place il serait judicieux de voir si tout fonctionne correctement.
+Pour cela, rien de plus simple, il suffit de déployer notre site en local avec la commande:
 
 ```
-git branch source
-git branch gh-pages
+make html && make serve
 ```
 
-Désormais, si nous lançons la commande ```git branch```, nous pouvons constater que le repository possède trois branches:
+En effet, lorsque nous avons répondu à la question *10. Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)*, Pelican a automatiquement généré un fichier Makefile afin de faciliter ce type d'opération.
+Cette commande va générer les fichiers html et lancer un serveur web en local. (Pour stopper le serveur un simple Ctrl + C suffit).
+
+En nous rendant à l'adresse ```http://localhost:8000/```, il est désormais possible d'accéder à son site.
+
+![publication du site en local][{filename}/images/tuto-pelican-local-site.png]
+
+## Créer notre premier articles
+
+Voyons désormais comment écrire un article.
+Il suffit pour cela de créer un fichier au format md à la racine du répertoire **content**.
 
 ```
-* master
-source
-gh-pages
+content/
+    |- images/
+    |- extra/
+        |- robots.txt
+        |- CNAME
+        |- favicon.png
+    |- article.md
+...
 ```
 
-Une fois créée, nous pouvons désormais toutes les pousser sur GitHub:
+Pour aider Pelican à récupérer les informations nécessaires pour chaque articles afin de générer correctement les fichiers html, nous allons utiliser les métadatas. Voici à quoi doit ressembler le début de votre article:
 
 ```
-git push origin HEAD
+Date: 2018-11-16
+Modified: 2018-11-16
+Category: tutoriels
+Tags: tutoriel, pelican, blog statique
+Slug: mon-premier-article
+Lang: fr
+Authors: Julien Nuellas
+Summary: Premier article sur blog tutoriel pelican
 ```
 
-Maintenant, retournant sur GitHub dans notre repository pour continuer la configuration. -->
+Cela permet à Pelican de récupérer les informations nécessaires pour le traîtement. En détaillant un peu, on a:
+
+* la date de l'article
+* la dernière date de modification de l'article
+* la catégorie associée à l'article
+* les tags associés à l'article
+* le slug qui permettra d'alimenter l'url de la page de l'article
+* la langue dans laquelle l'article sera écrit
+* l'auteur de l'article
+* une brève description de l'article
+
+Pour plus d'informations, n'hésitez pas à aller explorer la [documentation](http://docs.getpelican.com/en/stable/content.html).
+
+Une fois les metadatas renseignées, il suffit d'écrire son article:
+
+```
+Title: Premier article sur le blog tutoriel pelican
+Date: 2018-11-16
+Modified: 2018-11-16
+Category: tutoriels
+Tags: tutoriel, pelican, blog statique
+Slug: mon-premier-article
+Lang: fr
+Authors: Julien Nuellas
+Summary: Premier article sur blog tutoriel pelican
+
+Bonjour tout le monde, ceci est mon premier article.
+
+## Ceci est la première partie de mon article
+
+Pelican, c'est vraiment fun.
+
+## Ceci est la deuxième partie de mon article
+
+Et markdown, c'est tellement simple à utiliser!
+La syntaxe est simple à prendre en main et on peut faire tout ce qu'on veut. Voici une [cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) qui vous permettra d'en savoir un peu plus.
+```
+
+Et voilà le travail est fait. Un petit coup de ```make html && make serve``` pour admirer le travail.
+
+![publication du site en local][{filename}/images/tuto-pelican-local-site-avec-article.png]
+
+Dans cet article, nous avons vu beaucoup de choses:
+
+* Comment installer Pelican dans son repository et créer un projet
+* Comment configurer Pelican de façon basique
+* Comment générer et servir son blog statique en local
+* Comment écrire un article
+
+A ce stade du tutoriel, il nous reste encore deux choses importantes à voir:
+
+* Comment déployer notre site en production sur github pages. En effet, y accéder en local, c'est bien jolie mais si je suis le seul à le lire, je ne vois pas trop l'intérêt...
+* Comment installer un thème. En effet, le thème de base ne vous convient peut être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.
+
+Alors commençons par voir comment déployer notre site en production dans le prochain article du tutoriel:
+
+[Déployer son blog statique en production]({filename}tuto_pelican_4_installer_travis.md)
