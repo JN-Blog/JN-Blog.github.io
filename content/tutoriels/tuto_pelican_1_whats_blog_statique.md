@@ -2,7 +2,7 @@ Title: C'est quoi un blog statique? Comment ca fonctionne?
 Date: 2018-10-26
 Modified: 2018-10-26
 Category: tutoriels
-Tags: tutoriel, pelican, blog statique
+Tags: tutoriels, pelican, blog statique
 Slug: explication-blog-statique
 Lang: fr
 Authors: Julien Nuellas

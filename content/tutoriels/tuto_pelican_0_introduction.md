@@ -2,7 +2,7 @@ Title: Mettre en place un blog statique avec Pelican
 Date: 2018-10-26
 Modified: 2018-10-26
 Category: tutoriels
-Tags: tutoriel, pelican, blog statique
+Tags: tutoriels, pelican, blog statique
 Slug: tutoriel-creer-un-blog-statique
 Lang: fr
 Authors: Julien Nuellas

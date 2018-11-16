@@ -2,7 +2,7 @@ Title: Installer et configurer Pelican pour son blog statique
 Date: 2018-10-28
 Modified: 2018-10-28
 Category: tutoriels
-Tags: tutoriel, pelican, blog statique
+Tags: tutoriels, pelican, blog statique
 Slug: installer-pelican-pour-un-blog-statique
 Lang: fr
 Authors: Julien Nuellas
@@ -347,7 +347,7 @@ Disallow:
 
 * Votre fichier CNAME doit contenir uniquement votre nom de domaine. Pour le projet du tutoriel:
 ```
-tutoriel.jn-blog.com
+tutoriel-pelican.jn-blog.com
 ```
 
 Et voilà, notre configuration de base est faîte.
@@ -366,7 +366,7 @@ Cette commande va générer les fichiers html et lancer un serveur web en local.
 
 En nous rendant à l'adresse ```http://localhost:8000/```, il est désormais possible d'accéder à son site.
 
-![publication du site en local][{filename}/images/tuto-pelican-local-site.png]
+![publication du site en local]({filename}/images/tuto-pelican-local-site.png)
 
 ## Créer notre premier articles
 
@@ -437,7 +437,7 @@ La syntaxe est simple à prendre en main et on peut faire tout ce qu'on veut. Vo
 
 Et voilà le travail est fait. Un petit coup de ```make html && make serve``` pour admirer le travail.
 
-![publication du site en local][{filename}/images/tuto-pelican-local-site-avec-article.png]
+![publication du site en local]({filename}/images/tuto-pelican-local-site-avec-article.png)
 
 Dans cet article, nous avons vu beaucoup de choses:
 
