@@ -12,7 +12,7 @@ A travers ce tutoriel, je souhaite partager mon expérience suite à la mise en 
 
 ![gif ça fait sens](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
 
-Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérience dans la section *commentaire*.
+Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérience dans la section *commentaires*.
 Et j'insiste sur le fait que je ne prétends pas avoir la solution ultime (existe-t-elle vraiment finalement?) mais une solution pertinente par rapport à des objectifs définis.
 
 ## Objectifs du tutoriel
@@ -28,7 +28,7 @@ Le premier avantage à tout ça, vous pouvez créer un blog **gratuitement** san
 
 ## Quels sont les pré-requis?
 
-Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore **cotoyés** le monde du développement. Il n'y a rien d'innaccessible et il ne faut pas être un développeur confirmé pour mettre en place ce style de blog mais il faut avoir une certaine curiosité par rapport à l'environnement de développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif premier:
+Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore cotoyées le monde du développement. Il n'y a rien d'innaccessible et de compliqué mais il faut avoir une certaine curiosité pour l'univers du développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif principal:
 
 * Utilisation de lignes de commandes
 * Utilisation de git et GitHub
@@ -39,7 +39,7 @@ Alors, prêt pour l'aventure?
 
 ## Un projet fil rouge
 
-Tout au long de ce tutoriel, nous allons créer pas à pas un blog. Cela permettra d'ajouter du contexte et du concret aux différentes actions qui seront entreprises. Ce blog va s'appeler **Blog Pelican - un blog statique, un blog magique** et est accessible à l'adresse suivante: https://tutoriel-pelican.jn-blog.com.
+Tout au long de ce tutoriel, nous allons créer pas à pas un blog. Cela permettra d'ajouter du contexte et du concret aux différentes actions qui seront entreprises. Ce blog va s'appeler **Tutoriel Pelican** et est accessible à l'adresse suivante: [https://tutoriel-pelican.jn-blog.com](https://tutoriel-pelican.jn-blog.com).
 
 Vous pouvez d'ors et déjà vous y rendre, cela vous permettra de voir ce à quoi nous allons aboutir à la fin.
 
@@ -53,6 +53,7 @@ J'en profiterai également pour vous présenter **Pelican** plus particulièreme
 ## 2. [Mettre en place son repository GitHub Pages]({filename}tuto_pelican_2_githubpages_setup.md)
 
 La seconde partie de ce tutoriel évoquera la mise en place du repository **GitHub Pages**. Je vous présenterai:
+
 * Ce qu'est **GitHub Pages** en quelques lignes.
 * La logique de fonctionnement que nous allons utiliser pour gérer le blog
 * La configuration du repository.
@@ -60,7 +61,7 @@ La seconde partie de ce tutoriel évoquera la mise en place du repository **GitH
 
 ## 3. [Installer Pelican]({filename}tuto_pelican_3_installer_pelican.md)
 
-On va ensuite rentrer dans le vif du sujet et installer Pelican dans notre environnement de travail. On en profitera pour mettre en place les configurations basiques que j'ai jugé pertinentes. Il ne s'agit pas encore une fois de la seule façon de procéder et vous découvrirez avec le temps que Pelican offre de nombreuses possibilités en terme de configuration. L'idée étant de partir d'une base simple et fonctionnelle.
+On va ensuite rentrer dans le vif du sujet et installer Pelican au sein de notre environnement de travail. On en profitera pour mettre en place les configurations basiques que j'ai jugé pertinentes. Il ne s'agit pas encore une fois de la seule façon de procéder et vous découvrirez avec le temps que Pelican offre de nombreuses possibilités en terme de configuration. L'idée ici est de partir d'une base simple et fonctionnelle.
 On écrira même un premier article que nous déploierons en local afin de vérifier que tout fonctionne correctement.
 
 ## 4. [Mise en place de Travis et du workflow de déploiement]({filename}tuto_pelican_4_installer_travis.md)
