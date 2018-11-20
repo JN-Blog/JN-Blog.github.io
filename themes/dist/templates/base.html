@@ -108,14 +108,14 @@
                 {% endif %}
               </a>
           </div>
-          {% if DISPLAY_PAGES_ON_MENU %}
+          <!-- {% if DISPLAY_CATEGORIES_ON_MENU %}
               <p class="navigation__subtitle">Categories</p>
               <ul class="navigation__list list">
                   {% for category, articles in categories %}
                       <li class="navigation__item"><a href="{{ SITEURL }}/{{ category.url }}" class="navigation__link">{{ category }}</a></li>
                   {% endfor %}
               </ul>
-          {% endif %}
+          {% endif %} -->
           {% if DISPLAY_TAGS_ON_MENU %}
               <!-- <p class="navigation__subtitle">Tags</p> -->
               <ul class="navigation__list list">
@@ -124,7 +124,13 @@
                   {% endfor %}
               </ul>
           {% endif %}
-      
+          {% if DISPLAY_PAGES_ON_MENU %}
+              <ul class="navigation__list list">
+                  {% for page in pages %}
+                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ page.url }}" class="navigation__link">{{ page.title }}</a></li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
         <ul class="social">
           {% for name, link in SOCIAL %}
           <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }} fa-2x"></i></a></li>
