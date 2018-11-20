@@ -2,3 +2,4 @@ env/
 __pycache__/
 output/
 themes/src
+pelican-plugins/liquid_tags
