@@ -27,6 +27,7 @@
         &#8226; {{ article.stats['read_mins'] }} min read
       {% endif %}
     </p>
+    {% include "partial/share_post.html" %}
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
@@ -85,6 +86,8 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   {% endif %}
+
+  {% include "partial/share_post.html" %}
 
   {% include "partial/disqus.html" %}
 </article>
