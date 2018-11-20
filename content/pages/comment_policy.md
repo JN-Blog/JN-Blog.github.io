@@ -11,11 +11,11 @@ Dans vos commentaires:
 
 * N'hésitez pas à apporter votre pierre à l'édifice qui fera avancer l'histoire
 * N'hésitez pas à utiliser votre intelligence, votre respect, votre sagesse et bien sûr votre humour!
-* N'hésitez pas à donner un retour critique et constructif. Et si vous identifiez une erreur (ça m'arrive...), n'hésitez pas à le notifier et je le corrigerai dans la foulée
+* N'hésitez pas à donner un retour critique et constructif. Et si vous identifiez une erreur (ça m'arrive...), n'hésitez pas à le notifier et je le corrigerai dans la foulée.
 
 Par contre:
 
-* Ne soyez pas grossier et méchant
+* Ne soyez pas grossier et méchant.
 * Eviter de faire votre promotion personnelle. Il y a des endroits bien plus utile pour cela.
 * Pas de trolling. Utilisez votre humour de façon démesurée mais ne ridiculiser personne.
 * Et bien évidemment, tout propos raciste, sexiste, homophobique seront directement supprimé.

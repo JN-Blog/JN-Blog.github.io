@@ -24,5 +24,104 @@ Dans cet article, nous verrons donc où trouver le thème de nos rêves et verro
 
 ## Ou trouver un thème Pelican
 
+Il existe de nombreux thèmes pour Pelican et il y a de fortes chances que vous trouviez votre bonheur.
+
+Il est possible de les visualiser sur le site [www.pelicanthemes.com](http://www.pelicanthemes.com/).
+Chaque thème contient une petite description ainsi qu'un imprim écran permettant d'obtenir un aperçu.
+Et bien évidemment, chaque thème présenté contient un lien vers son repository github.
+
+Il existe également un repository github contenant l'ensemble des codes sources des [thèmes pelican](https://github.com/getpelican/pelican-themes)
+
+Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.
+
+## Préparer son projet à recevoir un thème
+
+Il existe plusieurs façon d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire **themes** de mon projet source.
+Pourquoi? Je trouve ce choix intéressant pour deux raisons:
+
+* Le thème est directement lié au projet
+* Il est possible d'en installer plusieurs, de supprimer ou d'en ajouter un facilement
+* Il est possible de personnaliser au fur et à mesure le thème sélectionné
+
+Voyons comment procéder désormais.
+
+### Création du répertoire thème
+
+La première chose à faire est de créer le répertoire **themes** à la racine du projet. Au sein de ce répertoire, nous allons créer deux répertoires supplémentaires, **dist** et **src**.
+
+```
+themes/
+    |- dist/
+    |- src/
+```
+
+Le répertoire **dist** contiendra les fichiers qui seront utilisés lors du déploiement tandis que le répertoire **src** contiendra les fichiers source du thème téléchargé sur lesquels il sera possible d'apporter des modifications et de tester avant de répliquer les fichiers sur le répertoire **dist**.
+
+Dans cette logique, il n'est pas nécessaire de versionner le répertoire **src**. Ajoutons donc ce répertoire au sein du fichier .gitignore:
+
+```
+...
+themes/src
+```
+
+### Ajoutons quelques modifications sur le fichier pelicanconf.py
+
+Il est maintenant nécessaire d'indiquer à Pelican l'endroit où il devra récupérer le thème.
+Pour faire cela, il suffit juste de rajouter une variable **THEME** au sein du fichier **palicanconf.py** et d'y indiquer le chemin:
+
+```python
+THEME = "themes/dist"
+```
+
+Et voilà, le projet est prêt à recevoir notre thème.
+
 ## Installer un thème sur notre blog statique
 
+### Cloner le code source du thème choisi
+
+Pour le blog **tutoriel pelican**, mon choix s'est porté sur le thème [blue-penguin](https://github.com/jody-frankowski/blue-penguin/tree/c5e23e7753367b5beacce87b732cd1567c4818f9).
+
+La première étape consiste à cloner le code source du thème au sein du répertoire **src**/
+
+```
+git clone https://github.com/jody-frankowski/blue-penguin.git themes/src
+```
+
+Le thème est désormais installé au sein du répertoire **src**.
+
+Pour le moment, nous n'allons pas apporter de modifications sur ce thèmes et nous l'utiliserons tel quel. Nous pouvons donc simplement copier les fichiers au sein du répertoire **dist**:
+
+```
+cp -a themes/src/* themes/dist
+```
+
+Il suffit désormais de lancer votre thème en local pour vous apercevoir que le nouveau thème a été pris en compte. 
+
+### Ajouter les paramétrages nécessaires
+
+En lançant le site en local, on s'aperçoit déjà que le nouveau thème a été pris en compte.
+
+En lisant le README du repository, on s'aperçoit qu'il est possible d'ajouter quelques configurations afin de personnaliser notamment le menu.
+Pour ma part, je rajoute uniquement la variable **MENUITEMS** permettant de rajouter les liens vers ce blog et vers la documentation Pelican au sein du menu.
+
+```python
+MENUITEMS = (
+    ('JN-Blog', 'https://www.jn-blog.com/'),
+    ('Docs Pelican', 'http://docs.getpelican.com/en/stable/'),
+)
+```
+
+Libre à vous d'apporter les modifications que vous souhaitez. Chaque thème comporte son lot de modification afin de proposer la meilleure expérience possible.
+Le thème est désormais installé et correctement paramétré. La structure mis en place permet de modifier et personnaliser facilement le thème.
+Il ne manque plus qu'un petit déploiement afin de tout envoyer sur l'environnement de production et notre blog est désormais accessible chaque utilisateur peut découvrir le nouveau thème.
+
+![deploiement d'un theme pelican]({filename}/images/tuto-pelican-theme-production.png)
+
+## Un petit dernier mot pour la route
+
+J'espère que ces articles vous ont intéressé.
+Nous avons vu ensemble à travers ces articles et ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com) comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.
+
+N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir partager votre expérience.
+
+Si vous souhaitez également d'autres articles sur ce sujet comme par exemple mettre en place un système de commentaires, n'hésitez à me le notifier.
