@@ -10,7 +10,7 @@ Summary: Découvrez comment déployer automatiquement votre blog statique Pelica
 
 Maintenant que notre hébergement sur GitHub Pages est en place et que Pelican est correctement installé, il est désormais temps de s'attaquer au processus de déploiement.
 
-Comme cet article est la cinquième partie du tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:
+Comme cet article correspond à la cinquième partie du tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:
 
 1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
 2. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
@@ -78,9 +78,9 @@ Rien de plus à ajouter sur ce fichier. Nous pouvons donc passer à la suite.
 
 ## Activer Travis CI sur le repository Git Hub
 
-Tout d'abors, si vous n'avez pas de compte [Travis CI](https://travis-ci.org/), il est temps d'en créer un. Vous pouvez utiliser votre compte Github pour la création. Cela aura pour effet de synchroniser automatiquement votre repository github avec votre compte.
+Tout d'abord, si vous n'avez pas de compte [Travis CI](https://travis-ci.org/), il est temps d'en créer un. Vous pouvez utiliser votre compte Github pour la création. Cela aura pour effet de synchroniser automatiquement votre repository github avec votre compte.
 
-Une fois le compte créé et synchronisé, il vous suffit d'identifier le nom du repository contenant votre blog et d'activer Travis
+Une fois le compte créé et synchronisé, il vous suffit d'identifier le nom du repository contenant votre blog et d'activer Travis CI
 
 ![activation de Travis sur le repository]({filename}/images/tuto-pelican-travis-activation-repo.png)
 
@@ -108,21 +108,21 @@ Pour que cette commande fonctionne avec Travis CI, il va falloir y apporter quel
 
 Avant tout, pour que Travis soit en capacité de réaliser une action de déploiement sur le repository github, il va falloir lui associer un access token. La manière la plus simple de le faire est la suivante:
 
-1. Il faut créer un token d'accès personnalisé sur Github. Voici un lien décrivant le processus à suivre: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+1. Il faut créer un token d'accès personnalisé sur Github. Voici un lien décrivant le processus à suivre: [https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 Lors de la création du token, n'oubliez pas de cocher la case *repo* si vous êtes sur un repository privé ou au moins *public repo* si vous êtes sur un repository public:
-https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
+[https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token](https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token)
 
-2. Une fois la clef obtenu:
+2. Une fois la clef obtenue:
     * Il suffit de retourner dans Travis CI dans la partie *Settings* du repository cible
 
     ![onglet Settings dans Travis CI]({filename}/images/tuto-pelican-travis-settings-repo.png)
 
-    * Dans la section *Environment Variables*, il faut ensuite ajouter la variable **GITHUB_TOKEN** avec comme valeur le token qui vient d'être généré. Une fois ajouté.
+    * Dans la section *Environment Variables*, il faut ensuite ajouter la variable **GITHUB_TOKEN** avec comme valeur le token qui vient d'être généré.
 
     ![onglet Settings dans Travis CI]({filename}/images/tuto-pelican-travis-github-token.png)
 
-Une fois cela fait, il est temps de modifier légèrement la commande make publish github.
+Il est désormais temps de modifier légèrement la commande make publish github.
 
 ### Modifier les actions de la commande make publish github
 
@@ -140,7 +140,7 @@ Sans rentrer dans les détails, la commande va utiliser le module [ghp-import](h
 
 ## Création du fichier .travis.yml
 
-Le dernière étape consite à créer le fichier **.travis.yml** à la racine du répertoire et qui contiendra l'ensemble des directives que Travis devra réaliser.
+Le dernière étape consite à créer le fichier **.travis.yml** à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.
 
 Voici les indications que doit contenir le fichier:
 
@@ -172,6 +172,7 @@ deploy:
 ```
 
 Ce fichier va globalement indiquer à Travis:
+
 * D'installer la version de Python utilisée
 * De cibler uniquement la branche master de notre repository
 * D'installer l'ensemble des éléments nécessaires (Pelican, Markdown, ghp-import)
@@ -181,13 +182,13 @@ Ce fichier va globalement indiquer à Travis:
 ## Déploiement de notre blog en production
 
 Et voilà! tous les éléments sont mis en place pour déployer notre site en production.
-Envoyons notre code à jour sur github dans notre branche source (une fois comitté)
+Envoyons notre code à jour sur github dans notre branche source (une fois le commit enregistré)
 
 ```
 git push origin source
 ```
 
-Il est temps désormais de déployer notre blog pour la première fois en faisant notre première pull request.
+Il est temps désormais de déployer notre blog en faisant notre première pull request.
 
 ![créer une pull request sur github]({filename}/images/tuto-pelican-travis-pull-request.png)
 
@@ -195,7 +196,7 @@ Une fois créée, avant de pouvoir confirmer le *merge*, Travis CI va lancer un 
 
 ![lancement d'un test Travis lors d'une pull request sur github]({filename}/images/tuto-pelican-travis-pull-request-check.png)
 
-Et si tout se passe bien (mais il n'y a pas de raison), un message de validation de test devrait apparaître une fois le test terminé permettant de confirmer le merge.
+Et si tout se passe bien (mais il n'y a pas de raison), un message de validation de test devrait apparaître une fois le test terminé permettant ainsi de confirmer le merge.
 
 ![lancement d'un test Travis lors d'une pull request sur github]({filename}/images/tuto-pelican-travis-pull-request-validated.png)
 
@@ -203,11 +204,11 @@ Et une fois confirmé et le merge réalisé, Travis CI va s'apercevoir que le co
 
 ![lancement d'un test Travis lors d'une pull request sur github]({filename}/images/tuto-pelican-travis-deploy.png)
 
-Et une fois terminée, la magie opère et le site est accessible à l'adresse de votre nom de domaine.
+La magie opère enfin et le site est accessible à l'adresse de votre nom de domaine.
 
 ![lancement d'un test Travis lors d'une pull request sur github]({filename}/images/tuto-pelican-travis-production.png)
 
-Elle est pas belle la vie? Cela demande un peu de configuration au départ je vous l'accorde mais désormais, une simple pull request vous permet de mettre à jour votre blog sur votre environnement de production avant d'avoir en amont vérifier que tout est opérationnel.
+Elle est pas belle la vie? Cela demande un peu de configuration au départ je vous l'accorde mais désormais, une simple pull request vous permet de mettre à jour votre blog sur votre environnement de production avant d'avoir en amont vérifier que tout soit opérationnel.
 
 Votre blog est désormais créé, hébergé et déployé! Il ne vous reste plus qu'à écrire vos articles.
 Mais avant de terminer ce tutoriel, j'aimerais voir avec vous une dernière chose. En effet, nous n'avons pas encore parlé de l'apparence du blog. Pour le moment, le blog utilise le thème d'origine. Nous verrons donc dans le prochain article comment installer un autre thème:

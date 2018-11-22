@@ -11,7 +11,7 @@ Summary: Découvrez comment installer un thème sur son blog Pelican
 Notre blog est désormais installé et déployé et il est désormais possible d'écrire tous les articles souhaités.
 Seulement, le thème principal n'est pas vraiment attractif et il serait sympa d'avoir la possibilité de le changer. C'est ce que nous allons découvrir dans cet article.
 
-Cet artcile est la sicième partie d'un tutoriel dédié à la mise en place d'un blog statique. Dans cette logique, je me permets de rappeler la structure globale de ce tutoriel:
+Il s'agit du sixième article d'un tutoriel dédié à la mise en place d'un blog statique. Dans cette logique, je me permets d'en rappeler la structure globale:
 
 1. [Présentation du tutoriel et de ces objectifs]({filename}tuto_pelican_0_introduction.md)
 2. [Un blog statique, c'est quoi et comment ça fonctionne?]({filename}tuto_pelican_1_whats_blog_statique.md)
@@ -30,14 +30,14 @@ Il est possible de les visualiser sur le site [www.pelicanthemes.com](http://www
 Chaque thème contient une petite description ainsi qu'un imprim écran permettant d'obtenir un aperçu.
 Et bien évidemment, chaque thème présenté contient un lien vers son repository github.
 
-Il existe également un repository github contenant l'ensemble des codes sources des [thèmes pelican](https://github.com/getpelican/pelican-themes)
+Il existe également un repository github contenant l'ensemble des codes sources des [thèmes pelican](https://github.com/getpelican/pelican-themes).
 
 Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.
 
 ## Préparer son projet à recevoir un thème
 
-Il existe plusieurs façon d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire **themes** de mon projet source.
-Pourquoi? Je trouve ce choix intéressant pour deux raisons:
+Il existe plusieurs façon d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire *themes* du projet source.
+Pourquoi? Je trouve ce choix intéressant pour trois raisons:
 
 * Le thème est directement lié au projet
 * Il est possible d'en installer plusieurs, de supprimer ou d'en ajouter un facilement
@@ -47,7 +47,7 @@ Voyons comment procéder désormais.
 
 ### Création du répertoire thème
 
-La première chose à faire est de créer le répertoire **themes** à la racine du projet. Au sein de ce répertoire, nous allons créer deux répertoires supplémentaires, **dist** et **src**.
+La première chose à faire est de créer le répertoire *themes* à la racine du projet. Au sein de ce répertoire, nous allons créer deux répertoires supplémentaires, **dist** et **src**.
 
 ```
 themes/
@@ -55,7 +55,7 @@ themes/
     |- src/
 ```
 
-Le répertoire **dist** contiendra les fichiers qui seront utilisés lors du déploiement tandis que le répertoire **src** contiendra les fichiers source du thème téléchargé sur lesquels il sera possible d'apporter des modifications et de tester avant de répliquer les fichiers sur le répertoire **dist**.
+Le répertoire **dist** contiendra les fichiers qui seront utilisés lors du déploiement tandis que le répertoire **src** contiendra les fichiers sources du thème téléchargé sur lesquels il sera possible d'apporter des modifications et de tester avant de répliquer les fichiers sur le répertoire **dist**.
 
 Dans cette logique, il n'est pas nécessaire de versionner le répertoire **src**. Ajoutons donc ce répertoire au sein du fichier .gitignore:
 
@@ -67,7 +67,7 @@ themes/src
 ### Ajoutons quelques modifications sur le fichier pelicanconf.py
 
 Il est maintenant nécessaire d'indiquer à Pelican l'endroit où il devra récupérer le thème.
-Pour faire cela, il suffit juste de rajouter une variable **THEME** au sein du fichier **palicanconf.py** et d'y indiquer le chemin:
+Pour faire cela, il suffit juste de rajouter une variable ```THEME``` au sein du fichier **pelicanconf.py** et d'y indiquer le chemin:
 
 ```python
 THEME = "themes/dist"
@@ -95,11 +95,11 @@ Pour le moment, nous n'allons pas apporter de modifications sur ce thèmes et no
 cp -a themes/src/* themes/dist
 ```
 
-Il suffit désormais de lancer votre thème en local pour vous apercevoir que le nouveau thème a été pris en compte. 
+Il suffit désormais de lancer votre thème en local pour vous apercevoir que votre blog n'a plus la même apparence.
 
 ### Ajouter les paramétrages nécessaires
 
-En lançant le site en local, on s'aperçoit déjà que le nouveau thème a été pris en compte.
+Le fait d'avoir lancé le site en local nous a permis de constater que ce nouveau thème a bien été pris en compte.
 
 En lisant le README du repository, on s'aperçoit qu'il est possible d'ajouter quelques configurations afin de personnaliser notamment le menu.
 Pour ma part, je rajoute uniquement la variable **MENUITEMS** permettant de rajouter les liens vers ce blog et vers la documentation Pelican au sein du menu.
@@ -111,17 +111,19 @@ MENUITEMS = (
 )
 ```
 
-Libre à vous d'apporter les modifications que vous souhaitez. Chaque thème comporte son lot de modification afin de proposer la meilleure expérience possible.
+Libre à vous d'apporter les modifications que vous souhaitez. Chaque thème comporte son lot de modifications afin de proposer la meilleure expérience possible.
 Le thème est désormais installé et correctement paramétré. La structure mis en place permet de modifier et personnaliser facilement le thème.
-Il ne manque plus qu'un petit déploiement afin de tout envoyer sur l'environnement de production et notre blog est désormais accessible chaque utilisateur peut découvrir le nouveau thème.
+Il ne reste plus qu'un petit déploiement afin de tout envoyer sur l'environnement de production.
 
 ![deploiement d'un theme pelican]({filename}/images/tuto-pelican-theme-production.png)
 
-## Un petit dernier mot pour la route
+## Un dernier mot pour la route
 
-J'espère que ces articles vous ont intéressé.
-Nous avons vu ensemble à travers ces articles et ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com) comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.
+J'espère que ces articles vous ont intéressés.
+Nous avons vu ensemble au travers de ces articles et de ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com) comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.
 
-N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir partager votre expérience.
+N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir les partager.
 
 Si vous souhaitez également d'autres articles sur ce sujet comme par exemple mettre en place un système de commentaires, n'hésitez à me le notifier.
+
+Il ne me reste plus qu'à vous souhaiter une bonne aventure en tant que bloggueur et j'espère avoir l'occasion de vous lire prochainement!
