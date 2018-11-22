@@ -90,7 +90,7 @@ Attribute  | Description
 
 (only the comment section is shown here)
 
-```html
+<!-- ```html
 {% if article.comments %}
 	{% for comment in article.comments recursive %}
 		{% if loop.depth0 == 0 %}
@@ -112,6 +112,6 @@ Attribute  | Description
 {% else %}
 	<p>There are no comments yet.<p>
 {% endif %}
-```
+``` -->
 
 For a more complex / extensive example have a look at [theme/templates/pcs/comments.html](../theme/templates/pcs/comments.html)
