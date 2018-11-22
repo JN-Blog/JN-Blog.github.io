@@ -63,12 +63,12 @@ Une fois notre environnement virtuel installé, il ne nous reste plus qu'à l'ac
 source env/bin/activate
 ```
 
-Nous sommes désormais prêt à installer Pelican
+Nous sommes désormais prêt à installer Pelican.
 
 ## Installer Pelican et Markdown
 
 Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
-Attention à bien avoir activé votre environnement virtuel au préalable.
+Attention à bien avoir activer votre environnement virtuel au préalable.
 
 ```
 pip install pelican
@@ -84,41 +84,41 @@ Et voilà, nous avons installer tous les éléments nécessaires pour créer not
 Et comme on aime bien les choses propres, on va:
 
 1. Créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:
-```
-pip freeze > requirements.txt
-```
+    ```
+    pip freeze > requirements.txt
+    ```
 
-Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:
-```
-blinker==1.4
-docutils==0.14
-feedgenerator==1.9
-Jinja2==2.10
-Markdown==3.0.1
-MarkupSafe==1.0
-pelican==3.7.1
-Pygments==2.2.0
-python-dateutil==2.7.5
-pytz==2018.7
-six==1.11.0
-Unidecode==1.0.22
-```
+    Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:
+    ```
+    blinker==1.4
+    docutils==0.14
+    feedgenerator==1.9
+    Jinja2==2.10
+    Markdown==3.0.1
+    MarkupSafe==1.0
+    pelican==3.7.1
+    Pygments==2.2.0
+    python-dateutil==2.7.5
+    pytz==2018.7
+    six==1.11.0
+    Unidecode==1.0.22
+    ```
 
-Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.
+    Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.
 
-2. Créer notre fichier .gitignore et y ajouter les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel et prenons un peu d'avance en y ajoutant le répertoire __pycache__/ et output/:
+2. Créer notre fichier .gitignore et y ajouter les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel et prenons un peu d'avance en y ajoutant les répertoires pycache et output:
 
-```
-touch .gitignore
-```
+    ```
+    touch .gitignore
+    ```
 
-Et le contenu de notre fichier ressemble à cela:
+    Et le contenu de notre fichier ressemble à cela:
 
-```
-env/
-__pycache__/
-output/
-```
+    ```
+    env/
+    __pycache__/
+    output/
+    ```
 
 Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).
 Nous sommes désormais prêt à créer notre projet Pelican.
@@ -158,7 +158,7 @@ Une fois lancé vous allez devoir répondre à une série de questions:
 -> Tapez Y
 
 8. How many articles per page do you want? [10]
--> Laissez à 10. Vous pourrez de toute façon modifier par la suite
+-> Laissez à 10. Vous pourrez de toute façon le modifier par la suite
 
 9. What is your time zone? [Europe/Paris]
 -> Indiquez le fuseau horaire souhaité.
@@ -201,7 +201,7 @@ Parmi les éléments installés, deux fichiers essentiels sont apparus. Il s'agi
 * pelicanconf.py
 * publishconf.py
 
-Il s'agit des fichiers de configurations du blog. pelicanconf.py est le fichier de configuration principale et publishconf.py sera utilisé uniquement pour le déploiement en production et viendra ajouter ou écraser des configurations présentes dans pelicanconf.py.
+Ce sont les fichiers de configurations du blog. pelicanconf.py est le fichier de configuration principale et publishconf.py sera utilisé uniquement pour le déploiement en production et viendra ajouter ou écraser des configurations présentes dans pelicanconf.py.
 
 ### Quelques ajustements sur pelicanconf.py
 
@@ -265,7 +265,7 @@ Je vous propose cependant d'ajouter quelques éléments supplémentaires
 
 #### Configurations des URLs
 
-Personnellement, j'aime bien définir la tête de mes urls. Je trouve que c'est un éléments non négligeables qui participe à la cohérence dans le processus de navigation. Je vous propose donc de rajouter les variables suivantes:
+Personnellement, j'aime bien définir la forme de mes urls. Je trouve que c'est un élément non négligeable qui participe à la cohérence dans le processus de navigation. Je vous propose donc de rajouter les variables suivantes:
 
 ```python
 # URL Settings
@@ -306,11 +306,11 @@ STATIC_PATHS = [
 ]
 ```
 
-cette variable contient une liste de répertoire par rapport au répertoire indiquer dans la variable ```PATH```, donc dans notre cas le repertoire **content**. Ces répertoires seront copiés dans le répertoire **output** sans modifications et pourront être utilisés en production. Par défault, Pelican inclus déjà le répertoire **images** mais c'est toujours bon de savoir comment faire!
+cette variable contient une liste de répertoire par rapport au répertoire indiqué dans la variable ```PATH```, donc dans notre cas le répertoire *content*. Ces éléments seront copiés dans le répertoire *output* sans modification et pourront être utilisés en production. Par défault, Pelican inclus déjà le répertoire *images* mais c'est toujours bon de savoir comment faire!
 
-Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire **output**. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
+Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire *output*. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
 Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
-Je vous propose dans le répertoire **content** d'ajouter un répertoire **extra** avec les fichiers **robots.txt** et **CNAME** et le **favicon**:
+Je vous propose d'ajouter dans le répertoire *content* un répertoire *extra* avec les fichiers *robots.txt* et *CNAME* et le *favicon*:
 
 ```
 content/
@@ -322,7 +322,7 @@ content/
 ...
 ```
 
-Et dans le fichier pelicanconf.py, nous allons rajouter ces éléments dans la variable STATIC_PATHS et ajouter la variable EXTRA_PATH_METADATA comme ceci:
+Et dans le fichier pelicanconf.py, nous allons rajouter ces éléments dans la variable STATIC_PATHS et déclarer la variable EXTRA_PATH_METADATA comme ceci:
 
 ```python
 STATIC_PATHS = [
@@ -371,7 +371,7 @@ En nous rendant à l'adresse ```http://localhost:8000/```, il est désormais pos
 ## Créer notre premier articles
 
 Voyons désormais comment écrire un article.
-Il suffit pour cela de créer un fichier au format md à la racine du répertoire **content**.
+Il suffit pour cela de créer un fichier au format md à la racine du répertoire *content*.
 
 ```
 content/
@@ -384,7 +384,7 @@ content/
 ...
 ```
 
-Pour aider Pelican à récupérer les informations nécessaires pour chaque articles afin de générer correctement les fichiers html, nous allons utiliser les métadatas. Voici à quoi doit ressembler le début de votre article:
+Pour aider Pelican à récupérer les informations nécessaires pour chaque article afin de générer correctement les fichiers html, nous allons utiliser les **métadatas**. Voici à quoi doit ressembler le début de votre article:
 
 ```
 Date: 2018-11-16
@@ -448,7 +448,7 @@ Dans cet article, nous avons vu beaucoup de choses:
 
 A ce stade du tutoriel, il nous reste encore deux choses importantes à voir:
 
-* Comment déployer notre site en production sur github pages. En effet, y accéder en local, c'est bien jolie mais si je suis le seul à le lire, je ne vois pas trop l'intérêt...
+* Comment déployer notre site en production sur github pages.
 * Comment installer un thème. En effet, le thème de base ne vous convient peut être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.
 
 Alors commençons par voir comment déployer notre site en production dans le prochain article du tutoriel:
