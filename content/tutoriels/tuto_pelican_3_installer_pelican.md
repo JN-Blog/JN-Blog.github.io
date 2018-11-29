@@ -318,7 +318,7 @@ content/
     |- extra/
         |- robots.txt
         |- CNAME
-        |- favicon.png
+        |- favicon.ico
 ...
 ```
 
@@ -329,12 +329,12 @@ STATIC_PATHS = [
     'images',
     'extra/robots.txt',
     'extra/CNAME',
-    'extra/favicon.png',
+    'extra/favicon.ico',
 ]
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
-    'extra/favicon.png': {'path': 'favicon.png'}
+    'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 ```
 
