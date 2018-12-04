@@ -2,7 +2,7 @@ Title: Installer et configurer Pelican pour son blog statique
 Date: 2018-10-28
 Modified: 2018-10-28
 Category: tutoriels
-Tags: tutoriels, pelican, blog statique
+Tags: tutoriels
 Slug: installer-pelican-pour-un-blog-statique
 Lang: fr
 Authors: Julien Nuellas
