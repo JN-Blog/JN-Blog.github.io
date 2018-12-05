@@ -36,7 +36,7 @@ LOCALE = 'fr_FR'
 DEFAULT_LANG = 'fr'
 
 DATE_FORMATS = {
-    'fr': '%B %d, %Y',
+    'fr': '%d/%m/%Y',
 }
 
 # Feed generation is usually not desired when developing

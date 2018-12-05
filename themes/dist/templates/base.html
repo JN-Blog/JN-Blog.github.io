@@ -120,7 +120,7 @@
               <!-- <p class="navigation__subtitle">Tags</p> -->
               <ul class="navigation__list list">
                   {% for tag, articles in tags %}
-                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="navigation__link">{{ tag }}</a></li>
+                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="navigation__link">&num; {{ tag }}</a></li>
                   {% endfor %}
               </ul>
           {% endif %}
