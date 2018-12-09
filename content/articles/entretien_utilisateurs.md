@@ -48,14 +48,19 @@ Essayez de filmer ou du moins enregistrer vos entretiens. Cela vous apportera de
 
 ### Prévoir une rétribution
 
-C'est un point non négligeable. En effet, sans cela, le recrutement d'utilisateurs risque d'être compliqué. Pour rappel, afin que cette étape soit pertinente, il faut pouvoir interroger tout type d'utilisateurs et pas uniquement des *early adopters* qui se feront une joie d'apporter leurs expérience au projet. Et donc pour convaincre les autres types de profils, vous trouverez difficilement mieux qu'une rétribution que ce soit une enveloppe, un chèque cadeau ou des goodies. De plus, les early adopters seront ravis également de ce petits gestes et pourront qui sait, jouer un rôle à la viralité de l'application lors de sa sortie!
+C'est un point non négligeable. En effet, sans cela, le recrutement d'utilisateurs peut s'avérer compliqué. Pour rappel, afin que cette étape soit pertinente, il faut pouvoir interroger tout type d'utilisateurs et pas uniquement des *early adopters* qui se feront une joie d'apporter leurs expérience au projet. Et donc pour convaincre les autres types de profils, vous trouverez difficilement mieux qu'une rétribution que ce soit une enveloppe, un chèque cadeau ou des goodies. De plus, les early adopters seront ravis également de ce petits gestes et pourront qui sait, jouer un rôle à la viralité de l'application lors de sa sortie!
 
 Cependant, malgré le fait qu'il soit difficile d'échapper à la rétribution, cela peut intégrer un biais lors des entretiens où l'utilisateur sera gêné de délivrer le fond de sa pensée et tentera de dresser une vision lissée - et donc faussée - de ses attentes. Cela peut notamment être plus impactant lors de **tests utilisateur**.
-Pour minimiser ce risque, il faudra adapter et rassurer l'utilisateur en début d'entretien. Ce point sera évoqué lorsque nous parlerons de la phase de début d'entretien.
+Pour minimiser ce risque, il faudra adapter et rassurer l'utilisateur en début d'entretien. C'est notamment le sujet de la partie suivante.
 
 ## Débuter son entretien utilisateur
 
+La première chose à faire lorsque l'on débute l'entretien est d'expliquer les raisons de celui-ci. Cela peut notamment passer par une présentation synthétique du projet.
 
+Ensuite, il est important de rassurer l'interviewé et lui faire comprendre qu'il n'y a pas de bonnes ou mauvaises réponses. En effet, il faut qu'il soit en capacité de comprendre qu'il ne s'agit pas d'une évalutation où l'on est en attente de certaines réponses.
+Il faut donc lui expliquer qu'il doit parler de manière décomplexée et de la façon la plus détaillée. N'hésitez pas à lui demander de réfléchir à voix haute et d'exprimer tout ce qui lui passe par la tête.
+
+Un autre point à aborder avant de rentrer dans le vif du sujet concerne les précisions sur les traces que vous allez conserver de cet entretien et la façon dont vous allez les utiliser par la suite. La plupart du temps, cela vous servira uniquement à titre personnel afin de synthétiser à postri
 
 ## Construire ces questions
 
