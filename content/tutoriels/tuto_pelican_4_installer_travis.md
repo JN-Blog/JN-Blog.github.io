@@ -2,7 +2,7 @@ Title: Déployer son blog statique Pelican en production
 Date: 2018-11-16
 Modified: 2018-11-16
 Category: tutoriels
-Tags: tutoriels, pelican, blog statique
+Tags: tutoriels
 Slug: deployer-pelican-en-production
 Lang: fr
 Authors: Julien Nuellas

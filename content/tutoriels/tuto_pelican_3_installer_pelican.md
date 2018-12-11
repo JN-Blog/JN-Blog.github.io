@@ -2,7 +2,7 @@ Title: Installer et configurer Pelican pour son blog statique
 Date: 2018-10-28
 Modified: 2018-10-28
 Category: tutoriels
-Tags: tutoriels, pelican, blog statique
+Tags: tutoriels
 Slug: installer-pelican-pour-un-blog-statique
 Lang: fr
 Authors: Julien Nuellas
@@ -81,43 +81,43 @@ pip install Markdown
 ```
 
 Et voilà, nous avons installer tous les éléments nécessaires pour créer notre blog statique.
-Et comme on aime bien les choses propres, on va:
+Et comme on aime bien les choses propres, nous allons dans un premier temps, créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:
 
-1. Créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:
-    ```
-    pip freeze > requirements.txt
-    ```
+```
+pip freeze > requirements.txt
+```
 
-    Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:
-    ```
-    blinker==1.4
-    docutils==0.14
-    feedgenerator==1.9
-    Jinja2==2.10
-    Markdown==3.0.1
-    MarkupSafe==1.0
-    pelican==3.7.1
-    Pygments==2.2.0
-    python-dateutil==2.7.5
-    pytz==2018.7
-    six==1.11.0
-    Unidecode==1.0.22
-    ```
+Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:
 
-    Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.
+```txt
+blinker==1.4
+docutils==0.14
+feedgenerator==1.9
+Jinja2==2.10
+Markdown==3.0.1
+MarkupSafe==1.0
+pelican==3.7.1
+Pygments==2.2.0
+python-dateutil==2.7.5
+pytz==2018.7
+six==1.11.0
+Unidecode==1.0.22
+```
 
-2. Créer notre fichier .gitignore et y ajouter les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel et prenons un peu d'avance en y ajoutant les répertoires pycache et output:
+Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.
 
-    ```
-    touch .gitignore
-    ```
+Ensuite, nous créons notre fichier .gitignore et y ajoutons les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel. Prenons également un peu d'avance en y ajoutant les répertoires pycache et output:
 
-    Et le contenu de notre fichier ressemble à cela:
+```
+touch .gitignore
+```
 
-    ```
-    env/
-    __pycache__/
-    output/
+Et le contenu de notre fichier ressemble à cela:
+
+```
+env/
+__pycache__/
+output/
     ```
 
 Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).

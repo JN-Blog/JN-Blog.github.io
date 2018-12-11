@@ -2,7 +2,7 @@ Title: Installer un thème sur son blog statique Pelican
 Date: 2018-11-18
 Modified: 2018-11-18
 Category: tutoriels
-Tags: tutoriels, pelican, blog statique
+Tags: tutoriels
 Slug: installer-un-theme-pelican
 Lang: fr
 Authors: Julien Nuellas
