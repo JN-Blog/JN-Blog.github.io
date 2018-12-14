@@ -3,17 +3,17 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Julien Nuellas'
-SITENAME = 'JN-Blog'
+SITENAME = 'ProductMakers'
 SITEURL = ''
-SITESUBTITLE = 'JN-Blog'
-SITEDESCRIPTION = 'Blog sur le monde informatique et le développement produit.'
+SITESUBTITLE = 'ProductMakers'
+SITEDESCRIPTION = "Blog sur l'univers de la conception et gestion produit"
 
 PYGMENTS_STYLE = 'monokai'
 
 # THEME = "../JN-PelicanTheme-Minimalist/Responsive-Pelican"
 
 # CSS_FILE = 'style.css'
-THEME = "themes/dist"
+THEME = "themes/src"
 PATH = 'content'
 STATIC_PATHS = [
     'images',
