@@ -18,7 +18,9 @@
   {% endif %}
 
   {% if USE_GOOGLE_FONTS != False %}
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,700|Merriweather:400,700,900" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
   {% endif %}
 
   {% if USE_LESS %}
@@ -178,10 +180,19 @@
     {% endif %}
 
     <header class="header">
-        <div class="header__title-box">
-            <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
-        </div>
-    </header>
+      <div class="header__title-box">
+          <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
+          <div class="header__tag-box">
+            {% if DISPLAY_TAGS_ON_MENU %}
+              <ul class="header__tag-box__list list">
+                  {% for tag, articles in tags %}
+                      <li class="header__tag-box__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tag-box__link">#{{ tag }}</a></li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+      </div>
+  </header>
 
     {% block content %}
     {% endblock %}
