@@ -18,9 +18,7 @@
   {% endif %}
 
   {% if USE_GOOGLE_FONTS != False %}
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,700|Merriweather:400,700,900" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
   {% endif %}
 
   {% if USE_LESS %}
@@ -225,5 +223,7 @@
   {% if GITHUB_CORNER_URL %}
   {% include 'partial/github.html' %}
   {% endif %}
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/javascript/header.js" async="async"></script>
 </body>
 </html>
