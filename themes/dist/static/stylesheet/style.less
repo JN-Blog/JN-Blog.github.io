@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   color: @primary-blue;
 }
@@ -55,7 +55,7 @@ body {
   padding: 0;
   background-color: @body-bg;
   color: @text-color;
-  font-family: @sans;
+  font-family: @lato;
   // font-size: 1.02em;
   line-height: 2.5rem;
 }
@@ -102,6 +102,36 @@ main {
     &__title-box {
         margin:-.5rem 0;
         text-transform: uppercase;
+
+        .heading-brand {
+            display: inline-block;
+            margin-left: 7rem;
+        }
+    }
+
+    &__tag-box {
+        visibility: hidden;
+        display: inline-block;
+        vertical-align: super;
+        margin-left: 2rem;
+        
+        &__list {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        &__item {
+            display: inline-block;
+            margin: 2px;
+        }
+
+        &__item:not(:last-child) {
+            &::after {
+              content: "....";
+              margin-left: 10px;
+              display: inline-block;
+              transform: rotate(90deg) translate(6%, -25%);
+            }
+        }
     }
   }
 
@@ -484,7 +514,7 @@ ul.social {
       height: 4rem;
       width: 4rem;
       position: fixed;
-      top: 1rem;
+      top: 1.2rem;
       left: 1.5rem;
       z-index: 2000;
       text-align: center;
@@ -644,6 +674,12 @@ ul.social {
     height: 100%;
     margin: auto;
 
+    .header {
+
+      &__tag-box {
+          visibility: visible;
+      }
+    }
     article {
 
       &.single {

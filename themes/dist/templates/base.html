@@ -180,10 +180,19 @@
     {% endif %}
 
     <header class="header">
-        <div class="header__title-box">
-            <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
-        </div>
-    </header>
+      <div class="header__title-box">
+          <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
+          <div class="header__tag-box">
+            {% if DISPLAY_TAGS_ON_MENU %}
+              <ul class="header__tag-box__list list">
+                  {% for tag, articles in tags %}
+                      <li class="header__tag-box__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tag-box__link">#{{ tag }}</a></li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+      </div>
+  </header>
 
     {% block content %}
     {% endblock %}
