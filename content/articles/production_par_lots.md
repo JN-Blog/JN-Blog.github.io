@@ -6,15 +6,16 @@ Tags: lean
 Slug: produire-par-petits-lots
 Lang: fr
 Authors: Julien Nuellas
-Summary: Selon Eric Ries, l'auteur du célèvre ouvrage Lean Startup, la production par petits lots est à priviligier plutôt que la production en série. Découvrons ensemble pourquoi.
+Summary: Selon Eric Ries, l'auteur du célèbre ouvrage Lean Startup, la production par petits lots est à priviligier plutôt que la production en série. Découvrons ensemble pourquoi.
 
-INTRODUCTION
+Au sein de votre environnement de travail, on vous demande d'adopter une approche agile, de gérer le cycle de vie d'un produit de façon itérative, d'aborder le développement dans un processus d'intégration continue, ou encore de définir les prochaines fonctionnalités à intégrer dans le MVP. Ces missions décrivent l'organisation de beaucoup d'entreprises et au-delà d'être passionnante, elles ont également du sens. Elles s'articulent autour de méthodologies et système organisationnels précis.
 
+Au travers de cet article, je souhaite vous exposer ma compréhension de l'un des éléments essentiels qu'Eric Ries évoque dans son ouvrage *Lean Startup*: la production par petits lots. En effet, c'est une composante essentiel de sa méthodologie. Et pour échanger avec vous autour de ce concept, j'ai décidé d'écrire cet article autour de l'histoire de Jean et Camille qui sont en pleine placification de leur mariage !
 
-## Basons nous sur un exemple
+## Le mariage de Jean et Camille: l'envoi des faire-parts
 ---
 
-Jean et Camille se marient dans 6 mois. Ils sont en pleins dans les préparatifs et se sont mis d'accord sur le thème du mariage. Le lieu est choisi et il est désormais d'envoyer les fair-parts de mariage.
+Jean et Camille se marient dans 6 mois. Ils sont heureux et ont ha^te de partager cet évènements avec leur famille et amis. Cependant, préparer un mariage ne se fait pas en deux claquements de doigts. Le lieu et la date du mariage ont été défini et il est grand temps d'envoyer les faire-parts. C'est leur mission du weekend!
 Pour chaque faire-part, l'opération consiste à:
 
 * Plier le faire-part
@@ -22,15 +23,15 @@ Pour chaque faire-part, l'opération consiste à:
 * Mettre un timbre sur l'enveloppe
 * Mettre l'adresse sur l'enveloppe
 
-Il y a 150 faire-parts à envoyer. Jean et Camille décide de se séparer le travail en deux soit 75 faire-parts à préparer chacun.
-Jean et Camille décide d'utiliser une méthode différente
+Il y a 150 faire-parts à envoyer. Jean et Camille décide de se séparer le travail en deux, soit 75 faire-parts à préparer chacun.
+Jean et Camille décide d'utiliser une méthode différente.
 
 ### La méthode de Jean
 
 Jean décide de découper les tâches en arborant une logique de production en série. Ainsi, il décide d'arborer la logique suivante:
 
 1. Dans un premier temps, il décide de plier tous les faire-parts
-2. Une fois cela fait,, il décide de mettre tous les faire-parts dans l'enveloppe
+2. Une fois cela fait, il décide de mettre tous les faire-parts dans l'enveloppe
 3. Il décide ensuite de coller un timbre sur chaque enveloppe
 4. Enfin, il décide d'écrire les adresses de chaque invité
 
@@ -133,18 +134,14 @@ Via cet exemple, Camille a réalisé une itération selon la boucle de feedback:
 
 Et Jean, il en est où maintenant? Et bien, il est toujours la tête dans le guidon en train de plier les siens sans se rendre compte qu'ils ne rentreront pas dans l'enveloppe.
 
+Si je devais proposer un dernier match Jean Vs. Camille qui résumerait cette partie de l'exemple, il s'agirait d'un **match concernant la satisfaction client** et devinez qui aurait gagné:
+
+* Camille: 3
+* Jean: 0
+
 ## La production par petits lots, c'est malin!
 
 Soyons clair, en écrivant cet article, je n'avais pas pour objectif de vous donner un tutoriel sur la façon de préparer votre mariage.
-L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marche. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à ajouter un commentaire.
+L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à ajouter un commentaire.
 
-J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquels son produit se base. Il s'agit du concept de **déploiement continu**
-
-## Résultat
-
-| Matchs       | Production par petits lots | Production en série |
-| ------------ |: ------------------------: | ------------------: |
-| Rapidité     |             1              |           0         |
-| Adaptabilité |             1              |           0         |
-| Satisfaction |             1              |           0         |
-| TOTAL        |             3              |           0         |
+J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquels son produit se base. Il s'agit du concept de **déploiement continu**. Je l'ai même utilisé dans la dernière parti de mon exemple. En effet, c'est ce qui permet notamment de pouvoir proposer rapidement à ces clients une nouvelle version de son produit. Si vous êtes également intéressé par un article sur le sujet afin d'échanger sur ce dernier, faîte le moi aussi savoir dans les commentaires.
