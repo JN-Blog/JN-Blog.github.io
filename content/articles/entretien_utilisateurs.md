@@ -2,7 +2,7 @@ Title: Réussir ses entretiens utilisateurs
 Date: 2018-12-11
 Modified: 2018-12-11
 Category: articles
-Tags: methode agile, UX
+Tags: agile, UX
 Slug: reussir-ses-entretiens-utilisateurs
 Lang: fr
 Authors: Julien Nuellas

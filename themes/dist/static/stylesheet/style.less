@@ -266,6 +266,10 @@ main {
     }
   }
 
+  .article__date {
+    font-weight: 700;
+  }
+
   footer {
     padding-top: 4px;
     border-top: @footer-border-color 1px solid;
@@ -282,19 +286,25 @@ main {
 
 .tag-cloud {
   a {
-    background-color: @tag-bg;
-    padding: .4rem .6rem;
-    font-size: 1rem;
+    // background-color: @tag-bg;
+    // padding: .4rem .6rem;
+    // font-size: 1rem;
+    // line-height: 1;
+    // color: @tag-text-color;
+    // text-align: center;
+    // white-space: nowrap;
+    // vertical-align: baseline;
+    // border-radius: 4px;
+
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
     line-height: 1;
-    color: @tag-text-color;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 4px;
+    color: @primary-blue-dark;
   }
 
   a:hover {
-    background-color: @tag-hover-color;
+    color: @tag-hover-color;
   }
 }
 
