@@ -13,7 +13,7 @@ PYGMENTS_STYLE = 'monokai'
 # THEME = "../JN-PelicanTheme-Minimalist/Responsive-Pelican"
 
 # CSS_FILE = 'style.css'
-THEME = "themes/dist"
+THEME = "themes/src"
 PATH = 'content'
 STATIC_PATHS = [
     'images',
