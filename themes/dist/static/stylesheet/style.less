@@ -102,14 +102,25 @@ img {
   left: 0;
   background-color: @body-bg;
 
-  &__title-box {
+  &__main-box {
       margin:-.5rem 0;
       text-transform: capitalize;
+  }
 
-      .heading-brand {
-          display: inline-block;
-          margin-left: 7rem;
-      }
+  &__title-box {
+    display: inline-block;
+    margin-left: 6rem;
+
+    .heading-logo {
+      display: table-cell;
+      vertical-align: top;
+      margin-top: 10px;
+      max-width: 35px;
+    }
+
+    .heading-brand {
+      display: inline-block;
+    }
   }
 
   &__tag-box {
@@ -695,19 +706,24 @@ ul.social {
 
   .header {
     &__title-box {
-      width: 90%;
-      margin: auto;
+      // width: 90%;
+      // margin: auto;
       
-      .heading-brand {
-        margin: 0 8% 0 8%;
+      .heading-logo {
+        margin-top: 15px;
+        max-width: 40px;
       }
 
+      // .heading-brand {
+      //   margin: 0 8% 0 8%;
+      // }
+
     }
 
-    &__tag-box {
-        visibility: visible;
+      &__tag-box {
+          visibility: visible;
+      }
     }
-  }
   
 
   main {
@@ -753,11 +769,11 @@ ul.social {
 
 @media screen and (min-width: 992px) {
 
-  .header {
-    &__title-box {
-      width: 85%;
-    }
-  }
+  // .header {
+  //   &__title-box {
+  //     width: 85%;
+  //   }
+  // }
 
   main { 
     width: 85%;
@@ -765,11 +781,11 @@ ul.social {
 }
 
 @media screen and (min-width: 1200px) {
-  .header {
-    &__title-box {
-      width: 75%;
-    }
-  }
+  // .header {
+  //   &__title-box {
+  //     width: 75%;
+  //   }
+  // }
 
   main {
     width: 75%;
@@ -778,11 +794,11 @@ ul.social {
 
 @media screen and (min-width: 1600px) {
 
-  .header {
-    &__title-box {
-      width: 65%;
-    }
-  }
+  // .header {
+  //   &__title-box {
+  //     width: 65%;
+  //   }
+  // }
 
   main {
     width: 65%;
