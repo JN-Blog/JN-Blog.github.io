@@ -16,6 +16,7 @@ Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérie
 Et j'insiste sur le fait que je ne prétends pas avoir la solution ultime (existe-t-elle vraiment finalement?) mais une solution pertinente par rapport à des objectifs définis.
 
 ## Objectifs du tutoriel
+---
 
 Alors justement, que va couvrir ce tutoriel?
 L'objectif de ce dernier est de structurer les différentes étapes liées à la mise en place d'un blog statique et proposer un workflow facile et fiable dans le temps. Pour cela, je vais vous proposer de travailler avec trois principaux outils:
@@ -27,6 +28,7 @@ L'objectif de ce dernier est de structurer les différentes étapes liées à la
 Le premier avantage à tout ça, vous pouvez créer un blog **gratuitement** sans dépenser un seul euro. Elle est pas belle la vie? A la limite, la seule dépense qui peut vous intéresser est l'achat de votre propre nom de domaine (ce qui représente environ 15 euros par an).
 
 ## Quels sont les pré-requis?
+---
 
 Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore cotoyées le monde du développement. Il n'y a rien d'innaccessible et de compliqué mais il faut avoir une certaine curiosité pour l'univers du développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif principal:
 
@@ -38,6 +40,7 @@ Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un sit
 Alors, prêt pour l'aventure?
 
 ## Un projet fil rouge
+---
 
 Tout au long de ce tutoriel, nous allons créer pas à pas un blog. Cela permettra d'ajouter du contexte et du concret aux différentes actions qui seront entreprises. Ce blog va s'appeler **Tutoriel Pelican** et est accessible à l'adresse suivante: [https://tutoriel-pelican.jn-blog.com](https://tutoriel-pelican.jn-blog.com).
 
@@ -46,11 +49,13 @@ Vous pouvez d'ors et déjà vous y rendre, cela vous permettra de voir ce à quo
 Mais avant de rentrer directement dans le vif du sujet, voici comment nous allons procéder. Ce tutoriel comportera différents articles selon le schéma suivant:
 
 ## 1. [Un blog statique, c'est quoi? Et pourquoi choisir cette solution?]({filename}tuto_pelican_1_whats_blog_statique.md)
+---
 
 Effectivement, on ne va pas rentrer dans le dur avant de comprendre ce qu'est un site statique et de savoir quels sont ses avantages et ses inconvénients. Ca serait dommage de vous rendre compte à la fin, après avoir tout mis en place que finalement, le blog statique n'est pas la situation idéale dans votre cas.
 J'en profiterai également pour vous présenter **Pelican** plus particulièrement car c'est ce dernier que nous utiliserons.
 
 ## 2. [Mettre en place son repository GitHub Pages]({filename}tuto_pelican_2_githubpages_setup.md)
+---
 
 La seconde partie de ce tutoriel évoquera la mise en place du repository **GitHub Pages**. Je vous présenterai:
 
@@ -60,15 +65,18 @@ La seconde partie de ce tutoriel évoquera la mise en place du repository **GitH
 * La mise en place d'un nom de domaine.
 
 ## 3. [Installer Pelican]({filename}tuto_pelican_3_installer_pelican.md)
+---
 
 On va ensuite rentrer dans le vif du sujet et installer Pelican au sein de notre environnement de travail. On en profitera pour mettre en place les configurations basiques que j'ai jugé pertinentes. Il ne s'agit pas encore une fois de la seule façon de procéder et vous découvrirez avec le temps que Pelican offre de nombreuses possibilités en terme de configuration. L'idée ici est de partir d'une base simple et fonctionnelle.
 On écrira même un premier article que nous déploierons en local afin de vérifier que tout fonctionne correctement.
 
 ## 4. [Mise en place de Travis et du workflow de déploiement]({filename}tuto_pelican_4_installer_travis.md)
+---
 
 L'étape suivante consistera à mettre en place le déploiement automatisé avec **Travis**. L'objectif étant qu'à chaque fois que vous écrirez un nouvel article et que vous souhaiterez le publier, vous n'aurez qu'à pousser votre projet sur GitHub, puis historiser la publication via une pull request (pour conserver un certain historique). Travis se chargera de tester le projet et déploiera la nouvelle version du blog si tout se passe bien.
 
 ## 5. [Mettre en place un thème Pelican]({filename}tuto_pelican_5_installer_theme.md)
+---
 
 A ce stade, le blog sera fonctionnel et la plus grande partie du travail aura été effectuée. Il ne restera plus qu'à styliser un peu le blog. Pour cela, nous verrons comment installer l'un des nombreux thèmes disponibles. Une fois ce sujet couvert, vous aurez vu l'ensemble des points qui vous permettra de mettre en place votre propre blog statique.
 

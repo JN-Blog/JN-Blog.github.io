@@ -23,6 +23,7 @@ Il s'agit du sixième article d'un tutoriel dédié à la mise en place d'un blo
 Dans cet article, nous verrons donc où trouver le thème de nos rêves et verrons une façon simple d'en mettre un en place.
 
 ## Ou trouver un thème Pelican
+---
 
 Il existe de nombreux thèmes pour Pelican et il y a de fortes chances que vous trouviez votre bonheur.
 
@@ -35,6 +36,7 @@ Il existe également un repository github contenant l'ensemble des codes sources
 Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.
 
 ## Préparer son projet à recevoir un thème
+---
 
 Il existe plusieurs façon d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire *themes* du projet source.
 Pourquoi? Je trouve ce choix intéressant pour trois raisons:
@@ -76,6 +78,7 @@ THEME = "themes/dist"
 Et voilà, le projet est prêt à recevoir notre thème.
 
 ## Installer un thème sur notre blog statique
+---
 
 ### Cloner le code source du thème choisi
 
@@ -118,6 +121,7 @@ Il ne reste plus qu'un petit déploiement afin de tout envoyer sur l'environneme
 ![deploiement d'un theme pelican]({filename}/images/tuto-pelican-theme-production.png)
 
 ## Un dernier mot pour la route
+---
 
 J'espère que ces articles vous ont intéressés.
 Nous avons vu ensemble au travers de ces articles et de ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com) comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.

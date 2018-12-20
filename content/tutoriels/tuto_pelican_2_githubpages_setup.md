@@ -26,6 +26,7 @@ Dans cet article, nous découvrirons ce qu'est GitHub Pages puisque nous allons 
 Commençons donc par présenter GitHub Pages.
 
 ## GitHub Pages: qu'est-ce que c'est?
+---
 
 [GitHub Pages](https://pages.github.com/) est un service d'hébergement de sites statiques conçu pour fonctionner à partir de l'un de vos repository GitHub. Il a été conçu dans l'idée de pouvoir facilement héberger et rendre accessible des projets qu'une personne ou une organisation souhaite rendre disponible (site vitrine, documentation, prototype, blog, etc...)
 
@@ -34,6 +35,7 @@ Je pense qu'à la vue de cette explication, cette solution paraît parfaite pour
 Avant d'aller plus loin, il est judicieux que vous ayez une compréhension basique de ce que sont Git et GitHub. Pour ceux qui connaissent déjà, ne serait-ce que le fonctionnement basique (pas besoin d'être un expert), vous pouvez directement passer à la section suivante.
 
 ## Quelques mots sur Git et GitHub
+---
 
 GitHub est un service web qui permet d'héberger et gérer le développement de logiciels. Pour cela, il utilise le [logicel de gestion de versions Git](https://fr.wikipedia.org/wiki/Logiciel_de_gestion_de_versions).
 
@@ -46,6 +48,7 @@ Si vous êtes intéressé, je vous recommande ce cours Openclassrooms: [Gérez v
 Ca y est? Vous avez installé git sur votre PC, vous avez ouvert un compte sur GitHub, créé votre premier repository et joué avec quelques branches? Alors, vous êtes prêt pour la suite du tutoriel!
 
 ## Présentation de la logique de fonctionnement
+---
 
 Voici donc la logique de fonctionnement que je vous propose.
 Nous allons travailler avec un repository et trois branches différentes:
@@ -71,6 +74,7 @@ Alors pourquoi intervertir les deux me demanderiez vous? Et bien principalement 
 Maintenant que la logique est expliquée, créons notre repository.
 
 ## Créer son repository GitHub Pages
+---
 
 Nous allons voir dans cette partie comment configurer GitHub Pages et plus globalement son environnement de travail où l'on installera par la suite Pelican.
 

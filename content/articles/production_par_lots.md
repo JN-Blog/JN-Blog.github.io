@@ -45,6 +45,7 @@ Jean, quelque peu vexé que Camille ne suive pas son conseille lui propose de fa
 Le défi est lancé!
 
 ## Match de la rapidité
+---
 
 Le suspense est à son comble. Les deux candidats sont au coude à coude. Qui va gagner? Qui va frimer devant l'autre pour avoir fini le premier? Est-ce Jean avec son approche de production en série? Ou bien, est-ce Camille qui a préféré choisir une production par petit lot?
 La réponse après cette courte page de pub...
@@ -74,6 +75,7 @@ En effet, et si Camille, en choisissant la logique de production par petits lots
 Affinons notre exemple dans la partie suivante.
 
 ## Match de l'adaptabilité
+---
 
 Camille et Jean, avant de se lancer dans cette course contre la montre, avait décidé au préalable de plier les faire-parts en deux dans le sens de la longueur pour les insérer dans les enveloppes.
 
@@ -97,6 +99,7 @@ Si on regarde de nouveaux les scores:
 Alors c'est bien beau tout ça me dirait vous mais quel est l'intérêt de parler de ça dans ce blog? En effet, l'objectif de ce blog n'est pas de vous présenter des astuces liées à la préparation d'un mariage mais d'échanger autour de la conception de produit et de la gestion de son cycle de vie. Et figurez-vous que la production par petits lots n'est pas dénué d'intérêt lorsque vous souhaitez lancer un produit sur un marché
 
 ## Tester la pertinence de son produit via un processus de production par lots.
+---
 
 ### La boucle de feedback
 
@@ -140,6 +143,7 @@ Si je devais proposer un dernier match Jean Vs. Camille qui résumerait cette pa
 * Jean: 0
 
 ## La production par petits lots, c'est malin!
+---
 
 Soyons clair, en écrivant cet article, je n'avais pas pour objectif de vous donner un tutoriel sur la façon de préparer votre mariage.
 L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à ajouter un commentaire.
