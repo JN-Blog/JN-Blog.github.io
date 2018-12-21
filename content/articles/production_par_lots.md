@@ -6,7 +6,7 @@ Tags: lean
 Slug: produire-par-petits-lots
 Lang: fr
 Authors: Julien Nuellas
-Summary: Eric Ries, l'auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. Au travers de article, je me suis amusé à partir d'un exemple assez simple qui n'est pas liée à une problématique d'entreprise et j'ai essayé de le développer petit à petit dans le but d'exprimer l'intérêt de ce type de production.
+Summary: Eric Ries, l'auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. Au travers de article, je me suis amusé à partir d'un exemple assez simple qui n'est pas lié à une problématique d'entreprise et j'ai essayé de le développer petit à petit dans le but d'exprimer l'intérêt de ce type de production.
 
 Au sein de votre environnement de travail, on vous demande d'adopter une approche agile, de gérer le cycle de vie d'un produit de façon itérative, d'aborder le développement dans un processus d'intégration continue, ou encore de définir les prochaines fonctionnalités à intégrer dans le MVP. Ces missions décrivent l'organisation de beaucoup d'entreprises et au-delà d'être passionnante, elles ont également du sens. Elles s'articulent autour de méthodologies et système organisationnels précis.
 
@@ -15,7 +15,7 @@ Au travers de cet article, je souhaite vous exposer ma compréhension de l'un de
 ## Le mariage de Jean et Camille: l'envoi des faire-parts
 ---
 
-Jean et Camille se marient dans 6 mois. Ils sont heureux et ont hâte de partager cet évènement avec leur famille et leurs amis. Cependant, préparer un mariage ne se fait pas en deux claquements de doigts. Le lieu et la date du mariage ont été défini et il est grand temps d'envoyer les faire-parts. C'est leur mission du weekend!
+Jean et Camille se marient dans 6 mois. Ils sont heureux et ont hâte de partager cet évènement avec leur famille et leurs amis. Cependant, préparer un mariage ne se fait pas en deux claquements de doigts. Le lieu et la date du mariage ont été définis et il est grand temps d'envoyer les faire-parts. C'est leur mission du weekend!
 Pour chaque faire-part, l'opération consiste à:
 
 * Plier le faire-part
