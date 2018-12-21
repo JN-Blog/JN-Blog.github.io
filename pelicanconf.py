@@ -24,7 +24,7 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
 TIMEZONE = 'Europe/Paris'
@@ -107,7 +107,9 @@ COPYRIGHT_YEAR = 2016
 DEFAULT_PAGINATION = 10
 
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['sitemap', 'i18n_subsites', 'share_post']
+PLUGINS = ['sitemap',
+           'i18n_subsites',
+           'share_post']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 

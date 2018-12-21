@@ -2,7 +2,7 @@ Title: Réussir ses entretiens utilisateurs
 Date: 2018-12-11
 Modified: 2018-12-11
 Category: articles
-Tags: methode agile, UX
+Tags: agile, UX
 Slug: reussir-ses-entretiens-utilisateurs
 Lang: fr
 Authors: Julien Nuellas
@@ -16,6 +16,7 @@ L'objectif de cet article est de lister les grands principes pour mener à bien 
 N'hésitez pas à réagir et à partager votre propre expérience via les commentaires en bas de l'article. L'idée est de pouvoir échanger autour des bonnes pratiques.
 
 ## Ce à quoi il faut penser lorsqu'on construit ses entretiens utilisateurs
+---
 
 Lorsque que l'on décide de réaliser des entretiens utilisateurs, la première chose à penser est de concevoir correctement cette étape.
 
@@ -62,6 +63,7 @@ Cela peut paraître logique mais construire un **guide d'entretien** est essenti
 3. Dernier point important, cela vous permettra de **comparer les résultats** entre différents utilisateurs. C'est un point crucial si vous souhaitez avoir des données utilisables et activables.
 
 ## Débuter son entretien utilisateur
+---
 
 La première chose à faire lorsque l'on débute l'entretien est d'expliquer les raisons de celui-ci. Cela peut notamment passer par une présentation synthétique du projet.
 
@@ -73,6 +75,7 @@ Un autre point à aborder avant de rentrer dans le vif du sujet concerne les pr�
 Tout est en place pour débuter votre entretien. Avant de rentrer dans le vif du sujet, il peut être intéressant de faire un petit *ice breaker* en lui demandant de se présenter et de dire ce qu'il fait dans la vie. Cela permettra à votre utilisateur de se mettre à l'aise et vous permettra de faire davantage connaissance avec lui et son profil.
 
 ## Construire ces questions
+---
 
 On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de receuillir le maximum d'informations.
 

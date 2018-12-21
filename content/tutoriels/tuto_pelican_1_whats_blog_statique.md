@@ -27,6 +27,7 @@ Et si vous avez des remarques, suggestions ou compléments à la fin de l'articl
 Maintenant que tout est plus clair, rentrons dans le vif du sujet.
 
 ## Pour commencer, c'est quoi un blog statique?
+---
 
 Un blog (ou un site d'ailleurs) statique n'est constitué uniquement que de fichiers entièrement statiques (merci captain Obious!)
 
@@ -39,6 +40,7 @@ Ainsi, le blog ne sera constitué que de fichiers html, d'images, de css et éve
 Alors super, maintenant que l'on sait ce que c'est, en quoi c'est intéressant de construire son blog en utilisant cette approche?
 
 ## Les avantages d'un blog statique
+---
 
 Je vois personnellement trois gros avantages:
 
@@ -62,6 +64,7 @@ Pour terminer avec la souplesse d'un blog statique (si je ne vous ai pas encore 
 Ouahhhh, c'est super un site statique. Pourquoi tout le monde ne l'utilise pas alors? Et bien, comme toute solution, il n'y a pas forcément que des avantages.
 
 ## Les inconvénients d'un blog statique
+---
 
 Effectivement, un blog statique présente certains inconvénients qu'il ne faut pas négliger.
 
@@ -83,6 +86,7 @@ Cela n'est cependant pas impossible et des méthodes existe pour mettre en place
 Alors convaincu et prêt à se lancer dans la mise en place d'un blog statique? Suivez le guide et approfondissons un peu en décrivant brièvement comment cela fonctionne.
 
 ## Comment met-on ça en place?
+---
 
 On va se servir d'un générateur de sites statiques.
 
@@ -108,6 +112,7 @@ Pour ce tutoriel, il s'agira de mettre en place un blog statique en utilisant **
 Mais vous pourriez tout aussi bien utiliser un autre outil comme **Jekyll** par exemple qui est également très populaire, notamment pour sa simplicité d'intégration avec GitHub Pages.
 
 ## Présentation de Pelican
+---
 
 Pelican est donc un logiciel écrit en Python sous licence AGPL. Il permet de générer des sites statiques (non??? Vraiment???) et offre notamment dans sa version 3 de nombreuses fonctionnalités:
 

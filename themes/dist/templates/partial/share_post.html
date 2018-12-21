@@ -1,11 +1,11 @@
 {% if article.share_post and article.status != 'draft' %}
 <section>
     <p id="post-share-links">
-        <a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        <a href="{{article.share_post['twitter']}}" target="_blank" title="Share on Twitter" onclick="ga('send', 'social', 'Twitter', 'Share', '{{ SITEURL }}/{{ article.url }}')"><i class="fa fa-twitter fa-lg"></i></a>
         &nbsp;
-        <a href="{{article.share_post['facebook']}}" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        <a href="{{article.share_post['facebook']}}" target="_blank" title="Share on Facebook" onclick="ga('send', 'social', 'Facebook', 'Share', '{{ SITEURL }}/{{ article.url }}')"><i class="fa fa-facebook fa-lg"></i></a>
         &nbsp;
-        <a href="{{article.share_post['linkedin']}}" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+        <a href="{{article.share_post['linkedin']}}" target="_blank" title="Share on LinkedIn" onclick="ga('send', 'social', 'Linkedin', 'Share', '{{ SITEURL }}/{{ article.url }}')"><i class="fa fa-linkedin fa-lg"></i></a>
     </p>
 </section>
 {% endif %}

@@ -18,6 +18,8 @@
   {% endif %}
 
   {% if USE_GOOGLE_FONTS != False %}
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
   {% endif %}
 
@@ -99,73 +101,89 @@
       <div class="navigation__background">&nbsp;</div>
 
       <nav class="navigation__nav">
-          <!-- <div>
-            <a href="{{ SITEURL }}">
-                {% if SITELOGO %}
-                <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
-                {% else %}
-                <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
-                {% endif %}
-              </a>
-          </div> -->
-          <!-- {% if DISPLAY_CATEGORIES_ON_MENU %}
-              <p class="navigation__subtitle">Categories</p>
-              <ul class="navigation__list list">
-                  {% for category, articles in categories %}
-                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ category.url }}" class="navigation__link">{{ category }}</a></li>
-                  {% endfor %}
-              </ul>
-          {% endif %} -->
-          {% if DISPLAY_TAGS_ON_MENU %}
-              <!-- <p class="navigation__subtitle">Tags</p> -->
-              <ul class="navigation__list list">
-                  {% for tag, articles in tags %}
-                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="navigation__link">&num; {{ tag }}</a></li>
-                  {% endfor %}
-              </ul>
-          {% endif %}
-          {% if DISPLAY_PAGES_ON_MENU %}
-              <ul class="navigation__list list">
-                  {% for page in pages %}
-                      <li class="navigation__item"><a href="{{ SITEURL }}/{{ page.url }}" class="navigation__link">{{ page.title }}</a></li>
-                  {% endfor %}
-              </ul>
-          {% endif %}
-        <!-- <ul class="social">
-          {% for name, link in SOCIAL %}
-          <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }} fa-2x"></i></a></li>
-          {% endfor %}
-        </ul> -->
+        <!-- <div>
+          <a href="{{ SITEURL }}">
+              {% if SITELOGO %}
+              <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+              {% else %}
+              <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+              {% endif %}
+            </a>
+        </div> -->
+        <!-- {% if DISPLAY_CATEGORIES_ON_MENU %}
+            <p class="navigation__subtitle">Categories</p>
+            <ul class="navigation__list list">
+                {% for category, articles in categories %}
+                    <li class="navigation__item"><a href="{{ SITEURL }}/{{ category.url }}" class="navigation__link">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %} -->
+        {% if DISPLAY_TAGS_ON_MENU %}
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                {% for tag, articles in tags %}
+                    <li class="navigation__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="navigation__link">&num; {{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+            <ul class="navigation__list list">
+                {% for page in pages %}
+                    <li class="navigation__item"><a href="{{ SITEURL }}/{{ page.url }}" class="navigation__link">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+      <!-- <ul class="social">
+        {% for name, link in SOCIAL %}
+        <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }} fa-2x"></i></a></li>
+        {% endfor %}
+      </ul> -->
 
-        {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <ins class="adsbygoogle ads-aside"
-              data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
-              data-ad-slot="{{ GOOGLE_ADSENSE.ads.aside }}"></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        {% endif %}
-        {% if MAIN_MENU %}
-          <div>
-              <a href="{{ SITEURL }}">{{ _('Home') }}</a>
-        
-              {% for title, link in MENUITEMS %}
-              <a href="{{ link }}">{{ title }}</a>
-              {% endfor %}
-        
-              {% if FEED_ALL_ATOM %}
-              <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">{{ _('Atom') }}</a>
-              {% endif %}
-        
-              {% if FEED_ALL_RSS %}
-              <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
-              {% endif %}
-          </div>
-        {% endif %}
-      </nav>
+      {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle ads-aside"
+            data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+            data-ad-slot="{{ GOOGLE_ADSENSE.ads.aside }}"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      {% endif %}
+      {% if MAIN_MENU %}
+        <div>
+            <a href="{{ SITEURL }}">{{ _('Home') }}</a>
+      
+            {% for title, link in MENUITEMS %}
+            <a href="{{ link }}">{{ title }}</a>
+            {% endfor %}
+      
+            {% if FEED_ALL_ATOM %}
+            <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">{{ _('Atom') }}</a>
+            {% endif %}
+      
+            {% if FEED_ALL_RSS %}
+            <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
+            {% endif %}
+        </div>
+      {% endif %}
+    </nav>
     </div>
   </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/icon.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}"><h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
+          </div>
+          <div class="header__tag-box">
+            {% if DISPLAY_TAGS_ON_MENU %}
+              <ul class="header__tag-box__list list">
+                  {% for tag, articles in tags %}
+                      <li class="header__tag-box__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tag-box__link">#{{ tag }}</a></li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+      </div>
+    </header>
   <main>
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -177,20 +195,7 @@
       </script>
     {% endif %}
 
-    <header class="header">
-      <div class="header__title-box">
-          <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
-          <div class="header__tag-box">
-            {% if DISPLAY_TAGS_ON_MENU %}
-              <ul class="header__tag-box__list list">
-                  {% for tag, articles in tags %}
-                      <li class="header__tag-box__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tag-box__link">#{{ tag }}</a></li>
-                  {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
-      </div>
-  </header>
+
 
     {% block content %}
     {% endblock %}
@@ -223,6 +228,7 @@
   {% if GITHUB_CORNER_URL %}
   {% include 'partial/github.html' %}
   {% endif %}
+
   <!-- Javascript animation -->
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/javascript/header.js" async="async"></script>
 </body>

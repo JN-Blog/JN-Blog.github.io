@@ -32,6 +32,7 @@ La mise en place se déroulera en cing principales étapes:
 5. Et enfin, nous vérifirons que tout fonctionne correctement
 
 ## Mettre à jour le fichier publishconf.py
+---
 
 Nous allons déployer notre site en production. De ce fait, il s'agit du fichier publishconf.py qui sera considéré dans le déploiement et non le fichier pelicanconf.py.
 
@@ -77,6 +78,7 @@ SITEURL = 'https://tutoriel-pelican.jn-blog.com'
 Rien de plus à ajouter sur ce fichier. Nous pouvons donc passer à la suite.
 
 ## Activer Travis CI sur le repository Git Hub
+---
 
 Tout d'abord, si vous n'avez pas de compte [Travis CI](https://travis-ci.org/), il est temps d'en créer un. Vous pouvez utiliser votre compte Github pour la création. Cela aura pour effet de synchroniser automatiquement votre repository github avec votre compte.
 
@@ -89,6 +91,7 @@ Et voilà, le travail est fait! Simple, Basique...
 ![lien gif simple](https://media.giphy.com/media/9Jcw5pUQlgQLe5NonJ/giphy.gif)
 
 ## Ajustement du fichier MakeFile
+---
 
 Comme expliqué dans le précédent article, le fichier Makefile généré lors de la création du projet permet de simplifier les actions réalisées sur ce dernier.
 
@@ -139,6 +142,7 @@ github: publish
 Sans rentrer dans les détails, la commande va utiliser le module [ghp-import](http://docs.getpelican.com/en/stable/tips.html#publishing-to-github) pour automatiser le déploiement du site vers la branche gh-pages. Le push vers le repository github utilise le token d'accès que nous venons de créer. Il faudra adapter bien évidemment l'url github en fonction de votre repository github.
 
 ## Création du fichier .travis.yml
+---
 
 Le dernière étape consite à créer le fichier **.travis.yml** à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.
 
@@ -180,6 +184,7 @@ Ce fichier va globalement indiquer à Travis:
 * De configurer les instructions de déploiement afin que le répertoire output soit poussé sur la branche gh-pages du repository (avec un clean en amont si cette branche contenait déjà un ancien répertoire)
 
 ## Déploiement de notre blog en production
+---
 
 Et voilà! tous les éléments sont mis en place pour déployer notre site en production.
 Envoyons notre code à jour sur github dans notre branche source (une fois le commit enregistré)

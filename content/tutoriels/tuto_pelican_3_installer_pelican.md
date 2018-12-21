@@ -24,6 +24,7 @@ Nous verrons donc dans cet article comment installer Pelican et le configurer de
 Maintenant que l'on sait ce que l'on va faire dans cet article, il est temps de débuter les hostilités.
 
 ## Cloner le repository et mettre créer la branche source
+---
 
 La première chose à faire est de cloner le repository en local dans le répertoire souhaité. Pour notre projet fil rouge, il s'agit de la commande suivante:
 
@@ -48,6 +49,7 @@ master
 L'asterix à côté de la branche source prouve que vous êtes positionné sur la bonne branche. Nous sommes désormais prêt à installer notre environnement de développement.
 
 ## Installer Python et créer son environnement virtuel
+---
 
 Si vous n'avez pas encore installer Python sur votre ordinateur, il est temps de le faire désormais. Voici le lien officiel pour télécharger la dernier version: https://www.python.org/downloads/
 
@@ -66,6 +68,7 @@ source env/bin/activate
 Nous sommes désormais prêt à installer Pelican.
 
 ## Installer Pelican et Markdown
+---
 
 Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
 Attention à bien avoir activer votre environnement virtuel au préalable.
@@ -118,12 +121,13 @@ Et le contenu de notre fichier ressemble à cela:
 env/
 __pycache__/
 output/
-    ```
+```
 
 Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).
 Nous sommes désormais prêt à créer notre projet Pelican.
 
 ## Créer un projet Pelican
+---
 
 Une fois tout installé, nous allons pouvoir créer notre squelette de projet sous Pelican.
 Pour cela, rien de plus simple, à l'installation de Pelican, des commandes ont également été installées.
@@ -195,6 +199,7 @@ Et voilà! Si vous examinez un peu votre répertoire, vous vous apercevez que to
 ![repertoire initial d'un projet Pelican]({filename}/images/tuto-pelican-pelican-repertoire.png)
 
 ## Mettre en place les premières configurations
+---
 
 Parmi les éléments installés, deux fichiers essentiels sont apparus. Il s'agit des fichiers:
 
@@ -353,6 +358,7 @@ tutoriel-pelican.jn-blog.com
 Et voilà, notre configuration de base est faîte.
 
 ## Publier notre site en local
+---
 
 Maintenant que tout est en place il serait judicieux de voir si tout fonctionne correctement.
 Pour cela, rien de plus simple, il suffit de déployer notre site en local avec la commande:
@@ -369,6 +375,7 @@ En nous rendant à l'adresse ```http://localhost:8000/```, il est désormais pos
 ![publication du site en local]({filename}/images/tuto-pelican-local-site.png)
 
 ## Créer notre premier articles
+---
 
 Voyons désormais comment écrire un article.
 Il suffit pour cela de créer un fichier au format md à la racine du répertoire *content*.
