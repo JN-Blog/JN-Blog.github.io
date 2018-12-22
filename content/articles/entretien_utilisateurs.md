@@ -31,7 +31,7 @@ Il est possible d'identifier deux profils types:
 * Le profil d'utilisateur extrême
 * Le profil d'utilisateur type
 
-Le premier type de profil regroupe les personnes utilisant de façon très fréquente le type de produit / service associé au projet ou inversement, ceux qui ne l'utilise jamais.
+Le premier type de profil regroupe les personnes utilisant de façon très fréquente le type de produit / service associé au projet ou inversement, ceux qui ne l'utilisent jamais.
 
 Le deuxième type de profil regroupe les utilisateurs les plus nombreux. L'objectif est de pouvoir interroger aussi bien des personnes appartenant au profil d'utilisateur extrême (grand utilisateur et faible utilisateur) que des personnes associées au profil d'utilisateur type.
 
@@ -72,9 +72,9 @@ Il faut donc lui expliquer qu'il doit parler de manière décomplexée et de la 
 
 Un autre point à aborder avant de rentrer dans le vif du sujet concerne les précisions sur les traces que vous allez conserver de cet entretien et la façon dont vous allez les utiliser par la suite. La plupart du temps, cela vous servira uniquement à titre personnel afin de synthétiser à posteriori votre échange. Faire signer une décharge serait judicieux afin de clarifier ce point.
 
-Tout est en place pour débuter votre entretien. Avant de rentrer dans le vif du sujet, il peut être intéressant de faire un petit *ice breaker* en lui demandant de se présenter et de dire ce qu'il fait dans la vie. Cela permettra à votre utilisateur de se mettre à l'aise et vous permettra de faire davantage connaissance avec lui et son profil.
+Tout est désormais en place pour débuter votre entretien. Avant de rentrer dans le vif du sujet, il peut être intéressant de faire un petit *ice breaker* en lui demandant de se présenter et de dire ce qu'il fait dans la vie. Cela permettra à votre utilisateur de se mettre à l'aise et vous permettra de faire davantage connaissance avec lui et son profil.
 
-## Construire ces questions
+## Construire ses questions
 ---
 
 On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de recueillir le maximum d'informations.
@@ -101,7 +101,7 @@ Là, il est certain que vous aurez un retour beaucoup plus riche!
 
 Il est important de poser des questions ouvertes mais cela n'empêche pas qu'elles doivent également être précises!
 Dans le cas contraire, vous risquez d'avoir des réponses confuses pouvant fausser votre analyse.
-Prenons un exemple sans non plus rentrer dans les détails. Imaginez que vous travaillez pour une salle de fitness qui vous contacte pour que vous l'aidiez à résoudre sa problématique de réabonnement. Vous allez donc rencontrer des utilisateurs de la salle. Afin de vous faire une idée sur le profil de l'utilisateur que vous interviewez, vous souhaitez obtenir une notion de fréquence *d'utilisation* du service proposé.
+Prenons un exemple sans rentrer dans les détails. Imaginez que vous travaillez pour une salle de fitness qui vous contacte pour que vous l'aidiez à résoudre sa problématique de réabonnement. Vous allez donc rencontrer des utilisateurs de la salle. Afin de vous faire une idée sur le profil de l'utilisateur que vous interviewez, vous souhaitez obtenir une notion de fréquence *d'utilisation* du service proposé.
 
 Si vous posez la question de cette façon:
 *- "Combien de fois par semaine en moyenne vous rendez-vous à la salle de sport?"*
@@ -109,7 +109,7 @@ Si vous posez la question de cette façon:
 Vous avez de fortes chances d'avoir une réponse de ce type:
 *- "Mmmmhhhh, 3 fois par semaine"*
 
-Du fait que vous demandez une moyenne, la réponse ne sera pas précise voir éloignée de la réalité. En effet, l'utilisateur va chercher à apporter une réponse à cette fameuse moyenne et il risque d'autant plus de gonfler la réponse en fonction des objectifs fixés initialement. Et soyons franc, qui ne connaît pas une personne qui se soit inscrite dans une salle de sport en Janvier (la fameuse bonne résolution) avec comme objectif de s'y rendre 4 fois par semaine mais qui finalement, à cause du froid, puis de la pluie, et aussi les collègues qui ont proposé d'aller boire une bière après le travail, et blablabla... finalement, n'y a jamais mis les pieds de sa vie?
+Du fait que vous demandez une moyenne, la réponse ne sera pas précise voir éloignée de la réalité. En effet, l'utilisateur va chercher à apporter une réponse à cette fameuse moyenne et il risque d'autant plus de gonfler la réponse en fonction des objectifs fixés initialement. Et soyons franc, qui ne connaît pas une personne qui se soit inscrite dans une salle de sport en Janvier (la fameuse bonne résolution) avec comme objectif de s'y rendre 4 fois par semaine mais qui finalement, à cause du froid, puis de la pluie, et aussi des collègues qui ont proposé d'aller boire une bière après le travail, et blablabla... finalement, n'y a jamais mis les pieds de sa vie?
 
 ![yeah gif](https://media.giphy.com/media/4KkSbPnZ5Skec/giphy.gif)
 
