@@ -3,3 +3,4 @@ __pycache__/
 output/
 themes/src
 pelican-plugins/liquid_tags
+pelican-plugins/pelican_comment_system
