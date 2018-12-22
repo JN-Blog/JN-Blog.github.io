@@ -19,7 +19,7 @@ Comme cet article constitue la quatrième partie d'un tutoriel dédié à la cr�
 5. [Utiliser Travis pour automatiser le déploiement de son blog statique]({filename}tuto_pelican_4_installer_travis.md)
 6. [Mettre en place un thème sur son blog statique Pelican]({filename}tuto_pelican_5_installer_theme.md)
 
-Nous verrons donc dans cet article comment installer Pelican et le configurer de manière basique. Nous écrirons également notre premier article et publirons notre blog en local.
+Nous verrons donc dans cet article comment installer Pelican et le configurer de manière basique. Nous écrirons également notre premier article et publierons notre blog en local.
 
 Maintenant que l'on sait ce que l'on va faire dans cet article, il est temps de débuter les hostilités.
 
@@ -33,7 +33,7 @@ git clone https://github.com/JN-Blog/tutoriel-pelican.git
 ```
 
 Il suffit de récupérer l'url de votre repository et remplacer l'url ci-dessous par la votre.
-Une fois le repository cloné, nous créeons la branche source qui sera notre branche principale de développement et nous nous positionnons dessus:
+Une fois le repository cloné, nous créons la branche source qui sera notre branche principale de développement et nous nous positionnons dessus:
 
 ```
 git checkout -b source
@@ -46,12 +46,12 @@ master
 * source
 ```
 
-L'asterix à côté de la branche source prouve que vous êtes positionné sur la bonne branche. Nous sommes désormais prêt à installer notre environnement de développement.
+L'asterix à côté de la branche source prouve que vous êtes positionné sur la bonne branche. Nous sommes désormais prêts à installer notre environnement de développement.
 
 ## Installer Python et créer son environnement virtuel
 ---
 
-Si vous n'avez pas encore installer Python sur votre ordinateur, il est temps de le faire désormais. Voici le lien officiel pour télécharger la dernier version: https://www.python.org/downloads/
+Si vous n'avez pas encore installer Python sur votre ordinateur, il est temps de le faire désormais. Voici le lien officiel pour télécharger la dernière version: https://www.python.org/downloads/
 
 Une fois installé, nous allons installer notre environnement virtuel à la racine de votre répertoire:
 
@@ -65,13 +65,13 @@ Une fois notre environnement virtuel installé, il ne nous reste plus qu'à l'ac
 source env/bin/activate
 ```
 
-Nous sommes désormais prêt à installer Pelican.
+Nous sommes désormais prêts à installer Pelican.
 
 ## Installer Pelican et Markdown
 ---
 
 Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
-Attention à bien avoir activer votre environnement virtuel au préalable.
+Attention à bien avoir activé votre environnement virtuel au préalable.
 
 ```
 pip install pelican
@@ -83,7 +83,7 @@ Et comme nous allons écrire en format Markdown, nous allons également l'instal
 pip install Markdown
 ```
 
-Et voilà, nous avons installer tous les éléments nécessaires pour créer notre blog statique.
+Et voilà, nous avons installé tous les éléments nécessaires pour créer notre blog statique.
 Et comme on aime bien les choses propres, nous allons dans un premier temps, créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:
 
 ```
@@ -124,7 +124,7 @@ output/
 ```
 
 Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).
-Nous sommes désormais prêt à créer notre projet Pelican.
+Il est temps désormais de créer notre projet Pelican.
 
 ## Créer un projet Pelican
 ---
@@ -141,7 +141,7 @@ pelican-quickstart
 Une fois lancé vous allez devoir répondre à une série de questions:
 
 1. Where do you want to create your new website? [.]
--> Taper .
+-> Tapez .
 
 2. What will be the tilte of this website?
 -> Indiquez le nom de votre blog. Pour le projet de ce tutoriel, il s'agit de tutoriel-pelican
@@ -211,7 +211,7 @@ Ce sont les fichiers de configurations du blog. pelicanconf.py est le fichier de
 ### Quelques ajustements sur pelicanconf.py
 
 Alors comment attaquer le morceau?
-Premièrement, je vous invite à prendre quelques minutes pour examiner la [documentation](http://docs.getpelican.com/en/stable/settings.html) et décourvir toutes les possibilités.
+Premièrement, je vous invite à prendre quelques minutes pour examiner la [documentation](http://docs.getpelican.com/en/stable/settings.html) et découvrir toutes les possibilités.
 
 En fonction des réponses aux questions, vous devez retrouver de votre côté un contenu similaire:
 
@@ -311,7 +311,7 @@ STATIC_PATHS = [
 ]
 ```
 
-cette variable contient une liste de répertoire par rapport au répertoire indiqué dans la variable ```PATH```, donc dans notre cas le répertoire *content*. Ces éléments seront copiés dans le répertoire *output* sans modification et pourront être utilisés en production. Par défault, Pelican inclus déjà le répertoire *images* mais c'est toujours bon de savoir comment faire!
+cette variable contient une liste de répertoire par rapport au répertoire indiqué dans la variable ```PATH```, donc dans notre cas le répertoire *content*. Ces éléments seront copiés dans le répertoire *output* sans modification et pourront être utilisés en production. Par défaut, Pelican inclus déjà le répertoire *images* mais c'est toujours bon de savoir comment faire!
 
 Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire *output*. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
 Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
@@ -344,7 +344,7 @@ EXTRA_PATH_METADATA = {
 ```
 
 Petits bonus:
-* Si vous ne connaissez par très bien le fonctionnement d'un fichier robots.txt mais que vous souhaitez être référencé sur l'ensemble des moteurs, voici la configuration:
+* Si vous ne connaissez pas très bien le fonctionnement d'un fichier robots.txt mais que vous souhaitez être référencé sur l'ensemble des moteurs, voici la configuration:
 ```
 User-agent: *
 Disallow: 
@@ -374,7 +374,7 @@ En nous rendant à l'adresse ```http://localhost:8000/```, il est désormais pos
 
 ![publication du site en local]({filename}/images/tuto-pelican-local-site.png)
 
-## Créer notre premier articles
+## Créer notre premier article
 ---
 
 Voyons désormais comment écrire un article.
@@ -404,16 +404,16 @@ Authors: Julien Nuellas
 Summary: Premier article sur blog tutoriel pelican
 ```
 
-Cela permet à Pelican de récupérer les informations nécessaires pour le traîtement. En détaillant un peu, on a:
+Cela permet à Pelican de récupérer les informations nécessaires pour le traitement. En détaillant un peu, on a:
 
-* la date de l'article
-* la dernière date de modification de l'article
-* la catégorie associée à l'article
-* les tags associés à l'article
-* le slug qui permettra d'alimenter l'url de la page de l'article
-* la langue dans laquelle l'article sera écrit
-* l'auteur de l'article
-* une brève description de l'article
+* La date de l'article
+* La dernière date de modification de l'article
+* La catégorie associée à l'article
+* Les tags associés à l'article
+* Le slug qui permettra d'alimenter l'url de la page de l'article
+* La langue dans laquelle l'article sera écrit
+* L'auteur de l'article
+* Une brève description de l'article
 
 Pour plus d'informations, n'hésitez pas à aller explorer la [documentation](http://docs.getpelican.com/en/stable/content.html).
 
@@ -456,7 +456,7 @@ Dans cet article, nous avons vu beaucoup de choses:
 A ce stade du tutoriel, il nous reste encore deux choses importantes à voir:
 
 * Comment déployer notre site en production sur github pages.
-* Comment installer un thème. En effet, le thème de base ne vous convient peut être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.
+* Comment installer un thème. En effet, le thème de base ne vous convient peut-être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.
 
 Alors commençons par voir comment déployer notre site en production dans le prochain article du tutoriel:
 

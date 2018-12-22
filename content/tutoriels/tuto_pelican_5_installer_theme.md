@@ -28,7 +28,7 @@ Dans cet article, nous verrons donc où trouver le thème de nos rêves et verro
 Il existe de nombreux thèmes pour Pelican et il y a de fortes chances que vous trouviez votre bonheur.
 
 Il est possible de les visualiser sur le site [www.pelicanthemes.com](http://www.pelicanthemes.com/).
-Chaque thème contient une petite description ainsi qu'un imprim écran permettant d'obtenir un aperçu.
+Chaque thème contient une petite description ainsi qu'un imprime écran permettant d'obtenir un aperçu.
 Et bien évidemment, chaque thème présenté contient un lien vers son repository github.
 
 Il existe également un repository github contenant l'ensemble des codes sources des [thèmes pelican](https://github.com/getpelican/pelican-themes).
@@ -38,7 +38,7 @@ Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.
 ## Préparer son projet à recevoir un thème
 ---
 
-Il existe plusieurs façon d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire *themes* du projet source.
+Il existe plusieurs façons d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire *themes* du projet source.
 Pourquoi? Je trouve ce choix intéressant pour trois raisons:
 
 * Le thème est directement lié au projet
@@ -92,7 +92,7 @@ git clone https://github.com/jody-frankowski/blue-penguin.git themes/src
 
 Le thème est désormais installé au sein du répertoire **src**.
 
-Pour le moment, nous n'allons pas apporter de modifications sur ce thèmes et nous l'utiliserons tel quel. Nous pouvons donc simplement copier les fichiers au sein du répertoire **dist**:
+Pour le moment, nous n'allons pas apporter de modifications sur ce thème et nous l'utiliserons tel quel. Nous pouvons donc simplement copier les fichiers au sein du répertoire **dist**:
 
 ```
 cp -a themes/src/* themes/dist
@@ -124,7 +124,7 @@ Il ne reste plus qu'un petit déploiement afin de tout envoyer sur l'environneme
 ---
 
 J'espère que ces articles vous ont intéressés.
-Nous avons vu ensemble au travers de ces articles et de ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com) comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.
+Nous avons vu ensemble au travers de ces articles et de ce [projet fil rouge](https://tutoriel-pelican.jn-blog.com)  comment mettre en place un blog statique en utilisant **Pelican** comme générateur de sites statiques, **Github Pages** pour l'hébergement et **Travis CI** pour l'automatisation du déploiement.
 
 N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir les partager.
 
