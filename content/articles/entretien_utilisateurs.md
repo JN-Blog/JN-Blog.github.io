@@ -22,7 +22,7 @@ Lorsque que l'on décide de réaliser des entretiens utilisateurs, la première 
 
 ### Faites plusieurs entretiens
 
-Pour recueillir des informations essentielles dans cette phase, il ne faut pas s'arrêter à un seul entretien. En effet, le but de cette étape est de recueillir des points de vues personnels en collectant des impressions, en identifiant des comportements et des attitudes. 
+Pour recueillir des informations essentielles dans cette phase, il ne faut pas s'arrêter à un seul entretien. En effet, le but de cette étape est de recueillir des points de vue personnels en collectant des impressions, en identifiant des comportements et des attitudes. 
 
 C'est pour cela qu'il est judicieux de réaliser **entre 5 et 10 entretiens** tout **en faisant varier les profils**. Cela vous permettra d'avoir des éléments variés et précis qui vous permettront d'établir vos **personas** par la suite.
 
@@ -37,11 +37,11 @@ Le deuxième type de profil regroupe les utilisateurs les plus nombreux. L'objec
 
 ### Durée des entretiens
 
-L'idée est de pouvoir mener des entretiens sur **une durée de 30 à 45 minutes**. En dessous de cette durée, vous risquez de passez à côté d'informations précieuses. Au dessus et cela risque de devenir un calvère pour votre utilisateur. De plus, son niveau de concentration et de motivation diminuera exponentiellement passé cette durée.
+L'idée est de pouvoir mener des entretiens sur **une durée de 30 à 45 minutes**. En dessous de cette durée, vous risquez de passer à côté d'informations précieuses. Au-delà et cela risque de devenir un calvaire pour votre utilisateur. De plus, son niveau de concentration et de motivation diminuera exponentiellement une fois cette durée dépassée.
 
 ### Garder une trace des entretiens
 
-Essayez de filmer ou du moins enregistrer vos entretiens. Cela vous apportera deux principaux avantages:
+Essayez de filmer ou du moins enregistrer vos entretiens. Cela vous apportera deux principaux avantages :
 
 1. Cela vous permettra d'analyser calmement avec le temps nécessaire les différents entretiens afin d'en ressortir les éléments principaux
 
@@ -77,14 +77,14 @@ Tout est en place pour débuter votre entretien. Avant de rentrer dans le vif du
 ## Construire ces questions
 ---
 
-On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de receuillir le maximum d'informations.
+On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de recueillir le maximum d'informations.
 
 ### Posez des questions ouvertes
 
 Evitez toutes les questions permettant à l'utilisateur de répondre par oui ou par non. en effet, la majorité du temps, vous n'obtiendrez rien de plus qu'un oui ou un non... Et ce n'est pas avec ces réponses que vous allez identifier des besoins.
 De plus, les questions fermées peuvent de temps à autre influencer la réponse:
 
-*- "Pensez-vous que l'expérience utilisateur pourrait être amélioré?"*
+*- "Pensez-vous que l'expérience utilisateur pourrait être améliorée ?"*
 *- "Oui"*
 
 ![yeah gif](https://media.giphy.com/media/l4KhSYoul5j8i3su4/giphy.gif)
@@ -121,7 +121,7 @@ Là vous avez plus de chances d'avoir une réponse précise du type:
 
 *-"La semaine dernière, je n'y suis allé qu'une seule fois. Mais dans l'idéal, j'y vais 3 fois par semaine même si en ce moment j'ai un peu de mal de dépasser les deux séances par semaine. Le problème, c'est que moi je me suis inscrit à cette salle pour les cours de Bodycombat mais les horaires d'hiver ne me conviennent pas. C'est beaucoup trop tôt. La plupart du temps, je sors trop tard du travail surtout qu'en ce moment, c'est un peu la course avec la clôture de l'année fiscale..."*
 
-C'est quand même plus intéressant comme réponse vous ne trouvez pas? En effet, des questions précises vous apporterons souvent davantage de matière. Dans cet exemple, il a suffit d'indiquer un **indicateur de temps**.
+C'est quand même plus intéressant comme réponse vous ne trouvez pas? En effet, des questions précises vous apporterons souvent davantage de matière. Dans cet exemple, il a suffi d'indiquer un **indicateur de temps**.
 
 N'hésitez pas à soumettre des ressources également si cela s'avère judicieux. Cela peut être un prototype dans le cadre d'un test utilisateur. Dans ce cas là, vos questions devront être précises quant à l'objectif à réaliser mais ne devront pas décrire les étapes pour aboutir à celui-ci. Prenons l'exemple d'un prototype servant à tester le processus d'inscription sur un site. Voici une idée de question adaptée:
 
@@ -131,9 +131,9 @@ Cette question indique l'objectif à réaliser sans pour autant influencer l'uti
 
 ### Laissez le temps de répondre
 
-Culturellement, nous sommes mal à l'aise par les moments de blanc dans une conversation. On se sent vite obligé d'essayer de le combler. Ici, ne le faîtes pas! Retenez-vous. En effet, laissez un temps de réflexion à la personne pour qu'elle puisse vraiment tout vous livrer. La plupart du temps, lorsque vous poserez une question, la personne interviewée vour répondra d'abord ce qui lui passe par la tête sans digérer au préalable la question pour essayer de la structurer. Et c'est très bien! Cependant, donnez-lui également le temps de réflechir plus posément. En règle général, vous constaterez que ce blanc lui offrira l'opportunité d'apporter des précisions et des justifications à ce qu'elle vient de dire.
+Culturellement, nous sommes mal à l'aise par les moments de blanc dans une conversation. On se sent vite obligé d'essayer de le combler. Ici, ne le faîtes pas! Retenez-vous. En effet, laissez un temps de réflexion à la personne pour qu'elle puisse vraiment tout vous livrer. La plupart du temps, lorsque vous poserez une question, la personne interviewée vour répondra d'abord ce qui lui passe par la tête sans digérer au préalable la question pour essayer de la structurer. Et c'est très bien! Cependant, donnez-lui également le temps de réfléchir plus posément. En règle générale, vous constaterez que ce blanc lui offrira l'opportunité d'apporter des précisions et des justifications à ce qu'elle vient de dire.
 
-Dans la même idée, **ne coupez jamais la parole** mais au contraire, soyez attentif à ses réponses sans jamais les interpréter. Restez au même niveau que l'utilisateur. C'est essentiel afin de receuillir le maximum d'informations viables. Cela permet de créer une certaine complicité et favorise les confidences.
+Dans la même idée, **ne coupez jamais la parole** mais au contraire, soyez attentif à ses réponses sans jamais les interpréter. Restez au même niveau que l'utilisateur. C'est essentiel afin de receillir le maximum d'informations viables. Cela permet de créer une certaine complicité et favorise les confidences.
 
 ### Demandez des retours d'expérience
 
