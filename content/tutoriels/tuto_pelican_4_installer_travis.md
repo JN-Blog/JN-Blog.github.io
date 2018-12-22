@@ -23,13 +23,13 @@ Dans cet article, nous nous attacherons à configurer Travis CI afin que ce dern
 
 **Travis CI** est un logiciel pour mettre en place de l'[intégration continue](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue). Il permet de compiler, tester et déployer un code source.
 
-La mise en place se déroulera en cing principales étapes:
+La mise en place se déroulera en cinq principales étapes:
 
 1. Mettre à jour le fichier publishconf.py
 2. Nous allons activer Travis CI sur le repository Git Hub
 3. Nous allons faire quelques petites modifications dans le fichier Makefile
 4. Ensuite, nous intègrerons le fichier .travis.yml au sein du projet
-5. Et enfin, nous vérifirons que tout fonctionne correctement
+5. Et enfin, nous vérifierons que tout fonctionne correctement
 
 ## Mettre à jour le fichier publishconf.py
 ---
@@ -69,7 +69,7 @@ DELETE_OUTPUT_DIRECTORY = True
 Comme expliqué auparavant, le fichier reprend les configurations présentes dans le fichier pelicanconf.py et va surcharger ce dernier. Il va notamment activer automatiquement la génération des flux ATOM et changer la prise en charge des urls. Au lieu de se baser sur une approche relative, il va récupérer le nom de domaine indiqué dans la variable **SITEURL**
 Il y a également des variables pour contenir les informations contenant la mise en place de Google Analytics et le système de commentaires via Disqus. Ces sujets pourront faire l'objet d'un autre article si cela vous intéresse. N'hésitez pas à le préciser dans les commentaires.
 
-Pour le déploiement, la seule modification que nous allons apporter concerne la variable SITEURL. Nous avons en effet activer le protocole https dans github pages et il est important de le rappeler ici sinon cela risque de créer certains problèmes lors de la récupérations d'éléments au moment du chargement (notamment les fichiers statiques). Modifions donc la variable de cette façon:
+Pour le déploiement, la seule modification que nous allons apporter concerne la variable SITEURL. Nous avons en effet activé le protocole https dans github pages et il est important de le rappeler ici sinon cela risque de créer certains problèmes lors de la récupérations d'éléments au moment du chargement (notamment les fichiers statiques). Modifions donc la variable de cette façon:
 
 ```python
 SITEURL = 'https://tutoriel-pelican.jn-blog.com'
@@ -144,7 +144,7 @@ Sans rentrer dans les détails, la commande va utiliser le module [ghp-import](h
 ## Création du fichier .travis.yml
 ---
 
-Le dernière étape consite à créer le fichier **.travis.yml** à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.
+Le dernière étape consiste à créer le fichier **.travis.yml** à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.
 
 Voici les indications que doit contenir le fichier:
 
