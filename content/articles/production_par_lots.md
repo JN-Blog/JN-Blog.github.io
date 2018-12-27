@@ -6,6 +6,7 @@ Tags: lean
 Slug: produire-par-petits-lots
 Lang: fr
 Authors: Julien Nuellas
+Cover: /images/img_summary_production_par_petits_lots.jpg
 Summary: Eric Ries, l'auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. A partir d'un exemple assez simple, j'ai tenté d'exprimer tout l'intérêt de ce type de production.
 
 Au sein de votre environnement de travail, on vous demande d'adopter une approche agile, de gérer le cycle de vie d'un produit de façon itérative, d'aborder le développement dans un processus d'intégration continue, ou encore de définir les prochaines fonctionnalités à intégrer dans le MVP. Ces missions décrivent l'organisation de beaucoup d'entreprises et au-delà d'être passionnantes, elles ont également du sens. Elles s'articulent autour de méthodologies et système organisationnels précis.

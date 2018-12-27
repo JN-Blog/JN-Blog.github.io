@@ -12,6 +12,9 @@
 
 {% block content %}
 <article class="single">
+  <div>
+      {% if article.cover %}<img src="{{ article.cover }}" alt="">{% endif %}
+  </div>
   <header>
     {% if not ARTICLE_HIDE_TRANSLATION %}
       {% import 'partial/translations.html' as translations with context %}
@@ -31,7 +34,7 @@
     </p>
     {% include "partial/share_post.html" %}
   </header>
-
+  
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle ads-responsive"
@@ -41,7 +44,6 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   {% endif %}
-
   <div>
     {{ article.content }}
   </div>

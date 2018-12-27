@@ -6,6 +6,7 @@ Tags: agile, UX
 Slug: reussir-ses-entretiens-utilisateurs
 Lang: fr
 Authors: Julien Nuellas
+Cover: /images/img_summary_reussir_ses°entretiens_utilisateurs.jpg
 Summary: Les entretiens utilisateurs sont une étapes importantes lorsque vous commencez à travailler sur un projet. Bien mené, ils vous permettront d'identifier des besoins dont vous n'avez pas connaissance au préalable. L'objectif de cet article est de fournir un cadre afin de pouvoir construire ces entretiens utilisateurs.
 
 Lorsque vous démarrez un projet de conception ou de refonte produit (informatique ou autre), il est primordial d'avoir une bonne compréhension des besoins utilisateurs. Cela permet d'avoir une vision globale du projet et aide à fixer un cap à ce dernier.
