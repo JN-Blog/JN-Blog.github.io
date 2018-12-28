@@ -17,8 +17,15 @@ class SocialButton {
 }
 
 // Initialization
-window.onload = () => {
-    const facebook = new SocialButton("facebook");
-    const twitter = new SocialButton("twitter");
-    const linkedin = new SocialButton("linkedin");
+const url = new URL(document.location.href);
+const pathRegex = /^\/articles\/.*\/$/
+
+if (pathRegex.test(url.pathname)) {
+    window.onload = () => {
+        const facebook = new SocialButton("facebook");
+        const twitter = new SocialButton("twitter");
+        const linkedin = new SocialButton("linkedin");
+    }    
 }
+
+
