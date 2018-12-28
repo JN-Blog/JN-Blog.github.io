@@ -4,10 +4,10 @@ class SocialButton {
         this.name = name;
         this.button = document.getElementById(this.name);
         this.socialTarget = document.location.href;
-        this.trackShareAction(this.name);
+        this.trackShareAction(this.button, this.name);
     }
 
-    trackShareAction(name) {
+    trackShareAction(buttonElt, name) {
         buttonElt.addEventListener("click", () => {
             gtag('event', 'share', {
                 engagement : 'engagement_' + name, 
