@@ -4,22 +4,21 @@ class SocialButton {
         this.name = name;
         this.button = document.getElementById(this.name);
         this.socialTarget = document.location.href;
-        this.trackShareAction(this.button);
+        this.trackShareAction(this.name);
     }
 
-    trackShareAction(buttonElt) {
+    trackShareAction(name) {
         buttonElt.addEventListener("click", () => {
-            gtag('event', 'share')
-            gtag('event', 'social_share', {
-                'event_category': buttonElt.name,
-                'event_label': document.location.href
-            })
+            gtag('event', 'share', {
+                engagement : 'engagement_' + name, 
+                method : document.location.href})
         });
     }
 }
 
 // Initialization
-
-const facebook = new SocialButton("facebook");
-const twitter = new SocialButton("twitter");
-const linkedin = new SocialButton("linkedin");
+window.onload = () => {
+    const facebook = new SocialButton("facebook");
+    const twitter = new SocialButton("twitter");
+    const linkedin = new SocialButton("linkedin");
+}
