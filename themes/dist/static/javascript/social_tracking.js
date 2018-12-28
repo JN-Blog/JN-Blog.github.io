@@ -9,14 +9,13 @@ class SocialButton {
 
     trackShareAction(buttonElt) {
         buttonElt.addEventListener("click", () => {
-            ga('send', 'social', {
-                socialNetwork: buttonElt.name,
-                socialAction: 'Share',
-                socialTarget: document.location.href
-              });
+            gtag('event', 'share')
+            gtag('event', 'social_share', {
+                'event_category': buttonElt.name,
+                'event_label': document.location.href
+            })
         });
     }
-
 }
 
 // Initialization
