@@ -9,9 +9,7 @@ class SocialButton {
 
     trackShareAction(buttonElt, name) {
         buttonElt.addEventListener("click", () => {
-            gtag('event', 'share', {
-                engagement : 'engagement_' + name, 
-                method : document.location.href})
+            gtag('event', 'share', {method : name})
         });
     }
 }
