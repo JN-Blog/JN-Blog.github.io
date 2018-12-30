@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Vous avez envie de créer un blog et vous êtes tenté par la solution du blog statique? Alors ce tutoriel est fait pour vous." />
+<meta name="keywords" content="tutoriels">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Mettre en place un blog statique avec Pelican"/>
+<meta property="og:description" content="Vous avez envie de créer un blog et vous êtes tenté par la solution du blog statique? Alors ce tutoriel est fait pour vous."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-10-26 00:00:00+02:00"/>
+<meta property="article:modified_time" content="2018-10-26 00:00:00+02:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="tutoriels"/>
+<meta property="article:tag" content="tutoriels"/>
+<meta property="og:image" content="">
+
+  <title>ProductMakers &ndash; Mettre en place un blog statique avec Pelican</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+  </div>
+  <header>
+      
+    <h1 id="tutoriel-creer-un-blog-statique">Mettre en place un blog statique avec Pelican</h1>
+    <p>
+      <!-- Posté le 26/10/2018 dans <a href="https://www.productmakers.fr/categorie/tutoriels/">tutoriels</a> -->
+      
+      26/10/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Mettre%20en%20place%20un%20blog%20statique%20avec%20Pelican&url=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/&title=Mettre%20en%20place%20un%20blog%20statique%20avec%20Pelican&summary=Vous%20avez%20envie%20de%20cr%C3%A9er%20un%20blog%20et%20vous%20%C3%AAtes%20tent%C3%A9%20par%20la%20solution%20du%20blog%20statique%3F%20Alors%20ce%20tutoriel%20est%20fait%20pour%20vous.&source=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>A travers ce tutoriel, je souhaite partager mon expérience suite à la mise en place de mon blog statique. En effet, j'ai créé ce blog dans l'idée d'en faire une base d'échange, de partage d'expérience, de connaissances et il paraît donc logique que le premier tutoriel de ce blog traite du sujet de la mise en place d'un blog statique.</p>
+<p><img alt="gif ça fait sens" src="https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif"></p>
+<p>Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérience dans la section <em>commentaires</em>.
+Et j'insiste sur le fait que je ne prétends pas avoir la solution ultime (existe-t-elle vraiment finalement?) mais une solution pertinente par rapport à des objectifs définis.</p>
+<h2>Objectifs du tutoriel</h2>
+<hr>
+<p>Alors justement, que va couvrir ce tutoriel?
+L'objectif de ce dernier est de structurer les différentes étapes liées à la mise en place d'un blog statique et proposer un workflow facile et fiable dans le temps. Pour cela, je vais vous proposer de travailler avec trois principaux outils:</p>
+<ul>
+<li><a href="http://docs.getpelican.com/en/stable/">Pelican</a> comme générateur de sites statiques</li>
+<li><a href="https://pages.github.com/">GitHub Pages</a> pour l'hébergement</li>
+<li><a href="https://travis-ci.org/">Travis CI</a> pour automatiser le déploiement</li>
+</ul>
+<p>Le premier avantage à tout ça, vous pouvez créer un blog <strong>gratuitement</strong> sans dépenser un seul euro. Elle est pas belle la vie? A la limite, la seule dépense qui peut vous intéresser est l'achat de votre propre nom de domaine (ce qui représente environ 15 euros par an).</p>
+<h2>Quels sont les pré-requis?</h2>
+<hr>
+<p>Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore côtoyés le monde du développement. Il n'y a rien d'inaccessible et de compliqué mais il faut avoir une certaine curiosité pour l'univers du développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif principal:</p>
+<ul>
+<li>Utilisation de lignes de commandes</li>
+<li>Utilisation de git et GitHub</li>
+<li>Mise en place d'un environnement Python</li>
+<li>Mise en place de Travis CI pour automatiser le déploiement</li>
+</ul>
+<p>Alors, prêt pour l'aventure?</p>
+<h2>Un projet fil rouge</h2>
+<hr>
+<p>Tout au long de ce tutoriel, nous allons créer pas à pas un blog. Cela permettra d'ajouter du contexte et du concret aux différentes actions qui seront entreprises. Ce blog va s'appeler <strong>Tutoriel Pelican</strong> et est accessible à l'adresse suivante: <a href="https://tutoriel-pelican.jn-blog.com">https://tutoriel-pelican.jn-blog.com</a>.</p>
+<p>Vous pouvez d'ores et déjà vous y rendre, cela vous permettra de voir ce à quoi nous allons aboutir à la fin.</p>
+<p>Mais avant de rentrer directement dans le vif du sujet, voici comment nous allons procéder. Ce tutoriel comportera différents articles selon le schéma suivant:</p>
+<h2>1. <a href="https://www.productmakers.fr/articles/explication-blog-statique/">Un blog statique, c'est quoi? Et pourquoi choisir cette solution?</a></h2>
+<hr>
+<p>Effectivement, on ne va pas rentrer dans le dur avant de comprendre ce qu'est un site statique et de savoir quels sont ses avantages et ses inconvénients. Ca serait dommage de vous rendre compte à la fin, après avoir tout mis en place que finalement, le blog statique n'est pas la situation idéale dans votre cas.
+J'en profiterai également pour vous présenter <strong>Pelican</strong>  plus particulièrement car c'est ce dernier que nous utiliserons.</p>
+<h2>2. <a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Mettre en place son repository GitHub Pages</a></h2>
+<hr>
+<p>La seconde partie de ce tutoriel évoquera la mise en place du repository <strong>GitHub Pages</strong>. Je vous présenterai:</p>
+<ul>
+<li>Ce qu'est <strong>GitHub Pages</strong> en quelques lignes.</li>
+<li>La logique de fonctionnement que nous allons utiliser pour gérer le blog</li>
+<li>La configuration du repository.</li>
+<li>La mise en place d'un nom de domaine.</li>
+</ul>
+<h2>3. <a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/">Installer Pelican</a></h2>
+<hr>
+<p>On va ensuite rentrer dans le vif du sujet et installer Pelican au sein de notre environnement de travail. On en profitera pour mettre en place les configurations basiques que j'ai jugé pertinentes. Il ne s'agit pas encore une fois de la seule façon de procéder et vous découvrirez avec le temps que Pelican offre de nombreuses possibilités en termes de configuration. L'idée ici est de partir d'une base simple et fonctionnelle.
+On écrira même un premier article que nous déploierons en local afin de vérifier que tout fonctionne correctement.</p>
+<h2>4. <a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/">Mise en place de Travis et du workflow de déploiement</a></h2>
+<hr>
+<p>L'étape suivante consistera à mettre en place le déploiement automatisé avec <strong>Travis</strong>. L'objectif étant qu'à chaque fois que vous écrirez un nouvel article et que vous souhaiterez le publier, vous n'aurez qu'à pousser votre projet sur GitHub, puis historiser la publication via une pull request (pour conserver un certain historique). Travis se chargera de tester le projet et déploiera la nouvelle version du blog si tout se passe bien.</p>
+<h2>5. <a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/">Mettre en place un thème Pelican</a></h2>
+<hr>
+<p>A ce stade, le blog sera fonctionnel et la plus grande partie du travail aura été effectuée. Il ne restera plus qu'à styliser un peu le blog. Pour cela, nous verrons comment installer l'un des nombreux thèmes disponibles. Une fois ce sujet couvert, vous aurez vu l'ensemble des points qui vous permettra de mettre en place votre propre blog statique.</p>
+<p>Bien sûr, ce tutoriel va s'enrichir avec le temps et de nouveaux chapitres verront le jour. Vous découvrirez ainsi comment mettre en place un système de commentaires, ou encore mettre en place Google Analytics afin de suivre les performances et la popularité de votre blog. Et puis, finalement ce tutoriel évoluera également en fonction de vos questions et besoins. Alors n'hésitez pas à écrire des commentaires afin d'avoir vos retours sur ce dernier. Cela me permettra d'affiner le contenu suite à votre retour d'expérience.</p>
+<p>Prêt pour la suite? Allez, c'est par ici:</p>
+<p><a href="https://www.productmakers.fr/articles/explication-blog-statique/">Comprendre ce qu'est un blog statique</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/tutoriels/">tutoriels</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Mettre%20en%20place%20un%20blog%20statique%20avec%20Pelican&url=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/&title=Mettre%20en%20place%20un%20blog%20statique%20avec%20Pelican&summary=Vous%20avez%20envie%20de%20cr%C3%A9er%20un%20blog%20et%20vous%20%C3%AAtes%20tent%C3%A9%20par%20la%20solution%20du%20blog%20statique%3F%20Alors%20ce%20tutoriel%20est%20fait%20pour%20vous.&source=https%3A//www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

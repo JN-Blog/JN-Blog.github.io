@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Découvrez comment installer un thème sur son blog Pelican" />
+<meta name="keywords" content="tutoriels">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Installer un thème sur son blog statique Pelican"/>
+<meta property="og:description" content="Découvrez comment installer un thème sur son blog Pelican"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/installer-un-theme-pelican/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-11-18 00:00:00+01:00"/>
+<meta property="article:modified_time" content="2018-11-18 00:00:00+01:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="tutoriels"/>
+<meta property="article:tag" content="tutoriels"/>
+<meta property="og:image" content="">
+
+  <title>ProductMakers &ndash; Installer un thème sur son blog statique Pelican</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+  </div>
+  <header>
+      
+    <h1 id="installer-un-theme-pelican">Installer un thème sur son blog statique Pelican</h1>
+    <p>
+      <!-- Posté le 18/11/2018 dans <a href="https://www.productmakers.fr/categorie/tutoriels/">tutoriels</a> -->
+      
+      18/11/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Installer%20un%20th%C3%A8me%20sur%20son%20blog%20statique%20Pelican&url=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/&title=Installer%20un%20th%C3%A8me%20sur%20son%20blog%20statique%20Pelican&summary=D%C3%A9couvrez%20comment%20installer%20un%20th%C3%A8me%20sur%20son%20blog%20Pelican&source=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Notre blog est désormais installé et déployé et il est désormais possible d'écrire tous les articles souhaités.
+Seulement, le thème principal n'est pas vraiment attractif et il serait sympa d'avoir la possibilité de le changer. C'est ce que nous allons découvrir dans cet article.</p>
+<p>Il s'agit du sixième article d'un tutoriel dédié à la mise en place d'un blog statique. Dans cette logique, je me permets d'en rappeler la structure globale:</p>
+<ol>
+<li><a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/">Présentation du tutoriel et de ces objectifs</a></li>
+<li><a href="https://www.productmakers.fr/articles/explication-blog-statique/">Un blog statique, c'est quoi et comment ça fonctionne?</a></li>
+<li><a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Mettre en place GitHub Pages pour l'hébergement d'un blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/">Utiliser Pelican pour son blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/">Utiliser Travis pour automatiser le déploiement de son blog statique</a></li>
+<li><strong>Mettre en place un thème sur son blog statique Pelican</strong></li>
+</ol>
+<p>Dans cet article, nous verrons donc où trouver le thème de nos rêves et verrons une façon simple d'en mettre un en place.</p>
+<h2>Ou trouver un thème Pelican</h2>
+<hr>
+<p>Il existe de nombreux thèmes pour Pelican et il y a de fortes chances que vous trouviez votre bonheur.</p>
+<p>Il est possible de les visualiser sur le site <a href="http://www.pelicanthemes.com/">www.pelicanthemes.com</a>.
+Chaque thème contient une petite description ainsi qu'un imprime écran permettant d'obtenir un aperçu.
+Et bien évidemment, chaque thème présenté contient un lien vers son repository github.</p>
+<p>Il existe également un repository github contenant l'ensemble des codes sources des <a href="https://github.com/getpelican/pelican-themes">thèmes pelican</a>.</p>
+<p>Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.</p>
+<h2>Préparer son projet à recevoir un thème</h2>
+<hr>
+<p>Il existe plusieurs façons d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire <em>themes</em> du projet source.
+Pourquoi? Je trouve ce choix intéressant pour trois raisons:</p>
+<ul>
+<li>Le thème est directement lié au projet</li>
+<li>Il est possible d'en installer plusieurs, de supprimer ou d'en ajouter un facilement</li>
+<li>Il est possible de personnaliser au fur et à mesure le thème sélectionné</li>
+</ul>
+<p>Voyons comment procéder désormais.</p>
+<h3>Création du répertoire thème</h3>
+<p>La première chose à faire est de créer le répertoire <em>themes</em> à la racine du projet. Au sein de ce répertoire, nous allons créer deux répertoires supplémentaires, <strong>dist</strong> et <strong>src</strong>.</p>
+<div class="highlight"><pre><span></span>themes/
+    |- dist/
+    |- src/
+</pre></div>
+
+
+<p>Le répertoire <strong>dist</strong> contiendra les fichiers qui seront utilisés lors du déploiement tandis que le répertoire <strong>src</strong> contiendra les fichiers sources du thème téléchargé sur lesquels il sera possible d'apporter des modifications et de tester avant de répliquer les fichiers sur le répertoire <strong>dist</strong>.</p>
+<p>Dans cette logique, il n'est pas nécessaire de versionner le répertoire <strong>src</strong>. Ajoutons donc ce répertoire au sein du fichier .gitignore:</p>
+<div class="highlight"><pre><span></span>...
+themes/src
+</pre></div>
+
+
+<h3>Ajoutons quelques modifications sur le fichier pelicanconf.py</h3>
+<p>Il est maintenant nécessaire d'indiquer à Pelican l'endroit où il devra récupérer le thème.
+Pour faire cela, il suffit juste de rajouter une variable <code>THEME</code> au sein du fichier <strong>pelicanconf.py</strong> et d'y indiquer le chemin:</p>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">&quot;themes/dist&quot;</span>
+</pre></div>
+
+
+<p>Et voilà, le projet est prêt à recevoir notre thème.</p>
+<h2>Installer un thème sur notre blog statique</h2>
+<hr>
+<h3>Cloner le code source du thème choisi</h3>
+<p>Pour le blog <strong>tutoriel pelican</strong>, mon choix s'est porté sur le thème <a href="https://github.com/jody-frankowski/blue-penguin/tree/c5e23e7753367b5beacce87b732cd1567c4818f9">blue-penguin</a>.</p>
+<p>La première étape consiste à cloner le code source du thème au sein du répertoire <strong>src</strong>/</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/jody-frankowski/blue-penguin.git themes/src
+</pre></div>
+
+
+<p>Le thème est désormais installé au sein du répertoire <strong>src</strong>.</p>
+<p>Pour le moment, nous n'allons pas apporter de modifications sur ce thème et nous l'utiliserons tel quel. Nous pouvons donc simplement copier les fichiers au sein du répertoire <strong>dist</strong>:</p>
+<div class="highlight"><pre><span></span>cp -a themes/src/* themes/dist
+</pre></div>
+
+
+<p>Il suffit désormais de lancer votre thème en local pour vous apercevoir que votre blog n'a plus la même apparence.</p>
+<h3>Ajouter les paramétrages nécessaires</h3>
+<p>Le fait d'avoir lancé le site en local nous a permis de constater que ce nouveau thème a bien été pris en compte.</p>
+<p>En lisant le README du repository, on s'aperçoit qu'il est possible d'ajouter quelques configurations afin de personnaliser notamment le menu.
+Pour ma part, je rajoute uniquement la variable <strong>MENUITEMS</strong> permettant de rajouter les liens vers ce blog et vers la documentation Pelican au sein du menu.</p>
+<div class="highlight"><pre><span></span><span class="n">MENUITEMS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;JN-Blog&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.jn-blog.com/&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Docs Pelican&#39;</span><span class="p">,</span> <span class="s1">&#39;http://docs.getpelican.com/en/stable/&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Libre à vous d'apporter les modifications que vous souhaitez. Chaque thème comporte son lot de modifications afin de proposer la meilleure expérience possible.
+Le thème est désormais installé et correctement paramétré. La structure mis en place permet de modifier et personnaliser facilement le thème.
+Il ne reste plus qu'un petit déploiement afin de tout envoyer sur l'environnement de production.</p>
+<p><img alt="deploiement d'un theme pelican" src="https://www.productmakers.fr/images/tuto-pelican-theme-production.png"></p>
+<h2>Un dernier mot pour la route</h2>
+<hr>
+<p>J'espère que ces articles vous ont intéressés.
+Nous avons vu ensemble au travers de ces articles et de ce <a href="https://tutoriel-pelican.jn-blog.com">projet fil rouge</a>  comment mettre en place un blog statique en utilisant <strong>Pelican</strong> comme générateur de sites statiques, <strong>Github Pages</strong> pour l'hébergement et <strong>Travis CI</strong> pour l'automatisation du déploiement.</p>
+<p>N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir les partager.</p>
+<p>Si vous souhaitez également d'autres articles sur ce sujet comme par exemple mettre en place un système de commentaires, n'hésitez à me le notifier.</p>
+<p>Il ne me reste plus qu'à vous souhaiter une bonne aventure en tant que bloggueur et j'espère avoir l'occasion de vous lire prochainement!</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/tutoriels/">tutoriels</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Installer%20un%20th%C3%A8me%20sur%20son%20blog%20statique%20Pelican&url=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/&title=Installer%20un%20th%C3%A8me%20sur%20son%20blog%20statique%20Pelican&summary=D%C3%A9couvrez%20comment%20installer%20un%20th%C3%A8me%20sur%20son%20blog%20Pelican&source=https%3A//www.productmakers.fr/articles/installer-un-theme-pelican/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

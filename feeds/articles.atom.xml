@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ProductMakers - articles</title><link href="https://www.productmakers.fr/" rel="alternate"></link><link href="https://www.productmakers.fr/feeds/articles.atom.xml" rel="self"></link><id>https://www.productmakers.fr/</id><updated>2018-12-22T00:00:00+01:00</updated><entry><title>Produire par petits lots VS produire en série</title><link href="https://www.productmakers.fr/articles/produire-par-petits-lots/" rel="alternate"></link><published>2018-12-19T00:00:00+01:00</published><updated>2018-12-22T00:00:00+01:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-12-19:/articles/produire-par-petits-lots/</id><summary type="html">&lt;p&gt;Eric Ries, l'auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. A partir d'un exemple assez simple, j'ai tenté d'exprimer tout l'intérêt de ce type de production.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Au sein de votre environnement de travail, on vous demande d'adopter une approche agile, de gérer le cycle de vie d'un produit de façon itérative, d'aborder le développement dans un processus d'intégration continue, ou encore de définir les prochaines fonctionnalités à intégrer dans le MVP. Ces missions décrivent l'organisation de beaucoup d'entreprises et au-delà d'être passionnantes, elles ont également du sens. Elles s'articulent autour de méthodologies et système organisationnels précis.&lt;/p&gt;
+&lt;p&gt;Au travers de cet article, je souhaite vous exposer ma compréhension de l'un des éléments essentiels qu'Eric Ries évoque dans son ouvrage &lt;a href="http://theleanstartup.com/"&gt;Lean Startup&lt;/a&gt;: &lt;strong&gt;la production par petits lots&lt;/strong&gt;. En effet, c'est une composante essentielle de sa méthodologie. Et pour échanger avec vous autour de ce concept, j'ai décidé d'écrire cet article autour de l'histoire de Jean et Camille qui sont en pleine planification de leur mariage!&lt;/p&gt;
+&lt;h2&gt;Le mariage de Jean et Camille: l'envoi des faire-parts&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Jean et Camille se marient dans 6 mois. Ils sont heureux et ont hâte de partager cet évènement avec leur famille et leurs amis. Cependant, préparer un mariage ne se fait pas en deux claquements de doigts. Le lieu et la date du mariage ont été définis et il est grand temps d'envoyer les faire-parts. C'est leur mission du weekend!
+Pour chaque faire-part, l'opération consiste à:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plier le faire-part&lt;/li&gt;
+&lt;li&gt;Mettre le faire-part dans l'enveloppe&lt;/li&gt;
+&lt;li&gt;Mettre un timbre sur l'enveloppe&lt;/li&gt;
+&lt;li&gt;Mettre l'adresse sur l'enveloppe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il y a 150 faire-parts à envoyer. Jean et Camille décident de se séparer le travail en deux, soit 75 faire-parts à préparer chacun.
+Jean et Camille décident d'utiliser une méthode différente.&lt;/p&gt;
+&lt;h3&gt;La méthode de Jean&lt;/h3&gt;
+&lt;p&gt;Jean décide de découper les tâches en adoptant une logique de &lt;strong&gt;production en série&lt;/strong&gt;. Ainsi, il décide d'arborer la logique suivante:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Dans un premier temps, il décide de plier tous les faire-parts&lt;/li&gt;
+&lt;li&gt;Une fois cela fait, il décide de mettre tous les faire-parts dans l'enveloppe&lt;/li&gt;
+&lt;li&gt;Il décide ensuite de coller un timbre sur chaque enveloppe&lt;/li&gt;
+&lt;li&gt;Enfin, il décide d'écrire les adresses de chaque invité&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Jean pense instinctivement qu'en découpant les tâches de cette façon, il sera plus rapide. Il conseille à Camille de faire de même mais elle décide tout de même de procéder autrement.&lt;/p&gt;
+&lt;h3&gt;La méthode de Camille&lt;/h3&gt;
+&lt;p&gt;Camille, contrairement à Jean, décide de réaliser chaque étape d'un faire-part avant de passer au suivant. Elle décide donc d'utiliser une logique de &lt;strong&gt;production par petits lots&lt;/strong&gt;, un lot dans notre cas étant égale à un faire-part.&lt;/p&gt;
+&lt;p&gt;Jean, quelque peu vexé que Camille ne suive pas son conseille lui propose de faire la course et de se chronométrer. Camille accepte.
+Le défi est lancé!&lt;/p&gt;
+&lt;h2&gt;Match de la rapidité&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Le suspense est à son comble. Qui va gagner? Qui va frimer devant l'autre pour avoir fini le premier? Est-ce Jean avec son approche de production en série? Ou bien, est-ce Camille qui a préféré choisir une production par petits lots?
+La réponse après cette courte page de pub...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pub drole tide gif" src="https://media.giphy.com/media/xThtaf9QQxeH7K1bS8/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Merci d'être encore là. Sans plus attendre, voici le nom du vainqueur. Il s'agit de ... Camille !!
+Un grand bravo à Camille pour avoir ridiculisé Jean et sa méthode de prodution en série.&lt;/p&gt;
+&lt;p&gt;Comment? Vous insinuez que ce n'est pas possible et qu'il y a forcément eu tricherie? Et si je vous dis que bien que la production par petits lots paraisse inefficace, cette dernière reste plus efficiente que la production en série. En effet, de nombreuses études l'ont démontrées. Et pous appuyer mes propos, je vous propose cette petite vidéo où une personne réalise l'expérience et se chronomètre:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.youtube.com/watch?v=Dr67i5SdXiM" title="Expérience flux pièce à pièce vs flux continu"&gt;&lt;img alt="Flux pièce à pièce vs flux continu" src="https://www.productmakers.fr/images/production_par_lots_youtube_screen.png"&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Les résultats semblent contre-intuitif. Cela est dû au fait que notre intuition nous joue des tours sur deux aspects:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Notre intuition ne tient pas compte des temps de transition entre chaque étape du processus, à savoir le tri, l'empilement ou encore le déplacement des grosses piles.&lt;/li&gt;
+&lt;li&gt;Il nous paraît plus efficace de répéter la tâche un grand nombre de fois car nous pensons que nous la réaliserons plus vite avec l'habitude. Ce qui ne semble malheureusement pas être le cas ou du moins cet aspect - à savoir la performance individuelle - n'est pas suffisant par rapport à la performance globale du système.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ainsi Camille remporte le match de la rapidité haut la main:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camille: 1&lt;/li&gt;
+&lt;li&gt;Jean: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mais si le match ne s'arrêtait pas là?
+En effet, et si Camille, en choisissant la logique de production par petits lots avait également identifié d'autres avantages à utiliser cette méthode?&lt;/p&gt;
+&lt;p&gt;Affinons notre exemple dans la partie suivante.&lt;/p&gt;
+&lt;h2&gt;Match de l'adaptabilité&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Camille et Jean, avant de se lancer dans cette course contre la montre, avait décidé au préalable de plier les faire-parts en deux dans le sens de la longueur pour les insérer dans les enveloppes.&lt;/p&gt;
+&lt;p&gt;Le problème, c'est que finalement, plié de cette façon, les faire-parts ne rentrent pas dans les enveloppes, du moins sans faire une sorte de goutière d'un demi centimètre sur la largeur, ce qui n'est vraiment pas joli.&lt;/p&gt;
+&lt;p&gt;Ce problème, Camille l'a identifié dès le premier faire-part et avant de passer au suivant, elle a pu mettre en place une nouvelle technique de pliage permettant d'insérer le faire-part dans l'enveloppe de manière élégante. Cela lui a couté 5 minutes de temps supplémentaires et elle a pu adapter ce nouveau moyen de pliage pour les faire-parts suivants.&lt;/p&gt;
+&lt;p&gt;Ayant l'esprit compétitif, Camille n'a pas souhaité avertir Jean. De son côté, Jean a donc plié les 75 faire-parts selon la méthode initiale pour se rendre compte au moment de mettre le premier faire-part dans l'enveloppe que le pliage ne convenait pas... Du coup, Jean est bien embêté car il se retrouve confronté à un problème bien plus sérieux à résoudre. En effet:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Il doit définir une nouvelle méthode de pliage et repartir de zéro lui faisant perdre un temps considérable.&lt;/li&gt;
+&lt;li&gt;Il doit choisir entre deux options dont aucune ne l'arrange. En effet, il doit décider entre &lt;strong&gt;baisser en qualité&lt;/strong&gt; (replier les faire-parts contenant déjà des plis) ou &lt;strong&gt;augmenter les coûts&lt;/strong&gt; (en rachetant de nouveaux faire-parts).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cet exemple illustre clairement l'autre avantage de la production par petits lots par rapport à la production en série.
+Il est beaucoup plus facile de s'adapter aux imprévus et apporter une solution efficace sans déteriorer le coût de production, ni la qualité et en minimisant le temps nécessaire à résoudre cet imprévu.&lt;/p&gt;
+&lt;p&gt;Si on regarde de nouveau les scores:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camille: 2&lt;/li&gt;
+&lt;li&gt;Jean: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alors c'est bien beau tout ça me direz vous mais quel est l'intérêt de parler de ça dans ce blog? En effet, l'objectif de ce blog n'est pas de vous présenter des astuces liées à la préparation d'un mariage mais d'échanger autour de la conception de produit et de la gestion de son cycle de vie. Et figurez-vous que la production par petits lots n'est pas dénuée d'intérêt lorsque vous souhaitez lancer un produit sur un marché.&lt;/p&gt;
+&lt;h2&gt;Tester la pertinence de son produit via un processus de production par lots.&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3&gt;La boucle de feedback&lt;/h3&gt;
+&lt;p&gt;Eric Ries, dans son ouvrage &lt;em&gt;Lean Startup&lt;/em&gt;, présente une méthodologie de conception de produit (peut également être une offre de service) qu'il nomme &lt;strong&gt;la boucle de feedback&lt;/strong&gt; et qui est constituée de trois étapes.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lean startup boucle de feedback" src="https://www.productmakers.fr/images/production_par_lots_boucle_feedback.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;L'objectif de cet article n'est pas de rentrer dans les détails de cette approche mais d'apporter un peu de contexte lié au développement d'un produit (ou service) et faire le parallèle avec l'exemple des faire-parts pour le mariage de Jean et Camille.
+Par contre, si vous êtes intéressés par le sujet et souhaitez échanger et approfondir le sujet ensemble, n'hésitez pas à me le notifier dans les commentaires.&lt;/p&gt;
+&lt;p&gt;Eric Riès propose cette approche itérative en trois étapes dont l'objectif est de concevoir un produit permettant notamment d'atteindre un product/market fit, qui pour reprendre les mots de son fondateur Marc Andreessen, consiste à :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;être positionné sur un bon marché avec un produit apte à satisfaire ledit marché.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mais dans notre cas, ce qui est intéressant pour cette article, c'est l'un des postulats qui a amené Eric Ries à concevoir cette méthodologie à savoir &lt;strong&gt;nous vivons dans un monde d'incertitude&lt;/strong&gt;. Dans le monde entrepreneurial, cela se rapporte au fait que nous n'avons pas d'idées précises de ce que veulent les clients. Et dans la même approche, ce n'est pas parce que nous connaissons les besoins de nos clients à un instant T qu'ils resteront les mêmes par la suite. Tout ce que nous avons, ce sont &lt;strong&gt;des hypothèses&lt;/strong&gt; concernant le client qu'il faut valider ou invalider. Cette méthodologie propose donc de travailler sur ces hypothèses en minimisant les coûts et le temps passé en intégrant notamment le client directement dans le cycle de production.&lt;/p&gt;
+&lt;p&gt;Et pour cela, cette méthodologie se base notamment (mais pas uniquement) sur la production par petits lots. C'est en partie grâce à cette approche qu'il est possible d'intégrer le client au sein du cycle de production et de pouvoir vérifier les hypothèses sur l'itération en cours.&lt;/p&gt;
+&lt;h3&gt;La boucle de feedback chez Jean et Camille&lt;/h3&gt;
+&lt;p&gt;Poussons l'exemple de cet article encore un peu plus loin en invitant la boucle de feedback dans les faire-parts de Jean et Camille.
+Ce que je ne vous ai pas dit jusqu'à maintenant, c'est que les parents de Jean et la soeur de Camille sont venus passer le weekend chez eux et ils se trouvent justement dans la pièce à côté.&lt;/p&gt;
+&lt;p&gt;Camille, ayant choisi l'approche de production par petits lots, a justement décidé de commencer par le faire-part de sa soeur. Après avoir constaté que le pliage initiale n'était pas correcte et ayant par la suite mis au point une nouvelle méthode qu'elle considère comme optimale, elle décide tout de même avant de continuer avec les autres faire-parts de donner à sa soeur le sien et lui demander ce qu'elle en pense. Sa soeur, ravie, ouvre l'enveloppe et lit le faire part. Elle est ravie mais elle a cependant quelques retours. En effet, intéressée par la décoration et le bricolage, ses amis lui ont offert un cours d'origami et elle souhaite en faire profiter Camille en lui proposant une manière originale pour plier les faire-parts. Sa soeur lui explique que de cette façon, lorsque les personnes sortiront le faire-part de l'enveloppe, ils auront conscience que c'est une invitation mais qu'ils devront ouvrir le faire-part afin de découvrir qu'il s'agit de leur mariage. Camille remercie sa soeur pour ce retour d'expérience et décide donc d'utiliser cette méthode de pliage pour les suivants. En effet, cela ne lui prend pas beaucoup plus de temps et elle pense (soit une nouvelle hypothèse) que l'expérience proposée conviendra à ses invités.
+Au même moment, Jean ne s'est toujours pas rendu compte que la méthode de pliage initiale ne permet pas d'insérer les faire-parts dans une enveloppe...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="homme qui évacue de l'eau inutilement gif" src="https://media.giphy.com/media/YWAiayVul0JLq/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Via cet exemple, Camille a réalisé une itération selon la boucle de feedback:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Elle est partie de l'hypothèse que sa première solution de pliage était celle qui convenait le mieux pour ses invités&lt;/li&gt;
+&lt;li&gt;Elle a mis en place un système permettant d'évaluer son prototype auprès de ses invités. Ici, il s'agit de saisir l'opportunité que sa soeur soit à ses côtés ce weekend pour préparer les faire-parts de mariage et lui proposer sa première version&lt;/li&gt;
+&lt;li&gt;Elle a ensuite récupéré et analysé les retours de sa soeur pour établir une nouvelle version avec une méthode de pliage différente &lt;/li&gt;
+&lt;li&gt;Pour la prochaine itération, Camille décidera sûrement d'offrir les faire-parts aux parents de Jean&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Et Jean, il en est où maintenant? Et bien, il est toujours la tête dans le guidon en train de plier les siens sans se rendre compte qu'ils ne rentreront pas dans l'enveloppe.&lt;/p&gt;
+&lt;p&gt;Si je devais proposer un dernier match Jean Vs. Camille qui résumerait cette partie de l'exemple, il s'agirait d'un &lt;strong&gt;match concernant la satisfaction client&lt;/strong&gt; et devinez qui aurait gagné:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camille: 3&lt;/li&gt;
+&lt;li&gt;Jean: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;La production par petits lots, c'est malin!&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Soyons clair, en écrivant cet article, je n'avais pas pour objectif de vous donner un tutoriel sur la façon de préparer votre mariage.
+L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à participer en ajoutant un commentaire!&lt;/p&gt;
+&lt;p&gt;J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquelles son produit se base. Il s'agit du concept de &lt;strong&gt;déploiement continu&lt;/strong&gt;. Je l'ai même utilisé dans la dernière partie de mon exemple. En effet, c'est ce qui permet notamment de pouvoir proposer rapidement à ses clients une nouvelle version de son produit. Si vous êtes également intéressé par un article sur le sujet afin d'échanger sur ce concept, faîtes le moi aussi savoir dans les commentaires.&lt;/p&gt;</content><category term="lean"></category></entry><entry><title>Réussir ses entretiens utilisateurs</title><link href="https://www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" rel="alternate"></link><published>2018-12-11T00:00:00+01:00</published><updated>2018-12-11T00:00:00+01:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-12-11:/articles/reussir-ses-entretiens-utilisateurs/</id><summary type="html">&lt;p&gt;Les entretiens utilisateurs sont une étapes importantes lorsque vous commencez à travailler sur un projet. Bien mené, ils vous permettront d'identifier des besoins dont vous n'avez pas connaissance au préalable. L'objectif de cet article est de fournir un cadre afin de pouvoir construire ces entretiens utilisateurs.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorsque vous démarrez un projet de conception ou de refonte produit (informatique ou autre), il est primordial d'avoir une bonne compréhension des besoins utilisateurs. Cela permet d'avoir une vision globale du projet et aide à fixer un cap à ce dernier.
+Pour cela, il apparaît souvent judicieux de réaliser des entretiens utilisateurs. C'est en effet un excellent moyen de définir les orientations du produit ainsi que de compléter et approfondir les besoins du client.&lt;/p&gt;
+&lt;p&gt;L'objectif de cet article est de lister les grands principes pour mener à bien un entretien utilisateur.&lt;/p&gt;
+&lt;p&gt;N'hésitez pas à réagir et à partager votre propre expérience via les commentaires en bas de l'article. L'idée est de pouvoir échanger autour des bonnes pratiques.&lt;/p&gt;
+&lt;h2&gt;Ce à quoi il faut penser lorsqu'on construit ses entretiens utilisateurs&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Lorsque que l'on décide de réaliser des entretiens utilisateurs, la première chose à penser est de concevoir correctement cette étape.&lt;/p&gt;
+&lt;h3&gt;Faites plusieurs entretiens&lt;/h3&gt;
+&lt;p&gt;Pour recueillir des informations essentielles dans cette phase, il ne faut pas s'arrêter à un seul entretien. En effet, le but de cette étape est de recueillir des points de vue personnels en collectant des impressions, en identifiant des comportements et des attitudes. &lt;/p&gt;
+&lt;p&gt;C'est pour cela qu'il est judicieux de réaliser &lt;strong&gt;entre 5 et 10 entretiens&lt;/strong&gt; tout &lt;strong&gt;en faisant varier les profils&lt;/strong&gt;. Cela vous permettra d'avoir des éléments diversifiés et précis qui vous permettront d'établir vos &lt;strong&gt;personas&lt;/strong&gt; par la suite.&lt;/p&gt;
+&lt;p&gt;Il est possible d'identifier deux profils types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le profil d'utilisateur extrême&lt;/li&gt;
+&lt;li&gt;Le profil d'utilisateur type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Le premier type de profil regroupe les personnes utilisant de façon très fréquente le type de produit / service associé au projet ou inversement, ceux qui ne l'utilisent jamais.&lt;/p&gt;
+&lt;p&gt;Le deuxième type de profil regroupe les utilisateurs les plus nombreux. L'objectif est de pouvoir interroger aussi bien des personnes appartenant au profil d'utilisateur extrême (grand utilisateur et faible utilisateur) que des personnes associées au profil d'utilisateur type.&lt;/p&gt;
+&lt;h3&gt;Durée des entretiens&lt;/h3&gt;
+&lt;p&gt;L'idée est de pouvoir mener des entretiens sur &lt;strong&gt;une durée de 30 à 45 minutes&lt;/strong&gt;. En dessous de cette durée, vous risquez de passer à côté d'informations précieuses. Au-delà et cela risque de devenir un calvaire pour votre utilisateur. De plus, son niveau de concentration et de motivation diminuera exponentiellement une fois cette durée dépassée.&lt;/p&gt;
+&lt;h3&gt;Garder une trace des entretiens&lt;/h3&gt;
+&lt;p&gt;Essayez de filmer ou du moins enregistrer vos entretiens. Cela vous apportera deux principaux avantages :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Cela vous permettra d'analyser calmement avec le temps nécessaire les différents entretiens afin d'en ressortir les éléments principaux&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cela vous permettra d'être davantage concentré lors des entretiens. En effet, il vous faudra faire preuve d'&lt;strong&gt;écoute&lt;/strong&gt; et d'&lt;strong&gt;empathie&lt;/strong&gt; afin de pouvoir comprendre et collecter les attentes des utilisateurs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Prévoir une rétribution&lt;/h3&gt;
+&lt;p&gt;C'est un point non négligeable. En effet, sans cela, le recrutement d'utilisateurs peut s'avérer compliqué. Pour rappel, afin que cette étape soit pertinente, il faut pouvoir interroger tous les types d'utilisateurs et pas uniquement des &lt;em&gt;early adopters&lt;/em&gt; qui se feront une joie d'apporter leur expérience au projet. Et donc pour convaincre les autres types de profils, vous trouverez difficilement mieux qu'une rétribution que ce soit une enveloppe, un chèque cadeau ou des goodies. De plus, les early adopters seront également ravis de ce petit geste et pourront qui sait, jouer un rôle à la viralité de l'application lors de sa sortie!&lt;/p&gt;
+&lt;p&gt;Cependant, malgré le fait qu'il soit difficile d'échapper à la rétribution, cela peut intégrer un biais lors des entretiens où l'utilisateur sera gêné de délivrer le fond de sa pensée et tentera de dresser une vision lissée - et donc faussée - de ses attentes. Cela peut notamment être plus impactant lors de &lt;strong&gt;tests utilisateur&lt;/strong&gt;.
+Pour minimiser ce risque, il faudra adapter et rassurer l'utilisateur en début d'entretien. C'est notamment le sujet de la partie suivante.&lt;/p&gt;
+&lt;h3&gt;Construire un guide d'entretien&lt;/h3&gt;
+&lt;p&gt;Cela peut paraître logique mais construire un &lt;strong&gt;guide d'entretien&lt;/strong&gt; est essentiel si vous souhaitez tirer le maximum de bénéfice de vos entretiens utilisateurs. En effet, cela présente plusieurs avantages:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Premièrement, le fait de rédiger un guide vous accompagne dans votre réflexion. Ainsi, vous orienterez vos questions en fonction des objectifs de votre enquête&lt;/li&gt;
+&lt;li&gt;Cela vous permet de construire un questionnaire exhaustif qui mettra en évidence les besoins que vous n'avez pas encore collectés ou détectés.&lt;/li&gt;
+&lt;li&gt;Dernier point important, cela vous permettra de &lt;strong&gt;comparer les résultats&lt;/strong&gt; entre différents utilisateurs. C'est un point crucial si vous souhaitez avoir des données utilisables et activables.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Débuter son entretien utilisateur&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;La première chose à faire lorsque l'on débute l'entretien est d'expliquer les raisons de celui-ci. Cela peut notamment passer par une présentation synthétique du projet.&lt;/p&gt;
+&lt;p&gt;Ensuite, il est important de rassurer la personne interviewée et lui faire comprendre qu'il n'y a pas de bonnes ou mauvaises réponses. En effet, il faut qu'il soit en capacité de comprendre qu'il ne s'agit pas d'une évaluation où l'on est en attente de certaines réponses.
+Il faut donc lui expliquer qu'il doit parler de manière décomplexée et de la façon la plus détaillée possible. N'hésitez pas à lui demander de réfléchir à voix haute et d'exprimer tout ce qui lui passe par la tête.&lt;/p&gt;
+&lt;p&gt;Un autre point à aborder avant de rentrer dans le vif du sujet concerne les précisions sur les traces que vous allez conserver de cet entretien et la façon dont vous allez les utiliser par la suite. La plupart du temps, cela vous servira uniquement à titre personnel afin de synthétiser à posteriori votre échange. Faire signer une décharge serait judicieux afin de clarifier ce point.&lt;/p&gt;
+&lt;p&gt;Tout est désormais en place pour débuter votre entretien. Avant de rentrer dans le vif du sujet, il peut être intéressant de faire un petit &lt;em&gt;ice breaker&lt;/em&gt; en lui demandant de se présenter et de dire ce qu'il fait dans la vie. Cela permettra à votre utilisateur de se mettre à l'aise et vous permettra de faire davantage connaissance avec lui et son profil.&lt;/p&gt;
+&lt;h2&gt;Construire ses questions&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de recueillir le maximum d'informations.&lt;/p&gt;
+&lt;h3&gt;Posez des questions ouvertes&lt;/h3&gt;
+&lt;p&gt;Evitez toutes les questions permettant à l'utilisateur de répondre par oui ou par non. en effet, la majorité du temps, vous n'obtiendrez rien de plus qu'un oui ou un non... Et ce n'est pas avec ces réponses que vous allez identifier des besoins.
+De plus, les questions fermées peuvent de temps à autre influencer la réponse:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;- "Pensez-vous que l'expérience utilisateur pourrait être améliorée ?"&lt;/em&gt;
+&lt;em&gt;- "Oui"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="yeah gif" src="https://media.giphy.com/media/l4KhSYoul5j8i3su4/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Apparemment, il serait judicieux d'améliorer l'expérience utilisateur. On y voit beaucoup plus clair maintenant...&lt;/p&gt;
+&lt;p&gt;Par contre, si vous tournez la question dans ce sens:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;- "Quel élément selon vous pourrait vous apporter une meilleure expérience utilisateur?"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Là, il est certain que vous aurez un retour beaucoup plus riche!&lt;/p&gt;
+&lt;h3&gt;Posez des questions précises&lt;/h3&gt;
+&lt;p&gt;Il est important de poser des questions ouvertes mais cela n'empêche pas qu'elles doivent également être précises!
+Dans le cas contraire, vous risquez d'avoir des réponses confuses pouvant fausser votre analyse.
+Prenons un exemple sans rentrer dans les détails. Imaginez que vous travaillez pour une salle de fitness qui vous contacte pour que vous l'aidiez à résoudre sa problématique de réabonnement. Vous allez donc rencontrer des utilisateurs de la salle. Afin de vous faire une idée sur le profil de l'utilisateur que vous interviewez, vous souhaitez obtenir une notion de fréquence &lt;em&gt;d'utilisation&lt;/em&gt; du service proposé.&lt;/p&gt;
+&lt;p&gt;Si vous posez la question de cette façon:
+&lt;em&gt;- "Combien de fois par semaine en moyenne vous rendez-vous à la salle de sport?"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Vous avez de fortes chances d'avoir une réponse de ce type:
+&lt;em&gt;- "Mmmmhhhh, 3 fois par semaine"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Du fait que vous demandez une moyenne, la réponse ne sera pas précise voir éloignée de la réalité. En effet, l'utilisateur va chercher à apporter une réponse à cette fameuse moyenne et il risque d'autant plus de gonfler la réponse en fonction des objectifs fixés initialement. Et soyons franc, qui ne connaît pas une personne qui se soit inscrite dans une salle de sport en Janvier (la fameuse bonne résolution) avec comme objectif de s'y rendre 4 fois par semaine mais qui finalement, à cause du froid, puis de la pluie, et aussi des collègues qui ont proposé d'aller boire une bière après le travail, et blablabla... finalement, n'y a jamais mis les pieds de sa vie?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="yeah gif" src="https://media.giphy.com/media/4KkSbPnZ5Skec/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Alors que, si vous posez la question de cette façon:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;-"Combien de fois êtes-vous allé à la salle de sport la semaine dernière?"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Là vous avez plus de chances d'avoir une réponse précise du type:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;-"La semaine dernière, je n'y suis allé qu'une seule fois. Mais dans l'idéal, j'y vais 3 fois par semaine même si en ce moment j'ai un peu de mal de dépasser les deux séances par semaine. Le problème, c'est que moi je me suis inscrit à cette salle pour les cours de Bodycombat mais les horaires d'hiver ne me conviennent pas. C'est beaucoup trop tôt. La plupart du temps, je sors trop tard du travail surtout qu'en ce moment, c'est un peu la course avec la clôture de l'année fiscale..."&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;C'est quand même plus intéressant comme réponse vous ne trouvez pas? En effet, des questions précises vous apporterons souvent davantage de matière. Dans cet exemple, il a suffi d'indiquer un &lt;strong&gt;indicateur de temps&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;N'hésitez pas à soumettre des ressources également si cela s'avère judicieux. Cela peut être un prototype dans le cadre d'un test utilisateur. Dans ce cas là, vos questions devront être précises quant à l'objectif à réaliser mais ne devront pas décrire les étapes pour aboutir à celui-ci. Prenons l'exemple d'un prototype servant à tester le processus d'inscription sur un site. Voici une idée de question adaptée:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;- "Pouvez-vous créer un compte s'il vous plait?"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Cette question indique l'objectif à réaliser sans pour autant influencer l'utilisateur dans les différentes étapes qu'il doit réaliser pour y parvenir. En effet cela vous permettra d'éprouver au mieux votre prototype et recueillir des besoins ou attentes inhérentes à l'utilisation du produit.&lt;/p&gt;
+&lt;h3&gt;Laissez le temps de répondre&lt;/h3&gt;
+&lt;p&gt;Culturellement, nous sommes mal à l'aise par les moments de blanc dans une conversation. On se sent vite obligé d'essayer de le combler. Ici, ne le faîtes pas! Retenez-vous. En effet, laissez un temps de réflexion à la personne pour qu'elle puisse vraiment tout vous livrer. La plupart du temps, lorsque vous poserez une question, la personne interviewée vour répondra d'abord ce qui lui passe par la tête sans digérer au préalable la question pour essayer de la structurer. Et c'est très bien! Cependant, donnez-lui également le temps de réfléchir plus posément. En règle générale, vous constaterez que ce blanc lui offrira l'opportunité d'apporter des précisions et des justifications à ce qu'elle vient de dire.&lt;/p&gt;
+&lt;p&gt;Dans la même idée, &lt;strong&gt;ne coupez jamais la parole&lt;/strong&gt; mais au contraire, soyez attentif à ses réponses sans jamais les interpréter. Restez au même niveau que l'utilisateur. C'est essentiel afin de receillir le maximum d'informations viables. Cela permet de créer une certaine complicité et favorise les confidences.&lt;/p&gt;
+&lt;h3&gt;Demandez des retours d'expérience&lt;/h3&gt;
+&lt;p&gt;Dans vos questions, n'hésitez pas à demander des retours d'expériences. Faîtes en sorte que les personnes livrent leur propre histoire.
+Vous allez certainement recueillir un tas d'informations intéressantes qui vous servira dans votre synthèse. Certains points communs pourront ressortir entre les utilisateurs mais avec des histoires différentes.
+L'autre intérêt de ces derniers, c'est qu'ils représentent un formidable argumentaire pour justifier vos idées et prouveront que celles-ci ne se basent pas sur votre propre sentiment personnel.&lt;/p&gt;
+&lt;p&gt;J'espère que cet article vous a apporté quelques éléments intéressants pour alimenter votre réflexion sur la manière de conduire des entretiens utilisateurs. Si vous avez des remarques concernant le contenu ou si vous souhaitez partager votre expérience sur le sujet, n'hésitez pas à écrire un commentaire juste en dessous! Cela ne fera qu'apporter une vision plus aboutie sur le sujet.&lt;/p&gt;</content><category term="agile"></category><category term="UX"></category></entry></feed>

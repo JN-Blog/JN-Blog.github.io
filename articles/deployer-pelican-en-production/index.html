@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Découvrez comment déployer automatiquement votre blog statique Pelican avec Travis CI et GitHub Pages." />
+<meta name="keywords" content="tutoriels">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Déployer son blog statique Pelican en production"/>
+<meta property="og:description" content="Découvrez comment déployer automatiquement votre blog statique Pelican avec Travis CI et GitHub Pages."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/deployer-pelican-en-production/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-11-16 00:00:00+01:00"/>
+<meta property="article:modified_time" content="2018-11-16 00:00:00+01:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="tutoriels"/>
+<meta property="article:tag" content="tutoriels"/>
+<meta property="og:image" content="">
+
+  <title>ProductMakers &ndash; Déployer son blog statique Pelican en production</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+  </div>
+  <header>
+      
+    <h1 id="deployer-pelican-en-production">Déployer son blog statique Pelican en production</h1>
+    <p>
+      <!-- Posté le 16/11/2018 dans <a href="https://www.productmakers.fr/categorie/tutoriels/">tutoriels</a> -->
+      
+      16/11/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=D%C3%A9ployer%20son%20blog%20statique%20Pelican%20en%20production&url=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/&title=D%C3%A9ployer%20son%20blog%20statique%20Pelican%20en%20production&summary=D%C3%A9couvrez%20comment%20d%C3%A9ployer%20automatiquement%20votre%20blog%20statique%20Pelican%20avec%20Travis%20CI%20et%20GitHub%20Pages.&source=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Maintenant que notre hébergement sur GitHub Pages est en place et que Pelican est correctement installé, il est désormais temps de s'attaquer au processus de déploiement.</p>
+<p>Comme cet article correspond à la cinquième partie du tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:</p>
+<ol>
+<li><a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/">Présentation du tutoriel et de ces objectifs</a></li>
+<li><a href="https://www.productmakers.fr/articles/explication-blog-statique/">Un blog statique, c'est quoi et comment ça fonctionne?</a></li>
+<li><a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Mettre en place GitHub Pages pour l'hébergement d'un blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/">Utiliser Pelican pour son blog statique</a></li>
+<li><strong>Utiliser Travis pour automatiser le déploiement de son blog statique</strong></li>
+<li><a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/">Mettre en place un thème sur son blog statique Pelican</a></li>
+</ol>
+<p>Dans cet article, nous nous attacherons à configurer Travis CI afin que ce dernier déploie automatiquement le blog lorsqu'une pull request est faite sur la branche Master. </p>
+<p><strong>Travis CI</strong> est un logiciel pour mettre en place de l'<a href="https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue">intégration continue</a>. Il permet de compiler, tester et déployer un code source.</p>
+<p>La mise en place se déroulera en cinq principales étapes:</p>
+<ol>
+<li>Mettre à jour le fichier publishconf.py</li>
+<li>Nous allons activer Travis CI sur le repository Git Hub</li>
+<li>Nous allons faire quelques petites modifications dans le fichier Makefile</li>
+<li>Ensuite, nous intègrerons le fichier .travis.yml au sein du projet</li>
+<li>Et enfin, nous vérifierons que tout fonctionne correctement</li>
+</ol>
+<h2>Mettre à jour le fichier publishconf.py</h2>
+<hr>
+<p>Nous allons déployer notre site en production. De ce fait, il s'agit du fichier publishconf.py qui sera considéré dans le déploiement et non le fichier pelicanconf.py.</p>
+<p>Regardons de plus près ce fichier:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="c1"># This file is only used if you use `make publish` or</span>
+<span class="c1"># explicitly specify it as your config file.</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pelicanconf</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;tutoriel-pelican.jn-blog.com&#39;</span>
+<span class="n">RELATIVE_URLS</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/all.atom.xml&#39;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s1">&#39;feeds/</span><span class="si">%s</span><span class="s1">.atom.xml&#39;</span>
+
+<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="c1"># Following items are often useful when publishing</span>
+
+<span class="c1">#DISQUS_SITENAME = &quot;&quot;</span>
+<span class="c1">#GOOGLE_ANALYTICS = &quot;&quot;</span>
+</pre></div>
+
+
+<p>Comme expliqué auparavant, le fichier reprend les configurations présentes dans le fichier pelicanconf.py et va surcharger ce dernier. Il va notamment activer automatiquement la génération des flux ATOM et changer la prise en charge des urls. Au lieu de se baser sur une approche relative, il va récupérer le nom de domaine indiqué dans la variable <strong>SITEURL</strong>
+Il y a également des variables pour contenir les informations contenant la mise en place de Google Analytics et le système de commentaires via Disqus. Ces sujets pourront faire l'objet d'un autre article si cela vous intéresse. N'hésitez pas à le préciser dans les commentaires.</p>
+<p>Pour le déploiement, la seule modification que nous allons apporter concerne la variable SITEURL. Nous avons en effet activé le protocole https dans github pages et il est important de le rappeler ici sinon cela risque de créer certains problèmes lors de la récupérations d'éléments au moment du chargement (notamment les fichiers statiques). Modifions donc la variable de cette façon:</p>
+<div class="highlight"><pre><span></span><span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;https://tutoriel-pelican.jn-blog.com&#39;</span>
+</pre></div>
+
+
+<p>Rien de plus à ajouter sur ce fichier. Nous pouvons donc passer à la suite.</p>
+<h2>Activer Travis CI sur le repository Git Hub</h2>
+<hr>
+<p>Tout d'abord, si vous n'avez pas de compte <a href="https://travis-ci.org/">Travis CI</a>, il est temps d'en créer un. Vous pouvez utiliser votre compte Github pour la création. Cela aura pour effet de synchroniser automatiquement votre repository github avec votre compte.</p>
+<p>Une fois le compte créé et synchronisé, il vous suffit d'identifier le nom du repository contenant votre blog et d'activer Travis CI</p>
+<p><img alt="activation de Travis sur le repository" src="https://www.productmakers.fr/images/tuto-pelican-travis-activation-repo.png"></p>
+<p>Et voilà, le travail est fait! Simple, Basique...</p>
+<p><img alt="lien gif simple" src="https://media.giphy.com/media/9Jcw5pUQlgQLe5NonJ/giphy.gif"></p>
+<h2>Ajustement du fichier MakeFile</h2>
+<hr>
+<p>Comme expliqué dans le précédent article, le fichier Makefile généré lors de la création du projet permet de simplifier les actions réalisées sur ce dernier.</p>
+<p>C'est ce fichier qui nous permet notamment de générer les fichiers html et de les servir sur un serveur local via les commandes <code>make html &amp;&amp; make serve</code></p>
+<p>Ce fichier contient également une commande permettant de publier sur github. Il s'agit de la commande <code>make publish github</code> et se trouve vers la fin du fichier Makefile:</p>
+<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+    ghp-import -m <span class="s2">&quot;Generate Pelican site&quot;</span> -b <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span> <span class="k">$(</span>OUTPUTDIR<span class="k">)</span>
+    git push origin <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>
+</pre></div>
+
+
+<p>Pour que cette commande fonctionne avec Travis CI, il va falloir y apporter quelques modifications.</p>
+<h3>Autoriser Travis CI à déployer via un access token</h3>
+<p>Avant tout, pour que Travis soit en capacité de réaliser une action de déploiement sur le repository github, il va falloir lui associer un access token. La manière la plus simple de le faire est la suivante:</p>
+<ol>
+<li>Il faut créer un token d'accès personnalisé sur Github. Voici un lien décrivant le processus à suivre: <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/</a></li>
+</ol>
+<p>Lors de la création du token, n'oubliez pas de cocher la case <em>repo</em> si vous êtes sur un repository privé ou au moins <em>public repo</em> si vous êtes sur un repository public:
+<a href="https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token">https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token</a></p>
+<ol>
+<li>
+<p>Une fois la clef obtenue:</p>
+<ul>
+<li>Il suffit de retourner dans Travis CI dans la partie <em>Settings</em> du repository cible</li>
+</ul>
+<p><img alt="onglet Settings dans Travis CI" src="https://www.productmakers.fr/images/tuto-pelican-travis-settings-repo.png"></p>
+<ul>
+<li>Dans la section <em>Environment Variables</em>, il faut ensuite ajouter la variable <strong>GITHUB_TOKEN</strong> avec comme valeur le token qui vient d'être généré.</li>
+</ul>
+<p><img alt="onglet Settings dans Travis CI" src="https://www.productmakers.fr/images/tuto-pelican-travis-github-token.png"></p>
+</li>
+</ol>
+<p>Il est désormais temps de modifier légèrement la commande make publish github.</p>
+<h3>Modifier les actions de la commande make publish github</h3>
+<p>Voici les modifications à apporter. (J'ai conservé les commandes initiales en les ajoutant comme commentaires).</p>
+<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+<span class="c">    # ghp-import -m &quot;Generate Pelican site&quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)</span>
+<span class="c">    # git push origin $(GITHUB_PAGES_BRANCH)</span>
+    ghp-import -n <span class="k">$(</span>OUTPUTDIR<span class="k">)</span>
+    @git push -fq https://<span class="k">$(</span>GITHUB_TOKEN<span class="k">)</span>@github.com/JN-Blog/tutoriel-pelican.git master:gh-pages
+</pre></div>
+
+
+<p>Sans rentrer dans les détails, la commande va utiliser le module <a href="http://docs.getpelican.com/en/stable/tips.html#publishing-to-github">ghp-import</a> pour automatiser le déploiement du site vers la branche gh-pages. Le push vers le repository github utilise le token d'accès que nous venons de créer. Il faudra adapter bien évidemment l'url github en fonction de votre repository github.</p>
+<h2>Création du fichier .travis.yml</h2>
+<hr>
+<p>Le dernière étape consiste à créer le fichier <strong>.travis.yml</strong> à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.</p>
+<p>Voici les indications que doit contenir le fichier:</p>
+<div class="highlight"><pre><span></span><span class="n">language</span><span class="o">:</span> <span class="n">python</span>
+<span class="n">python</span><span class="o">:</span>
+  <span class="o">-</span> <span class="s2">&quot;3.6&quot;</span> <span class="err">#</span> <span class="n">la</span> <span class="n">version</span> <span class="n">de</span> <span class="n">Python</span> <span class="n">utilisée</span>
+
+<span class="n">branches</span><span class="o">:</span>
+  <span class="n">only</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">master</span>
+
+<span class="n">install</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="na">txt</span>
+  <span class="o">-</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="k">import</span>
+
+<span class="nn">script</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">make</span> <span class="n">publish</span> <span class="n">github</span>
+
+<span class="n">deploy</span><span class="o">:</span>
+  <span class="n">provider</span><span class="o">:</span> <span class="n">pages</span>
+  <span class="n">repo</span><span class="o">:</span> <span class="n">JN</span><span class="o">-</span><span class="n">Blog</span><span class="o">/</span><span class="n">tutoriel</span><span class="o">-</span><span class="n">pelican</span> <span class="err">#</span> <span class="n">Le</span> <span class="n">nom</span> <span class="n">du</span> <span class="n">repository</span> <span class="n">utilisé</span>
+  <span class="n">target_branch</span><span class="o">:</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+  <span class="n">skip_cleanup</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="n">github_token</span><span class="o">:</span> <span class="n">$GITHUB_TOKEN</span>
+  <span class="n">local_dir</span><span class="o">:</span> <span class="n">output</span>
+  <span class="n">on</span><span class="o">:</span>
+    <span class="n">branch</span><span class="o">:</span> <span class="n">master</span>
+</pre></div>
+
+
+<p>Ce fichier va globalement indiquer à Travis:</p>
+<ul>
+<li>D'installer la version de Python utilisée</li>
+<li>De cibler uniquement la branche master de notre repository</li>
+<li>D'installer l'ensemble des éléments nécessaires (Pelican, Markdown, ghp-import)</li>
+<li>De lancer le script <code>make publish github</code></li>
+<li>De configurer les instructions de déploiement afin que le répertoire output soit poussé sur la branche gh-pages du repository (avec un clean en amont si cette branche contenait déjà un ancien répertoire)</li>
+</ul>
+<h2>Déploiement de notre blog en production</h2>
+<hr>
+<p>Et voilà! tous les éléments sont mis en place pour déployer notre site en production.
+Envoyons notre code à jour sur github dans notre branche source (une fois le commit enregistré)</p>
+<div class="highlight"><pre><span></span>git push origin source
+</pre></div>
+
+
+<p>Il est temps désormais de déployer notre blog en faisant notre première pull request.</p>
+<p><img alt="créer une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request.png"></p>
+<p>Une fois créée, avant de pouvoir confirmer le <em>merge</em>, Travis CI va lancer un test et valider (ou invalider) que le processus de déploiement est fonctionnel.</p>
+<p><img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request-check.png"></p>
+<p>Et si tout se passe bien (mais il n'y a pas de raison), un message de validation de test devrait apparaître une fois le test terminé permettant ainsi de confirmer le merge.</p>
+<p><img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request-validated.png"></p>
+<p>Et une fois confirmé et le merge réalisé, Travis CI va s'apercevoir que le code sur la branche master a été mis à jour et va lancer la procédure de déploiement tout seul comme un grand.</p>
+<p><img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-deploy.png"></p>
+<p>La magie opère enfin et le site est accessible à l'adresse de votre nom de domaine.</p>
+<p><img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-production.png"></p>
+<p>Elle est pas belle la vie? Cela demande un peu de configuration au départ je vous l'accorde mais désormais, une simple pull request vous permet de mettre à jour votre blog sur votre environnement de production avant d'avoir en amont vérifier que tout soit opérationnel.</p>
+<p>Votre blog est désormais créé, hébergé et déployé! Il ne vous reste plus qu'à écrire vos articles.
+Mais avant de terminer ce tutoriel, j'aimerais voir avec vous une dernière chose. En effet, nous n'avons pas encore parlé de l'apparence du blog. Pour le moment, le blog utilise le thème d'origine. Nous verrons donc dans le prochain article comment installer un autre thème:</p>
+<p><a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/">Installer un thème sur son blog Pelican</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/tutoriels/">tutoriels</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=D%C3%A9ployer%20son%20blog%20statique%20Pelican%20en%20production&url=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/&title=D%C3%A9ployer%20son%20blog%20statique%20Pelican%20en%20production&summary=D%C3%A9couvrez%20comment%20d%C3%A9ployer%20automatiquement%20votre%20blog%20statique%20Pelican%20avec%20Travis%20CI%20et%20GitHub%20Pages.&source=https%3A//www.productmakers.fr/articles/deployer-pelican-en-production/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

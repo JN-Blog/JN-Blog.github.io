@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Les entretiens utilisateurs sont une étapes importantes lorsque vous commencez à travailler sur un projet. Bien mené, ils vous permettront d&#39;identifier des besoins dont vous n&#39;avez pas connaissance au préalable. L&#39;objectif de cet article est de fournir un cadre afin de pouvoir construire ces entretiens utilisateurs." />
+<meta name="keywords" content="agile, UX">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Réussir ses entretiens utilisateurs"/>
+<meta property="og:description" content="Les entretiens utilisateurs sont une étapes importantes lorsque vous commencez à travailler sur un projet. Bien mené, ils vous permettront d&#39;identifier des besoins dont vous n&#39;avez pas connaissance au préalable. L&#39;objectif de cet article est de fournir un cadre afin de pouvoir construire ces entretiens utilisateurs."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-12-11 00:00:00+01:00"/>
+<meta property="article:modified_time" content="2018-12-11 00:00:00+01:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="articles"/>
+<meta property="article:tag" content="agile"/>
+<meta property="article:tag" content="UX"/>
+<meta property="og:image" content="https://www.productmakers.fr//images/img_summary_reussir_ses°entretiens_utilisateurs.jpg">
+
+  <title>ProductMakers &ndash; Réussir ses entretiens utilisateurs</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+<img src="/images/img_summary_reussir_ses°entretiens_utilisateurs.jpg" alt="">  </div>
+  <header>
+      
+    <h1 id="reussir-ses-entretiens-utilisateurs">Réussir ses entretiens utilisateurs</h1>
+    <p>
+      <!-- Posté le 11/12/2018 dans <a href="https://www.productmakers.fr/categorie/articles/">articles</a> -->
+      
+      11/12/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=R%C3%A9ussir%20ses%20entretiens%20utilisateurs&url=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/&title=R%C3%A9ussir%20ses%20entretiens%20utilisateurs&summary=Les%20entretiens%20utilisateurs%20sont%20une%20%C3%A9tapes%20importantes%20lorsque%20vous%20commencez%20%C3%A0%20travailler%20sur%20un%20projet.%20Bien%20men%C3%A9%2C%20ils%20vous%20permettront%20d%27identifier%20des%20besoins%20dont%20vous%20n%27avez%20pas%20connaissance%20au%20pr%C3%A9alable.%20L%27objectif%20de%20cet%20article%20est%20de%20fournir%20un%20cadre%20afin%20de%20pouvoir%20construire%20ces%20entretiens%20utilisateurs.&source=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Lorsque vous démarrez un projet de conception ou de refonte produit (informatique ou autre), il est primordial d'avoir une bonne compréhension des besoins utilisateurs. Cela permet d'avoir une vision globale du projet et aide à fixer un cap à ce dernier.
+Pour cela, il apparaît souvent judicieux de réaliser des entretiens utilisateurs. C'est en effet un excellent moyen de définir les orientations du produit ainsi que de compléter et approfondir les besoins du client.</p>
+<p>L'objectif de cet article est de lister les grands principes pour mener à bien un entretien utilisateur.</p>
+<p>N'hésitez pas à réagir et à partager votre propre expérience via les commentaires en bas de l'article. L'idée est de pouvoir échanger autour des bonnes pratiques.</p>
+<h2>Ce à quoi il faut penser lorsqu'on construit ses entretiens utilisateurs</h2>
+<hr>
+<p>Lorsque que l'on décide de réaliser des entretiens utilisateurs, la première chose à penser est de concevoir correctement cette étape.</p>
+<h3>Faites plusieurs entretiens</h3>
+<p>Pour recueillir des informations essentielles dans cette phase, il ne faut pas s'arrêter à un seul entretien. En effet, le but de cette étape est de recueillir des points de vue personnels en collectant des impressions, en identifiant des comportements et des attitudes. </p>
+<p>C'est pour cela qu'il est judicieux de réaliser <strong>entre 5 et 10 entretiens</strong> tout <strong>en faisant varier les profils</strong>. Cela vous permettra d'avoir des éléments diversifiés et précis qui vous permettront d'établir vos <strong>personas</strong> par la suite.</p>
+<p>Il est possible d'identifier deux profils types:</p>
+<ul>
+<li>Le profil d'utilisateur extrême</li>
+<li>Le profil d'utilisateur type</li>
+</ul>
+<p>Le premier type de profil regroupe les personnes utilisant de façon très fréquente le type de produit / service associé au projet ou inversement, ceux qui ne l'utilisent jamais.</p>
+<p>Le deuxième type de profil regroupe les utilisateurs les plus nombreux. L'objectif est de pouvoir interroger aussi bien des personnes appartenant au profil d'utilisateur extrême (grand utilisateur et faible utilisateur) que des personnes associées au profil d'utilisateur type.</p>
+<h3>Durée des entretiens</h3>
+<p>L'idée est de pouvoir mener des entretiens sur <strong>une durée de 30 à 45 minutes</strong>. En dessous de cette durée, vous risquez de passer à côté d'informations précieuses. Au-delà et cela risque de devenir un calvaire pour votre utilisateur. De plus, son niveau de concentration et de motivation diminuera exponentiellement une fois cette durée dépassée.</p>
+<h3>Garder une trace des entretiens</h3>
+<p>Essayez de filmer ou du moins enregistrer vos entretiens. Cela vous apportera deux principaux avantages :</p>
+<ol>
+<li>
+<p>Cela vous permettra d'analyser calmement avec le temps nécessaire les différents entretiens afin d'en ressortir les éléments principaux</p>
+</li>
+<li>
+<p>Cela vous permettra d'être davantage concentré lors des entretiens. En effet, il vous faudra faire preuve d'<strong>écoute</strong> et d'<strong>empathie</strong> afin de pouvoir comprendre et collecter les attentes des utilisateurs.</p>
+</li>
+</ol>
+<h3>Prévoir une rétribution</h3>
+<p>C'est un point non négligeable. En effet, sans cela, le recrutement d'utilisateurs peut s'avérer compliqué. Pour rappel, afin que cette étape soit pertinente, il faut pouvoir interroger tous les types d'utilisateurs et pas uniquement des <em>early adopters</em> qui se feront une joie d'apporter leur expérience au projet. Et donc pour convaincre les autres types de profils, vous trouverez difficilement mieux qu'une rétribution que ce soit une enveloppe, un chèque cadeau ou des goodies. De plus, les early adopters seront également ravis de ce petit geste et pourront qui sait, jouer un rôle à la viralité de l'application lors de sa sortie!</p>
+<p>Cependant, malgré le fait qu'il soit difficile d'échapper à la rétribution, cela peut intégrer un biais lors des entretiens où l'utilisateur sera gêné de délivrer le fond de sa pensée et tentera de dresser une vision lissée - et donc faussée - de ses attentes. Cela peut notamment être plus impactant lors de <strong>tests utilisateur</strong>.
+Pour minimiser ce risque, il faudra adapter et rassurer l'utilisateur en début d'entretien. C'est notamment le sujet de la partie suivante.</p>
+<h3>Construire un guide d'entretien</h3>
+<p>Cela peut paraître logique mais construire un <strong>guide d'entretien</strong> est essentiel si vous souhaitez tirer le maximum de bénéfice de vos entretiens utilisateurs. En effet, cela présente plusieurs avantages:</p>
+<ol>
+<li>Premièrement, le fait de rédiger un guide vous accompagne dans votre réflexion. Ainsi, vous orienterez vos questions en fonction des objectifs de votre enquête</li>
+<li>Cela vous permet de construire un questionnaire exhaustif qui mettra en évidence les besoins que vous n'avez pas encore collectés ou détectés.</li>
+<li>Dernier point important, cela vous permettra de <strong>comparer les résultats</strong> entre différents utilisateurs. C'est un point crucial si vous souhaitez avoir des données utilisables et activables.</li>
+</ol>
+<h2>Débuter son entretien utilisateur</h2>
+<hr>
+<p>La première chose à faire lorsque l'on débute l'entretien est d'expliquer les raisons de celui-ci. Cela peut notamment passer par une présentation synthétique du projet.</p>
+<p>Ensuite, il est important de rassurer la personne interviewée et lui faire comprendre qu'il n'y a pas de bonnes ou mauvaises réponses. En effet, il faut qu'il soit en capacité de comprendre qu'il ne s'agit pas d'une évaluation où l'on est en attente de certaines réponses.
+Il faut donc lui expliquer qu'il doit parler de manière décomplexée et de la façon la plus détaillée possible. N'hésitez pas à lui demander de réfléchir à voix haute et d'exprimer tout ce qui lui passe par la tête.</p>
+<p>Un autre point à aborder avant de rentrer dans le vif du sujet concerne les précisions sur les traces que vous allez conserver de cet entretien et la façon dont vous allez les utiliser par la suite. La plupart du temps, cela vous servira uniquement à titre personnel afin de synthétiser à posteriori votre échange. Faire signer une décharge serait judicieux afin de clarifier ce point.</p>
+<p>Tout est désormais en place pour débuter votre entretien. Avant de rentrer dans le vif du sujet, il peut être intéressant de faire un petit <em>ice breaker</em> en lui demandant de se présenter et de dire ce qu'il fait dans la vie. Cela permettra à votre utilisateur de se mettre à l'aise et vous permettra de faire davantage connaissance avec lui et son profil.</p>
+<h2>Construire ses questions</h2>
+<hr>
+<p>On en arrive au coeur du sujet, c'est à dire les questions que vous allez poser. Voici quelques règles à respecter afin de recueillir le maximum d'informations.</p>
+<h3>Posez des questions ouvertes</h3>
+<p>Evitez toutes les questions permettant à l'utilisateur de répondre par oui ou par non. en effet, la majorité du temps, vous n'obtiendrez rien de plus qu'un oui ou un non... Et ce n'est pas avec ces réponses que vous allez identifier des besoins.
+De plus, les questions fermées peuvent de temps à autre influencer la réponse:</p>
+<p><em>- "Pensez-vous que l'expérience utilisateur pourrait être améliorée ?"</em>
+<em>- "Oui"</em></p>
+<p><img alt="yeah gif" src="https://media.giphy.com/media/l4KhSYoul5j8i3su4/giphy.gif"></p>
+<p>Apparemment, il serait judicieux d'améliorer l'expérience utilisateur. On y voit beaucoup plus clair maintenant...</p>
+<p>Par contre, si vous tournez la question dans ce sens:</p>
+<p><em>- "Quel élément selon vous pourrait vous apporter une meilleure expérience utilisateur?"</em></p>
+<p>Là, il est certain que vous aurez un retour beaucoup plus riche!</p>
+<h3>Posez des questions précises</h3>
+<p>Il est important de poser des questions ouvertes mais cela n'empêche pas qu'elles doivent également être précises!
+Dans le cas contraire, vous risquez d'avoir des réponses confuses pouvant fausser votre analyse.
+Prenons un exemple sans rentrer dans les détails. Imaginez que vous travaillez pour une salle de fitness qui vous contacte pour que vous l'aidiez à résoudre sa problématique de réabonnement. Vous allez donc rencontrer des utilisateurs de la salle. Afin de vous faire une idée sur le profil de l'utilisateur que vous interviewez, vous souhaitez obtenir une notion de fréquence <em>d'utilisation</em> du service proposé.</p>
+<p>Si vous posez la question de cette façon:
+<em>- "Combien de fois par semaine en moyenne vous rendez-vous à la salle de sport?"</em></p>
+<p>Vous avez de fortes chances d'avoir une réponse de ce type:
+<em>- "Mmmmhhhh, 3 fois par semaine"</em></p>
+<p>Du fait que vous demandez une moyenne, la réponse ne sera pas précise voir éloignée de la réalité. En effet, l'utilisateur va chercher à apporter une réponse à cette fameuse moyenne et il risque d'autant plus de gonfler la réponse en fonction des objectifs fixés initialement. Et soyons franc, qui ne connaît pas une personne qui se soit inscrite dans une salle de sport en Janvier (la fameuse bonne résolution) avec comme objectif de s'y rendre 4 fois par semaine mais qui finalement, à cause du froid, puis de la pluie, et aussi des collègues qui ont proposé d'aller boire une bière après le travail, et blablabla... finalement, n'y a jamais mis les pieds de sa vie?</p>
+<p><img alt="yeah gif" src="https://media.giphy.com/media/4KkSbPnZ5Skec/giphy.gif"></p>
+<p>Alors que, si vous posez la question de cette façon:</p>
+<p><em>-"Combien de fois êtes-vous allé à la salle de sport la semaine dernière?"</em></p>
+<p>Là vous avez plus de chances d'avoir une réponse précise du type:</p>
+<p><em>-"La semaine dernière, je n'y suis allé qu'une seule fois. Mais dans l'idéal, j'y vais 3 fois par semaine même si en ce moment j'ai un peu de mal de dépasser les deux séances par semaine. Le problème, c'est que moi je me suis inscrit à cette salle pour les cours de Bodycombat mais les horaires d'hiver ne me conviennent pas. C'est beaucoup trop tôt. La plupart du temps, je sors trop tard du travail surtout qu'en ce moment, c'est un peu la course avec la clôture de l'année fiscale..."</em></p>
+<p>C'est quand même plus intéressant comme réponse vous ne trouvez pas? En effet, des questions précises vous apporterons souvent davantage de matière. Dans cet exemple, il a suffi d'indiquer un <strong>indicateur de temps</strong>.</p>
+<p>N'hésitez pas à soumettre des ressources également si cela s'avère judicieux. Cela peut être un prototype dans le cadre d'un test utilisateur. Dans ce cas là, vos questions devront être précises quant à l'objectif à réaliser mais ne devront pas décrire les étapes pour aboutir à celui-ci. Prenons l'exemple d'un prototype servant à tester le processus d'inscription sur un site. Voici une idée de question adaptée:</p>
+<p><em>- "Pouvez-vous créer un compte s'il vous plait?"</em></p>
+<p>Cette question indique l'objectif à réaliser sans pour autant influencer l'utilisateur dans les différentes étapes qu'il doit réaliser pour y parvenir. En effet cela vous permettra d'éprouver au mieux votre prototype et recueillir des besoins ou attentes inhérentes à l'utilisation du produit.</p>
+<h3>Laissez le temps de répondre</h3>
+<p>Culturellement, nous sommes mal à l'aise par les moments de blanc dans une conversation. On se sent vite obligé d'essayer de le combler. Ici, ne le faîtes pas! Retenez-vous. En effet, laissez un temps de réflexion à la personne pour qu'elle puisse vraiment tout vous livrer. La plupart du temps, lorsque vous poserez une question, la personne interviewée vour répondra d'abord ce qui lui passe par la tête sans digérer au préalable la question pour essayer de la structurer. Et c'est très bien! Cependant, donnez-lui également le temps de réfléchir plus posément. En règle générale, vous constaterez que ce blanc lui offrira l'opportunité d'apporter des précisions et des justifications à ce qu'elle vient de dire.</p>
+<p>Dans la même idée, <strong>ne coupez jamais la parole</strong> mais au contraire, soyez attentif à ses réponses sans jamais les interpréter. Restez au même niveau que l'utilisateur. C'est essentiel afin de receillir le maximum d'informations viables. Cela permet de créer une certaine complicité et favorise les confidences.</p>
+<h3>Demandez des retours d'expérience</h3>
+<p>Dans vos questions, n'hésitez pas à demander des retours d'expériences. Faîtes en sorte que les personnes livrent leur propre histoire.
+Vous allez certainement recueillir un tas d'informations intéressantes qui vous servira dans votre synthèse. Certains points communs pourront ressortir entre les utilisateurs mais avec des histoires différentes.
+L'autre intérêt de ces derniers, c'est qu'ils représentent un formidable argumentaire pour justifier vos idées et prouveront que celles-ci ne se basent pas sur votre propre sentiment personnel.</p>
+<p>J'espère que cet article vous a apporté quelques éléments intéressants pour alimenter votre réflexion sur la manière de conduire des entretiens utilisateurs. Si vous avez des remarques concernant le contenu ou si vous souhaitez partager votre expérience sur le sujet, n'hésitez pas à écrire un commentaire juste en dessous! Cela ne fera qu'apporter une vision plus aboutie sur le sujet.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/agile/">agile</a>
+      <a href="https://www.productmakers.fr/tag/ux/">UX</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=R%C3%A9ussir%20ses%20entretiens%20utilisateurs&url=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/&title=R%C3%A9ussir%20ses%20entretiens%20utilisateurs&summary=Les%20entretiens%20utilisateurs%20sont%20une%20%C3%A9tapes%20importantes%20lorsque%20vous%20commencez%20%C3%A0%20travailler%20sur%20un%20projet.%20Bien%20men%C3%A9%2C%20ils%20vous%20permettront%20d%27identifier%20des%20besoins%20dont%20vous%20n%27avez%20pas%20connaissance%20au%20pr%C3%A9alable.%20L%27objectif%20de%20cet%20article%20est%20de%20fournir%20un%20cadre%20afin%20de%20pouvoir%20construire%20ces%20entretiens%20utilisateurs.&source=https%3A//www.productmakers.fr/articles/reussir-ses-entretiens-utilisateurs/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

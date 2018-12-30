@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Un blog statique, c&#39;est quoi et comment ça marche? Découvrez le concept de blog statique, ses avantages et ses inconvénients ainsi que son fonctionnement." />
+<meta name="keywords" content="tutoriels">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="C&#39;est quoi un blog statique? Comment ça fonctionne?"/>
+<meta property="og:description" content="Un blog statique, c&#39;est quoi et comment ça marche? Découvrez le concept de blog statique, ses avantages et ses inconvénients ainsi que son fonctionnement."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/explication-blog-statique/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-10-26 00:00:00+02:00"/>
+<meta property="article:modified_time" content="2018-10-26 00:00:00+02:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="tutoriels"/>
+<meta property="article:tag" content="tutoriels"/>
+<meta property="og:image" content="">
+
+  <title>ProductMakers &ndash; C&#39;est quoi un blog statique? Comment ça fonctionne?</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+  </div>
+  <header>
+      
+    <h1 id="explication-blog-statique">C'est quoi un blog statique? Comment ça fonctionne?</h1>
+    <p>
+      <!-- Posté le 26/10/2018 dans <a href="https://www.productmakers.fr/categorie/tutoriels/">tutoriels</a> -->
+      
+      26/10/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=C%27est%20quoi%20un%20blog%20statique%3F%20Comment%20%C3%A7a%20fonctionne%3F&url=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/explication-blog-statique/&title=C%27est%20quoi%20un%20blog%20statique%3F%20Comment%20%C3%A7a%20fonctionne%3F&summary=Un%20blog%20statique%2C%20c%27est%20quoi%20et%20comment%20%C3%A7a%20marche%3F%20D%C3%A9couvrez%20le%20concept%20de%20blog%20statique%2C%20ses%20avantages%20et%20ses%20inconv%C3%A9nients%20ainsi%20que%20son%20fonctionnement.&source=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Un blog statique? Mais qu'est-ce que tu me racontes? Si je veux un blog, je me tourne vers Wordpress et puis on en parle plus.
+Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blogs mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique (et un site statique plus globalement) ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.</p>
+<p>Comme ce post est le second d'un tutoriel dédié à la création d'un blog statique, je me permets d'en rappeler sa structure:</p>
+<ol>
+<li><a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/">Présentation du tutoriel et de ces objectifs</a></li>
+<li><strong>Un blog statique, c'est quoi et comment ça fonctionne?</strong></li>
+<li><a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Mettre en place GitHub Pages pour l'hébergement d'un blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/">Utiliser Pelican pour son blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/">Utiliser Travis pour automatiser le déploiement de son blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/">Mettre en place un thème sur son blog statique Pelican</a></li>
+</ol>
+<p>Au travers cet article, il s'agira donc de définir le concept de blog statique puis d'en présenter ces avantages et ces inconvénients. Ensuite, l'objectif sera de décrire globalement comment un blog statique fonctionne et s'attardera sur le générateur de sites statiques <strong>Pelican</strong>, car c'est celui-ci que nous utiliserons dans le tutoriel.</p>
+<p>Et si vous avez des remarques, suggestions ou compléments à la fin de l'article, n'hésitez pas à laisser un commentaire!</p>
+<p>Maintenant que tout est plus clair, rentrons dans le vif du sujet.</p>
+<h2>Pour commencer, c'est quoi un blog statique?</h2>
+<hr>
+<p>Un blog (ou un site d'ailleurs) statique n'est constitué uniquement que de fichiers entièrement statiques (merci captain Obious!)</p>
+<p><img alt="thanks captain obvious gif" src="https://media.giphy.com/media/3o7abonV6K9irq7kaY/giphy.gif"></p>
+<p>Et oui, il ne faut pas aller chercher très loin... En effet, plus de langages serveurs (php, python, ...), plus de bases de données ou autres scripts exécutés sur le serveur, tout est 100% statique et délivré par un serveur web.</p>
+<p>Ainsi, le blog ne sera constitué que de fichiers html, d'images, de css et éventuellement de javascript. </p>
+<p>Alors super, maintenant que l'on sait ce que c'est, en quoi c'est intéressant de construire son blog en utilisant cette approche?</p>
+<h2>Les avantages d'un blog statique</h2>
+<hr>
+<p>Je vois personnellement trois gros avantages:</p>
+<h3>La rapidité</h3>
+<p>En effet, le serveur n'a plus besoin de récupérer des informations dans une base de données pour construire les pages. Il ne fait rien d'autres que délivrer des pages HTML et les médias qui lui sont associés.</p>
+<h3>La sécurité</h3>
+<p>L'autre énorme avantage d'un site statique réside dans la sécurité. Il n'y a quasiment aucuns risques de se faire pirater (injection SQL, injection de fichiers, ...) et aucun script n'est réalisé côté serveur. Ce ne sont que des fichiers statiques qui sont délivrés au navigateur.
+Ainsi, les risques de se faire planter son blog après 3 ans d'existences et de tout perdre bêtement sont fortement limités.</p>
+<h3>Souplesse</h3>
+<p>Enfin, le dernier avantage non négligeable concerne la souplesse de ce type de blog.
+Le fait d'avoir un site statique rend l'<strong>hébergement</strong> beaucoup plus simple et moins cher. Dans ce tutoriel, il ne nous coûtera pas 1 seul centime! Le seul coût concernera l'achat du nom de domaine.
+De plus, un site statique offre une très bonne capacité à tenir la charge. Je ne l'ai peut-être pas assez dit, mais un site statique n'est composé que de fichiers statiques... Oui, mais du coup, et je me répète encore, pas de scripts exécutés sur le serveurs et cela permet d'économiser des ressources serveurs importantes!</p>
+<p>Pour terminer avec la souplesse d'un blog statique (si je ne vous ai pas encore convaincu), la sauvegarde et la restauration se font facilement. Un simple archivage de fichiers suffit et il n'est pas nécessaire de faire des exports ou imports de base de données qui peuvent être des tâches parfois délicates.</p>
+<p>Ouahhhh, c'est super un site statique. Pourquoi tout le monde ne l'utilise pas alors? Et bien, comme toute solution, il n'y a pas forcément que des avantages.</p>
+<h2>Les inconvénients d'un blog statique</h2>
+<hr>
+<p>Effectivement, un blog statique présente certains inconvénients qu'il ne faut pas négliger.</p>
+<h3>Prise en main</h3>
+<p>Premièrement, la prise en main n'est pas aussi facile qu'un CMS de type Wordpress. En effet, il n'y a pas d'interface d'administration user-friendly de type <a href="https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get">wysiwyg</a> (WhatYouSeeIsWhatYouGet) qui permet de tous gérer en quelques clics. Il ne faut pas avoir peur de faire quelques lignes de commande (même si cela n'est pas compliqué en soit et ne doit pas vous effrayer plus que ça).</p>
+<h3>Et mes commentaires?</h3>
+<p>En effet, le fait de ne pas avoir de base de données pour un blog limite les interactions avec les lecteurs, ce qui est profondément pénalisant lorsque l'on considère qu'un blog est avant tout un outil d'échange et de partage.
+Cependant, il est possible de passer par des systèmes externes pour la gestion de commentaires qui s'interface très bien avec les générateurs de sites statiques.
+Cependant, le fait de faire appel à un outil externe crée une certaine dépendance envers celui-ci et peut s'avérer impactant (si le service tombe par exemple).</p>
+<h3>Comment je fais pour être contacté?</h3>
+<p>Il est également plus difficile de créer un espace de contact. Cela peut s'avérer être un frein lorsque c'est l'un des objectifs principaux.
+Cela n'est cependant pas impossible et des méthodes existe pour mettre en place cela.</p>
+<p>Alors convaincu et prêt à se lancer dans la mise en place d'un blog statique? Suivez le guide et approfondissons un peu en décrivant brièvement comment cela fonctionne.</p>
+<h2>Comment met-on ça en place?</h2>
+<hr>
+<p>On va se servir d'un générateur de sites statiques.</p>
+<h3>C'est quoi un générateur de sites statiques?</h3>
+<p>Et bien comme son nom l'indique, ça permet de gérer des fichiers statiques. Il va permettre de générer des menus, mettre en place de la pagination, etc... un vrai site web finalement de façon simple, rapide et à moindre coût.</p>
+<p>La particularité principale d'un générateur de sites statiques réside dans son moteur de templates. Pour faire simple, cela permet de créer des gabarits (ou structure) de pages web dans lequel va être diffusé votre contenu écrit dans un format Markdown la plupart du temps.
+Ensuite lorsque vous souhaitez publier/ mettre à jour votre site suite à la création d'un nouveau contenu, le générateur va créer les fichiers html qui composeront votre site.</p>
+<p>Il existe une multitude de générateurs de sites statiques. En voici une liste non exhaustive:</p>
+<ul>
+<li><a href="https://jekyllrb.com/">Jekyll</a> (écrit en Ruby)</li>
+<li><a href="http://docs.getpelican.com/en/stable/">Pelican</a> (écrit en Python)</li>
+<li><a href="https://gohugo.io/">Hugo</a> (écrit en Go)</li>
+<li><a href="http://ringce.com/hyde/">Hyde</a> (écrit en Python)</li>
+<li><a href="http://octopress.org/">Octopress</a> (écrit en Ruby)</li>
+<li><a href="https://middlemanapp.com/">Middleman</a> (écrit en Ruby)
+...</li>
+</ul>
+<p>Pour ce tutoriel, il s'agira de mettre en place un blog statique en utilisant <strong>Pelican</strong>. Ce n'est pas parce que c'est le meilleur mais parce que c'est celui-ci que j'utilise car il est écrit en Python et qu'il utilise le moteur de template <a href="http://jinja.pocoo.org/">Jinja2</a>. Je trouve notamment sa documentation complète et claire ce qui est un point non négligeable.</p>
+<p>Mais vous pourriez tout aussi bien utiliser un autre outil comme <strong>Jekyll</strong> par exemple qui est également très populaire, notamment pour sa simplicité d'intégration avec GitHub Pages.</p>
+<h2>Présentation de Pelican</h2>
+<hr>
+<p>Pelican est donc un logiciel écrit en Python sous licence AGPL. Il permet de générer des sites statiques (non??? Vraiment???) et offre notamment dans sa version 3 de nombreuses fonctionnalités:</p>
+<ul>
+<li>Il permet de rédiger des articles de blogs et des pages aux formats <a href="https://fr.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> ou <a href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a> en utilisant l'éditeur de texte de votre choix</li>
+<li>Il offre l'opportunité de gérer les thèmes par l'intermédiaire du système de templates Jinja2</li>
+<li>Il inclut une interface de ligne de commande (<a href="https://fr.wikipedia.org/wiki/CLI">CLI</a>) permettant de générer facilement votre site.</li>
+<li>Il gère l'internationalisation</li>
+<li>Il intègre des outils externes comme Twitter, Google Analytics, etc...</li>
+<li>Il génère des flux Atom et RSS</li>
+<li>...</li>
+</ul>
+<p>Il s'agit donc d'un outil complet avec lequel on va pouvoir s'amuser.</p>
+<p>Afin de résumer un peu son fonctionnement et ce qu'il a été dit dans les deux dernières parties, voici un schéma très simple résumant la façon dont Pelican génère un site statique:</p>
+<p><img alt="blog_static_fonctionnement" src="https://www.productmakers.fr/images/blog_statique_fonctionnement.jpg"></p>
+<p>Le répertoire source contient deux principaux répertoire (nous reviendrons sur les autres fichiers par la suite):</p>
+<ul>
+<li>Un répertoire <strong>theme</strong> qui contient l'ensemble des éléments propre au thème sélectionné. Il s'agit principalement des templates (ou gabarits) des différentes pages ainsi que les fichiers statics (css, javacript, images, ...)</li>
+<li>Un répertoire <strong>content</strong> qui contient l'ensemble du contenu dans des fichiers au format .md (Markdown) ou .rst (reStructuredText).</li>
+</ul>
+<p>Au moment de la génération du site par Pelican, ce dernier crée un répertoire <strong>output</strong> contenant l'ensemble des fichiers html du site ainsi qu'un dossier pour les statics. Et c'est ce répertoire qui sera hébergé sur un serveur web.</p>
+<p>Maintenant que vous en savez un peu plus sur ce qu'est un blog statique (ces avantages, ces inconvénients et son fonctionnement global), j'espère que vous avez hâte de passer à l'action et de vous salir un peu les mains car le prochain article de ce tutoriel va consister à mettre en place la structure qui va héberger et délivrer notre blog statique.</p>
+<p>Si vous êtes prêt, il est temps de passer à la partie suivante de ce tutoriel:</p>
+<p><a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Tutoriel pour apprendre à héberger son site statique avec GitHub Pages</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/tutoriels/">tutoriels</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=C%27est%20quoi%20un%20blog%20statique%3F%20Comment%20%C3%A7a%20fonctionne%3F&url=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/explication-blog-statique/&title=C%27est%20quoi%20un%20blog%20statique%3F%20Comment%20%C3%A7a%20fonctionne%3F&summary=Un%20blog%20statique%2C%20c%27est%20quoi%20et%20comment%20%C3%A7a%20marche%3F%20D%C3%A9couvrez%20le%20concept%20de%20blog%20statique%2C%20ses%20avantages%20et%20ses%20inconv%C3%A9nients%20ainsi%20que%20son%20fonctionnement.&source=https%3A//www.productmakers.fr/articles/explication-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

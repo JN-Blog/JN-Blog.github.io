@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Eric Ries, l&#39;auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. A partir d&#39;un exemple assez simple, j&#39;ai tenté d&#39;exprimer tout l&#39;intérêt de ce type de production." />
+<meta name="keywords" content="lean">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Produire par petits lots VS produire en série"/>
+<meta property="og:description" content="Eric Ries, l&#39;auteur de Lean Startup, décrit la production par petits lots (inspirée du Toyotisme) comme un élément essentiel de sa méthodologie. A partir d&#39;un exemple assez simple, j&#39;ai tenté d&#39;exprimer tout l&#39;intérêt de ce type de production."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/produire-par-petits-lots/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-12-19 00:00:00+01:00"/>
+<meta property="article:modified_time" content="2018-12-22 00:00:00+01:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="articles"/>
+<meta property="article:tag" content="lean"/>
+<meta property="og:image" content="https://www.productmakers.fr//images/img_summary_production_par_petits_lots.jpg">
+
+  <title>ProductMakers &ndash; Produire par petits lots VS produire en série</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+<img src="/images/img_summary_production_par_petits_lots.jpg" alt="">  </div>
+  <header>
+      
+    <h1 id="produire-par-petits-lots">Produire par petits lots VS produire en série</h1>
+    <p>
+      <!-- Posté le 19/12/2018 dans <a href="https://www.productmakers.fr/categorie/articles/">articles</a> -->
+      
+      19/12/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Produire%20par%20petits%20lots%20VS%20produire%20en%20s%C3%A9rie&url=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/&title=Produire%20par%20petits%20lots%20VS%20produire%20en%20s%C3%A9rie&summary=Eric%20Ries%2C%20l%27auteur%20de%20Lean%20Startup%2C%20d%C3%A9crit%20la%20production%20par%20petits%20lots%20%28inspir%C3%A9e%20du%20Toyotisme%29%20comme%20un%20%C3%A9l%C3%A9ment%20essentiel%20de%20sa%20m%C3%A9thodologie.%20A%20partir%20d%27un%20exemple%20assez%20simple%2C%20j%27ai%20tent%C3%A9%20d%27exprimer%20tout%20l%27int%C3%A9r%C3%AAt%20de%20ce%20type%20de%20production.&source=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Au sein de votre environnement de travail, on vous demande d'adopter une approche agile, de gérer le cycle de vie d'un produit de façon itérative, d'aborder le développement dans un processus d'intégration continue, ou encore de définir les prochaines fonctionnalités à intégrer dans le MVP. Ces missions décrivent l'organisation de beaucoup d'entreprises et au-delà d'être passionnantes, elles ont également du sens. Elles s'articulent autour de méthodologies et système organisationnels précis.</p>
+<p>Au travers de cet article, je souhaite vous exposer ma compréhension de l'un des éléments essentiels qu'Eric Ries évoque dans son ouvrage <a href="http://theleanstartup.com/">Lean Startup</a>: <strong>la production par petits lots</strong>. En effet, c'est une composante essentielle de sa méthodologie. Et pour échanger avec vous autour de ce concept, j'ai décidé d'écrire cet article autour de l'histoire de Jean et Camille qui sont en pleine planification de leur mariage!</p>
+<h2>Le mariage de Jean et Camille: l'envoi des faire-parts</h2>
+<hr>
+<p>Jean et Camille se marient dans 6 mois. Ils sont heureux et ont hâte de partager cet évènement avec leur famille et leurs amis. Cependant, préparer un mariage ne se fait pas en deux claquements de doigts. Le lieu et la date du mariage ont été définis et il est grand temps d'envoyer les faire-parts. C'est leur mission du weekend!
+Pour chaque faire-part, l'opération consiste à:</p>
+<ul>
+<li>Plier le faire-part</li>
+<li>Mettre le faire-part dans l'enveloppe</li>
+<li>Mettre un timbre sur l'enveloppe</li>
+<li>Mettre l'adresse sur l'enveloppe</li>
+</ul>
+<p>Il y a 150 faire-parts à envoyer. Jean et Camille décident de se séparer le travail en deux, soit 75 faire-parts à préparer chacun.
+Jean et Camille décident d'utiliser une méthode différente.</p>
+<h3>La méthode de Jean</h3>
+<p>Jean décide de découper les tâches en adoptant une logique de <strong>production en série</strong>. Ainsi, il décide d'arborer la logique suivante:</p>
+<ol>
+<li>Dans un premier temps, il décide de plier tous les faire-parts</li>
+<li>Une fois cela fait, il décide de mettre tous les faire-parts dans l'enveloppe</li>
+<li>Il décide ensuite de coller un timbre sur chaque enveloppe</li>
+<li>Enfin, il décide d'écrire les adresses de chaque invité</li>
+</ol>
+<p>Jean pense instinctivement qu'en découpant les tâches de cette façon, il sera plus rapide. Il conseille à Camille de faire de même mais elle décide tout de même de procéder autrement.</p>
+<h3>La méthode de Camille</h3>
+<p>Camille, contrairement à Jean, décide de réaliser chaque étape d'un faire-part avant de passer au suivant. Elle décide donc d'utiliser une logique de <strong>production par petits lots</strong>, un lot dans notre cas étant égale à un faire-part.</p>
+<p>Jean, quelque peu vexé que Camille ne suive pas son conseille lui propose de faire la course et de se chronométrer. Camille accepte.
+Le défi est lancé!</p>
+<h2>Match de la rapidité</h2>
+<hr>
+<p>Le suspense est à son comble. Qui va gagner? Qui va frimer devant l'autre pour avoir fini le premier? Est-ce Jean avec son approche de production en série? Ou bien, est-ce Camille qui a préféré choisir une production par petits lots?
+La réponse après cette courte page de pub...</p>
+<p><img alt="pub drole tide gif" src="https://media.giphy.com/media/xThtaf9QQxeH7K1bS8/giphy.gif"></p>
+<p>Merci d'être encore là. Sans plus attendre, voici le nom du vainqueur. Il s'agit de ... Camille !!
+Un grand bravo à Camille pour avoir ridiculisé Jean et sa méthode de prodution en série.</p>
+<p>Comment? Vous insinuez que ce n'est pas possible et qu'il y a forcément eu tricherie? Et si je vous dis que bien que la production par petits lots paraisse inefficace, cette dernière reste plus efficiente que la production en série. En effet, de nombreuses études l'ont démontrées. Et pous appuyer mes propos, je vous propose cette petite vidéo où une personne réalise l'expérience et se chronomètre:</p>
+<p><a href="http://www.youtube.com/watch?v=Dr67i5SdXiM" title="Expérience flux pièce à pièce vs flux continu"><img alt="Flux pièce à pièce vs flux continu" src="https://www.productmakers.fr/images/production_par_lots_youtube_screen.png"></a> </p>
+<p>Les résultats semblent contre-intuitif. Cela est dû au fait que notre intuition nous joue des tours sur deux aspects:</p>
+<ol>
+<li>Notre intuition ne tient pas compte des temps de transition entre chaque étape du processus, à savoir le tri, l'empilement ou encore le déplacement des grosses piles.</li>
+<li>Il nous paraît plus efficace de répéter la tâche un grand nombre de fois car nous pensons que nous la réaliserons plus vite avec l'habitude. Ce qui ne semble malheureusement pas être le cas ou du moins cet aspect - à savoir la performance individuelle - n'est pas suffisant par rapport à la performance globale du système.</li>
+</ol>
+<p>Ainsi Camille remporte le match de la rapidité haut la main:</p>
+<ul>
+<li>Camille: 1</li>
+<li>Jean: 0</li>
+</ul>
+<p>Mais si le match ne s'arrêtait pas là?
+En effet, et si Camille, en choisissant la logique de production par petits lots avait également identifié d'autres avantages à utiliser cette méthode?</p>
+<p>Affinons notre exemple dans la partie suivante.</p>
+<h2>Match de l'adaptabilité</h2>
+<hr>
+<p>Camille et Jean, avant de se lancer dans cette course contre la montre, avait décidé au préalable de plier les faire-parts en deux dans le sens de la longueur pour les insérer dans les enveloppes.</p>
+<p>Le problème, c'est que finalement, plié de cette façon, les faire-parts ne rentrent pas dans les enveloppes, du moins sans faire une sorte de goutière d'un demi centimètre sur la largeur, ce qui n'est vraiment pas joli.</p>
+<p>Ce problème, Camille l'a identifié dès le premier faire-part et avant de passer au suivant, elle a pu mettre en place une nouvelle technique de pliage permettant d'insérer le faire-part dans l'enveloppe de manière élégante. Cela lui a couté 5 minutes de temps supplémentaires et elle a pu adapter ce nouveau moyen de pliage pour les faire-parts suivants.</p>
+<p>Ayant l'esprit compétitif, Camille n'a pas souhaité avertir Jean. De son côté, Jean a donc plié les 75 faire-parts selon la méthode initiale pour se rendre compte au moment de mettre le premier faire-part dans l'enveloppe que le pliage ne convenait pas... Du coup, Jean est bien embêté car il se retrouve confronté à un problème bien plus sérieux à résoudre. En effet:</p>
+<ol>
+<li>Il doit définir une nouvelle méthode de pliage et repartir de zéro lui faisant perdre un temps considérable.</li>
+<li>Il doit choisir entre deux options dont aucune ne l'arrange. En effet, il doit décider entre <strong>baisser en qualité</strong> (replier les faire-parts contenant déjà des plis) ou <strong>augmenter les coûts</strong> (en rachetant de nouveaux faire-parts).</li>
+</ol>
+<p>Cet exemple illustre clairement l'autre avantage de la production par petits lots par rapport à la production en série.
+Il est beaucoup plus facile de s'adapter aux imprévus et apporter une solution efficace sans déteriorer le coût de production, ni la qualité et en minimisant le temps nécessaire à résoudre cet imprévu.</p>
+<p>Si on regarde de nouveau les scores:</p>
+<ul>
+<li>Camille: 2</li>
+<li>Jean: 0</li>
+</ul>
+<p>Alors c'est bien beau tout ça me direz vous mais quel est l'intérêt de parler de ça dans ce blog? En effet, l'objectif de ce blog n'est pas de vous présenter des astuces liées à la préparation d'un mariage mais d'échanger autour de la conception de produit et de la gestion de son cycle de vie. Et figurez-vous que la production par petits lots n'est pas dénuée d'intérêt lorsque vous souhaitez lancer un produit sur un marché.</p>
+<h2>Tester la pertinence de son produit via un processus de production par lots.</h2>
+<hr>
+<h3>La boucle de feedback</h3>
+<p>Eric Ries, dans son ouvrage <em>Lean Startup</em>, présente une méthodologie de conception de produit (peut également être une offre de service) qu'il nomme <strong>la boucle de feedback</strong> et qui est constituée de trois étapes.</p>
+<p><img alt="lean startup boucle de feedback" src="https://www.productmakers.fr/images/production_par_lots_boucle_feedback.jpg"></p>
+<p>L'objectif de cet article n'est pas de rentrer dans les détails de cette approche mais d'apporter un peu de contexte lié au développement d'un produit (ou service) et faire le parallèle avec l'exemple des faire-parts pour le mariage de Jean et Camille.
+Par contre, si vous êtes intéressés par le sujet et souhaitez échanger et approfondir le sujet ensemble, n'hésitez pas à me le notifier dans les commentaires.</p>
+<p>Eric Riès propose cette approche itérative en trois étapes dont l'objectif est de concevoir un produit permettant notamment d'atteindre un product/market fit, qui pour reprendre les mots de son fondateur Marc Andreessen, consiste à :</p>
+<blockquote>
+<p>être positionné sur un bon marché avec un produit apte à satisfaire ledit marché.</p>
+</blockquote>
+<p>Mais dans notre cas, ce qui est intéressant pour cette article, c'est l'un des postulats qui a amené Eric Ries à concevoir cette méthodologie à savoir <strong>nous vivons dans un monde d'incertitude</strong>. Dans le monde entrepreneurial, cela se rapporte au fait que nous n'avons pas d'idées précises de ce que veulent les clients. Et dans la même approche, ce n'est pas parce que nous connaissons les besoins de nos clients à un instant T qu'ils resteront les mêmes par la suite. Tout ce que nous avons, ce sont <strong>des hypothèses</strong> concernant le client qu'il faut valider ou invalider. Cette méthodologie propose donc de travailler sur ces hypothèses en minimisant les coûts et le temps passé en intégrant notamment le client directement dans le cycle de production.</p>
+<p>Et pour cela, cette méthodologie se base notamment (mais pas uniquement) sur la production par petits lots. C'est en partie grâce à cette approche qu'il est possible d'intégrer le client au sein du cycle de production et de pouvoir vérifier les hypothèses sur l'itération en cours.</p>
+<h3>La boucle de feedback chez Jean et Camille</h3>
+<p>Poussons l'exemple de cet article encore un peu plus loin en invitant la boucle de feedback dans les faire-parts de Jean et Camille.
+Ce que je ne vous ai pas dit jusqu'à maintenant, c'est que les parents de Jean et la soeur de Camille sont venus passer le weekend chez eux et ils se trouvent justement dans la pièce à côté.</p>
+<p>Camille, ayant choisi l'approche de production par petits lots, a justement décidé de commencer par le faire-part de sa soeur. Après avoir constaté que le pliage initiale n'était pas correcte et ayant par la suite mis au point une nouvelle méthode qu'elle considère comme optimale, elle décide tout de même avant de continuer avec les autres faire-parts de donner à sa soeur le sien et lui demander ce qu'elle en pense. Sa soeur, ravie, ouvre l'enveloppe et lit le faire part. Elle est ravie mais elle a cependant quelques retours. En effet, intéressée par la décoration et le bricolage, ses amis lui ont offert un cours d'origami et elle souhaite en faire profiter Camille en lui proposant une manière originale pour plier les faire-parts. Sa soeur lui explique que de cette façon, lorsque les personnes sortiront le faire-part de l'enveloppe, ils auront conscience que c'est une invitation mais qu'ils devront ouvrir le faire-part afin de découvrir qu'il s'agit de leur mariage. Camille remercie sa soeur pour ce retour d'expérience et décide donc d'utiliser cette méthode de pliage pour les suivants. En effet, cela ne lui prend pas beaucoup plus de temps et elle pense (soit une nouvelle hypothèse) que l'expérience proposée conviendra à ses invités.
+Au même moment, Jean ne s'est toujours pas rendu compte que la méthode de pliage initiale ne permet pas d'insérer les faire-parts dans une enveloppe...</p>
+<p><img alt="homme qui évacue de l'eau inutilement gif" src="https://media.giphy.com/media/YWAiayVul0JLq/giphy.gif"></p>
+<p>Via cet exemple, Camille a réalisé une itération selon la boucle de feedback:</p>
+<ol>
+<li>Elle est partie de l'hypothèse que sa première solution de pliage était celle qui convenait le mieux pour ses invités</li>
+<li>Elle a mis en place un système permettant d'évaluer son prototype auprès de ses invités. Ici, il s'agit de saisir l'opportunité que sa soeur soit à ses côtés ce weekend pour préparer les faire-parts de mariage et lui proposer sa première version</li>
+<li>Elle a ensuite récupéré et analysé les retours de sa soeur pour établir une nouvelle version avec une méthode de pliage différente </li>
+<li>Pour la prochaine itération, Camille décidera sûrement d'offrir les faire-parts aux parents de Jean</li>
+</ol>
+<p>Et Jean, il en est où maintenant? Et bien, il est toujours la tête dans le guidon en train de plier les siens sans se rendre compte qu'ils ne rentreront pas dans l'enveloppe.</p>
+<p>Si je devais proposer un dernier match Jean Vs. Camille qui résumerait cette partie de l'exemple, il s'agirait d'un <strong>match concernant la satisfaction client</strong> et devinez qui aurait gagné:</p>
+<ul>
+<li>Camille: 3</li>
+<li>Jean: 0</li>
+</ul>
+<h2>La production par petits lots, c'est malin!</h2>
+<hr>
+<p>Soyons clair, en écrivant cet article, je n'avais pas pour objectif de vous donner un tutoriel sur la façon de préparer votre mariage.
+L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à participer en ajoutant un commentaire!</p>
+<p>J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquelles son produit se base. Il s'agit du concept de <strong>déploiement continu</strong>. Je l'ai même utilisé dans la dernière partie de mon exemple. En effet, c'est ce qui permet notamment de pouvoir proposer rapidement à ses clients une nouvelle version de son produit. Si vous êtes également intéressé par un article sur le sujet afin d'échanger sur ce concept, faîtes le moi aussi savoir dans les commentaires.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/lean/">lean</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Produire%20par%20petits%20lots%20VS%20produire%20en%20s%C3%A9rie&url=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/&title=Produire%20par%20petits%20lots%20VS%20produire%20en%20s%C3%A9rie&summary=Eric%20Ries%2C%20l%27auteur%20de%20Lean%20Startup%2C%20d%C3%A9crit%20la%20production%20par%20petits%20lots%20%28inspir%C3%A9e%20du%20Toyotisme%29%20comme%20un%20%C3%A9l%C3%A9ment%20essentiel%20de%20sa%20m%C3%A9thodologie.%20A%20partir%20d%27un%20exemple%20assez%20simple%2C%20j%27ai%20tent%C3%A9%20d%27exprimer%20tout%20l%27int%C3%A9r%C3%AAt%20de%20ce%20type%20de%20production.&source=https%3A//www.productmakers.fr/articles/produire-par-petits-lots/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>

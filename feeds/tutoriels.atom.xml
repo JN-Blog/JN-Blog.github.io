@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ProductMakers - tutoriels</title><link href="https://www.productmakers.fr/" rel="alternate"></link><link href="https://www.productmakers.fr/feeds/tutoriels.atom.xml" rel="self"></link><id>https://www.productmakers.fr/</id><updated>2018-11-18T00:00:00+01:00</updated><entry><title>Installer un thème sur son blog statique Pelican</title><link href="https://www.productmakers.fr/articles/installer-un-theme-pelican/" rel="alternate"></link><published>2018-11-18T00:00:00+01:00</published><updated>2018-11-18T00:00:00+01:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-11-18:/articles/installer-un-theme-pelican/</id><summary type="html">&lt;p&gt;Découvrez comment installer un thème sur son blog Pelican&lt;/p&gt;</summary><content type="html">&lt;p&gt;Notre blog est désormais installé et déployé et il est désormais possible d'écrire tous les articles souhaités.
+Seulement, le thème principal n'est pas vraiment attractif et il serait sympa d'avoir la possibilité de le changer. C'est ce que nous allons découvrir dans cet article.&lt;/p&gt;
+&lt;p&gt;Il s'agit du sixième article d'un tutoriel dédié à la mise en place d'un blog statique. Dans cette logique, je me permets d'en rappeler la structure globale:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"&gt;Présentation du tutoriel et de ces objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Un blog statique, c'est quoi et comment ça fonctionne?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Mettre en place GitHub Pages pour l'hébergement d'un blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Utiliser Pelican pour son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Utiliser Travis pour automatiser le déploiement de son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mettre en place un thème sur son blog statique Pelican&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dans cet article, nous verrons donc où trouver le thème de nos rêves et verrons une façon simple d'en mettre un en place.&lt;/p&gt;
+&lt;h2&gt;Ou trouver un thème Pelican&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Il existe de nombreux thèmes pour Pelican et il y a de fortes chances que vous trouviez votre bonheur.&lt;/p&gt;
+&lt;p&gt;Il est possible de les visualiser sur le site &lt;a href="http://www.pelicanthemes.com/"&gt;www.pelicanthemes.com&lt;/a&gt;.
+Chaque thème contient une petite description ainsi qu'un imprime écran permettant d'obtenir un aperçu.
+Et bien évidemment, chaque thème présenté contient un lien vers son repository github.&lt;/p&gt;
+&lt;p&gt;Il existe également un repository github contenant l'ensemble des codes sources des &lt;a href="https://github.com/getpelican/pelican-themes"&gt;thèmes pelican&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Voyons ensuite une méthode pour en installer un sur le blog tutoriel-pelican.&lt;/p&gt;
+&lt;h2&gt;Préparer son projet à recevoir un thème&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Il existe plusieurs façons d'installer un thème Pelican. Pour ma part, j'ai privilégié la méthode qui installe le thème sélectionné au sein d'un répertoire &lt;em&gt;themes&lt;/em&gt; du projet source.
+Pourquoi? Je trouve ce choix intéressant pour trois raisons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le thème est directement lié au projet&lt;/li&gt;
+&lt;li&gt;Il est possible d'en installer plusieurs, de supprimer ou d'en ajouter un facilement&lt;/li&gt;
+&lt;li&gt;Il est possible de personnaliser au fur et à mesure le thème sélectionné&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Voyons comment procéder désormais.&lt;/p&gt;
+&lt;h3&gt;Création du répertoire thème&lt;/h3&gt;
+&lt;p&gt;La première chose à faire est de créer le répertoire &lt;em&gt;themes&lt;/em&gt; à la racine du projet. Au sein de ce répertoire, nous allons créer deux répertoires supplémentaires, &lt;strong&gt;dist&lt;/strong&gt; et &lt;strong&gt;src&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;themes/
+    |- dist/
+    |- src/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le répertoire &lt;strong&gt;dist&lt;/strong&gt; contiendra les fichiers qui seront utilisés lors du déploiement tandis que le répertoire &lt;strong&gt;src&lt;/strong&gt; contiendra les fichiers sources du thème téléchargé sur lesquels il sera possible d'apporter des modifications et de tester avant de répliquer les fichiers sur le répertoire &lt;strong&gt;dist&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Dans cette logique, il n'est pas nécessaire de versionner le répertoire &lt;strong&gt;src&lt;/strong&gt;. Ajoutons donc ce répertoire au sein du fichier .gitignore:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;...
+themes/src
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Ajoutons quelques modifications sur le fichier pelicanconf.py&lt;/h3&gt;
+&lt;p&gt;Il est maintenant nécessaire d'indiquer à Pelican l'endroit où il devra récupérer le thème.
+Pour faire cela, il suffit juste de rajouter une variable &lt;code&gt;THEME&lt;/code&gt; au sein du fichier &lt;strong&gt;pelicanconf.py&lt;/strong&gt; et d'y indiquer le chemin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;themes/dist&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et voilà, le projet est prêt à recevoir notre thème.&lt;/p&gt;
+&lt;h2&gt;Installer un thème sur notre blog statique&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3&gt;Cloner le code source du thème choisi&lt;/h3&gt;
+&lt;p&gt;Pour le blog &lt;strong&gt;tutoriel pelican&lt;/strong&gt;, mon choix s'est porté sur le thème &lt;a href="https://github.com/jody-frankowski/blue-penguin/tree/c5e23e7753367b5beacce87b732cd1567c4818f9"&gt;blue-penguin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La première étape consiste à cloner le code source du thème au sein du répertoire &lt;strong&gt;src&lt;/strong&gt;/&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/jody-frankowski/blue-penguin.git themes/src
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le thème est désormais installé au sein du répertoire &lt;strong&gt;src&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Pour le moment, nous n'allons pas apporter de modifications sur ce thème et nous l'utiliserons tel quel. Nous pouvons donc simplement copier les fichiers au sein du répertoire &lt;strong&gt;dist&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cp -a themes/src/* themes/dist
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il suffit désormais de lancer votre thème en local pour vous apercevoir que votre blog n'a plus la même apparence.&lt;/p&gt;
+&lt;h3&gt;Ajouter les paramétrages nécessaires&lt;/h3&gt;
+&lt;p&gt;Le fait d'avoir lancé le site en local nous a permis de constater que ce nouveau thème a bien été pris en compte.&lt;/p&gt;
+&lt;p&gt;En lisant le README du repository, on s'aperçoit qu'il est possible d'ajouter quelques configurations afin de personnaliser notamment le menu.
+Pour ma part, je rajoute uniquement la variable &lt;strong&gt;MENUITEMS&lt;/strong&gt; permettant de rajouter les liens vers ce blog et vers la documentation Pelican au sein du menu.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MENUITEMS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;JN-Blog&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;https://www.jn-blog.com/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Docs Pelican&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://docs.getpelican.com/en/stable/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Libre à vous d'apporter les modifications que vous souhaitez. Chaque thème comporte son lot de modifications afin de proposer la meilleure expérience possible.
+Le thème est désormais installé et correctement paramétré. La structure mis en place permet de modifier et personnaliser facilement le thème.
+Il ne reste plus qu'un petit déploiement afin de tout envoyer sur l'environnement de production.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="deploiement d'un theme pelican" src="https://www.productmakers.fr/images/tuto-pelican-theme-production.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Un dernier mot pour la route&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;J'espère que ces articles vous ont intéressés.
+Nous avons vu ensemble au travers de ces articles et de ce &lt;a href="https://tutoriel-pelican.jn-blog.com"&gt;projet fil rouge&lt;/a&gt;  comment mettre en place un blog statique en utilisant &lt;strong&gt;Pelican&lt;/strong&gt; comme générateur de sites statiques, &lt;strong&gt;Github Pages&lt;/strong&gt; pour l'hébergement et &lt;strong&gt;Travis CI&lt;/strong&gt; pour l'automatisation du déploiement.&lt;/p&gt;
+&lt;p&gt;N'hésitez pas à intervenir dans les commentaires afin d'avoir votre avis sur ce tutoriel et votre retour d'expérience. Vous avez certainement d'autres approches sur certains sujets et l'intérêt est de justement pouvoir les partager.&lt;/p&gt;
+&lt;p&gt;Si vous souhaitez également d'autres articles sur ce sujet comme par exemple mettre en place un système de commentaires, n'hésitez à me le notifier.&lt;/p&gt;
+&lt;p&gt;Il ne me reste plus qu'à vous souhaiter une bonne aventure en tant que bloggueur et j'espère avoir l'occasion de vous lire prochainement!&lt;/p&gt;</content><category term="tutoriels"></category></entry><entry><title>Déployer son blog statique Pelican en production</title><link href="https://www.productmakers.fr/articles/deployer-pelican-en-production/" rel="alternate"></link><published>2018-11-16T00:00:00+01:00</published><updated>2018-11-16T00:00:00+01:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-11-16:/articles/deployer-pelican-en-production/</id><summary type="html">&lt;p&gt;Découvrez comment déployer automatiquement votre blog statique Pelican avec Travis CI et GitHub Pages.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Maintenant que notre hébergement sur GitHub Pages est en place et que Pelican est correctement installé, il est désormais temps de s'attaquer au processus de déploiement.&lt;/p&gt;
+&lt;p&gt;Comme cet article correspond à la cinquième partie du tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"&gt;Présentation du tutoriel et de ces objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Un blog statique, c'est quoi et comment ça fonctionne?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Mettre en place GitHub Pages pour l'hébergement d'un blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Utiliser Pelican pour son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Utiliser Travis pour automatiser le déploiement de son blog statique&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Mettre en place un thème sur son blog statique Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dans cet article, nous nous attacherons à configurer Travis CI afin que ce dernier déploie automatiquement le blog lorsqu'une pull request est faite sur la branche Master. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt; est un logiciel pour mettre en place de l'&lt;a href="https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue"&gt;intégration continue&lt;/a&gt;. Il permet de compiler, tester et déployer un code source.&lt;/p&gt;
+&lt;p&gt;La mise en place se déroulera en cinq principales étapes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mettre à jour le fichier publishconf.py&lt;/li&gt;
+&lt;li&gt;Nous allons activer Travis CI sur le repository Git Hub&lt;/li&gt;
+&lt;li&gt;Nous allons faire quelques petites modifications dans le fichier Makefile&lt;/li&gt;
+&lt;li&gt;Ensuite, nous intègrerons le fichier .travis.yml au sein du projet&lt;/li&gt;
+&lt;li&gt;Et enfin, nous vérifierons que tout fonctionne correctement&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Mettre à jour le fichier publishconf.py&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Nous allons déployer notre site en production. De ce fait, il s'agit du fichier publishconf.py qui sera considéré dans le déploiement et non le fichier pelicanconf.py.&lt;/p&gt;
+&lt;p&gt;Regardons de plus près ce fichier:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+
+&lt;span class="c1"&gt;# This file is only used if you use `make publish` or&lt;/span&gt;
+&lt;span class="c1"&gt;# explicitly specify it as your config file.&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelicanconf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tutoriel-pelican.jn-blog.com&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;RELATIVE_URLS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/all.atom.xml&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;.atom.xml&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;DELETE_OUTPUT_DIRECTORY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Following items are often useful when publishing&lt;/span&gt;
+
+&lt;span class="c1"&gt;#DISQUS_SITENAME = &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;#GOOGLE_ANALYTICS = &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Comme expliqué auparavant, le fichier reprend les configurations présentes dans le fichier pelicanconf.py et va surcharger ce dernier. Il va notamment activer automatiquement la génération des flux ATOM et changer la prise en charge des urls. Au lieu de se baser sur une approche relative, il va récupérer le nom de domaine indiqué dans la variable &lt;strong&gt;SITEURL&lt;/strong&gt;
+Il y a également des variables pour contenir les informations contenant la mise en place de Google Analytics et le système de commentaires via Disqus. Ces sujets pourront faire l'objet d'un autre article si cela vous intéresse. N'hésitez pas à le préciser dans les commentaires.&lt;/p&gt;
+&lt;p&gt;Pour le déploiement, la seule modification que nous allons apporter concerne la variable SITEURL. Nous avons en effet activé le protocole https dans github pages et il est important de le rappeler ici sinon cela risque de créer certains problèmes lors de la récupérations d'éléments au moment du chargement (notamment les fichiers statiques). Modifions donc la variable de cette façon:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;https://tutoriel-pelican.jn-blog.com&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Rien de plus à ajouter sur ce fichier. Nous pouvons donc passer à la suite.&lt;/p&gt;
+&lt;h2&gt;Activer Travis CI sur le repository Git Hub&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Tout d'abord, si vous n'avez pas de compte &lt;a href="https://travis-ci.org/"&gt;Travis CI&lt;/a&gt;, il est temps d'en créer un. Vous pouvez utiliser votre compte Github pour la création. Cela aura pour effet de synchroniser automatiquement votre repository github avec votre compte.&lt;/p&gt;
+&lt;p&gt;Une fois le compte créé et synchronisé, il vous suffit d'identifier le nom du repository contenant votre blog et d'activer Travis CI&lt;/p&gt;
+&lt;p&gt;&lt;img alt="activation de Travis sur le repository" src="https://www.productmakers.fr/images/tuto-pelican-travis-activation-repo.png"&gt;&lt;/p&gt;
+&lt;p&gt;Et voilà, le travail est fait! Simple, Basique...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lien gif simple" src="https://media.giphy.com/media/9Jcw5pUQlgQLe5NonJ/giphy.gif"&gt;&lt;/p&gt;
+&lt;h2&gt;Ajustement du fichier MakeFile&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Comme expliqué dans le précédent article, le fichier Makefile généré lors de la création du projet permet de simplifier les actions réalisées sur ce dernier.&lt;/p&gt;
+&lt;p&gt;C'est ce fichier qui nous permet notamment de générer les fichiers html et de les servir sur un serveur local via les commandes &lt;code&gt;make html &amp;amp;&amp;amp; make serve&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ce fichier contient également une commande permettant de publier sur github. Il s'agit de la commande &lt;code&gt;make publish github&lt;/code&gt; et se trouve vers la fin du fichier Makefile:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
+    ghp-import -m &lt;span class="s2"&gt;&amp;quot;Generate Pelican site&amp;quot;&lt;/span&gt; -b &lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_PAGES_BRANCH&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt;
+    git push origin &lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_PAGES_BRANCH&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour que cette commande fonctionne avec Travis CI, il va falloir y apporter quelques modifications.&lt;/p&gt;
+&lt;h3&gt;Autoriser Travis CI à déployer via un access token&lt;/h3&gt;
+&lt;p&gt;Avant tout, pour que Travis soit en capacité de réaliser une action de déploiement sur le repository github, il va falloir lui associer un access token. La manière la plus simple de le faire est la suivante:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Il faut créer un token d'accès personnalisé sur Github. Voici un lien décrivant le processus à suivre: &lt;a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"&gt;https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lors de la création du token, n'oubliez pas de cocher la case &lt;em&gt;repo&lt;/em&gt; si vous êtes sur un repository privé ou au moins &lt;em&gt;public repo&lt;/em&gt; si vous êtes sur un repository public:
+&lt;a href="https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token"&gt;https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Une fois la clef obtenue:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Il suffit de retourner dans Travis CI dans la partie &lt;em&gt;Settings&lt;/em&gt; du repository cible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="onglet Settings dans Travis CI" src="https://www.productmakers.fr/images/tuto-pelican-travis-settings-repo.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dans la section &lt;em&gt;Environment Variables&lt;/em&gt;, il faut ensuite ajouter la variable &lt;strong&gt;GITHUB_TOKEN&lt;/strong&gt; avec comme valeur le token qui vient d'être généré.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="onglet Settings dans Travis CI" src="https://www.productmakers.fr/images/tuto-pelican-travis-github-token.png"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Il est désormais temps de modifier légèrement la commande make publish github.&lt;/p&gt;
+&lt;h3&gt;Modifier les actions de la commande make publish github&lt;/h3&gt;
+&lt;p&gt;Voici les modifications à apporter. (J'ai conservé les commandes initiales en les ajoutant comme commentaires).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
+&lt;span class="c"&gt;    # ghp-import -m &amp;quot;Generate Pelican site&amp;quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)&lt;/span&gt;
+&lt;span class="c"&gt;    # git push origin $(GITHUB_PAGES_BRANCH)&lt;/span&gt;
+    ghp-import -n &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt;
+    @git push -fq https://&lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_TOKEN&lt;span class="k"&gt;)&lt;/span&gt;@github.com/JN-Blog/tutoriel-pelican.git master:gh-pages
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sans rentrer dans les détails, la commande va utiliser le module &lt;a href="http://docs.getpelican.com/en/stable/tips.html#publishing-to-github"&gt;ghp-import&lt;/a&gt; pour automatiser le déploiement du site vers la branche gh-pages. Le push vers le repository github utilise le token d'accès que nous venons de créer. Il faudra adapter bien évidemment l'url github en fonction de votre repository github.&lt;/p&gt;
+&lt;h2&gt;Création du fichier .travis.yml&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Le dernière étape consiste à créer le fichier &lt;strong&gt;.travis.yml&lt;/strong&gt; à la racine du répertoire qui contiendra l'ensemble des directives que Travis devra réaliser.&lt;/p&gt;
+&lt;p&gt;Voici les indications que doit contenir le fichier:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;3.6&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;la&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="n"&gt;de&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;utilisée&lt;/span&gt;
+
+&lt;span class="n"&gt;branches&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+
+&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;txt&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;import&lt;/span&gt;
+
+&lt;span class="nn"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;
+
+&lt;span class="n"&gt;deploy&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pages&lt;/span&gt;
+  &lt;span class="n"&gt;repo&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;JN&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tutoriel&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Le&lt;/span&gt; &lt;span class="n"&gt;nom&lt;/span&gt; &lt;span class="n"&gt;du&lt;/span&gt; &lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;utilisé&lt;/span&gt;
+  &lt;span class="n"&gt;target_branch&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+  &lt;span class="n"&gt;skip_cleanup&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+  &lt;span class="n"&gt;github_token&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$GITHUB_TOKEN&lt;/span&gt;
+  &lt;span class="n"&gt;local_dir&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+  &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ce fichier va globalement indiquer à Travis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;D'installer la version de Python utilisée&lt;/li&gt;
+&lt;li&gt;De cibler uniquement la branche master de notre repository&lt;/li&gt;
+&lt;li&gt;D'installer l'ensemble des éléments nécessaires (Pelican, Markdown, ghp-import)&lt;/li&gt;
+&lt;li&gt;De lancer le script &lt;code&gt;make publish github&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;De configurer les instructions de déploiement afin que le répertoire output soit poussé sur la branche gh-pages du repository (avec un clean en amont si cette branche contenait déjà un ancien répertoire)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Déploiement de notre blog en production&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Et voilà! tous les éléments sont mis en place pour déployer notre site en production.
+Envoyons notre code à jour sur github dans notre branche source (une fois le commit enregistré)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin source
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il est temps désormais de déployer notre blog en faisant notre première pull request.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="créer une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request.png"&gt;&lt;/p&gt;
+&lt;p&gt;Une fois créée, avant de pouvoir confirmer le &lt;em&gt;merge&lt;/em&gt;, Travis CI va lancer un test et valider (ou invalider) que le processus de déploiement est fonctionnel.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request-check.png"&gt;&lt;/p&gt;
+&lt;p&gt;Et si tout se passe bien (mais il n'y a pas de raison), un message de validation de test devrait apparaître une fois le test terminé permettant ainsi de confirmer le merge.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-pull-request-validated.png"&gt;&lt;/p&gt;
+&lt;p&gt;Et une fois confirmé et le merge réalisé, Travis CI va s'apercevoir que le code sur la branche master a été mis à jour et va lancer la procédure de déploiement tout seul comme un grand.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-deploy.png"&gt;&lt;/p&gt;
+&lt;p&gt;La magie opère enfin et le site est accessible à l'adresse de votre nom de domaine.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lancement d'un test Travis lors d'une pull request sur github" src="https://www.productmakers.fr/images/tuto-pelican-travis-production.png"&gt;&lt;/p&gt;
+&lt;p&gt;Elle est pas belle la vie? Cela demande un peu de configuration au départ je vous l'accorde mais désormais, une simple pull request vous permet de mettre à jour votre blog sur votre environnement de production avant d'avoir en amont vérifier que tout soit opérationnel.&lt;/p&gt;
+&lt;p&gt;Votre blog est désormais créé, hébergé et déployé! Il ne vous reste plus qu'à écrire vos articles.
+Mais avant de terminer ce tutoriel, j'aimerais voir avec vous une dernière chose. En effet, nous n'avons pas encore parlé de l'apparence du blog. Pour le moment, le blog utilise le thème d'origine. Nous verrons donc dans le prochain article comment installer un autre thème:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Installer un thème sur son blog Pelican&lt;/a&gt;&lt;/p&gt;</content><category term="tutoriels"></category></entry><entry><title>Installer et configurer Pelican pour son blog statique</title><link href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" rel="alternate"></link><published>2018-10-28T00:00:00+02:00</published><updated>2018-10-28T00:00:00+02:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-10-28:/articles/installer-pelican-pour-un-blog-statique/</id><summary type="html">&lt;p&gt;Découvrez comment installer et configurer Pelican pour votre propre blog statique. Toutes les étapes sont décrites et expliquées.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Après avoir découvert ce qu'est un site statique et avoir installé notre environnement de production via GitHub Pages, nous allons désormais mettre en place la structure de notre blog statique en utilisant le générateur de site statique &lt;a href="http://docs.getpelican.com/en/stable/"&gt;Pelican&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Comme cet article constitue la quatrième partie d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"&gt;Présentation du tutoriel et de ces objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Un blog statique, c'est quoi et comment ça fonctionne?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Mettre en place GitHub Pages pour l'hébergement d'un blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Utiliser Pelican pour son blog statique&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Utiliser Travis pour automatiser le déploiement de son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Mettre en place un thème sur son blog statique Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nous verrons donc dans cet article comment installer Pelican et le configurer de manière basique. Nous écrirons également notre premier article et publierons notre blog en local.&lt;/p&gt;
+&lt;p&gt;Maintenant que l'on sait ce que l'on va faire dans cet article, il est temps de débuter les hostilités.&lt;/p&gt;
+&lt;h2&gt;Cloner le repository et mettre créer la branche source&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;La première chose à faire est de cloner le repository en local dans le répertoire souhaité. Pour notre projet fil rouge, il s'agit de la commande suivante:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/JN-Blog/tutoriel-pelican.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il suffit de récupérer l'url de votre repository et remplacer l'url ci-dessous par la votre.
+Une fois le repository cloné, nous créons la branche source qui sera notre branche principale de développement et nous nous positionnons dessus:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout -b source
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si vous lancer désormais la commande &lt;code&gt;git branch&lt;/code&gt;, vous devriez obtenir le résultat suivant:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;master
+* source
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;L'asterix à côté de la branche source prouve que vous êtes positionné sur la bonne branche. Nous sommes désormais prêts à installer notre environnement de développement.&lt;/p&gt;
+&lt;h2&gt;Installer Python et créer son environnement virtuel&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Si vous n'avez pas encore installer Python sur votre ordinateur, il est temps de le faire désormais. Voici le lien officiel pour télécharger la dernière version: https://www.python.org/downloads/&lt;/p&gt;
+&lt;p&gt;Une fois installé, nous allons installer notre environnement virtuel à la racine de votre répertoire:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 -m venv env
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois notre environnement virtuel installé, il ne nous reste plus qu'à l'activer:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source env/bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Nous sommes désormais prêts à installer Pelican.&lt;/p&gt;
+&lt;h2&gt;Installer Pelican et Markdown&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
+Attention à bien avoir activé votre environnement virtuel au préalable.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et comme nous allons écrire en format Markdown, nous allons également l'installer:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et voilà, nous avons installé tous les éléments nécessaires pour créer notre blog statique.
+Et comme on aime bien les choses propres, nous allons dans un premier temps, créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip freeze &amp;gt; requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;blinker==1.4
+docutils==0.14
+feedgenerator==1.9
+Jinja2==2.10
+Markdown==3.0.1
+MarkupSafe==1.0
+pelican==3.7.1
+Pygments==2.2.0
+python-dateutil==2.7.5
+pytz==2018.7
+six==1.11.0
+Unidecode==1.0.22
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.&lt;/p&gt;
+&lt;p&gt;Ensuite, nous créons notre fichier .gitignore et y ajoutons les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel. Prenons également un peu d'avance en y ajoutant les répertoires pycache et output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;touch .gitignore
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et le contenu de notre fichier ressemble à cela:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;env/
+__pycache__/
+output/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).
+Il est temps désormais de créer notre projet Pelican.&lt;/p&gt;
+&lt;h2&gt;Créer un projet Pelican&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Une fois tout installé, nous allons pouvoir créer notre squelette de projet sous Pelican.
+Pour cela, rien de plus simple, à l'installation de Pelican, des commandes ont également été installées.&lt;/p&gt;
+&lt;p&gt;Il vous suffit donc de lancer la commande suivante:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois lancé vous allez devoir répondre à une série de questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Where do you want to create your new website? [.]
+-&amp;gt; Tapez .&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What will be the tilte of this website?
+-&amp;gt; Indiquez le nom de votre blog. Pour le projet de ce tutoriel, il s'agit de tutoriel-pelican&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What will be the author of this web site?
+-&amp;gt; Indiquez votre nom et prénom&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What will be the default language of this web site?[fr]
+-&amp;gt; Tapez la langue que vous utiliserez pour votre blog&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to specify a URL prefix? e.g, http://example.com (Y/n)
+-&amp;gt; Si vous avez un nom de domaine personnalisé, tapez Y&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What is your URL prefix? (see above example; no trailing slash)
+-&amp;gt; Tapez votre nom de domaine selon l'exemple indiqué dans la question précédent : https://tutoriel-pelican.jn-blog.com&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to enable article pagination? (Y/n)
+-&amp;gt; Tapez Y&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How many articles per page do you want? [10]
+-&amp;gt; Laissez à 10. Vous pourrez de toute façon le modifier par la suite&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What is your time zone? [Europe/Paris]
+-&amp;gt; Indiquez le fuseau horaire souhaité.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)
+-&amp;gt; Tapez &lt;strong&gt;Y&lt;/strong&gt;. Nous utiliserons le Makefile pour générer le site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development. (Y/n)
+-&amp;gt; Vous pouvez répondre n&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using FTP? (y/N)
+-&amp;gt; Tapez N&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using SSH? (y/N)
+-&amp;gt; Tapez N&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using Dropbox (y/N)
+-&amp;gt; Tapez N&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using S3 (y/N)
+-&amp;gt; Tapez N&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using Rackspace Cloud Files (y/N)
+-&amp;gt; Tapez N&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do you want to upload your website using GitHub Pages (y/N)
+-&amp;gt; Tapez y. C'est la solution que nous avons choisie dans ce tutoriel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is this your personal page (username.github.io)? (y/N)
+-&amp;gt; Vous pouvez taper y&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Et voilà! Si vous examinez un peu votre répertoire, vous vous apercevez que tous les fichiers nécessaires ont été automatiquement générés!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="repertoire initial d'un projet Pelican" src="https://www.productmakers.fr/images/tuto-pelican-pelican-repertoire.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Mettre en place les premières configurations&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Parmi les éléments installés, deux fichiers essentiels sont apparus. Il s'agit des fichiers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pelicanconf.py&lt;/li&gt;
+&lt;li&gt;publishconf.py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ce sont les fichiers de configurations du blog. pelicanconf.py est le fichier de configuration principale et publishconf.py sera utilisé uniquement pour le déploiement en production et viendra ajouter ou écraser des configurations présentes dans pelicanconf.py.&lt;/p&gt;
+&lt;h3&gt;Quelques ajustements sur pelicanconf.py&lt;/h3&gt;
+&lt;p&gt;Alors comment attaquer le morceau?
+Premièrement, je vous invite à prendre quelques minutes pour examiner la &lt;a href="http://docs.getpelican.com/en/stable/settings.html"&gt;documentation&lt;/a&gt; et découvrir toutes les possibilités.&lt;/p&gt;
+&lt;p&gt;En fonction des réponses aux questions, vous devez retrouver de votre côté un contenu similaire:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+
+&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Julien Nuellas&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tutoriel-pelican&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Europe/Paris&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fr&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Feed generation is usually not desired when developing&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;TRANSLATION_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Blogroll&lt;/span&gt;
+&lt;span class="n"&gt;LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Pelican&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://getpelican.com/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Python.org&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://python.org/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Jinja2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://jinja.pocoo.org/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;You can modify those links in your config file&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Social widget&lt;/span&gt;
+&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;You can add links in your config file&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Another social link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+
+&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Uncomment following line if you want document-relative URLs when developing&lt;/span&gt;
+&lt;span class="c1"&gt;#RELATIVE_URLS = True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il s'agit des configurations basiques. Globalement, on retrouve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AUTHOR&lt;/code&gt;: Le nom de l'auteur du blog&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITENAME&lt;/code&gt;: le nom du blog&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SITEURL&lt;/code&gt;: l'URL du blog en environnement de développement. Cette variable sera écrasé par l'url de votre site en production via le fichier publishconf.py&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PATH&lt;/code&gt;: le nom du dossier contenant vos contenus&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TIMEZONE&lt;/code&gt; et &lt;code&gt;DEFAULT_LANG&lt;/code&gt;: les configurations basiques du fuseau horaire et du langage principal.&lt;/li&gt;
+&lt;li&gt;Ensuite, il y a les variables servant à activer ou désactiver les flux Atom et RSS. On laissera ici à None car on ne souhaite pas les générer pour l'environnement de développement&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LINKS&lt;/code&gt;: cette variable contient un tuple de tuples contenant des liens devant apparaître dans le header&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SOCIAL&lt;/code&gt;: dans la même logique que la variable LINKS, il s'agit des liens de vos réseaux sociaux devant apparaître dans la section social.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DEFAULT_PAGINATION&lt;/code&gt;: définit le nombre d'articles maximum à intégrer dans une page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ainsi, le fichier de configuration contient tout ce qu'il y a de nécessaire pour fonctionner correctement dans un premier temps.
+Je vous propose cependant d'ajouter quelques éléments supplémentaires&lt;/p&gt;
+&lt;h4&gt;Configurations des URLs&lt;/h4&gt;
+&lt;p&gt;Personnellement, j'aime bien définir la forme de mes urls. Je trouve que c'est un élément non négligeable qui participe à la cohérence dans le processus de navigation. Je vous propose donc de rajouter les variables suivantes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# URL Settings&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;articles/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pages/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pages/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;categorie/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;categorie/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;TAG_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tag/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;TAG_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tag/{slug}/index.html&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;CATEGORIES_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;categories.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;TAGS_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tags.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;INDEX_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;index.html&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;AUTHOR_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;author/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Configuration des éléménts statiques&lt;/h4&gt;
+&lt;p&gt;Vous intègrerez certainement des images dans vos articles et pour cela, il vous faut un endroit où les entreposer.
+Je vous propose donc de stocker ces éléments dans un répertoire que nous nommerons &lt;strong&gt;images&lt;/strong&gt; au sein du répertoire &lt;strong&gt;content&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;content/
+    |- images/
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois créé, il est nécessaire d'indiquer à Pelican le chemin où récupérer ces statics.
+Il faut pour cela utiliser la variable STATIC_PATHS au sein du fichier de configuration:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;cette variable contient une liste de répertoire par rapport au répertoire indiqué dans la variable &lt;code&gt;PATH&lt;/code&gt;, donc dans notre cas le répertoire &lt;em&gt;content&lt;/em&gt;. Ces éléments seront copiés dans le répertoire &lt;em&gt;output&lt;/em&gt; sans modification et pourront être utilisés en production. Par défaut, Pelican inclus déjà le répertoire &lt;em&gt;images&lt;/em&gt; mais c'est toujours bon de savoir comment faire!&lt;/p&gt;
+&lt;p&gt;Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire &lt;em&gt;output&lt;/em&gt;. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
+Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
+Je vous propose d'ajouter dans le répertoire &lt;em&gt;content&lt;/em&gt; un répertoire &lt;em&gt;extra&lt;/em&gt; avec les fichiers &lt;em&gt;robots.txt&lt;/em&gt; et &lt;em&gt;CNAME&lt;/em&gt; et le &lt;em&gt;favicon&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;content/
+    |- images/
+    |- extra/
+        |- robots.txt
+        |- CNAME
+        |- favicon.ico
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et dans le fichier pelicanconf.py, nous allons rajouter ces éléments dans la variable STATIC_PATHS et déclarer la variable EXTRA_PATH_METADATA comme ceci:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/favicon.ico&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;EXTRA_PATH_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;extra/favicon.ico&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;favicon.ico&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Petits bonus:
+* Si vous ne connaissez pas très bien le fonctionnement d'un fichier robots.txt mais que vous souhaitez être référencé sur l'ensemble des moteurs, voici la configuration:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;User-agent: *
+Disallow: 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Votre fichier CNAME doit contenir uniquement votre nom de domaine. Pour le projet du tutoriel:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tutoriel-pelican.jn-blog.com
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et voilà, notre configuration de base est faîte.&lt;/p&gt;
+&lt;h2&gt;Publier notre site en local&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Maintenant que tout est en place il serait judicieux de voir si tout fonctionne correctement.
+Pour cela, rien de plus simple, il suffit de déployer notre site en local avec la commande:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make html &amp;amp;&amp;amp; make serve
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;En effet, lorsque nous avons répondu à la question &lt;em&gt;10. Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)&lt;/em&gt;, Pelican a automatiquement généré un fichier Makefile afin de faciliter ce type d'opération.
+Cette commande va générer les fichiers html et lancer un serveur web en local. (Pour stopper le serveur un simple Ctrl + C suffit).&lt;/p&gt;
+&lt;p&gt;En nous rendant à l'adresse &lt;code&gt;http://localhost:8000/&lt;/code&gt;, il est désormais possible d'accéder à son site.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="publication du site en local" src="https://www.productmakers.fr/images/tuto-pelican-local-site.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Créer notre premier article&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Voyons désormais comment écrire un article.
+Il suffit pour cela de créer un fichier au format md à la racine du répertoire &lt;em&gt;content&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;content/
+    |- images/
+    |- extra/
+        |- robots.txt
+        |- CNAME
+        |- favicon.png
+    |- article.md
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour aider Pelican à récupérer les informations nécessaires pour chaque article afin de générer correctement les fichiers html, nous allons utiliser les &lt;strong&gt;métadatas&lt;/strong&gt;. Voici à quoi doit ressembler le début de votre article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tutoriels&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tutoriel&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;statique&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;mon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;premier&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;article&lt;/span&gt;
+&lt;span class="n"&gt;Lang&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fr&lt;/span&gt;
+&lt;span class="n"&gt;Authors&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Julien&lt;/span&gt; &lt;span class="n"&gt;Nuellas&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Premier&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;sur&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;tutoriel&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Cela permet à Pelican de récupérer les informations nécessaires pour le traitement. En détaillant un peu, on a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;La date de l'article&lt;/li&gt;
+&lt;li&gt;La dernière date de modification de l'article&lt;/li&gt;
+&lt;li&gt;La catégorie associée à l'article&lt;/li&gt;
+&lt;li&gt;Les tags associés à l'article&lt;/li&gt;
+&lt;li&gt;Le slug qui permettra d'alimenter l'url de la page de l'article&lt;/li&gt;
+&lt;li&gt;La langue dans laquelle l'article sera écrit&lt;/li&gt;
+&lt;li&gt;L'auteur de l'article&lt;/li&gt;
+&lt;li&gt;Une brève description de l'article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pour plus d'informations, n'hésitez pas à aller explorer la &lt;a href="http://docs.getpelican.com/en/stable/content.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Une fois les metadatas renseignées, il suffit d'écrire son article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;Title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Premier&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;sur&lt;/span&gt; &lt;span class="n"&gt;le&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;tutoriel&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="nl"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;
+&lt;span class="nl"&gt;Modified&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;
+&lt;span class="nl"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tutoriels&lt;/span&gt;
+&lt;span class="nl"&gt;Tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tutoriel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;statique&lt;/span&gt;
+&lt;span class="nl"&gt;Slug&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;mon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;premier&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;article&lt;/span&gt;
+&lt;span class="nl"&gt;Lang&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fr&lt;/span&gt;
+&lt;span class="nl"&gt;Authors&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Julien&lt;/span&gt; &lt;span class="n"&gt;Nuellas&lt;/span&gt;
+&lt;span class="nl"&gt;Summary&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Premier&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;sur&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;tutoriel&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+
+&lt;span class="n"&gt;Bonjour&lt;/span&gt; &lt;span class="n"&gt;tout&lt;/span&gt; &lt;span class="n"&gt;le&lt;/span&gt; &lt;span class="n"&gt;monde&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ceci&lt;/span&gt; &lt;span class="n"&gt;est&lt;/span&gt; &lt;span class="n"&gt;mon&lt;/span&gt; &lt;span class="n"&gt;premier&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="cp"&gt;## Ceci est la première partie de mon article&lt;/span&gt;
+
+&lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;est&lt;/span&gt; &lt;span class="n"&gt;vraiment&lt;/span&gt; &lt;span class="n"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="cp"&gt;## Ceci est la deuxième partie de mon article&lt;/span&gt;
+
+&lt;span class="n"&gt;Et&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;est&lt;/span&gt; &lt;span class="n"&gt;tellement&lt;/span&gt; &lt;span class="n"&gt;simple&lt;/span&gt; &lt;span class="err"&gt;à&lt;/span&gt; &lt;span class="n"&gt;utiliser&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;span class="n"&gt;La&lt;/span&gt; &lt;span class="n"&gt;syntaxe&lt;/span&gt; &lt;span class="n"&gt;est&lt;/span&gt; &lt;span class="n"&gt;simple&lt;/span&gt; &lt;span class="err"&gt;à&lt;/span&gt; &lt;span class="n"&gt;prendre&lt;/span&gt; &lt;span class="n"&gt;en&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt; &lt;span class="n"&gt;et&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;peut&lt;/span&gt; &lt;span class="n"&gt;faire&lt;/span&gt; &lt;span class="n"&gt;tout&lt;/span&gt; &lt;span class="n"&gt;ce&lt;/span&gt; &lt;span class="n"&gt;qu&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;veut&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Voici&lt;/span&gt; &lt;span class="n"&gt;une&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cheat&lt;/span&gt; &lt;span class="n"&gt;sheet&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) qui vous permettra d&amp;#39;en savoir un peu plus.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et voilà le travail est fait. Un petit coup de &lt;code&gt;make html &amp;amp;&amp;amp; make serve&lt;/code&gt; pour admirer le travail.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="publication du site en local" src="https://www.productmakers.fr/images/tuto-pelican-local-site-avec-article.png"&gt;&lt;/p&gt;
+&lt;p&gt;Dans cet article, nous avons vu beaucoup de choses:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comment installer Pelican dans son repository et créer un projet&lt;/li&gt;
+&lt;li&gt;Comment configurer Pelican de façon basique&lt;/li&gt;
+&lt;li&gt;Comment générer et servir son blog statique en local&lt;/li&gt;
+&lt;li&gt;Comment écrire un article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A ce stade du tutoriel, il nous reste encore deux choses importantes à voir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comment déployer notre site en production sur github pages.&lt;/li&gt;
+&lt;li&gt;Comment installer un thème. En effet, le thème de base ne vous convient peut-être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alors commençons par voir comment déployer notre site en production dans le prochain article du tutoriel:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Déployer son blog statique en production&lt;/a&gt;&lt;/p&gt;</content><category term="tutoriels"></category></entry><entry><title>C'est quoi un blog statique? Comment ça fonctionne?</title><link href="https://www.productmakers.fr/articles/explication-blog-statique/" rel="alternate"></link><published>2018-10-26T00:00:00+02:00</published><updated>2018-10-26T00:00:00+02:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-10-26:/articles/explication-blog-statique/</id><summary type="html">&lt;p&gt;Un blog statique, c'est quoi et comment ça marche? Découvrez le concept de blog statique, ses avantages et ses inconvénients ainsi que son fonctionnement.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un blog statique? Mais qu'est-ce que tu me racontes? Si je veux un blog, je me tourne vers Wordpress et puis on en parle plus.
+Effectivement, ce n'est pas une mauvaise solution. Un blog statique n'est pas la nouvelle génération de blogs mais elle a le mérite d'exister et de présenter notamment de nombreux avantages, et également des inconvénients. Dans tous les cas, comprendre ce qu'est un blog statique (et un site statique plus globalement) ne peut vous apportez qu'un choix plus éclairé quant à la solution que vous choisirez pour mettre en place votre blog.&lt;/p&gt;
+&lt;p&gt;Comme ce post est le second d'un tutoriel dédié à la création d'un blog statique, je me permets d'en rappeler sa structure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"&gt;Présentation du tutoriel et de ces objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Un blog statique, c'est quoi et comment ça fonctionne?&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Mettre en place GitHub Pages pour l'hébergement d'un blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Utiliser Pelican pour son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Utiliser Travis pour automatiser le déploiement de son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Mettre en place un thème sur son blog statique Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Au travers cet article, il s'agira donc de définir le concept de blog statique puis d'en présenter ces avantages et ces inconvénients. Ensuite, l'objectif sera de décrire globalement comment un blog statique fonctionne et s'attardera sur le générateur de sites statiques &lt;strong&gt;Pelican&lt;/strong&gt;, car c'est celui-ci que nous utiliserons dans le tutoriel.&lt;/p&gt;
+&lt;p&gt;Et si vous avez des remarques, suggestions ou compléments à la fin de l'article, n'hésitez pas à laisser un commentaire!&lt;/p&gt;
+&lt;p&gt;Maintenant que tout est plus clair, rentrons dans le vif du sujet.&lt;/p&gt;
+&lt;h2&gt;Pour commencer, c'est quoi un blog statique?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Un blog (ou un site d'ailleurs) statique n'est constitué uniquement que de fichiers entièrement statiques (merci captain Obious!)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="thanks captain obvious gif" src="https://media.giphy.com/media/3o7abonV6K9irq7kaY/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Et oui, il ne faut pas aller chercher très loin... En effet, plus de langages serveurs (php, python, ...), plus de bases de données ou autres scripts exécutés sur le serveur, tout est 100% statique et délivré par un serveur web.&lt;/p&gt;
+&lt;p&gt;Ainsi, le blog ne sera constitué que de fichiers html, d'images, de css et éventuellement de javascript. &lt;/p&gt;
+&lt;p&gt;Alors super, maintenant que l'on sait ce que c'est, en quoi c'est intéressant de construire son blog en utilisant cette approche?&lt;/p&gt;
+&lt;h2&gt;Les avantages d'un blog statique&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Je vois personnellement trois gros avantages:&lt;/p&gt;
+&lt;h3&gt;La rapidité&lt;/h3&gt;
+&lt;p&gt;En effet, le serveur n'a plus besoin de récupérer des informations dans une base de données pour construire les pages. Il ne fait rien d'autres que délivrer des pages HTML et les médias qui lui sont associés.&lt;/p&gt;
+&lt;h3&gt;La sécurité&lt;/h3&gt;
+&lt;p&gt;L'autre énorme avantage d'un site statique réside dans la sécurité. Il n'y a quasiment aucuns risques de se faire pirater (injection SQL, injection de fichiers, ...) et aucun script n'est réalisé côté serveur. Ce ne sont que des fichiers statiques qui sont délivrés au navigateur.
+Ainsi, les risques de se faire planter son blog après 3 ans d'existences et de tout perdre bêtement sont fortement limités.&lt;/p&gt;
+&lt;h3&gt;Souplesse&lt;/h3&gt;
+&lt;p&gt;Enfin, le dernier avantage non négligeable concerne la souplesse de ce type de blog.
+Le fait d'avoir un site statique rend l'&lt;strong&gt;hébergement&lt;/strong&gt; beaucoup plus simple et moins cher. Dans ce tutoriel, il ne nous coûtera pas 1 seul centime! Le seul coût concernera l'achat du nom de domaine.
+De plus, un site statique offre une très bonne capacité à tenir la charge. Je ne l'ai peut-être pas assez dit, mais un site statique n'est composé que de fichiers statiques... Oui, mais du coup, et je me répète encore, pas de scripts exécutés sur le serveurs et cela permet d'économiser des ressources serveurs importantes!&lt;/p&gt;
+&lt;p&gt;Pour terminer avec la souplesse d'un blog statique (si je ne vous ai pas encore convaincu), la sauvegarde et la restauration se font facilement. Un simple archivage de fichiers suffit et il n'est pas nécessaire de faire des exports ou imports de base de données qui peuvent être des tâches parfois délicates.&lt;/p&gt;
+&lt;p&gt;Ouahhhh, c'est super un site statique. Pourquoi tout le monde ne l'utilise pas alors? Et bien, comme toute solution, il n'y a pas forcément que des avantages.&lt;/p&gt;
+&lt;h2&gt;Les inconvénients d'un blog statique&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Effectivement, un blog statique présente certains inconvénients qu'il ne faut pas négliger.&lt;/p&gt;
+&lt;h3&gt;Prise en main&lt;/h3&gt;
+&lt;p&gt;Premièrement, la prise en main n'est pas aussi facile qu'un CMS de type Wordpress. En effet, il n'y a pas d'interface d'administration user-friendly de type &lt;a href="https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get"&gt;wysiwyg&lt;/a&gt; (WhatYouSeeIsWhatYouGet) qui permet de tous gérer en quelques clics. Il ne faut pas avoir peur de faire quelques lignes de commande (même si cela n'est pas compliqué en soit et ne doit pas vous effrayer plus que ça).&lt;/p&gt;
+&lt;h3&gt;Et mes commentaires?&lt;/h3&gt;
+&lt;p&gt;En effet, le fait de ne pas avoir de base de données pour un blog limite les interactions avec les lecteurs, ce qui est profondément pénalisant lorsque l'on considère qu'un blog est avant tout un outil d'échange et de partage.
+Cependant, il est possible de passer par des systèmes externes pour la gestion de commentaires qui s'interface très bien avec les générateurs de sites statiques.
+Cependant, le fait de faire appel à un outil externe crée une certaine dépendance envers celui-ci et peut s'avérer impactant (si le service tombe par exemple).&lt;/p&gt;
+&lt;h3&gt;Comment je fais pour être contacté?&lt;/h3&gt;
+&lt;p&gt;Il est également plus difficile de créer un espace de contact. Cela peut s'avérer être un frein lorsque c'est l'un des objectifs principaux.
+Cela n'est cependant pas impossible et des méthodes existe pour mettre en place cela.&lt;/p&gt;
+&lt;p&gt;Alors convaincu et prêt à se lancer dans la mise en place d'un blog statique? Suivez le guide et approfondissons un peu en décrivant brièvement comment cela fonctionne.&lt;/p&gt;
+&lt;h2&gt;Comment met-on ça en place?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;On va se servir d'un générateur de sites statiques.&lt;/p&gt;
+&lt;h3&gt;C'est quoi un générateur de sites statiques?&lt;/h3&gt;
+&lt;p&gt;Et bien comme son nom l'indique, ça permet de gérer des fichiers statiques. Il va permettre de générer des menus, mettre en place de la pagination, etc... un vrai site web finalement de façon simple, rapide et à moindre coût.&lt;/p&gt;
+&lt;p&gt;La particularité principale d'un générateur de sites statiques réside dans son moteur de templates. Pour faire simple, cela permet de créer des gabarits (ou structure) de pages web dans lequel va être diffusé votre contenu écrit dans un format Markdown la plupart du temps.
+Ensuite lorsque vous souhaitez publier/ mettre à jour votre site suite à la création d'un nouveau contenu, le générateur va créer les fichiers html qui composeront votre site.&lt;/p&gt;
+&lt;p&gt;Il existe une multitude de générateurs de sites statiques. En voici une liste non exhaustive:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; (écrit en Ruby)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/"&gt;Pelican&lt;/a&gt; (écrit en Python)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt; (écrit en Go)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ringce.com/hyde/"&gt;Hyde&lt;/a&gt; (écrit en Python)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://octopress.org/"&gt;Octopress&lt;/a&gt; (écrit en Ruby)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://middlemanapp.com/"&gt;Middleman&lt;/a&gt; (écrit en Ruby)
+...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pour ce tutoriel, il s'agira de mettre en place un blog statique en utilisant &lt;strong&gt;Pelican&lt;/strong&gt;. Ce n'est pas parce que c'est le meilleur mais parce que c'est celui-ci que j'utilise car il est écrit en Python et qu'il utilise le moteur de template &lt;a href="http://jinja.pocoo.org/"&gt;Jinja2&lt;/a&gt;. Je trouve notamment sa documentation complète et claire ce qui est un point non négligeable.&lt;/p&gt;
+&lt;p&gt;Mais vous pourriez tout aussi bien utiliser un autre outil comme &lt;strong&gt;Jekyll&lt;/strong&gt; par exemple qui est également très populaire, notamment pour sa simplicité d'intégration avec GitHub Pages.&lt;/p&gt;
+&lt;h2&gt;Présentation de Pelican&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Pelican est donc un logiciel écrit en Python sous licence AGPL. Il permet de générer des sites statiques (non??? Vraiment???) et offre notamment dans sa version 3 de nombreuses fonctionnalités:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Il permet de rédiger des articles de blogs et des pages aux formats &lt;a href="https://fr.wikipedia.org/wiki/ReStructuredText"&gt;reStructuredText&lt;/a&gt; ou &lt;a href="https://fr.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; en utilisant l'éditeur de texte de votre choix&lt;/li&gt;
+&lt;li&gt;Il offre l'opportunité de gérer les thèmes par l'intermédiaire du système de templates Jinja2&lt;/li&gt;
+&lt;li&gt;Il inclut une interface de ligne de commande (&lt;a href="https://fr.wikipedia.org/wiki/CLI"&gt;CLI&lt;/a&gt;) permettant de générer facilement votre site.&lt;/li&gt;
+&lt;li&gt;Il gère l'internationalisation&lt;/li&gt;
+&lt;li&gt;Il intègre des outils externes comme Twitter, Google Analytics, etc...&lt;/li&gt;
+&lt;li&gt;Il génère des flux Atom et RSS&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il s'agit donc d'un outil complet avec lequel on va pouvoir s'amuser.&lt;/p&gt;
+&lt;p&gt;Afin de résumer un peu son fonctionnement et ce qu'il a été dit dans les deux dernières parties, voici un schéma très simple résumant la façon dont Pelican génère un site statique:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="blog_static_fonctionnement" src="https://www.productmakers.fr/images/blog_statique_fonctionnement.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Le répertoire source contient deux principaux répertoire (nous reviendrons sur les autres fichiers par la suite):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un répertoire &lt;strong&gt;theme&lt;/strong&gt; qui contient l'ensemble des éléments propre au thème sélectionné. Il s'agit principalement des templates (ou gabarits) des différentes pages ainsi que les fichiers statics (css, javacript, images, ...)&lt;/li&gt;
+&lt;li&gt;Un répertoire &lt;strong&gt;content&lt;/strong&gt; qui contient l'ensemble du contenu dans des fichiers au format .md (Markdown) ou .rst (reStructuredText).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Au moment de la génération du site par Pelican, ce dernier crée un répertoire &lt;strong&gt;output&lt;/strong&gt; contenant l'ensemble des fichiers html du site ainsi qu'un dossier pour les statics. Et c'est ce répertoire qui sera hébergé sur un serveur web.&lt;/p&gt;
+&lt;p&gt;Maintenant que vous en savez un peu plus sur ce qu'est un blog statique (ces avantages, ces inconvénients et son fonctionnement global), j'espère que vous avez hâte de passer à l'action et de vous salir un peu les mains car le prochain article de ce tutoriel va consister à mettre en place la structure qui va héberger et délivrer notre blog statique.&lt;/p&gt;
+&lt;p&gt;Si vous êtes prêt, il est temps de passer à la partie suivante de ce tutoriel:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Tutoriel pour apprendre à héberger son site statique avec GitHub Pages&lt;/a&gt;&lt;/p&gt;</content><category term="tutoriels"></category></entry><entry><title>Utiliser GitHub Pages pour héberger son blog statique</title><link href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/" rel="alternate"></link><published>2018-10-26T00:00:00+02:00</published><updated>2018-10-26T00:00:00+02:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-10-26:/articles/heberger-un-blog-statique-avec-github-pages/</id><summary type="html">&lt;p&gt;Découvrez toutes les étapes pour configurer GitHub Pages et héberger votre blog statique facilement. Ne soyez pas effrayé, ce n'est pas très compliqué!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Maintenant que nous avons découvert ce qu'est un &lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;blog statique&lt;/a&gt; et comment cela fonctionne, il est temps de commencer à se retrousser les manches.&lt;/p&gt;
+&lt;p&gt;Avant d'aller plus loin, puisque cet article est le troisième d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler le plan de ce dernier:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/"&gt;Présentation du tutoriel et de ces objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Un blog statique, c'est quoi et comment ça fonctionne?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mettre en place GitHub Pages pour l'hébergement d'un blog statique&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Utiliser Pelican pour son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Utiliser Travis pour automatiser le déploiement de son blog statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Mettre en place un thème sur son blog statique Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Pour rappel, ce tutoriel se base sur la construction d'un blog statique que vous pouvez déjà découvrir à l'adresse suivante: https://www.tutoriel-pelican.jn-blog.com&lt;/p&gt;
+&lt;p&gt;Dans cet article, nous découvrirons ce qu'est GitHub Pages puisque nous allons l'utiliser au sein de notre projet. Ensuite, nous le configurerons complètement pour qu'il puisse accueillir la structure de notre blog statique.&lt;/p&gt;
+&lt;p&gt;Commençons donc par présenter GitHub Pages.&lt;/p&gt;
+&lt;h2&gt;GitHub Pages: qu'est-ce que c'est?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; est un service d'hébergement de sites statiques conçu pour fonctionner à partir de l'un de vos repository GitHub. Il a été conçu dans l'idée de pouvoir facilement héberger et rendre accessible des projets qu'une personne ou une organisation souhaite rendre disponible (site vitrine, documentation, prototype, blog, etc...)&lt;/p&gt;
+&lt;p&gt;Je pense qu'à la vue de cette explication, cette solution paraît parfaite pour héberger notre blog vous ne pensez pas?&lt;/p&gt;
+&lt;p&gt;Avant d'aller plus loin, il est judicieux que vous ayez une compréhension basique de ce que sont Git et GitHub. Pour ceux qui connaissent déjà, ne serait-ce que le fonctionnement basique (pas besoin d'être un expert), vous pouvez directement passer à la section suivante.&lt;/p&gt;
+&lt;h2&gt;Quelques mots sur Git et GitHub&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;GitHub est un service web qui permet d'héberger et gérer le développement de logiciels. Pour cela, il utilise le &lt;a href="https://fr.wikipedia.org/wiki/Logiciel_de_gestion_de_versions"&gt;logiciel de gestion de versions Git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ne soyez pas effrayé par ces concepts qui peuvent vous paraître obscure. Pour faire simple, Git est l'un des logiciels (parmi d'autres) qui permet à des développeurs de collaborer de manière intelligente et structurée sur un même projet de développement. C'est un outil incontournable et extrêmement puissant pour toute personne travaillant sur des projets de développement, qu'ils soient importants ou petits.&lt;/p&gt;
+&lt;p&gt;Et il est très pertinent pour la suite du tutoriel d'avoir une compréhension basique de son fonctionnement. Et si vous avez ne serait-ce qu'un minimum d'intérêt pour le développement (ce qui semble être le cas si la mise en place d'un blog statique vous intéresse), vous ne pouvez pas ignorer plus longtemps ce type d'outils. Croyez-moi, après la première utilisation, vous ne pourrez plus vous en passer.&lt;/p&gt;
+&lt;p&gt;Si vous êtes intéressé, je vous recommande ce cours Openclassrooms: &lt;a href="https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github"&gt;Gérez votre code avec Git et GitHub&lt;/a&gt; qui vous apportera de manière très ludique les fondamentaux pour utiliser correctement Git. C'est un cours qui ne dure pas longtemps et qui est très bien construit. Avec ce cours, vous aurez largement les connaissances pour suivre la suite du tutoriel. Et vraiment, ne soyez pas effrayé par la difficulté de l'exercice, c'est très simple et le temps investi à apprendre à utiliser ce type d'outils sera largement rentabilisé par la suite.&lt;/p&gt;
+&lt;p&gt;Ca y est? Vous avez installé git sur votre PC, vous avez ouvert un compte sur GitHub, créé votre premier repository et joué avec quelques branches? Alors, vous êtes prêt pour la suite du tutoriel!&lt;/p&gt;
+&lt;h2&gt;Présentation de la logique de fonctionnement&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Voici donc la logique de fonctionnement que je vous propose.
+Nous allons travailler avec un repository et trois branches différentes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;source&lt;/li&gt;
+&lt;li&gt;master&lt;/li&gt;
+&lt;li&gt;gh-pages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La branche source sera celle où la &lt;em&gt;vie&lt;/em&gt; va avoir lieu. C'est sur cette dernière que nous travaillerons en local avant de pousser le code sur GitHub.
+Ensuite, lorsque nous souhaiterons déployer une nouvelle version du site suite à un nouvel article par exemple, nous ferons une pull request vers la branche master. Durant cette pull request, Travis réalisera un test automatique afin de savoir s'il n'y a pas d'erreurs qui se sont glissées dans le code par rapport à la précédente version. 
+Si le test est positif, alors nous confirmons le merge de la branche source vers la branche master. Une fois la branche master à jour, Travis intervient encore une fois pour générer automatiquement le site et le déployer sur la branche gh-pages. Elle est pas belle la vie?&lt;/p&gt;
+&lt;p&gt;Voici un petit schéma pour illustrer mes propos:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="logique de déploiement" src="https://www.productmakers.fr/images/tuto-pelican-methodo-deploiement.png"&gt;&lt;/p&gt;
+&lt;p&gt;Encore une fois, ce n'est pas la seule logique de fonctionnement. J'ai vu certaines personnes travailler avec deux repositories par exemple: un pour travailler et concevoir le blog et l'autre uniquement pour le déploiement, ce qui est une solution judicieuse également. J'ai simplement peur d'ajouter un risque de confusion supplémentaire en travaillant avec deux repositories.&lt;/p&gt;
+&lt;p&gt;D'autres personnes intervertissent la branche gh-pages et master dans la logique de fonctionnement. Ainsi, c'est la branche master sur laquelle GitHub Pages se base pour le déploiement et la branche gh-pages ou un autre nom qui contient la version du code à jour. C'est d'autant plus intéressant que si vous n'utilisez pas de nom de domaine personnalisé et que vous avez nommé votre repository USERNAME.github.io, vous n'avez pas la possibilité de choisir une autre branche que master comme origine de déploiement.&lt;/p&gt;
+&lt;p&gt;Alors pourquoi intervertir les deux me demanderiez-vous? Et bien principalement pour une convention de nommage. La branche master est la plupart du temps la branche par défaut, celle qui contient le code complet et stable et que l'on voit directement lorsque l'on arrive sur un repository. Cela peut paraître absurde mais si vous créez un blog avec plusieurs contributeurs et auteurs qui ont l'habitude - tellement l'habitude que cela relève du domaine de l'inconcsient - de fonctionner ainsi, cela risque de provoquer des erreurs comme pousser un code non testé sur la branche qui sert au déploiement. Et boom, le site est cassé...&lt;/p&gt;
+&lt;p&gt;Maintenant que la logique est expliquée, créons notre repository.&lt;/p&gt;
+&lt;h2&gt;Créer son repository GitHub Pages&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Nous allons voir dans cette partie comment configurer GitHub Pages et plus globalement son environnement de travail où l'on installera par la suite Pelican.&lt;/p&gt;
+&lt;h3&gt;Création du repository&lt;/h3&gt;
+&lt;p&gt;Tout d'abord et en toute logique, nous allons créer notre repository sur GitHub.
+Pour ce projet, nous nommerons le repository tutoriel-pelican et nous allons l'initialiser avec un README.md.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="creation d'un repository github" src="https://www.productmakers.fr/images/tuto-pelican-githubpages-create.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Création de la branche gh-pages&lt;/h3&gt;
+&lt;p&gt;Une fois le repository créé, il faut désormais créer la branche gh-pages en complément de la branche master initialement créée.
+Pour cela, rien de plus simple, il suffit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;De cliquer sur le bouton indiquant la branche sélectionnée&lt;/li&gt;
+&lt;li&gt;Dans le champ de recherche, écrire &lt;em&gt;gh-pages&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Cliquer ensuite le bouton indiqué pour créer la branche gh-pages à partir de la branche master&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="ajout d'une branche au sein d'un repository github" src="https://www.productmakers.fr/images/tuto-pelican-ghpages-branch-creation.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Vérifier les informations de configurations de GitHub Pages&lt;/h3&gt;
+&lt;p&gt;Une fois la branche gh-pages créée, rendez-vous dans la partie &lt;strong&gt;settings&lt;/strong&gt; afin de vérifier la configuration initiale de GitHub Pages.
+Pour cela, il suffit de cliquer sur l'onglet settings.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="aller dans l'onglet configuration d'un reposotiry github pages" src="https://www.productmakers.fr/images/tuto-pelican-settings-button.png"&gt;&lt;/p&gt;
+&lt;p&gt;Une fois arrivé, dans la partie configuration, il suffit de descendre un peu afin d'arriver sur la partie GitHub Pages.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitHub Pages configuration" src="https://www.productmakers.fr/images/tuto-pelican-ghpages-settings-global.png"&gt;&lt;/p&gt;
+&lt;p&gt;Comme vous pouvez le constater, GitHub Pages est déjà activé et la branche associée à l'hébergement est déjà la branche gh-pages. Cette configuration initiale s'est automatiquement mise en place lorsque nous avons créé la branche gh-pages. En effet, GitHub a directement compris que nous souhaitions utiliser GitHub Pages au sein de ce repository afin d'héberger un site statique et il a directement sélectionné la branche gh-pages. Comme quoi, respecter les conventions n'est pas totalement dénué d'intérêt!&lt;/p&gt;
+&lt;p&gt;Cependant, si cela ne s'est pas créé automatiquement, il suffit juste de sélectionner la branche gh-pages et d'enregistrer ce choix.&lt;/p&gt;
+&lt;p&gt;Et voilà, désormais tout site hébergé poussé au sein de cette branche sera désormais accessible via l'url indiquée. Dans notre cas, il s'agit de l'url &lt;strong&gt;https://jn-blog.github.io/tutoriel-pelican/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cela ne fait pas très vendeur vous ne pensez pas? un peu difficile à retenir, et on a du mal à identifier le thème et l'objectif du site au travers de cette url. 
+A la limite, nous aurions pu un peu mieux faire si nous avions nommé notre repository JN-Blog/JN-Blog.github.io. En effet, l'url aurait été &lt;strong&gt;https://jn-blog.github.io&lt;/strong&gt;. Cela permet d'avoir une url qui ne fonctionne pas avec un répertoire mais cela implique d'autres problèmes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;En effet, jn-blog c'est parlant pour le blog que vous lisez actuellement car c'est son nom, mais on ne retrouve pas le thème du blog qui consiste à proposer des tutoriels autour de Pelican. Il aurait donc fallu créer une nouvelle organisation qui s'appellerait tutoriel-pelican et créer un repository tutoriel-pelican.github.io. On aurait ainsi eu tutoriel-pelican/tutoriel-pelican.github.io et le site aurait été accessible à l'adresse https://tutoriel-pelican.github.io. Cela devient plus parlant mais on n'est toujours pas sur un nom facile à retenir et à écrire.&lt;/li&gt;
+&lt;li&gt;L'autre point négatif consiste au fait qu'en adoptant ce choix, seule la branche master du repository peut servir d'hébergement. Et il n'est donc pas possible d'utiliser la branche gh-pages pour cela, ce qui est un peu problématique (pour moi en tout cas) car cela ne permet pas de respecter les conventions de nommage.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Donc mon conseil, mais encore une fois, ce n'est que le mien - et je ne prétends pas détenir la vérité absolue -, c'est de choisir cette option si vous n'avez pas prévu de mettre en place un nom de domaine personnalisé. En effet, dans ce cadre-là, je pense qu'il est plus judicieux d'avoir un site accessible à l'adresse ORGANISATION.github.io que ORGANISATION.github.io/NOM_REPOSITORY.&lt;/p&gt;
+&lt;p&gt;Mais bon, si vous désirez créer votre propre blog, il y a tout de même de forte chance que vous ayez envie de choisir le nom de domaine de ce dernier. Et c'est ce que nous allons voir dans la partie suivante.&lt;/p&gt;
+&lt;h3&gt;Mise en place d'un domaine personnalisé&lt;/h3&gt;
+&lt;p&gt;Maintenant que notre repository est créé et que GitHub Pages est mis en place, la prochaine étape consiste à associer notre nom de domaine sur cet hébergement et pour cela il va falloir faire un enregistrement CNAME. &lt;/p&gt;
+&lt;p&gt;Si vous n'êtes pas familier avec ce terme, sachez juste qu'un enregistrement CNAME permet de faire pointer un nom de domaine vers un autre nom de domaine hôte. C'est un peu comme les adresses postales de type CEDEX. Vous allez envoyer un chèque à votre Banque via une adresse Paris CEDEX par exemple. Mais finalement, cette adresse sera redirigée vers le siège social situé dans une autre ville comme Levallois-Perret. Pour revenir au monde du digital, si vous souhaitez que votre blog soit accessible à l'adresse www.mon-blog.com et que votre adresse github pages soit username.github.io/mon-blog, il va falloir faire un enregistrement CNAME pour que votre domaine www.mon-blog.com soit redirigé vers l'adresse username.github.io/mon-blog. &lt;/p&gt;
+&lt;p&gt;Et pour en revenir à notre projet de blog tutoriel-pelican, nous allons faire en sorte que le domaine tutoriel-pelican.jn-blog.com redirige vers jn-blog.github.io/tutoriel-pelican. Pourquoi tutoriel-pelican.jn-blog.com? Parce que je suis déjà propriétaire du domaine jn-blog.com et que travailler avec un sous-domaine comme celui-ci me parait pertinent. Mais j'aurai pu également acheter le domaine tutoriel-pelican.com et faire en sorte que ce soit www.tutoriel-pelican.com qui redirige vers jn-blog.github.io/tutoriel-pelican. L'opération reste la même au final.&lt;/p&gt;
+&lt;p&gt;Cette opération se fait auprès de votre fournisseur DNS. Les interfaces sont différentes mais la plupart du temps, l'opération est bien cadrée et il suffit d'indiquer au travers d'un formulaire son sous-domaine et le nom de domaine hôte.&lt;/p&gt;
+&lt;p&gt;Une commande CNAME ressemble à ça:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;NOM_DOMAINE IN CNAME NOM_HOTE
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Dans notre cas, on aura:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tutoriel-pelican IN CNAME jn-blog.gituhb.io.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois cela fait, il va falloir un peu patienter car l'opération peut prendre quelques heures à être propagée.&lt;/p&gt;
+&lt;p&gt;Pour terminer la configuration, rien de plus simple. Il suffit juste de retourner dans les settings de votre repository GitHub et ajouter votre domaine à l'endroit indiqué. Je vous recommande également d'activer le protocole https. Cela vous apporte un niveau de sécurité supplémentaire et les domaines accessibles en https sont favorisés en termes de référencement naturel. Dans la même logique, cette activation demande la mise en place d'un certificat SSL du côté de GitHub et cela peut demander un peu de temps.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="configuration github pages terminés" src="https://www.productmakers.fr/images/tuto-pelican-settings-global-done.png"&gt;&lt;/p&gt;
+&lt;p&gt;Notre configuration de GitHub Pages est désormais terminée! Notre repository est prêt à accueillir notre blog ainsi qu'à le servir sur notre domaine personnalisé.
+Nous allons dans la prochaine étape installer notre blog et mettre en place ses configurations initiales:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Mettre en place Pelican pour son blog statique&lt;/a&gt;&lt;/p&gt;</content><category term="tutoriels"></category></entry><entry><title>Mettre en place un blog statique avec Pelican</title><link href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/" rel="alternate"></link><published>2018-10-26T00:00:00+02:00</published><updated>2018-10-26T00:00:00+02:00</updated><author><name>Julien Nuellas</name></author><id>tag:www.productmakers.fr,2018-10-26:/articles/tutoriel-creer-un-blog-statique/</id><summary type="html">&lt;p&gt;Vous avez envie de créer un blog et vous êtes tenté par la solution du blog statique? Alors ce tutoriel est fait pour vous.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A travers ce tutoriel, je souhaite partager mon expérience suite à la mise en place de mon blog statique. En effet, j'ai créé ce blog dans l'idée d'en faire une base d'échange, de partage d'expérience, de connaissances et il paraît donc logique que le premier tutoriel de ce blog traite du sujet de la mise en place d'un blog statique.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="gif ça fait sens" src="https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Et dans la même logique, j'espère pouvoir avoir votre propre retour d'expérience dans la section &lt;em&gt;commentaires&lt;/em&gt;.
+Et j'insiste sur le fait que je ne prétends pas avoir la solution ultime (existe-t-elle vraiment finalement?) mais une solution pertinente par rapport à des objectifs définis.&lt;/p&gt;
+&lt;h2&gt;Objectifs du tutoriel&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Alors justement, que va couvrir ce tutoriel?
+L'objectif de ce dernier est de structurer les différentes étapes liées à la mise en place d'un blog statique et proposer un workflow facile et fiable dans le temps. Pour cela, je vais vous proposer de travailler avec trois principaux outils:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/"&gt;Pelican&lt;/a&gt; comme générateur de sites statiques&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; pour l'hébergement&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://travis-ci.org/"&gt;Travis CI&lt;/a&gt; pour automatiser le déploiement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Le premier avantage à tout ça, vous pouvez créer un blog &lt;strong&gt;gratuitement&lt;/strong&gt; sans dépenser un seul euro. Elle est pas belle la vie? A la limite, la seule dépense qui peut vous intéresser est l'achat de votre propre nom de domaine (ce qui représente environ 15 euros par an).&lt;/p&gt;
+&lt;h2&gt;Quels sont les pré-requis?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Comme nous le verrons dans le chapitre suivant, l'un des inconvénients d'un site statique réside dans le fait que sa mise en place peut s'avérer un peu plus compliqué comparée à la création d'un blog avec Wordpress pour les personnes qui n'ont pas encore côtoyés le monde du développement. Il n'y a rien d'inaccessible et de compliqué mais il faut avoir une certaine curiosité pour l'univers du développement. Avant d'aller plus loin, voici quelques points qui seront utilisés dans le tutoriel mais qui ne seront pas détaillés afin de ne pas s'éloigner de l'objectif principal:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilisation de lignes de commandes&lt;/li&gt;
+&lt;li&gt;Utilisation de git et GitHub&lt;/li&gt;
+&lt;li&gt;Mise en place d'un environnement Python&lt;/li&gt;
+&lt;li&gt;Mise en place de Travis CI pour automatiser le déploiement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alors, prêt pour l'aventure?&lt;/p&gt;
+&lt;h2&gt;Un projet fil rouge&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Tout au long de ce tutoriel, nous allons créer pas à pas un blog. Cela permettra d'ajouter du contexte et du concret aux différentes actions qui seront entreprises. Ce blog va s'appeler &lt;strong&gt;Tutoriel Pelican&lt;/strong&gt; et est accessible à l'adresse suivante: &lt;a href="https://tutoriel-pelican.jn-blog.com"&gt;https://tutoriel-pelican.jn-blog.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Vous pouvez d'ores et déjà vous y rendre, cela vous permettra de voir ce à quoi nous allons aboutir à la fin.&lt;/p&gt;
+&lt;p&gt;Mais avant de rentrer directement dans le vif du sujet, voici comment nous allons procéder. Ce tutoriel comportera différents articles selon le schéma suivant:&lt;/p&gt;
+&lt;h2&gt;1. &lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Un blog statique, c'est quoi? Et pourquoi choisir cette solution?&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Effectivement, on ne va pas rentrer dans le dur avant de comprendre ce qu'est un site statique et de savoir quels sont ses avantages et ses inconvénients. Ca serait dommage de vous rendre compte à la fin, après avoir tout mis en place que finalement, le blog statique n'est pas la situation idéale dans votre cas.
+J'en profiterai également pour vous présenter &lt;strong&gt;Pelican&lt;/strong&gt;  plus particulièrement car c'est ce dernier que nous utiliserons.&lt;/p&gt;
+&lt;h2&gt;2. &lt;a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/"&gt;Mettre en place son repository GitHub Pages&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;La seconde partie de ce tutoriel évoquera la mise en place du repository &lt;strong&gt;GitHub Pages&lt;/strong&gt;. Je vous présenterai:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ce qu'est &lt;strong&gt;GitHub Pages&lt;/strong&gt; en quelques lignes.&lt;/li&gt;
+&lt;li&gt;La logique de fonctionnement que nous allons utiliser pour gérer le blog&lt;/li&gt;
+&lt;li&gt;La configuration du repository.&lt;/li&gt;
+&lt;li&gt;La mise en place d'un nom de domaine.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;3. &lt;a href="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"&gt;Installer Pelican&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;On va ensuite rentrer dans le vif du sujet et installer Pelican au sein de notre environnement de travail. On en profitera pour mettre en place les configurations basiques que j'ai jugé pertinentes. Il ne s'agit pas encore une fois de la seule façon de procéder et vous découvrirez avec le temps que Pelican offre de nombreuses possibilités en termes de configuration. L'idée ici est de partir d'une base simple et fonctionnelle.
+On écrira même un premier article que nous déploierons en local afin de vérifier que tout fonctionne correctement.&lt;/p&gt;
+&lt;h2&gt;4. &lt;a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/"&gt;Mise en place de Travis et du workflow de déploiement&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;L'étape suivante consistera à mettre en place le déploiement automatisé avec &lt;strong&gt;Travis&lt;/strong&gt;. L'objectif étant qu'à chaque fois que vous écrirez un nouvel article et que vous souhaiterez le publier, vous n'aurez qu'à pousser votre projet sur GitHub, puis historiser la publication via une pull request (pour conserver un certain historique). Travis se chargera de tester le projet et déploiera la nouvelle version du blog si tout se passe bien.&lt;/p&gt;
+&lt;h2&gt;5. &lt;a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/"&gt;Mettre en place un thème Pelican&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;A ce stade, le blog sera fonctionnel et la plus grande partie du travail aura été effectuée. Il ne restera plus qu'à styliser un peu le blog. Pour cela, nous verrons comment installer l'un des nombreux thèmes disponibles. Une fois ce sujet couvert, vous aurez vu l'ensemble des points qui vous permettra de mettre en place votre propre blog statique.&lt;/p&gt;
+&lt;p&gt;Bien sûr, ce tutoriel va s'enrichir avec le temps et de nouveaux chapitres verront le jour. Vous découvrirez ainsi comment mettre en place un système de commentaires, ou encore mettre en place Google Analytics afin de suivre les performances et la popularité de votre blog. Et puis, finalement ce tutoriel évoluera également en fonction de vos questions et besoins. Alors n'hésitez pas à écrire des commentaires afin d'avoir vos retours sur ce dernier. Cela me permettra d'affiner le contenu suite à votre retour d'expérience.&lt;/p&gt;
+&lt;p&gt;Prêt pour la suite? Allez, c'est par ici:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.productmakers.fr/articles/explication-blog-statique/"&gt;Comprendre ce qu'est un blog statique&lt;/a&gt;&lt;/p&gt;</content><category term="tutoriels"></category></entry></feed>

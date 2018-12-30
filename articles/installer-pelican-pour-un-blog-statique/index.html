@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400,400i,500,500i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.productmakers.fr/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://www.productmakers.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ProductMakers Atom">
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-129524955-1', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524955-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524955-1');
+</script>
+<!-- This is the updated tag -->
+
+<meta name="author" content="Julien Nuellas" />
+<meta name="description" content="Découvrez comment installer et configurer Pelican pour votre propre blog statique. Toutes les étapes sont décrites et expliquées." />
+<meta name="keywords" content="tutoriels">
+
+<meta property="og:site_name" content="ProductMakers"/>
+<meta property="og:title" content="Installer et configurer Pelican pour son blog statique"/>
+<meta property="og:description" content="Découvrez comment installer et configurer Pelican pour votre propre blog statique. Toutes les étapes sont décrites et expliquées."/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-10-28 00:00:00+02:00"/>
+<meta property="article:modified_time" content="2018-10-28 00:00:00+02:00"/>
+<meta property="article:author" content="https://www.productmakers.fr/author/julien-nuellas/">
+<meta property="article:section" content="tutoriels"/>
+<meta property="article:tag" content="tutoriels"/>
+<meta property="og:image" content="">
+
+  <title>ProductMakers &ndash; Installer et configurer Pelican pour son blog statique</title>
+
+</head>
+<body>
+  <aside class="navigation">
+    <div>
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <!-- <div>
+          <a href="https://www.productmakers.fr">
+              <img src="https://www.productmakers.fr/theme/img/profile.png" alt="" title="">
+            </a>
+        </div> -->
+        <!--  -->
+            <!-- <p class="navigation__subtitle">Tags</p> -->
+            <ul class="navigation__list list">
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/lean/" class="navigation__link">&num; lean</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/agile/" class="navigation__link">&num; agile</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/ux/" class="navigation__link">&num; UX</a></li>
+                    <li class="navigation__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="navigation__link">&num; tutoriels</a></li>
+            </ul>
+      <!-- <ul class="social">
+        <li><a class="sc-twitter" href="https://twitter.com/JulienNuellas" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a class="sc-linkedin" href="https://fr.linkedin.com/in/julien-nuellas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/JN-Lab" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+      </ul> -->
+
+    </nav>
+    </div>
+  </aside>
+  <header class="header">
+      <div class="header__main-box">
+          <div class="header__title-box">
+              <img class="heading-logo" src="https://www.productmakers.fr/theme/img/icon.png" alt="" title=""><h1 class="heading-brand heading-brand--primary"><a href="https://www.productmakers.fr" class="heading-brand__link">ProductMakers</a></h1>
+          </div>
+          <div class="header__tag-box">
+              <ul class="header__tag-box__list list">
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/lean/" class="header__tag-box__link">#lean</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/agile/" class="header__tag-box__link">#agile</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/ux/" class="header__tag-box__link">#UX</a></li>
+                      <li class="header__tag-box__item"><a href="https://www.productmakers.fr/tag/tutoriels/" class="header__tag-box__link">#tutoriels</a></li>
+              </ul>
+          </div>
+      </div>
+    </header>
+  <main>
+
+
+
+<article class="single">
+  <div>
+  </div>
+  <header>
+      
+    <h1 id="installer-pelican-pour-un-blog-statique">Installer et configurer Pelican pour son blog statique</h1>
+    <p>
+      <!-- Posté le 28/10/2018 dans <a href="https://www.productmakers.fr/categorie/tutoriels/">tutoriels</a> -->
+      
+      28/10/2018
+
+    </p>
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Installer%20et%20configurer%20Pelican%20pour%20son%20blog%20statique&url=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/&title=Installer%20et%20configurer%20Pelican%20pour%20son%20blog%20statique&summary=D%C3%A9couvrez%20comment%20installer%20et%20configurer%20Pelican%20pour%20votre%20propre%20blog%20statique.%20Toutes%20les%20%C3%A9tapes%20sont%20d%C3%A9crites%20et%20expliqu%C3%A9es.&source=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+  </header>
+  
+  <div>
+    <p>Après avoir découvert ce qu'est un site statique et avoir installé notre environnement de production via GitHub Pages, nous allons désormais mettre en place la structure de notre blog statique en utilisant le générateur de site statique <a href="http://docs.getpelican.com/en/stable/">Pelican</a>.</p>
+<p>Comme cet article constitue la quatrième partie d'un tutoriel dédié à la création d'un blog statique, je me permets de rappeler la structure de ce dernier:</p>
+<ol>
+<li><a href="https://www.productmakers.fr/articles/tutoriel-creer-un-blog-statique/">Présentation du tutoriel et de ces objectifs</a></li>
+<li><a href="https://www.productmakers.fr/articles/explication-blog-statique/">Un blog statique, c'est quoi et comment ça fonctionne?</a></li>
+<li><a href="https://www.productmakers.fr/articles/heberger-un-blog-statique-avec-github-pages/">Mettre en place GitHub Pages pour l'hébergement d'un blog statique</a></li>
+<li><strong>Utiliser Pelican pour son blog statique</strong></li>
+<li><a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/">Utiliser Travis pour automatiser le déploiement de son blog statique</a></li>
+<li><a href="https://www.productmakers.fr/articles/installer-un-theme-pelican/">Mettre en place un thème sur son blog statique Pelican</a></li>
+</ol>
+<p>Nous verrons donc dans cet article comment installer Pelican et le configurer de manière basique. Nous écrirons également notre premier article et publierons notre blog en local.</p>
+<p>Maintenant que l'on sait ce que l'on va faire dans cet article, il est temps de débuter les hostilités.</p>
+<h2>Cloner le repository et mettre créer la branche source</h2>
+<hr>
+<p>La première chose à faire est de cloner le repository en local dans le répertoire souhaité. Pour notre projet fil rouge, il s'agit de la commande suivante:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/JN-Blog/tutoriel-pelican.git
+</pre></div>
+
+
+<p>Il suffit de récupérer l'url de votre repository et remplacer l'url ci-dessous par la votre.
+Une fois le repository cloné, nous créons la branche source qui sera notre branche principale de développement et nous nous positionnons dessus:</p>
+<div class="highlight"><pre><span></span>git checkout -b source
+</pre></div>
+
+
+<p>Si vous lancer désormais la commande <code>git branch</code>, vous devriez obtenir le résultat suivant:</p>
+<div class="highlight"><pre><span></span>master
+* source
+</pre></div>
+
+
+<p>L'asterix à côté de la branche source prouve que vous êtes positionné sur la bonne branche. Nous sommes désormais prêts à installer notre environnement de développement.</p>
+<h2>Installer Python et créer son environnement virtuel</h2>
+<hr>
+<p>Si vous n'avez pas encore installer Python sur votre ordinateur, il est temps de le faire désormais. Voici le lien officiel pour télécharger la dernière version: https://www.python.org/downloads/</p>
+<p>Une fois installé, nous allons installer notre environnement virtuel à la racine de votre répertoire:</p>
+<div class="highlight"><pre><span></span>python3 -m venv env
+</pre></div>
+
+
+<p>Une fois notre environnement virtuel installé, il ne nous reste plus qu'à l'activer:</p>
+<div class="highlight"><pre><span></span>source env/bin/activate
+</pre></div>
+
+
+<p>Nous sommes désormais prêts à installer Pelican.</p>
+<h2>Installer Pelican et Markdown</h2>
+<hr>
+<p>Pour installer Pelican, rien de plus de simple, il suffit d'utiliser pip, le gestionnaire de paquet Python.
+Attention à bien avoir activé votre environnement virtuel au préalable.</p>
+<div class="highlight"><pre><span></span>pip install pelican
+</pre></div>
+
+
+<p>Et comme nous allons écrire en format Markdown, nous allons également l'installer:</p>
+<div class="highlight"><pre><span></span>pip install Markdown
+</pre></div>
+
+
+<p>Et voilà, nous avons installé tous les éléments nécessaires pour créer notre blog statique.
+Et comme on aime bien les choses propres, nous allons dans un premier temps, créer notre fichier requirements.txt avec toutes les dépendances associées à notre projet:</p>
+<div class="highlight"><pre><span></span>pip freeze &gt; requirements.txt
+</pre></div>
+
+
+<p>Vous devriez retrouver un contenu similaire dans votre fichier requirements.txt:</p>
+<div class="highlight"><pre><span></span>blinker==1.4
+docutils==0.14
+feedgenerator==1.9
+Jinja2==2.10
+Markdown==3.0.1
+MarkupSafe==1.0
+pelican==3.7.1
+Pygments==2.2.0
+python-dateutil==2.7.5
+pytz==2018.7
+six==1.11.0
+Unidecode==1.0.22
+</pre></div>
+
+
+<p>Il s'agit des dépendances du projet. En effet, vous n'avez installé que Markdown et Pelican mais ce dernier a besoin de ces autres paquets pour fonctionner.</p>
+<p>Ensuite, nous créons notre fichier .gitignore et y ajoutons les éléments que l'on ne souhaite pas committer à savoir notre environnement virtuel. Prenons également un peu d'avance en y ajoutant les répertoires pycache et output:</p>
+<div class="highlight"><pre><span></span>touch .gitignore
+</pre></div>
+
+
+<p>Et le contenu de notre fichier ressemble à cela:</p>
+<div class="highlight"><pre><span></span>env/
+__pycache__/
+output/
+</pre></div>
+
+
+<p>Vous pouvez bien sûr faire votre premier commit et pousser le tout sur GitHub (dans votre branche source).
+Il est temps désormais de créer notre projet Pelican.</p>
+<h2>Créer un projet Pelican</h2>
+<hr>
+<p>Une fois tout installé, nous allons pouvoir créer notre squelette de projet sous Pelican.
+Pour cela, rien de plus simple, à l'installation de Pelican, des commandes ont également été installées.</p>
+<p>Il vous suffit donc de lancer la commande suivante:</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+
+
+<p>Une fois lancé vous allez devoir répondre à une série de questions:</p>
+<ol>
+<li>
+<p>Where do you want to create your new website? [.]
+-&gt; Tapez .</p>
+</li>
+<li>
+<p>What will be the tilte of this website?
+-&gt; Indiquez le nom de votre blog. Pour le projet de ce tutoriel, il s'agit de tutoriel-pelican</p>
+</li>
+<li>
+<p>What will be the author of this web site?
+-&gt; Indiquez votre nom et prénom</p>
+</li>
+<li>
+<p>What will be the default language of this web site?[fr]
+-&gt; Tapez la langue que vous utiliserez pour votre blog</p>
+</li>
+<li>
+<p>Do you want to specify a URL prefix? e.g, http://example.com (Y/n)
+-&gt; Si vous avez un nom de domaine personnalisé, tapez Y</p>
+</li>
+<li>
+<p>What is your URL prefix? (see above example; no trailing slash)
+-&gt; Tapez votre nom de domaine selon l'exemple indiqué dans la question précédent : https://tutoriel-pelican.jn-blog.com</p>
+</li>
+<li>
+<p>Do you want to enable article pagination? (Y/n)
+-&gt; Tapez Y</p>
+</li>
+<li>
+<p>How many articles per page do you want? [10]
+-&gt; Laissez à 10. Vous pourrez de toute façon le modifier par la suite</p>
+</li>
+<li>
+<p>What is your time zone? [Europe/Paris]
+-&gt; Indiquez le fuseau horaire souhaité.</p>
+</li>
+<li>
+<p>Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)
+-&gt; Tapez <strong>Y</strong>. Nous utiliserons le Makefile pour générer le site.</p>
+</li>
+<li>
+<p>Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development. (Y/n)
+-&gt; Vous pouvez répondre n</p>
+</li>
+<li>
+<p>Do you want to upload your website using FTP? (y/N)
+-&gt; Tapez N</p>
+</li>
+<li>
+<p>Do you want to upload your website using SSH? (y/N)
+-&gt; Tapez N</p>
+</li>
+<li>
+<p>Do you want to upload your website using Dropbox (y/N)
+-&gt; Tapez N</p>
+</li>
+<li>
+<p>Do you want to upload your website using S3 (y/N)
+-&gt; Tapez N</p>
+</li>
+<li>
+<p>Do you want to upload your website using Rackspace Cloud Files (y/N)
+-&gt; Tapez N</p>
+</li>
+<li>
+<p>Do you want to upload your website using GitHub Pages (y/N)
+-&gt; Tapez y. C'est la solution que nous avons choisie dans ce tutoriel.</p>
+</li>
+<li>
+<p>Is this your personal page (username.github.io)? (y/N)
+-&gt; Vous pouvez taper y</p>
+</li>
+</ol>
+<p>Et voilà! Si vous examinez un peu votre répertoire, vous vous apercevez que tous les fichiers nécessaires ont été automatiquement générés!</p>
+<p><img alt="repertoire initial d'un projet Pelican" src="https://www.productmakers.fr/images/tuto-pelican-pelican-repertoire.png"></p>
+<h2>Mettre en place les premières configurations</h2>
+<hr>
+<p>Parmi les éléments installés, deux fichiers essentiels sont apparus. Il s'agit des fichiers:</p>
+<ul>
+<li>pelicanconf.py</li>
+<li>publishconf.py</li>
+</ul>
+<p>Ce sont les fichiers de configurations du blog. pelicanconf.py est le fichier de configuration principale et publishconf.py sera utilisé uniquement pour le déploiement en production et viendra ajouter ou écraser des configurations présentes dans pelicanconf.py.</p>
+<h3>Quelques ajustements sur pelicanconf.py</h3>
+<p>Alors comment attaquer le morceau?
+Premièrement, je vous invite à prendre quelques minutes pour examiner la <a href="http://docs.getpelican.com/en/stable/settings.html">documentation</a> et découvrir toutes les possibilités.</p>
+<p>En fonction des réponses aux questions, vous devez retrouver de votre côté un contenu similaire:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">&#39;Julien Nuellas&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s1">&#39;tutoriel-pelican&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Paris&#39;</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>
+
+<span class="c1"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s1">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s1">&#39;http://python.org/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s1">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;You can modify those links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="c1"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c1">#RELATIVE_URLS = True</span>
+</pre></div>
+
+
+<p>Il s'agit des configurations basiques. Globalement, on retrouve:</p>
+<ul>
+<li><code>AUTHOR</code>: Le nom de l'auteur du blog</li>
+<li><code>SITENAME</code>: le nom du blog</li>
+<li><code>SITEURL</code>: l'URL du blog en environnement de développement. Cette variable sera écrasé par l'url de votre site en production via le fichier publishconf.py</li>
+<li><code>PATH</code>: le nom du dossier contenant vos contenus</li>
+<li><code>TIMEZONE</code> et <code>DEFAULT_LANG</code>: les configurations basiques du fuseau horaire et du langage principal.</li>
+<li>Ensuite, il y a les variables servant à activer ou désactiver les flux Atom et RSS. On laissera ici à None car on ne souhaite pas les générer pour l'environnement de développement</li>
+<li><code>LINKS</code>: cette variable contient un tuple de tuples contenant des liens devant apparaître dans le header</li>
+<li><code>SOCIAL</code>: dans la même logique que la variable LINKS, il s'agit des liens de vos réseaux sociaux devant apparaître dans la section social.</li>
+<li><code>DEFAULT_PAGINATION</code>: définit le nombre d'articles maximum à intégrer dans une page.</li>
+</ul>
+<p>Ainsi, le fichier de configuration contient tout ce qu'il y a de nécessaire pour fonctionner correctement dans un premier temps.
+Je vous propose cependant d'ajouter quelques éléments supplémentaires</p>
+<h4>Configurations des URLs</h4>
+<p>Personnellement, j'aime bien définir la forme de mes urls. Je trouve que c'est un élément non négligeable qui participe à la cohérence dans le processus de navigation. Je vous propose donc de rajouter les variables suivantes:</p>
+<div class="highlight"><pre><span></span><span class="c1"># URL Settings</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;articles/{slug}/index.html&#39;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s1">&#39;pages/{slug}/&#39;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;pages/{slug}/index.html&#39;</span>
+<span class="n">CATEGORY_URL</span> <span class="o">=</span> <span class="s1">&#39;categorie/{slug}/&#39;</span>
+<span class="n">CATEGORY_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;categorie/{slug}/index.html&#39;</span>
+<span class="n">TAG_URL</span> <span class="o">=</span> <span class="s1">&#39;tag/{slug}/&#39;</span>
+<span class="n">TAG_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;tag/{slug}/index.html&#39;</span>
+
+<span class="n">CATEGORIES_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;categories.html&#39;</span>
+<span class="n">TAGS_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;tags.html&#39;</span>
+<span class="n">INDEX_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_URL</span> <span class="o">=</span> <span class="s1">&#39;author/{slug}/&#39;</span>
+<span class="n">AUTHOR_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+
+
+<h4>Configuration des éléménts statiques</h4>
+<p>Vous intègrerez certainement des images dans vos articles et pour cela, il vous faut un endroit où les entreposer.
+Je vous propose donc de stocker ces éléments dans un répertoire que nous nommerons <strong>images</strong> au sein du répertoire <strong>content</strong>.</p>
+<div class="highlight"><pre><span></span>content/
+    |- images/
+...
+</pre></div>
+
+
+<p>Une fois créé, il est nécessaire d'indiquer à Pelican le chemin où récupérer ces statics.
+Il faut pour cela utiliser la variable STATIC_PATHS au sein du fichier de configuration:</p>
+<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;images&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p>cette variable contient une liste de répertoire par rapport au répertoire indiqué dans la variable <code>PATH</code>, donc dans notre cas le répertoire <em>content</em>. Ces éléments seront copiés dans le répertoire <em>output</em> sans modification et pourront être utilisés en production. Par défaut, Pelican inclus déjà le répertoire <em>images</em> mais c'est toujours bon de savoir comment faire!</p>
+<p>Avant d'aller plus loin, nous allons ajouter quelques éléments supplémentaires. En effet, un CNAME a été enregistré et Pelican aura besoin d'y accéder dans le répertoire <em>output</em>. De plus, il paraît judicieux de rajouter un robot.txt lorsque l'on souhaite travailler son référencement dans les moteurs de recherche.
+Et enfin, afin de personnaliser un peu, nous rajouterons un favicon également.
+Je vous propose d'ajouter dans le répertoire <em>content</em> un répertoire <em>extra</em> avec les fichiers <em>robots.txt</em> et <em>CNAME</em> et le <em>favicon</em>:</p>
+<div class="highlight"><pre><span></span>content/
+    |- images/
+    |- extra/
+        |- robots.txt
+        |- CNAME
+        |- favicon.ico
+...
+</pre></div>
+
+
+<p>Et dans le fichier pelicanconf.py, nous allons rajouter ces éléments dans la variable STATIC_PATHS et déclarer la variable EXTRA_PATH_METADATA comme ceci:</p>
+<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;images&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extra/CNAME&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extra/favicon.ico&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;robots.txt&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/CNAME&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;CNAME&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon.ico&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon.ico&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Petits bonus:
+* Si vous ne connaissez pas très bien le fonctionnement d'un fichier robots.txt mais que vous souhaitez être référencé sur l'ensemble des moteurs, voici la configuration:</p>
+<div class="highlight"><pre><span></span>User-agent: *
+Disallow: 
+</pre></div>
+
+
+<ul>
+<li>Votre fichier CNAME doit contenir uniquement votre nom de domaine. Pour le projet du tutoriel:</li>
+</ul>
+<div class="highlight"><pre><span></span>tutoriel-pelican.jn-blog.com
+</pre></div>
+
+
+<p>Et voilà, notre configuration de base est faîte.</p>
+<h2>Publier notre site en local</h2>
+<hr>
+<p>Maintenant que tout est en place il serait judicieux de voir si tout fonctionne correctement.
+Pour cela, rien de plus simple, il suffit de déployer notre site en local avec la commande:</p>
+<div class="highlight"><pre><span></span>make html &amp;&amp; make serve
+</pre></div>
+
+
+<p>En effet, lorsque nous avons répondu à la question <em>10. Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)</em>, Pelican a automatiquement généré un fichier Makefile afin de faciliter ce type d'opération.
+Cette commande va générer les fichiers html et lancer un serveur web en local. (Pour stopper le serveur un simple Ctrl + C suffit).</p>
+<p>En nous rendant à l'adresse <code>http://localhost:8000/</code>, il est désormais possible d'accéder à son site.</p>
+<p><img alt="publication du site en local" src="https://www.productmakers.fr/images/tuto-pelican-local-site.png"></p>
+<h2>Créer notre premier article</h2>
+<hr>
+<p>Voyons désormais comment écrire un article.
+Il suffit pour cela de créer un fichier au format md à la racine du répertoire <em>content</em>.</p>
+<div class="highlight"><pre><span></span>content/
+    |- images/
+    |- extra/
+        |- robots.txt
+        |- CNAME
+        |- favicon.png
+    |- article.md
+...
+</pre></div>
+
+
+<p>Pour aider Pelican à récupérer les informations nécessaires pour chaque article afin de générer correctement les fichiers html, nous allons utiliser les <strong>métadatas</strong>. Voici à quoi doit ressembler le début de votre article:</p>
+<div class="highlight"><pre><span></span><span class="n">Date</span><span class="o">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span>
+<span class="n">Modified</span><span class="o">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">tutoriels</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">tutoriel</span><span class="o">,</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">blog</span> <span class="n">statique</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">mon</span><span class="o">-</span><span class="n">premier</span><span class="o">-</span><span class="n">article</span>
+<span class="n">Lang</span><span class="o">:</span> <span class="n">fr</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Julien</span> <span class="n">Nuellas</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Premier</span> <span class="n">article</span> <span class="n">sur</span> <span class="n">blog</span> <span class="n">tutoriel</span> <span class="n">pelican</span>
+</pre></div>
+
+
+<p>Cela permet à Pelican de récupérer les informations nécessaires pour le traitement. En détaillant un peu, on a:</p>
+<ul>
+<li>La date de l'article</li>
+<li>La dernière date de modification de l'article</li>
+<li>La catégorie associée à l'article</li>
+<li>Les tags associés à l'article</li>
+<li>Le slug qui permettra d'alimenter l'url de la page de l'article</li>
+<li>La langue dans laquelle l'article sera écrit</li>
+<li>L'auteur de l'article</li>
+<li>Une brève description de l'article</li>
+</ul>
+<p>Pour plus d'informations, n'hésitez pas à aller explorer la <a href="http://docs.getpelican.com/en/stable/content.html">documentation</a>.</p>
+<p>Une fois les metadatas renseignées, il suffit d'écrire son article:</p>
+<div class="highlight"><pre><span></span><span class="nl">Title</span><span class="p">:</span> <span class="n">Premier</span> <span class="n">article</span> <span class="n">sur</span> <span class="n">le</span> <span class="n">blog</span> <span class="n">tutoriel</span> <span class="n">pelican</span>
+<span class="nl">Date</span><span class="p">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span>
+<span class="nl">Modified</span><span class="p">:</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span>
+<span class="nl">Category</span><span class="p">:</span> <span class="n">tutoriels</span>
+<span class="nl">Tags</span><span class="p">:</span> <span class="n">tutoriel</span><span class="p">,</span> <span class="n">pelican</span><span class="p">,</span> <span class="n">blog</span> <span class="n">statique</span>
+<span class="nl">Slug</span><span class="p">:</span> <span class="n">mon</span><span class="o">-</span><span class="n">premier</span><span class="o">-</span><span class="n">article</span>
+<span class="nl">Lang</span><span class="p">:</span> <span class="n">fr</span>
+<span class="nl">Authors</span><span class="p">:</span> <span class="n">Julien</span> <span class="n">Nuellas</span>
+<span class="nl">Summary</span><span class="p">:</span> <span class="n">Premier</span> <span class="n">article</span> <span class="n">sur</span> <span class="n">blog</span> <span class="n">tutoriel</span> <span class="n">pelican</span>
+
+<span class="n">Bonjour</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span><span class="p">,</span> <span class="n">ceci</span> <span class="n">est</span> <span class="n">mon</span> <span class="n">premier</span> <span class="n">article</span><span class="p">.</span>
+
+<span class="cp">## Ceci est la première partie de mon article</span>
+
+<span class="n">Pelican</span><span class="p">,</span> <span class="n">c</span><span class="err">&#39;</span><span class="n">est</span> <span class="n">vraiment</span> <span class="n">fun</span><span class="p">.</span>
+
+<span class="cp">## Ceci est la deuxième partie de mon article</span>
+
+<span class="n">Et</span> <span class="n">markdown</span><span class="p">,</span> <span class="n">c</span><span class="err">&#39;</span><span class="n">est</span> <span class="n">tellement</span> <span class="n">simple</span> <span class="err">à</span> <span class="n">utiliser</span><span class="o">!</span>
+<span class="n">La</span> <span class="n">syntaxe</span> <span class="n">est</span> <span class="n">simple</span> <span class="err">à</span> <span class="n">prendre</span> <span class="n">en</span> <span class="n">main</span> <span class="n">et</span> <span class="n">on</span> <span class="n">peut</span> <span class="n">faire</span> <span class="n">tout</span> <span class="n">ce</span> <span class="n">qu</span><span class="err">&#39;</span><span class="n">on</span> <span class="n">veut</span><span class="p">.</span> <span class="n">Voici</span> <span class="n">une</span> <span class="p">[</span><span class="n">cheat</span> <span class="n">sheet</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) qui vous permettra d&#39;en savoir un peu plus.</span>
+</pre></div>
+
+
+<p>Et voilà le travail est fait. Un petit coup de <code>make html &amp;&amp; make serve</code> pour admirer le travail.</p>
+<p><img alt="publication du site en local" src="https://www.productmakers.fr/images/tuto-pelican-local-site-avec-article.png"></p>
+<p>Dans cet article, nous avons vu beaucoup de choses:</p>
+<ul>
+<li>Comment installer Pelican dans son repository et créer un projet</li>
+<li>Comment configurer Pelican de façon basique</li>
+<li>Comment générer et servir son blog statique en local</li>
+<li>Comment écrire un article</li>
+</ul>
+<p>A ce stade du tutoriel, il nous reste encore deux choses importantes à voir:</p>
+<ul>
+<li>Comment déployer notre site en production sur github pages.</li>
+<li>Comment installer un thème. En effet, le thème de base ne vous convient peut-être pas et vous aurez certainement l'envie de personnaliser un peu votre blog.</li>
+</ul>
+<p>Alors commençons par voir comment déployer notre site en production dans le prochain article du tutoriel:</p>
+<p><a href="https://www.productmakers.fr/articles/deployer-pelican-en-production/">Déployer son blog statique en production</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.productmakers.fr/tag/tutoriels/">tutoriels</a>
+    </p>
+  </div>
+
+
+
+
+
+<section>
+    <p id="post-share-links">
+        <a href="https://twitter.com/intent/tweet?text=Installer%20et%20configurer%20Pelican%20pour%20son%20blog%20statique&url=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="twitter" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+        &nbsp;
+        <a href="http://www.facebook.com/sharer/sharer.php?u=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="facebook" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/&title=Installer%20et%20configurer%20Pelican%20pour%20son%20blog%20statique&summary=D%C3%A9couvrez%20comment%20installer%20et%20configurer%20Pelican%20pour%20votre%20propre%20blog%20statique.%20Toutes%20les%20%C3%A9tapes%20sont%20d%C3%A9crites%20et%20expliqu%C3%A9es.&source=https%3A//www.productmakers.fr/articles/installer-pelican-pour-un-blog-statique/" class="linkedin" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+    </p>
+</section>
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jn-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Veuillez activer le JavaScript pour voir les commentaires.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Propulsé par <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> thème par <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ProductMakers ",
+  "url" : "https://www.productmakers.fr",
+  "image": "",
+  "description": "Blog sur l'univers de la conception et gestion produit"
+}
+</script>
+
+
+  <!-- Javascript animation -->
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/header.js" async="async"></script>
+  <script type="text/javascript" src="https://www.productmakers.fr/theme/javascript/social_tracking.js" async="async"></script>
+</body>
+</html>
