@@ -25,7 +25,7 @@ Lorsque que l'on décide de réaliser des entretiens utilisateurs, la première 
 
 Pour recueillir des informations essentielles dans cette phase, il ne faut pas s'arrêter à un seul entretien. En effet, le but de cette étape est de recueillir des points de vue personnels en collectant des impressions, en identifiant des comportements et des attitudes. 
 
-C'est pour cela qu'il est judicieux de réaliser **entre 5 et 10 entretiens** tout **en faisant varier les profils**. Cela vous permettra d'avoir des éléments variés et précis qui vous permettront d'établir vos **personas** par la suite.
+C'est pour cela qu'il est judicieux de réaliser **entre 5 et 10 entretiens** tout **en faisant varier les profils**. Cela vous permettra d'avoir des éléments diversifiés et précis qui vous permettront d'établir vos **personas** par la suite.
 
 Il est possible d'identifier deux profils types:
 
@@ -141,6 +141,5 @@ Dans la même idée, **ne coupez jamais la parole** mais au contraire, soyez att
 Dans vos questions, n'hésitez pas à demander des retours d'expériences. Faîtes en sorte que les personnes livrent leur propre histoire.
 Vous allez certainement recueillir un tas d'informations intéressantes qui vous servira dans votre synthèse. Certains points communs pourront ressortir entre les utilisateurs mais avec des histoires différentes.
 L'autre intérêt de ces derniers, c'est qu'ils représentent un formidable argumentaire pour justifier vos idées et prouveront que celles-ci ne se basent pas sur votre propre sentiment personnel.
-
 
 J'espère que cet article vous a apporté quelques éléments intéressants pour alimenter votre réflexion sur la manière de conduire des entretiens utilisateurs. Si vous avez des remarques concernant le contenu ou si vous souhaitez partager votre expérience sur le sujet, n'hésitez pas à écrire un commentaire juste en dessous! Cela ne fera qu'apporter une vision plus aboutie sur le sujet.

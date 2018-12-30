@@ -25,6 +25,8 @@ if (pathRegex.test(url.pathname)) {
         const facebook = new SocialButton("facebook");
         const twitter = new SocialButton("twitter");
         const linkedin = new SocialButton("linkedin");
+        const twitterDisqus = new SocialButton("share-twitter");
+        const facebookDisqus = new SocialButton("share-facebook");
     }    
 }
 

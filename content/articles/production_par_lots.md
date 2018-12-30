@@ -1,4 +1,4 @@
-Title: La production par petits lots VS la production en série
+Title: Produire par petits lots VS produire en série
 Date: 2018-12-19
 Modified: 2018-12-22
 Category: articles
