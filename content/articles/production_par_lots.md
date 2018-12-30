@@ -54,7 +54,7 @@ La réponse après cette courte page de pub...
 ![pub drole tide gif](https://media.giphy.com/media/xThtaf9QQxeH7K1bS8/giphy.gif)
 
 Merci d'être encore là. Sans plus attendre, voici le nom du vainqueur. Il s'agit de ... Camille !!
-Un grand bravo à Camille pour avoir ridiculisée Jean et sa méthode de prodution en série.
+Un grand bravo à Camille pour avoir ridiculisé Jean et sa méthode de prodution en série.
 
 Comment? Vous insinuez que ce n'est pas possible et qu'il y a forcément eu tricherie? Et si je vous dis que bien que la production par petits lots paraisse inefficace, cette dernière reste plus efficiente que la production en série. En effet, de nombreuses études l'ont démontrées. Et pous appuyer mes propos, je vous propose cette petite vidéo où une personne réalise l'expérience et se chronomètre:
 
@@ -87,12 +87,12 @@ Ce problème, Camille l'a identifié dès le premier faire-part et avant de pass
 Ayant l'esprit compétitif, Camille n'a pas souhaité avertir Jean. De son côté, Jean a donc plié les 75 faire-parts selon la méthode initiale pour se rendre compte au moment de mettre le premier faire-part dans l'enveloppe que le pliage ne convenait pas... Du coup, Jean est bien embêté car il se retrouve confronté à un problème bien plus sérieux à résoudre. En effet:
 
 1. Il doit définir une nouvelle méthode de pliage et repartir de zéro lui faisant perdre un temps considérable.
-2. Il doit choisir entre deux options dont aucunes ne l'arrangent. En effet, il doit décider entre **baisser en qualité** (replier les faire-parts contenant déjà des plis) ou **augmenter les coûts** (en rachetant de nouveaux faire-parts).
+2. Il doit choisir entre deux options dont aucune ne l'arrange. En effet, il doit décider entre **baisser en qualité** (replier les faire-parts contenant déjà des plis) ou **augmenter les coûts** (en rachetant de nouveaux faire-parts).
 
-Cette exemple illustre clairement l'autre avantage de la production par petits lots par rapport à la production en série.
+Cet exemple illustre clairement l'autre avantage de la production par petits lots par rapport à la production en série.
 Il est beaucoup plus facile de s'adapter aux imprévus et apporter une solution efficace sans déteriorer le coût de production, ni la qualité et en minimisant le temps nécessaire à résoudre cet imprévu.
 
-Si on regarde de nouveaux les scores:
+Si on regarde de nouveau les scores:
 
 * Camille: 2
 * Jean: 0
@@ -147,6 +147,6 @@ Si je devais proposer un dernier match Jean Vs. Camille qui résumerait cette pa
 ---
 
 Soyons clair, en écrivant cet article, je n'avais pas pour objectif de vous donner un tutoriel sur la façon de préparer votre mariage.
-L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à participer en ajoutant un commentaires!
+L'idée, c'était de présenter ma perception sur la production par petits lots et l'importance de cet élément lorsque l'on souhaite tester une idée de produit ou service sur un marché. Comme l'ensemble des articles de ce blog, il a aussi pour vocation d'être un support d'échange autour de ce concept et d'avoir l'opportunité également de recueillir votre vision du sujet. Alors, n'hésitez à participer en ajoutant un commentaire!
 
-J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquels son produit se base. Il s'agit du concept de **déploiement continu**. Je l'ai même utilisé dans la dernière partie de mon exemple. En effet, c'est ce qui permet notamment de pouvoir proposer rapidement à ces clients une nouvelle version de son produit. Si vous êtes également intéressé par un article sur le sujet afin d'échanger sur ce concept, faîtes le moi aussi savoir dans les commentaires.
+J'ai également omis volontairement un autre élément important sans quoi la production par petits lots ne peut suffire à tester les hypothèses sur lesquelles son produit se base. Il s'agit du concept de **déploiement continu**. Je l'ai même utilisé dans la dernière partie de mon exemple. En effet, c'est ce qui permet notamment de pouvoir proposer rapidement à ses clients une nouvelle version de son produit. Si vous êtes également intéressé par un article sur le sujet afin d'échanger sur ce concept, faîtes le moi aussi savoir dans les commentaires.
