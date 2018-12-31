@@ -2,7 +2,7 @@ Title: Challenge: Mesurer l'engagement de son contenu via le volume de partage s
 Date: 2018-12-19
 Modified: 2018-12-22
 Category: articles
-Tags: challenge
+Tags: tutoriels
 Slug: tracking_partage_reseaux_sociaux_avec_google_analytics
 Lang: fr
 Authors: Julien Nuellas
@@ -26,7 +26,7 @@ Mais il aimerait également visualiser l'engagement de ses lecteurs via leur vol
 
 Avant d'aller plus loin, voyons ensemble quelques contraintes supplémentaires à laquelle la solution doit faire face.
 
-# La solution doit respecter certaines contraintes
+## La solution doit respecter certaines contraintes
 
 Afin de répondre à ce challenge, je me suis fixé quelques contraintes supplémentaires. En effet, le sujet étant large et digne d'intérêt pour plusieurs personnes - que ce soit quelqu'un ayant un blog personnel et qui souhaite évaluer la pertinence de son contenu, ou alors un professionnel s'étant lancé dans la production de contenu car cela fait partie de sa stratégie marketing -, j'ai pour objectif de proposer une solution la plus simple et la plus adaptable possible. Ainsi, la solution devra:
 
@@ -36,27 +36,27 @@ Afin de répondre à ce challenge, je me suis fixé quelques contraintes supplé
 
 Maintenant que tout est clair et défini, intéressons nous plus en détail aux objectifs analytiques liés au tracking de ces actions de partage.
 
-# Concrètement, comment j'évalue l'engagement de mes lecteurs via le partage sur les réseaux sociaux?
+## Concrètement, comment j'évalue l'engagement de mes lecteurs via le partage sur les réseaux sociaux?
 
 C'est effectivement une question digne d'intérêt. Evaluer l'engagement et la viralité de mon contenu via le partage sur les réseaux sociaux, c'est bien mais concrètement, quelles sont les questions sous-jacente?
 
-## Quel est le volume de partage de mon contenu sur les réseaux sociaux sur une période donnée?
+### Quel est le volume de partage de mon contenu sur les réseaux sociaux sur une période donnée?
 
 Tout d'abord, Charlie a envie d'évaluer la pertinence de son contenu en général suivant la tendance globale de partage de ce dernier sur les réseaux sociaux. Cela lui donnera notamment une évolution sur le long terme et permettra d'évaluer cette tendance en fonction des actions prises.
 
-## Quels sont les réseaux sociaux les plus utilisés pour partager mon contenu?
+### Quels sont les réseaux sociaux les plus utilisés pour partager mon contenu?
 
 Un autre point intéressant, Charlie a envie de connaître quelles sont les plateformes priorisées chez ses lecteurs. Cela lui permettra notamment d'adapter son contenu en conséquence et de prioriser sa communication sur les plateformes les plus utilisées par sa communauté.
 
-## Quels sont les contenus les plus partagés sur les réseaux sociaux sur une période donnée?
+### Quels sont les contenus les plus partagés sur les réseaux sociaux sur une période donnée?
 
 Ensuite, Charlie a bien évidemment besoin de visualiser le degré d'engagement de ses lecteurs via le partage sur les réseaux sociaux par article et type de contenu. Cela lui permettra notamment d'identifier quel type de contenu intéresse le plus les lecteurs et a le plus de chance d'être viral.
 
-# Comment répond-on à ces question dans Google Analytics?
+## Comment répond-on à ces question dans Google Analytics?
 
 Google Analytics propose quelques rapports déjà construits permettant de répondre à ces questions. Et comme l'une de mes contraintes consiste à minimiser les paramétrages sur la plateforme, la solution s'attachera à alimenter ce dernier et ne demandera pas la création d'un rapport personnalisé.
 
-## Les rapports Evènements de Google Analytics
+### Les rapports Evènements de Google Analytics
 
 Au sein de la section Comportement, Google Analytics propose une série de rapports sur les **évènements**. 
 
@@ -69,7 +69,7 @@ Pour ce challenge, les rapports qui vont nous intéresser seront les rapports:
 * Comportement > Evenements > Principaux événements
 * Comportement > Evenements > Pages
 
-### Le rapport Principaux évènement
+#### Le rapport Principaux évènement
 
 Sans trop rentrer dans les détails, ce rapport permet d'évaluer les performances de vos évènements selon 3 dimensons principales:
 
@@ -86,20 +86,139 @@ Pour ce challenge, voici ce que je vous propose d'associer en face de ces 3 dime
 Dans notre cas, en partant du principe que le partage sur les réseaux sociaux constituent votre seul évènement d'engagement, il pourrait être intéressant par exemple d'utiliser ce rapport avec comme dimension principale le libellé d'évènement et comme dimension secondaire les pages.
 Cela vous permettra d'identifier par réseau social, les articles les plus partagés.
 
-### Le rapport évènements par page
+#### Le rapport évènements par page
 
 Ce rapport propose de mesurer la performance de vos évènements avex comme dimension principale la pages (dans notre cas, l'article). Si vous ajoutez comme dimension secondaire le libellé d'évènement, vous aurez ainsi le volume de partage par page et par réseau social. 
 vec ces deux rapports, vous avez déjà donc déjà un peu de matière pour analyser l'engagement de vos lecteurs sur votre contenu.
 
-Donc, si nous faisons le point par rapport au challenge de départ. Les questions analytiques ont été définies et nous avons également identifié les rapports qui vont nous permettrent d'y répondre. La prochaine étape, c'est donc de trouver un moyen de nourrir ces rapports.
+Donc, si nous faisons le point par rapport au challenge de départ, à savoir Charlie qui souhaite intégrer l'action de partager son contenu sur les réseaux sociaux pour analyser plus précisément l'engagement de ses lecteurs.
+Les questions analytiques ont été définies et nous avons également identifié les rapports qui vont nous permettrent d'y répondre. La prochaine étape, c'est donc de trouver un moyen de nourrir ces rapports.
 
 ![souris en dessin animé qui demande à manger](https://media.giphy.com/media/11NLstLWNHhNC0/giphy.gif)
 
-## Objectifs
-## Contraintes
+## Mettre en place le tracking d'évènement sur les boutons de partage
 
-# 
+Il est désormais temps de mettre en place le tracking des évènements de partage sur le blog de Charlie. Pour cela Google propose une *event command* avec une syntaxe spécifique. Le petit point d'attention à avoir sur ce sujet, c'est que cette syntaxe diffère en fonction du type de code de suivi que vous utilisez. En effet, il y a trois principales façons de tracker son site avec Google Analytics.
 
+### Quelques précisions sur l'implémentation initiale afin de resituer la solution qui va suivre
 
-J'ai une activité en tant que voyagiste. Je propose des voyages personnalisés en Asie du Sud Est. Dans une volonté de me créer de la visibilité et avoir la possibilité d'échanger avec mon marché, j'ai décidé de créer un blog qui présente la beauté de cette région du monde et décrit les voyages qui ont été organisés.
-Afin de mesure
+Google Analytics propose encore trois façon d'implémenter Google Analytics sur son site:
+
+* Via la librairie **analytics.js**. Il s'agit de l'ancienne version du code de suivi mais qui est toujours opérationnelle.
+* Via la librairie **gtag.js**. Il s'agit de la nouvelle version du code de suivi qui est désormais proposé par défaut.
+* Via le Google Tag Manager. Google analytics a pu être installé via l'interface de Google Tag Manager. Il est basé sur la même infrastrucure que la librairie gtag.js par ailleurs.
+
+Dans notre cas, Charlie a implémenté le code de suivi **gtag.js**. Pourquoi? Tout simplement parce que c'est le code de suivi proposé par défaut lorsque l'on installe Google Analytics sur son site et qu'au vu de ses besoins, il n'a pas forcément besoin d'utiliser un Tag Manager. 
+Cet article proposera donc une solution sur cette base d'implémentation (la plus fréquente finalement).
+
+### Présentation de la syntaxe de l'*event command*
+
+Sans rentrer dans les détails (pour plus d'information, la [documentation Google](https://developers.google.com/analytics/devguides/collection/gtagjs/events) est excellente!), voici à quoi ressemble:
+
+```javascript
+gtag('event', <action>, {
+  'event_category': <category>,
+  'event_label': <label>,
+  'value': <value>
+});
+```
+
+L'objectif est donc de déclencher cette fonction javascript au moment du clic sur un bouton de partage.
+Dans notre cas, après lecture de la documentation, afin de pouvoir visualiser la donnée comme elle a été présentée précédemment, la syntaxe sera la suivante:
+
+```javascript
+gtag('event', 'share', {method : 'NOM_RESEAU_SOCIAL'})
+```
+
+La valeur ```NOM_RESEAU_SOCIAL``` sera différente en fonction du réseau social associé à chaque bouton.
+
+Bon le décor est planté, voyons maintenant comment implémenter ça sur le blog de Charlie.
+
+## Intégration du tracking d'évènement sur le blog de Charlie
+
+Comme décrit précédemment, l'objectif est de déclencher cet *event command* lorsqu'un lecteur clique sur un bouton de partage. Examinons de plus près ces boutons.
+
+### Les boutons de partage sur le blog de Charlie
+
+Sur chaque article, Charlie a intégré des boutons de partage sur Linkedin, Facebook et Twitter.
+Voici l'élément html associé:
+
+```html
+<section>
+    <p id="post-share-links">
+        <a href="URL_DE_PARTAGE_TWITTER" class="twitter" target="_blank" title="Share on Twitter">
+            <i class="fa fa-twitter fa-lg"></i>
+        </a>
+        <a href="URL_DE_PARTAGE_FACEBOOK" class="facebook" target="_blank" title="Share on Facebook">
+            <i class="fa fa-facebook fa-lg"></i>
+        </a>
+        <a href="URL_DE_PARTAGE_LINKEDIN" class="linkedin" target="_blank" title="Share on LinkedIn">
+            <i class="fa fa-linkedin fa-lg"></i>
+        </a>
+    </p>
+</section>
+```
+
+Pour simplifier, j'ai volontairement simplifier au niveau des attributs ```href```.
+Ce bout de code là, Charlie pense le répéter peut être plusieurs fois dans chaque article (en début et en fin par exemple). Voyons comment intégrer ces *event commands*.
+
+### Intégration des *events commands* via un script javascript
+
+Pour intégrer ces évènements, je vous propose la solution suivante que je décrirai ensuite morceau par morceau:
+
+```javascript
+// ------------------------------------------------
+// ----- Déclaration de l'objet / de la class -----
+// ------------------------------------------------
+
+class SocialButton {
+    
+    // A chaque instanciation, on récupère:
+    //   --> La classe de l'élément html (this.name)
+    //   --> L'ensemble des éléments HTML associés (this.buttons)
+    //   --> On applique l'event command adéquate sur chaque bouton 
+    //       via la méthode trackShareAction
+
+    constructor(name) {
+        this.name = name;
+        this.buttons = document.getElementsByClassName(this.name);
+        this.trackShareAction(this.buttons, this.name);
+    }
+
+    // La méthode trackShareAction a pour objectif de déclencher
+    // l'event command sur chaque bouton récupéré
+
+    trackShareAction(buttonElts, name) {
+        for (let buttonElt of buttonElts) {
+            buttonElt.addEventListener("click", () => {
+                gtag('event', 'share', {method : name})
+            });
+        }
+    }
+}
+
+// ------------------------------------------------
+// ---------------- Initialization ----------------
+// ------------------------------------------------
+
+// On cible les URLS où créer les instances 
+// (uniquement les pages articles)
+const url = new URL(document.location.href);
+const pathRegex = /^\/articles\/.*\/$/
+
+if (pathRegex.test(url.pathname)) {
+    window.onload = () => {
+        // Une fois l'ensemble des éléments chargés, on crée une instance
+        // de la classe SocialButton pour chaque réseau social
+        const facebook = new SocialButton("facebook");
+        const twitter = new SocialButton("twitter");
+        const linkedin = new SocialButton("linkedin");
+    }    
+}
+```
+
+### Pourquoi ce script?
+
+Parmi les contraintes du challenge, il fallait que l'intégration puisse s'intégrer et s'adapter facilement dans la majorité des cas.
+
+Et c'est normalement le cas pour ce script. Il suffit d'ajouter ce script en chaque bas de page du site (avant la fermeture de la balise body)
