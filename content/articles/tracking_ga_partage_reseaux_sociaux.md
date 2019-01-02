@@ -17,7 +17,7 @@ En effet, pour un même problème, il y aura forcément plusieurs solutions. Cel
 
 Pour ce challenge, je vous propose de partir du contexte suivant:
 
-Charlie est un voyagiste qui propose des itinéraires éco-responsables uniquement en Asie du Sud Est. Au lancement de son activité, il a créé un blog afin de pouvoir partager sa passion sur cette région, véhiculer ses valeurs et construire une communauté autour de tout ça.
+Charlie est un voyagiste qui propose des itinéraires éco-responsables uniquement en Asie du Sud Est. Au lancement de son activité, il a créé un blog afin de pouvoir partager sa passion sur cette région, véhiculer ses valeurs et construire une communauté autour de tout ça. Son blog, c'est www.asia-dream.com.
 
 Pour mesurer son activité et l'engagement de ses lecteurs envers son contenu, il installé le code de suivi de Google Analytics qui me permet notamment de visualiser la durée par session, le nombre de pages vues par session, le taux de rebond, etc...
 Mais il aimerait également visualiser l'engagement de ses lecteurs via leur volonté de partager sur les réseaux sociaux un contenu qui les a intéressé. Au delà de la notion liée à l'intérêt porté par le lecteur sur le contenu, il y a également la notion de viralité qui rentre en jeu dans l'action de partage.
@@ -136,7 +136,17 @@ Bon le décor est planté, voyons maintenant comment implémenter ça sur le blo
 
 ## Intégration du tracking d'évènement sur le blog de Charlie
 
-Comme décrit précédemment, l'objectif est de déclencher cet *event command* lorsqu'un lecteur clique sur un bouton de partage. Examinons de plus près ces boutons.
+Comme décrit précédemment, l'objectif est de déclencher cet *event command* lorsqu'un lecteur clique sur un bouton de partage sur l'un de ces articles. Examinons de plus près ces pages articles et ces boutons.
+
+### La structure des URLs des pages articles du blog de Chalie
+
+Comme la majorité des blogs, celui de Charlie ne contient pas que des pages d'articles. Il y a notamment, une homepage, une page archives, une page *A propos*, etc...
+Cependant, chaque type de page possède une structure d'url bien définie. Pour les pages articles, elles sont constituées ainsi:
+
+www.asia-dream.com/articles/NOM_ARTICLE
+
+Pour chaque page article, on aura donc comme élément récurrent dans l'URL celui-ci : **/articles/**
+Et c'est sur ces pages, et uniquement celles-ci, où les boutons de partage sont présents. Parlons en un peu de ces boutons justement!
 
 ### Les boutons de partage sur le blog de Charlie
 
@@ -159,8 +169,10 @@ Voici l'élément html associé:
 </section>
 ```
 
-Pour simplifier, j'ai volontairement simplifier au niveau des attributs ```href```.
-Ce bout de code là, Charlie pense le répéter peut être plusieurs fois dans chaque article (en début et en fin par exemple). Voyons comment intégrer ces *event commands*.
+Pour simplifier, j'ai volontairement supprimer la structure des urls de partage au niveau des attributs ```href```.
+Ce bout de code là, Charlie pense le répéter peut être plusieurs fois dans chaque article (en début et en fin par exemple). 
+Ce qui est important ici pour la suite, c'est que chaque bouton / lien est associé à une classe identifiant le réseau social correspondant. C'est notamment sur cet élément que la solution qui suit va se baser.
+Voyons comment intégrer ces *event commands*.
 
 ### Intégration des *events commands* via un script javascript
 
@@ -168,7 +180,7 @@ Pour intégrer ces évènements, je vous propose la solution suivante que je dé
 
 ```javascript
 // ------------------------------------------------
-// ----- Déclaration de l'objet / de la class -----
+// ----- Déclaration de l'objet / de la classe -----
 // ------------------------------------------------
 
 class SocialButton {
@@ -198,7 +210,7 @@ class SocialButton {
 }
 
 // ------------------------------------------------
-// ---------------- Initialization ----------------
+// ---------------- Initialisation ----------------
 // ------------------------------------------------
 
 // On cible les URLS où créer les instances 
@@ -219,6 +231,53 @@ if (pathRegex.test(url.pathname)) {
 
 ### Pourquoi ce script?
 
-Parmi les contraintes du challenge, il fallait que l'intégration puisse s'intégrer et s'adapter facilement dans la majorité des cas.
+Parmi les contraintes du challenge, il est noté que la mise en place puisse s'intégrer et s'adapter facilement dans la plupart des environnements.
 
-Et c'est normalement le cas pour ce script. Il suffit d'ajouter ce script en chaque bas de page du site (avant la fermeture de la balise body)
+Et c'est normalement le cas pour ce script. Il suffit de l'ajouter en bas de chaque page du site (avant la fermeture de la balise body) et faire quelques ajustements nécessaires. Voyons justement de quoi il s'agit.
+
+### La classe SocialButton
+
+Si vous n'êtes pas très à l'aise avec le javascript, considérez cette partie comme le moteur regroupant les différentes actions qui seront effectuées sur les boutons de partage. Mais la bonne nouvelle c'est que cette partie n'a pas besoin d'être modifiée!
+
+### La partie *Initialisation*
+
+Pour modéliser, la logique de cette partie, je vous propose d'appréhender ce script selon cette logique:
+
+1. On défini dans un premier temps sur quel type de page on doit agir (ici, les pages articles). Pour cela, on utilise une expression régulière ```/^\/articles\/.*\/$/```. Cela signifie toutes les urls dont l'uri (ce qui suit le nom de domaine) ressemble à **/articles/QUELQUE_CHOSE**
+
+Il s'agit du code suivant:
+
+```javascript
+// On cible les URLS où créer les instances 
+// (uniquement les pages articles)
+const url = new URL(document.location.href);
+const pathRegex = /^\/articles\/.*\/$/
+```
+
+Si par exemple, demain Charlie change la structure d'url de ces articles comme cela: www.asia-dream.com/posts/NOM_ARTICLE. Il suffira alors de modifier la variable ```pathRegex``` de cette façon : ```/^\/posts\/.*\/$/```
+
+2. Si l'url sur laquelle l'internaute se trouve match avec cette expression régulière ```if (pathRegex.test(url.pathname)) {}```...
+
+3. ...Alors, lorsque tous les éléments de la page sont chargés, pour chaque bouton de partage, on crée une instance de SocialButton en transmettant la classe associée au bouton: ```const bouton = new SocialButton('CLASSE_BOUTON')```
+
+Sur le blog de Charlie, il y a un bouton de partage pour facebook, un pour twitter et un pour linkedin, d'où les trois instances dans le script. Mais si demain, imaginons qu'il rajoute un bouton de partage sur Pinterest: 
+
+```html
+<a href="URL_DE_PARTAGE_PINTEREST" class="pinterest" target="_blank" title="Share on Pinterest">
+    <i class="fa fa-pinterest fa-lg"></i>
+</a>
+```
+
+on aurait alors une nouvelle instance:
+
+```javascript
+const pinterest = new SocialButton("pinterest")
+```
+
+Et voilà! Il n'y a rien besoin de plus.
+
+## Une solution parmi tant d'autres
+
+Comme expliqué au départ, il s'agit bien évidemment d'une solution parmi tant d'autres! Et pour enrichir le débat, n'hésitez pas à proposer votre approche du challenge dans les commentaires!
+Cela permettra d'apporter d'autres éléments très intéressants j'en suis certain.
+De plus, si vous vous retrouvez à devoir résoudre ce type de problématique de votre côté et que vous rencontrez quelques difficultés, je me ferai un plaisir de vous aider.
