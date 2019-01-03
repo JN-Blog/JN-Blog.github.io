@@ -1,4 +1,4 @@
-Title: Challenge: Mesurer l'engagement de son contenu via le volume de partage sur les réseaux sociaux grâce à Google Analytics
+Title: Challenge: Tracker les partages de son contenu avec Google Analytics
 Date: 2018-12-19
 Modified: 2018-12-22
 Category: articles
@@ -7,7 +7,7 @@ Slug: tracking_partage_reseaux_sociaux_avec_google_analytics
 Lang: fr
 Authors: Julien Nuellas
 Cover: /images/img_summary_production_par_petits_lots.jpg
-Summary: Lorsque l'on souhaite mesurer l'engagement des utilisateurs envers son contenu, il est important d'analyser le volume de partage de ce dernier sur les réseaux sociaux. Cet article propose une façon simple et flexible de remonter cette donnée sur Google Analytics
+Summary: Lorsque l'on souhaite mesurer l'engagement des utilisateurs envers son contenu, il est important d'analyser le volume de partage de ce dernier sur les réseaux sociaux. Cet article propose au travers d'un challenge, une façon simple et flexible de remonter cette donnée sur Google Analytics
 
 J'adore résoudre les problèmes! C'est pourquoi j'ai envie à travers ce blog de me lancer des challenges. Je trouve l'approche intéressante pour plusieurs raisons:
 1. Cela permet de partir d'un sujet concret
@@ -20,7 +20,7 @@ Pour ce challenge, je vous propose de partir du contexte suivant:
 Charlie est un voyagiste qui propose des itinéraires éco-responsables uniquement en Asie du Sud Est. Au lancement de son activité, il a créé un blog afin de pouvoir partager sa passion sur cette région, véhiculer ses valeurs et construire une communauté autour de tout ça. Son blog, c'est www.asia-dream.com.
 
 Pour mesurer son activité et l'engagement de ses lecteurs envers son contenu, il installé le code de suivi de Google Analytics qui me permet notamment de visualiser la durée par session, le nombre de pages vues par session, le taux de rebond, etc...
-Mais il aimerait également visualiser l'engagement de ses lecteurs via leur volonté de partager sur les réseaux sociaux un contenu qui les a intéressé. Au delà de la notion liée à l'intérêt porté par le lecteur sur le contenu, il y a également la notion de viralité qui rentre en jeu dans l'action de partage.
+Mais il aimerait également visualiser l'engagement de ses lecteurs via leur volonté de partager sur les réseaux sociaux un contenu qui les a intéressés. Au-delà de la notion liée à l'intérêt porté par le lecteur sur le contenu, il y a également la notion de viralité qui rentre en jeu dans l'action de partage.
 
 **Le défi lancé au travers de cet article est donc de proposer une solution (parmi tant d'autres) pour évaluer l'engagement des lecteurs de ce blog via le partage du contenu sur les réseaux sociaux.**
 
@@ -34,7 +34,7 @@ Afin de répondre à ce challenge, je me suis fixé quelques contraintes supplé
 * Minimiser le paramétrage sur Google Analytics. Utiliser les rapports existants le plus possible
 * Proposer un script le plus facilement adaptable en fonction de l'implémentation des boutons de partage sur votre site.
 
-Maintenant que tout est clair et défini, intéressons nous plus en détail aux objectifs analytiques liés au tracking de ces actions de partage.
+Maintenant que tout est clair et défini, intéressons-nous plus en détail aux objectifs analytiques liés au tracking de ces actions de partage.
 
 ## Concrètement, comment j'évalue l'engagement de mes lecteurs via le partage sur les réseaux sociaux?
 
@@ -71,7 +71,7 @@ Pour ce challenge, les rapports qui vont nous intéresser seront les rapports:
 
 #### Le rapport Principaux évènement
 
-Sans trop rentrer dans les détails, ce rapport permet d'évaluer les performances de vos évènements selon 3 dimensons principales:
+Sans trop rentrer dans les détails, ce rapport permet d'évaluer les performances de vos évènements selon 3 dimensions principales:
 
 * Catégorie d'évènement
 * Action d'évènement
@@ -83,16 +83,16 @@ Pour ce challenge, voici ce que je vous propose d'associer en face de ces 3 dime
 * Action d'évènement = **"share"**. Cela permettra de regrouper tous vos évènements d'actions de partage au sein d'un même endroit et de les différencier de vos autres évènements d'engagement. Il s'agit également d'une action par défaut.
 * Libellé d'évènement = **nom du réseau social**. Cette dimension vous permettra de différencier vos évènements en fonction de chaque réseau social.
 
-Dans notre cas, en partant du principe que le partage sur les réseaux sociaux constituent votre seul évènement d'engagement, il pourrait être intéressant par exemple d'utiliser ce rapport avec comme dimension principale le libellé d'évènement et comme dimension secondaire les pages.
+Dans notre cas, en partant du principe que le partage sur les réseaux sociaux constitue votre seul évènement d'engagement, il pourrait être intéressant par exemple d'utiliser ce rapport avec comme dimension principale le libellé d'évènement et comme dimension secondaire les pages.
 Cela vous permettra d'identifier par réseau social, les articles les plus partagés.
 
 #### Le rapport évènements par page
 
-Ce rapport propose de mesurer la performance de vos évènements avex comme dimension principale la pages (dans notre cas, l'article). Si vous ajoutez comme dimension secondaire le libellé d'évènement, vous aurez ainsi le volume de partage par page et par réseau social. 
-vec ces deux rapports, vous avez déjà donc déjà un peu de matière pour analyser l'engagement de vos lecteurs sur votre contenu.
+Ce rapport propose de mesurer la performance de vos évènements avec comme dimension principale la pages (dans notre cas, l'article). Si vous ajoutez comme dimension secondaire le libellé d'évènement, vous aurez ainsi le volume de partage par page et par réseau social. 
+Avec ces deux rapports, vous avez déjà donc déjà un peu de matière pour analyser l'engagement de vos lecteurs sur votre contenu.
 
 Donc, si nous faisons le point par rapport au challenge de départ, à savoir Charlie qui souhaite intégrer l'action de partager son contenu sur les réseaux sociaux pour analyser plus précisément l'engagement de ses lecteurs.
-Les questions analytiques ont été définies et nous avons également identifié les rapports qui vont nous permettrent d'y répondre. La prochaine étape, c'est donc de trouver un moyen de nourrir ces rapports.
+Les questions analytiques ont été définies et nous avons également identifié les rapports qui vont nous permettre d'y répondre. La prochaine étape, c'est donc de trouver un moyen de les nourrir.
 
 ![souris en dessin animé qui demande à manger](https://media.giphy.com/media/11NLstLWNHhNC0/giphy.gif)
 
@@ -106,7 +106,7 @@ Google Analytics propose encore trois façon d'implémenter Google Analytics sur
 
 * Via la librairie **analytics.js**. Il s'agit de l'ancienne version du code de suivi mais qui est toujours opérationnelle.
 * Via la librairie **gtag.js**. Il s'agit de la nouvelle version du code de suivi qui est désormais proposé par défaut.
-* Via le Google Tag Manager. Google analytics a pu être installé via l'interface de Google Tag Manager. Il est basé sur la même infrastrucure que la librairie gtag.js par ailleurs.
+* Via le Google Tag Manager. Google analytics a pu être installé via l'interface de Google Tag Manager. Il est basé sur la même infrastructure que la librairie gtag.js par ailleurs.
 
 Dans notre cas, Charlie a implémenté le code de suivi **gtag.js**. Pourquoi? Tout simplement parce que c'est le code de suivi proposé par défaut lorsque l'on installe Google Analytics sur son site et qu'au vu de ses besoins, il n'a pas forcément besoin d'utiliser un Tag Manager. 
 Cet article proposera donc une solution sur cette base d'implémentation (la plus fréquente finalement).
@@ -169,8 +169,8 @@ Voici l'élément html associé:
 </section>
 ```
 
-Pour simplifier, j'ai volontairement supprimer la structure des urls de partage au niveau des attributs ```href```.
-Ce bout de code là, Charlie pense le répéter peut être plusieurs fois dans chaque article (en début et en fin par exemple). 
+Pour simplifier, j'ai volontairement supprimé la structure des urls de partage au niveau des attributs ```href```.
+Ce bout de code là, Charlie pense le répéter peut-être plusieurs fois dans chaque article (en début et en fin par exemple). 
 Ce qui est important ici pour la suite, c'est que chaque bouton / lien est associé à une classe identifiant le réseau social correspondant. C'est notamment sur cet élément que la solution qui suit va se baser.
 Voyons comment intégrer ces *event commands*.
 
@@ -243,20 +243,20 @@ Si vous n'êtes pas très à l'aise avec le javascript, considérez cette partie
 
 Pour modéliser, la logique de cette partie, je vous propose d'appréhender ce script selon cette logique:
 
-1. On défini dans un premier temps sur quel type de page on doit agir (ici, les pages articles). Pour cela, on utilise une expression régulière ```/^\/articles\/.*\/$/```. Cela signifie toutes les urls dont l'uri (ce qui suit le nom de domaine) ressemble à **/articles/QUELQUE_CHOSE**
+1. On définit dans un premier temps sur quel type de page on doit agir (ici, les pages articles). Pour cela, on utilise une expression régulière ```/^\/articles\/.*\/$/```. Cela signifie toutes les urls dont l'uri (ce qui suit le nom de domaine) ressemble à **/articles/QUELQUE_CHOSE**.
 
-Il s'agit du code suivant:
+    Il s'agit du code suivant:
 
-```javascript
-// On cible les URLS où créer les instances 
-// (uniquement les pages articles)
-const url = new URL(document.location.href);
-const pathRegex = /^\/articles\/.*\/$/
-```
+    ```javascript
+    // On cible les URLS où créer les instances 
+    // (uniquement les pages articles)
+    const url = new URL(document.location.href);
+    const pathRegex = /^\/articles\/.*\/$/
+    ```
 
-Si par exemple, demain Charlie change la structure d'url de ces articles comme cela: www.asia-dream.com/posts/NOM_ARTICLE. Il suffira alors de modifier la variable ```pathRegex``` de cette façon : ```/^\/posts\/.*\/$/```
+    Si par exemple, demain Charlie change la structure d'url de ces articles comme cela: www.asia-dream.com/posts/NOM_ARTICLE. Il suffira alors de modifier la variable ```pathRegex``` de cette façon : ```/^\/posts\/.*\/$/```
 
-2. Si l'url sur laquelle l'internaute se trouve match avec cette expression régulière ```if (pathRegex.test(url.pathname)) {}```...
+2. Si l'url sur laquelle l'internaute se trouve valide cette expression régulière ```if (pathRegex.test(url.pathname)) {}```...
 
 3. ...Alors, lorsque tous les éléments de la page sont chargés, pour chaque bouton de partage, on crée une instance de SocialButton en transmettant la classe associée au bouton: ```const bouton = new SocialButton('CLASSE_BOUTON')```
 
